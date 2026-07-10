@@ -1,0 +1,2500 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clown Hole Clan Battle log comp</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"
+    />
+    <style>
+      :root {
+        --orange: #e8580a;
+        --orangeL: #fde9da;
+        --orangeM: #f9b38a;
+        --teal: #0f6e56;
+        --tealL: #e1f5ee;
+        --tealM: #5dcaa5;
+        --red: #a32d2d;
+        --redL: #fcebeb;
+        --purple: #534ab7;
+        --purpleL: #eeedfe;
+        --amber: #854f0b;
+        --amberL: #faeeda;
+        --gray: #444441;
+        --grayL: #f1efe8;
+        --grayM: #d3d1c7;
+        --white: #ffffff;
+        --black: #1a1a1a;
+        --radius: 8px;
+        --radius-lg: 12px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f5f4f0;
+        color: var(--black);
+        min-height: 100vh;
+      }
+      .topbar {
+        background: var(--black);
+        padding: 0 24px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .topbar-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .topbar-logo {
+        color: var(--orange);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+      .topbar-sub {
+        color: #888;
+        font-size: 13px;
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-reset {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+        border: 1px solid #444;
+        color: #ccc;
+        padding: 6px 14px;
+        border-radius: var(--radius);
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .btn-reset:hover {
+        border-color: var(--orange);
+        color: var(--orange);
+      }
+      .progress-pill {
+        background: #222;
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 4px 12px;
+        font-size: 12px;
+        color: #aaa;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .progress-pill span {
+        color: var(--orange);
+        font-weight: 600;
+      }
+      .main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 20px 100px;
+      }
+      .tab-nav {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        border-bottom: 1px solid var(--grayM);
+      }
+      .tab-btn {
+        padding: 10px 20px;
+        background: none;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--gray);
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+        transition: all 0.15s;
+      }
+      .tab-btn.active {
+        color: var(--orange);
+        border-bottom-color: var(--orange);
+      }
+      .tab-btn:hover:not(.active) {
+        color: var(--black);
+      }
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: block;
+      }
+      /* CARDS */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+        gap: 16px;
+      }
+      .design-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        border: 0.5px solid var(--grayM);
+        overflow: hidden;
+      }
+      .card-header {
+        display: flex;
+        align-items: stretch;
+        background: var(--black);
+      }
+      .card-num {
+        background: var(--orange);
+        color: var(--white);
+        font-size: 22px;
+        font-weight: 700;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        min-width: 60px;
+        justify-content: center;
+      }
+      .card-title-block {
+        padding: 12px 16px;
+        flex: 1;
+      }
+      .card-title {
+        color: var(--white);
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .card-mantra {
+        color: var(--orangeM);
+        font-size: 12px;
+        margin-top: 3px;
+        font-style: italic;
+      }
+      .card-body {
+        padding: 16px;
+      }
+      .card-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .card-section-label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        margin-bottom: 8px;
+      }
+      .philosophy-block {
+        background: var(--orangeL);
+        border-radius: var(--radius);
+        padding: 12px;
+        border: 0.5px solid var(--orangeM);
+      }
+      .philosophy-block .card-section-label {
+        color: var(--orange);
+      }
+      .feel-block {
+        background: var(--tealL);
+        border-radius: var(--radius);
+        padding: 12px;
+        border: 0.5px solid var(--tealM);
+      }
+      .feel-block .card-section-label {
+        color: var(--teal);
+      }
+      .point-list {
+        list-style: none;
+      }
+      .point-list li {
+        font-size: 12px;
+        color: var(--gray);
+        padding: 3px 0;
+        display: flex;
+        gap: 6px;
+        align-items: flex-start;
+      }
+      .point-list li::before {
+        content: "→";
+        color: var(--orange);
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .feel-block .point-list li::before {
+        color: var(--teal);
+      }
+      .anti-block {
+        background: var(--redL);
+        border-radius: var(--radius);
+        padding: 12px;
+        border: 0.5px solid var(--red);
+        margin-bottom: 10px;
+      }
+      .anti-block .card-section-label {
+        color: var(--red);
+      }
+      .anti-list {
+        list-style: none;
+      }
+      .anti-list li {
+        font-size: 12px;
+        color: var(--red);
+        padding: 3px 0;
+        display: flex;
+        gap: 6px;
+        align-items: flex-start;
+      }
+      .anti-list li::before {
+        content: "✕";
+        flex-shrink: 0;
+      }
+      .card-chk-section {
+        margin-top: 12px;
+      }
+      .card-chk-label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--black);
+        background: var(--grayL);
+        padding: 6px 10px;
+        border-radius: var(--radius) var(--radius) 0 0;
+        border: 0.5px solid var(--grayM);
+      }
+      .card-chk-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12px;
+      }
+      .card-chk-table th {
+        background: var(--black);
+        color: var(--white);
+        padding: 6px 10px;
+        text-align: left;
+        font-weight: 500;
+      }
+      .card-chk-table td {
+        padding: 7px 10px;
+        border-bottom: 0.5px solid var(--grayL);
+        vertical-align: top;
+      }
+      .card-chk-table tr:last-child td {
+        border-bottom: none;
+      }
+      .card-chk-table tr:hover td {
+        background: var(--grayL);
+      }
+      .chk-id-badge {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--orange);
+        white-space: nowrap;
+      }
+      .chk-why {
+        font-size: 11px;
+        color: #999;
+        font-style: italic;
+      }
+      .opt-badge {
+        font-size: 10px;
+        background: var(--amberL);
+        color: var(--amber);
+        border-radius: 4px;
+        padding: 1px 5px;
+        margin-left: 4px;
+        font-weight: 600;
+      }
+      /* CHECKLIST */
+      .checklist-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .check-group {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        border: 0.5px solid var(--grayM);
+        overflow: hidden;
+      }
+      .check-group-header {
+        padding: 12px 18px;
+        background: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .check-group-title {
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .check-group-progress {
+        font-size: 12px;
+        color: #aaa;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .check-group-progress .done {
+        color: var(--orange);
+        font-weight: 600;
+      }
+      .check-items {
+        padding: 8px 0;
+      }
+      .check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 18px;
+        border-bottom: 0.5px solid var(--grayL);
+        cursor: pointer;
+        transition: background 0.1s;
+      }
+      .check-item:last-child {
+        border-bottom: none;
+      }
+      .check-item:hover {
+        background: var(--grayL);
+      }
+      .check-item.checked {
+        background: #f8fdf9;
+      }
+      .check-item.optional-item {
+        opacity: 0.85;
+      }
+      .check-item input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--teal);
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .check-item-content {
+        flex: 1;
+      }
+      .check-id {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--orange);
+        margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .req-star {
+        color: var(--red);
+        font-size: 12px;
+      }
+      .check-item.checked .check-id {
+        color: var(--teal);
+      }
+      .check-criterion {
+        font-size: 13px;
+        color: var(--black);
+        line-height: 1.4;
+      }
+      .check-item.checked .check-criterion {
+        color: var(--gray);
+        text-decoration: line-through;
+        text-decoration-color: var(--tealM);
+      }
+      .check-why-row {
+        font-size: 11px;
+        color: #999;
+        margin-top: 3px;
+        font-style: italic;
+      }
+      /* DIFFICULTY TYPE SECTION */
+      .diff-group {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        border: 0.5px solid var(--grayM);
+        overflow: hidden;
+      }
+      .diff-group-header {
+        padding: 12px 18px;
+        background: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .diff-group-title {
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .diff-group-sub {
+        color: #aaa;
+        font-size: 12px;
+      }
+      .diff-options {
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .diff-option {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: var(--radius);
+        border: 0.5px solid var(--grayM);
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .diff-option:hover {
+        border-color: var(--orangeM);
+        background: var(--orangeL);
+      }
+      .diff-option.selected {
+        border-color: var(--orange);
+        background: var(--orangeL);
+      }
+      .diff-option input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--orange);
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .diff-option-content {
+        flex: 1;
+      }
+      .diff-option-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 3px;
+      }
+      .diff-option-desc {
+        font-size: 12px;
+        color: var(--gray);
+        line-height: 1.5;
+      }
+      .boss-col {
+        width: 90px;
+        font-weight: 600;
+        vertical-align: top;
+      }
+
+      .boss-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 6px;
+        background: #e4dfdf;
+        color: #000000;
+        resize: vertical;
+        font-size: 13px;
+      }
+
+      .boss-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(78, 161, 255, 0.35);
+      }
+      .boss-input.error {
+        background: var(--redL);
+        box-shadow: 0 0 0 1px var(--red);
+      }
+      .boss-input-grid {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 8px;
+        align-items: start;
+      }
+      .boss-input-block {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .boss-field-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #777;
+      }
+      .boss-note-input {
+        min-height: 38px;
+      }
+      .boss-input-hint {
+        font-size: 10px;
+        color: #888;
+        margin-top: 4px;
+        line-height: 1.4;
+      }
+      .tab-btn-log {
+        background: var(--tealL);
+        color: var(--teal);
+        border-radius: var(--radius) var(--radius) 0 0;
+        font-weight: 600;
+      }
+      .tab-btn-log.active {
+        background: var(--teal);
+        color: var(--white);
+      }
+      .tab-btn-log:hover:not(.active) {
+        background: var(--tealM);
+        color: var(--white);
+      }
+      .tab-btn-video {
+        background: var(--amberL);
+        color: var(--amber);
+        border-radius: var(--radius) var(--radius) 0 0;
+        font-weight: 600;
+      }
+      .tab-btn-video.active {
+        background: var(--amber);
+        color: var(--white);
+      }
+      .tab-btn-video:hover:not(.active) {
+        background: #c8832e;
+        color: var(--white);
+      }
+      .btn-upload {
+        background: var(--teal);
+      }
+      .btn-upload:hover {
+        background: #0a5a47;
+      }
+      .btn-upload:disabled {
+        background: var(--grayM);
+      }
+      .validation-msg {
+        font-size: 12px;
+        color: var(--red);
+        max-width: 420px;
+        line-height: 1.4;
+      }
+      .log-panel {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        border: 0.5px solid var(--grayM);
+        overflow: hidden;
+      }
+      .log-panel-header {
+        padding: 14px 18px;
+        background: var(--black);
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .log-panel-body {
+        padding: 16px 18px;
+      }
+      .log-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+        align-items: end;
+        justify-content: space-between;
+      }
+      .log-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .log-field label {
+        font-size: 12px;
+        color: var(--gray);
+        font-weight: 600;
+      }
+      .log-field input,
+      .log-field select {
+        min-width: 120px;
+        padding: 8px 10px;
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius);
+        font-size: 13px;
+        outline: none;
+        background: var(--white);
+      }
+      .log-field input:focus,
+      .log-field select:focus {
+        border-color: var(--orange);
+      }
+      .log-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .log-toolbar-main {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: end;
+      }
+      .btn-log-action {
+        height: 38px;
+        padding: 0 14px;
+        border-radius: var(--radius);
+        border: 1px solid var(--grayM);
+        background: var(--white);
+        color: var(--black);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .btn-log-action.primary {
+        background: var(--teal);
+        border-color: var(--teal);
+        color: var(--white);
+      }
+      .btn-log-action:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .log-summary {
+        font-size: 12px;
+        color: var(--gray);
+        margin-bottom: 12px;
+      }
+      .log-table-wrap {
+        overflow-x: auto;
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius);
+      }
+      .log-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--white);
+      }
+      .log-table th,
+      .log-table td {
+        padding: 12px 14px;
+        border-bottom: 0.5px solid var(--grayM);
+        font-size: 13px;
+        text-align: left;
+      }
+      .log-table th {
+        background: var(--grayL);
+        font-size: 12px;
+        color: var(--gray);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .log-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .log-pager {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+      }
+      .log-pager-meta {
+        font-size: 12px;
+        color: var(--gray);
+      }
+      .log-pager-controls {
+        display: flex;
+        gap: 10px;
+        align-items: end;
+        flex-wrap: wrap;
+      }
+      .log-pager-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .btn-page-num {
+        min-width: 38px;
+        padding: 0 10px;
+      }
+      .btn-page-num.active {
+        background: var(--teal);
+        border-color: var(--teal);
+        color: var(--white);
+      }
+      .log-page-gap {
+        color: var(--gray);
+        font-size: 12px;
+        padding: 0 2px;
+      }
+      .log-empty {
+        font-size: 13px;
+        color: var(--gray);
+        text-align: center;
+        padding: 32px 16px;
+      }
+      .video-panel {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        border: 0.5px solid var(--grayM);
+        overflow: hidden;
+      }
+      .video-panel-header {
+        padding: 14px 18px;
+        background: var(--black);
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .video-panel-sub {
+        color: #bfbfbf;
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .video-panel-body {
+        padding: 18px;
+      }
+      .video-frame-wrap {
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        background: #000;
+      }
+      .video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: none;
+        display: block;
+        background: #000;
+      }
+      .log-entry {
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius);
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        background: var(--grayL);
+      }
+      .log-entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 12px;
+        color: var(--gray);
+      }
+      .log-entry-head strong {
+        color: var(--black);
+        font-size: 13px;
+      }
+      .log-cells {
+        font-size: 12px;
+        font-family: ui-monospace, monospace;
+        line-height: 1.6;
+      }
+      .log-cell-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .log-cell-badge {
+        background: var(--white);
+        border: 0.5px solid var(--grayM);
+        border-radius: 4px;
+        padding: 2px 8px;
+      }
+      .log-cell-note {
+        color: var(--amber);
+        font-style: italic;
+      }
+      .toast.error {
+        background: var(--red);
+      }
+      .card-chk-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      /* row cuối đẩy xuống đáy */
+      .cant-row td {
+        height: 40px;
+        position: relative;
+      }
+
+      /* label nằm góc phải dưới */
+      .cant-check {
+        position: absolute;
+        right: 10px;
+        bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 15px;
+      }
+      .cant-check input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        transform: scale(1.2); /* 👈 tăng/giảm size */
+        cursor: pointer;
+      }
+      /* BOTTOM BAR */
+      .complete-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-top: 1px solid var(--grayM);
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        z-index: 99;
+      }
+      .complete-bar-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+      }
+      .complete-status {
+        font-size: 13px;
+        color: var(--gray);
+        white-space: nowrap;
+      }
+      .complete-status strong {
+        color: var(--orange);
+      }
+      .level-input-wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .level-input-label {
+        font-size: 13px;
+        color: var(--gray);
+        white-space: nowrap;
+      }
+      .level-input {
+        width: 80px;
+        padding: 6px 10px;
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius);
+        font-size: 13px;
+        outline: none;
+        transition: border 0.15s;
+      }
+      .level-input:focus {
+        border-color: var(--orange);
+      }
+      .complete-bar-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-log-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--tealL);
+        border: 1px solid var(--tealM);
+        color: var(--teal);
+        padding: 8px 14px;
+        border-radius: var(--radius);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .btn-log-bar:hover {
+        background: var(--teal);
+        color: var(--white);
+        border-color: var(--teal);
+      }
+      .btn-complete {
+        background: var(--orange);
+        color: var(--white);
+        border: none;
+        border-radius: var(--radius);
+        padding: 10px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-complete:hover {
+        background: #c44808;
+        transform: translateY(-1px);
+      }
+      .btn-complete:disabled {
+        background: var(--grayM);
+        cursor: not-allowed;
+        transform: none;
+      }
+      /* GUIDELINE */
+      .btn-guideline {
+        position: fixed;
+        top: 72px;
+        left: 20px;
+        background: var(--black);
+        color: var(--white);
+        border: none;
+        border-radius: var(--radius);
+        padding: 10px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        transition: all 0.15s;
+      }
+      .btn-guideline:hover {
+        background: var(--orange);
+      }
+      .guideline-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 300;
+      }
+      .guideline-overlay.open {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-end;
+      }
+      .guideline-panel {
+        background: var(--white);
+        width: 580px;
+        max-width: 95vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .guideline-panel-header {
+        background: var(--black);
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-shrink: 0;
+      }
+      .guideline-panel-title {
+        color: var(--white);
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .guideline-panel-sub {
+        color: #888;
+        font-size: 12px;
+        margin-top: 2px;
+      }
+      .btn-close-panel {
+        background: #333;
+        border: none;
+        color: #aaa;
+        width: 32px;
+        height: 32px;
+        border-radius: var(--radius);
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+        flex-shrink: 0;
+      }
+      .btn-close-panel:hover {
+        background: var(--orange);
+        color: var(--white);
+      }
+      .guideline-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 12px 20px;
+        border-bottom: 0.5px solid var(--grayM);
+        background: var(--grayL);
+        flex-shrink: 0;
+      }
+      .gl-nav-btn {
+        background: var(--white);
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius);
+        padding: 4px 10px;
+        font-size: 12px;
+        cursor: pointer;
+        color: var(--gray);
+        transition: all 0.12s;
+      }
+      .gl-nav-btn:hover {
+        border-color: var(--orange);
+        color: var(--orange);
+      }
+      .guideline-panel-body {
+        padding: 20px;
+        flex: 1;
+        overflow-y: auto;
+      }
+      .gl-section {
+        margin-bottom: 28px;
+      }
+      .gl-section-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--orange);
+        border-bottom: 2px solid var(--orangeL);
+        padding-bottom: 6px;
+        margin-bottom: 12px;
+      }
+      .gl-sub {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--black);
+        margin: 12px 0 6px;
+      }
+      .gl-body {
+        font-size: 13px;
+        color: var(--gray);
+        line-height: 1.65;
+        margin-bottom: 8px;
+      }
+      .gl-callout {
+        background: var(--orangeL);
+        border-left: 3px solid var(--orange);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 10px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+        color: var(--black);
+        line-height: 1.55;
+      }
+      .gl-callout.teal {
+        background: var(--tealL);
+        border-left-color: var(--teal);
+      }
+      .gl-callout.purple {
+        background: var(--purpleL);
+        border-left-color: var(--purple);
+      }
+      .gl-callout.opt {
+        background: var(--amberL);
+        border-left-color: var(--amber);
+      }
+      .gl-step-list {
+        list-style: none;
+        margin: 8px 0;
+      }
+      .gl-step-list li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 6px 0;
+        font-size: 13px;
+        color: var(--gray);
+        line-height: 1.5;
+      }
+      .gl-step-num {
+        background: var(--orange);
+        color: var(--white);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 11px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .gl-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12px;
+        margin: 8px 0;
+      }
+      .gl-table th {
+        background: var(--black);
+        color: var(--white);
+        padding: 7px 10px;
+        text-align: left;
+        font-weight: 500;
+      }
+      .gl-table td {
+        padding: 7px 10px;
+        border-bottom: 0.5px solid var(--grayL);
+        color: var(--gray);
+      }
+      .gl-table tr:last-child td {
+        border-bottom: none;
+      }
+      .gl-table .ok {
+        color: var(--teal);
+        font-weight: 600;
+      }
+      .gl-table .bad {
+        color: var(--red);
+        font-weight: 600;
+      }
+      /* TOAST */
+      .toast {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--teal);
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: var(--radius);
+        font-size: 13px;
+        font-weight: 500;
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .toast.show {
+        opacity: 1;
+      }
+      /* LOGIN */
+      .login-overlay {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(
+          145deg,
+          #1a1a1a 0%,
+          #2a2018 50%,
+          #1a1a1a 100%
+        );
+        z-index: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .login-overlay.hidden {
+        display: none;
+      }
+      .login-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 32px 28px;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+      }
+      .login-logo {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      .login-logo-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--orange);
+        letter-spacing: 0.5px;
+      }
+      .login-logo-sub {
+        font-size: 13px;
+        color: var(--gray);
+        margin-top: 4px;
+      }
+      .login-label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--black);
+        margin-bottom: 6px;
+      }
+      .login-input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius);
+        font-size: 14px;
+        outline: none;
+        transition: border 0.15s;
+      }
+      .login-input:focus {
+        border-color: var(--orange);
+      }
+      .login-input.error {
+        border-color: var(--red);
+      }
+      .login-error {
+        font-size: 12px;
+        color: var(--red);
+        margin-top: 6px;
+        min-height: 18px;
+      }
+      .login-hint {
+        font-size: 11px;
+        color: #999;
+        margin-top: 10px;
+        text-align: center;
+        line-height: 1.5;
+      }
+      .login-hint code {
+        background: var(--grayL);
+        padding: 1px 5px;
+        border-radius: 4px;
+        font-size: 11px;
+      }
+      .btn-login {
+        width: 100%;
+        margin-top: 16px;
+        background: var(--orange);
+        color: var(--white);
+        border: none;
+        border-radius: var(--radius);
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .btn-login:hover {
+        background: #c44808;
+      }
+      .btn-login:disabled {
+        background: var(--grayM);
+        cursor: not-allowed;
+      }
+      #app-shell {
+        display: none;
+      }
+      #app-shell.visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2
+      class="sr-only"
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden"
+    >
+      FlowOut Level Design Tool
+    </h2>
+
+    <div class="login-overlay" id="login-overlay">
+      <div class="login-card">
+        <div class="login-logo">
+          <div class="login-logo-title">CLOWN HOLE</div>
+          <div class="login-logo-sub">Đăng nhập bằng tên acc trong game</div>
+        </div>
+        <form id="login-form" onsubmit="handleLogin(event)">
+          <label class="login-label" for="login-username">Tên tài khoản</label>
+          <input
+            class="login-input"
+            type="text"
+            id="login-username"
+            placeholder="Nhập tên acc..."
+            autocomplete="username"
+            required
+          />
+          <div class="login-error" id="login-error"></div>
+          <button class="btn-login" type="submit" id="btn-login">
+            <i class="ti ti-login" aria-hidden="true"></i> Đăng nhập
+          </button>
+        </form>
+        <p class="login-hint">
+          Nhập đúng tên acc trong game như trên Sheet của Clan.<br />Nếu không
+          đăng nhập được, liên hệ Leader.
+        </p>
+      </div>
+    </div>
+
+    <div id="app-shell">
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-logo">CLOWN HOLE</div>
+          <div class="topbar-sub">CLAN BATTLE LOG COMP v1.0.1</div>
+        </div>
+        <div class="topbar-right">
+          <div class="progress-pill">
+            <span id="player-name">Tên nhân vật</span>
+          </div>
+
+          <button class="btn-reset" onclick="logout()">
+            <i class="ti ti-logout" aria-hidden="true"></i> Log Out
+          </button>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="switchTab('cards', this)">
+            <i class="ti ti-layout-cards" aria-hidden="true"></i> Dashboard
+          </button>
+          <button
+            class="tab-btn tab-btn-log"
+            onclick="switchTab('checklist', this)"
+          >
+            <i class="ti ti-history" aria-hidden="true"></i> Log
+          </button>
+          <button
+            class="tab-btn tab-btn-video"
+            onclick="switchTab('video', this)"
+          >
+            <i class="ti ti-video" aria-hidden="true"></i> Video
+          </button>
+        </div>
+        <div id="tab-cards" class="tab-panel active">
+          <div class="cards-grid" id="cards-container"></div>
+        </div>
+        <div id="tab-checklist" class="tab-panel">
+          <div id="log-container"></div>
+        </div>
+        <div id="tab-video" class="tab-panel">
+          <div id="video-container"></div>
+        </div>
+      </div>
+
+      <div class="complete-bar">
+        <div class="complete-bar-left">
+          <div class="complete-status">
+            Comp đã nhập: <strong id="bar-filled">0</strong> &nbsp;|&nbsp;
+            <span id="validation-msg" class="validation-msg"></span>
+          </div>
+        </div>
+        <div class="complete-bar-right">
+          <button class="btn-log-bar" onclick="goToLogPage()">
+            <i class="ti ti-history" aria-hidden="true"></i> Log
+          </button>
+          <button
+            class="btn-complete btn-upload"
+            id="btn-complete"
+            onclick="uploadLevel()"
+            disabled
+          >
+            <i class="ti ti-cloud-upload" aria-hidden="true"></i> Upload
+          </button>
+        </div>
+      </div>
+
+      <button
+        class="btn-guideline"
+        onclick="openGuideline()"
+        aria-label="Mở guideline"
+      >
+        <i class="ti ti-book-2" aria-hidden="true"></i> Guideline
+      </button>
+
+      <div
+        class="guideline-overlay"
+        id="guideline-overlay"
+        onclick="closeGuidelineOnOverlay(event)"
+      >
+        <div class="guideline-panel">
+          <div class="guideline-panel-header">
+            <div>
+              <div class="guideline-panel-title">
+                CLOWN HOLE - Hướng dẫn sử dụng tool
+              </div>
+              <div class="guideline-panel-sub">
+                v1.01 · "Tất cả thông số sẽ được log lên Sheet của Clan."
+              </div>
+            </div>
+            <button
+              class="btn-close-panel"
+              onclick="closeGuideline()"
+              aria-label="Đóng"
+            >
+              <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="guideline-nav" id="guideline-nav"></div>
+          <div class="guideline-panel-body" id="guideline-body"></div>
+        </div>
+      </div>
+
+      <button
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        style="
+          position: fixed;
+          bottom: 72px;
+          left: 20px;
+          background: var(--black);
+          color: var(--white);
+          border: none;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 200;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+          transition: all 0.15s;
+        "
+        onmouseover="this.style.background = 'var(--orange)'"
+        onmouseout="this.style.background = 'var(--black)'"
+        aria-label="Go to top"
+      >
+        <i class="ti ti-arrow-up" style="font-size: 18px"></i>
+      </button>
+    </div>
+
+    <div class="toast" id="toast">
+      <i class="ti ti-check" aria-hidden="true"></i><span id="toast-msg"></span>
+    </div>
+
+    <script>
+      // ── DATA ──────────────────────────────────────────────────────────
+      const CARDS = [
+        {
+          num: "01",
+          title: "Comp - Tier 4",
+          tier: 4,
+          prefix: "D",
+          required: true,
+          mantra: "Acc có khả năng đánh TẤT CẢ boss nào - Log tại đây",
+          philosophy: [
+            "Check xem acc có đủ comp đánh boss tương ứng hay không",
+            "Nếu acc chỉ có 4 gái → có thể mượn gái thứ 5 trong clan",
+            "Check các điều kiện của comp (nếu có) - chi tiết trong guideline",
+          ],
+          feel: [
+            "Có thể log cả 5 boss nếu acc đủ comp tương ứng",
+            "Cụ thể comp tương ứng trên Sheet của Chef (ví dụ: D501)",
+            "Nếu comp của bạn không lấy từ Chef → Thêm comp đó vào Sheet nhé! - chi tiết xem guideline",
+          ],
+          anti: [
+            "BẮT BUỘC phải hoàn thành trước khi DAY 1 bắt đầu",
+            "Nếu không thể đánh Tier 4 → tích Checkbox ở dưới",
+          ],
+          checks: [
+            { id: "Boss 1", bossNum: 1 },
+            { id: "Boss 2", bossNum: 2 },
+            { id: "Boss 3", bossNum: 3 },
+            { id: "Boss 4", bossNum: 4 },
+            { id: "Boss 5", bossNum: 5 },
+          ],
+          inputHint: "Chỉ nhập 0, 1, 2 hoặc 3.",
+          placeholder: "203",
+        },
+        {
+          num: "02",
+          title: "Comp - Tier 3",
+          tier: 3,
+          prefix: "C",
+          required: false,
+          mantra:
+            "Nếu bạn đánh 6 con Tier 3 hoặc đánh Blitz 3-4 thì log tại đây",
+          philosophy: [
+            "Log comp cho các boss Tier 3 mà acc có thể đánh",
+            "Chỉ cần điền boss bạn thực sự có comp",
+            "Không đánh Tier 3 → bỏ trống phần này",
+          ],
+          feel: [
+            "Nhập số comp tương ứng — hệ thống tự mapping lên Sheet",
+            "Có thể thêm ghi chú thời gian/EV ở dòng riêng",
+          ],
+          anti: ["Không bắt buộc nếu acc không đánh Tier 3"],
+          checks: [
+            { id: "Boss 1", bossNum: 1 },
+            { id: "Boss 2", bossNum: 2 },
+            { id: "Boss 3", bossNum: 3 },
+            { id: "Boss 4", bossNum: 4 },
+            { id: "Boss 5", bossNum: 5 },
+          ],
+          inputHint: "Chỉ nhập 0, 1, 2 hoặc 3.",
+          placeholder: "0",
+        },
+        {
+          num: "03",
+          title: "Comp - Tier 2",
+          tier: 2,
+          prefix: "B",
+          required: false,
+          mantra:
+            "Đây là phần cho các acc đánh Blitz, nếu acc bạn không đánh Blitz thì không cần điền",
+          philosophy: [
+            "Log comp Blitz cho acc có thể đánh Tier 2",
+            "Chỉ điền boss bạn thực sự có comp",
+          ],
+          feel: [
+            "Nhập số comp — hệ thống tự mapping lên Sheet",
+            "Ghi chú thời gian/EV để dòng riêng, không ghi đè cell",
+          ],
+          anti: ["Không bắt buộc nếu acc không đánh Blitz"],
+          checks: [
+            { id: "Boss 1", bossNum: 1 },
+            { id: "Boss 2", bossNum: 2 },
+            { id: "Boss 3", bossNum: 3 },
+            { id: "Boss 4", bossNum: 4 },
+            { id: "Boss 5", bossNum: 5 },
+          ],
+          inputHint:
+            "Comp ghi vào cell. Note ghi vào Google Sheet note của cell đó.",
+          placeholder: "0",
+        },
+      ];
+
+      const GUIDELINE = [
+        {
+          id: "gl-1",
+          label: "1. Đăng nhập",
+          html: `
+    <p class="gl-body"><strong>Mọi người đăng nhập bằng tên acc mình trong game</strong><br>Nếu nhập đúng mà không được thì liên hệ Leader - Aether</p>
+    <div class="gl-callout teal">"Tên acc là BẮT BUỘC - ngoài ra có thể điền thêm tên acc Fb hoặc Discord để mọi người dễ tag khi cần"</div>`,
+        },
+        {
+          id: "gl-2",
+          label: "2. Việc cần làm đầu tiên",
+          html: `
+    <p class="gl-body"><strong>Hoàn thành việc log comp trước khi D1 của CB bắt đầu</strong><br>Để mọi người có thể theo dõi và có kế hoạch phù hợp. Riêng comp Tier 4 thì chỉ cần xem acc có đủ gái tương ứng hay không.</p>
+    <p class="gl-body"><strong>Chi tiết thông tin</strong><br>Nếu log thông tin càng đầy đủ và chi tiết thì những ngày sau sẽ càng nhàn, nếu bận thì có thể được đánh hộ.</p>
+    <div class="gl-callout teal">Nếu có bất kì vấn đề gì về Cb cứ ping Aether (lead)</div>`,
+        },
+        {
+          id: "gl-3",
+          label: "3. Phân loại Boss và Tier Boss",
+          html: `
+    <p class="gl-body">CB được phân ra làm 4 tier 1/2/3/4, được người chơi gọi tắt là A/B/C/D Tier, cụ thể như sau:</p>
+    <ul class="gl-step-list">
+      <li><span class="gl-step-num">1</span>Chữ sẽ biểu thị cho tier của Boss (A/B/C/D) + Số biểu thị cho thứ tự của Boss (1/2/3/4/5)</li>
+      <li><span class="gl-step-num">2</span>Ví dụ: D2 là Boss thứ 2 của tier 4, B3 là boss thứ 3 của tier 2</li>
+      <li><span class="gl-step-num">3</span>Lap # cũng có thể thêm vào ở đằng trước để xác định chính xác Boss mà bạn đang nhắc đến. Ví dụ: L30D2, tức là Boss D2 của lap 30</li>
+    </ul>
+    <div class="gl-callout">Việc phân loại Boss và Tier Boss giúp người chơi dễ dàng nhận biết acc của mình có thể đánh con nào, quy tắc này dùng chung cho tất cả Timeline (TL)</div>`,
+        },
+        {
+          id: "gl-4",
+          label: "4. Phân loại comp: Auto / Semi-Auto / Simple Manual / Manual",
+          html: `
+    <p class="gl-body">Đây là các thuật ngữ xuất hiện khi đánh tất cả các Timeline (TL), cụ thể như sau:</p>
+    <table class="gl-table">
+      <tr><th>Thuật ngữ</th><th>Mô tả</th></tr>
+      <tr><td>Auto (Full-Set)</td><td>Đây là dạng comp đơn giản nhất, bao gồm cả Full-Set (ở server JP, Auto thường rất ít khi được nhắc đến vì Full Set sẽ cho nhiều damage hơn)</td></tr>
+      <tr><td>Semi-Auto (SA)</td><td>Yêu cầu bạn phải bật Auto ON/OFF hoặc SET/UNSET ở một khoảng thời gian nhất định.</td></tr>
+      <tr><td>Simple Manual</td><td>Thường sẽ sử dụng thêm một số thao tác cần phải quan sát hoạt ảnh gái hoặc nghe tiếng nhưng đơn giản, ví dụ như Christina Injection.</td></tr>
+      <tr><td>Manual</td><td>Sẽ có một vài hoặc nhiều manual, đòi hỏi sự chính xác (giống style của The_Lab từ server GLB)</td></tr>
+    </table>
+    <div class="gl-callout">Thường chỉ gặp các trường hợp Full Set hoặc Semi-Auto, nên cần nắm rõ 2 cái này.</div>`,
+        },
+        {
+          id: "gl-5",
+          label: "5. Giá trị ước tính (Estimated Value - EV)",
+          html: `
+    <p class="gl-body">Giá trị ước tính là giá trị mà damage của hit đánh dự kiến sẽ đạt được.</p>
+    <p class="gl-body">Một số comp sẽ có EV cố định, một số khác sẽ có sự chênh lệch phụ thuộc vào RNG và execute (các trường hợp này sẽ đều có Note.</p>
+    <div class="gl-callout teal">Nếu damage của bạn thấp hơn rất nhiều so với St. Dev (Độ lệch chuẩn), thì bạn đã làm sai ở đâu đó. Hãy kiểm tra lại điều kiện của comp hoặc Timeline</div>`,
+        },
+        {
+          id: "gl-6",
+          label: "6. Alloc - Allocation",
+          html: `
+    <p class="gl-body">Là cách mà bạn sắp xếp/lên kế hoạch cho 3 hit mỗi ngày của bạn trong 5 ngày Clan Battle, bao gồm việc sử dụng và mượn những unit nào, đánh boss nào, và EV của mỗi hit"</p>
+    <div class="gl-callout purple">Hiểu đơn giản là xếp sẵn các comp mình sẽ đánh là được</div>`,
+        },
+        {
+          id: "gl-7",
+          label:
+            "7. OT/OVF/OF/COT/OVK: Overtime/Overflow/CarryOverTime/Overkill",
+          html: `
+    <p class="gl-sub">Thường gọi là OT hoặc OVK thôi</p>
+    <p class="gl-body">Khi hit đánh của bạn hạ được Boss, bạn sẽ nhận được overtime. Độ dài OT = thời gian còn lại + 20s</p>
+    <p class="gl-sub">Có cách tính OT phức tạp hơn (đọc làm đếch gì)</p>
+    <p class="gl-body">min(110 - (hp lúc hit xong)*(thời gian sử dụng)/(min(damage, hp lúc bắt đầu)), 90)</p>
+    <div class="gl-callout">Cái thứ 2 có bot tính cho rồi khỏi đọc =))))</div>`,
+        },
+        {
+          id: "gl-8",
+          label: "8. FQ = Force Quit",
+          html: `
+    <p class="gl-body">Thoát game khi đang đánh thì sẽ gọi là Force Quit</p>
+    <ul class="gl-step-list">
+      <li><span class="gl-step-num">1</span><div><strong>Mỗi account chỉ được cho 1 lượt FQ MỖI ngày</strong> — Lượt FQ thứ hai sẽ dẫn đến mất hit (tốn 1 lượt và không gây damage).</div></li>
+      <li><span class="gl-step-num">2</span><div><strong>Mất kết nối cũng sẽ dẫn đến một lần FQ</strong> — nếu lúc bạn hoàn thành hit vẫn chưa kết nối mạng lại và nó hiện Timeout thì là cúc</div></li>
+      <li><span class="gl-step-num">3</span><div><strong>Black Box (BB)</strong> — chỉ một lượt đánh bị mất do FC lần thứ hai trong ngày, hoặc bỏ lượt, hoặc lượng damage gây ra thấp hơn rất nhiều so với EV</div></li>
+    </ul>
+    <div class="gl-callout teal">Khi thiết kế, hỏi: nếu player thua level này, họ học được gì? Câu trả lời phải cụ thể.</div>`,
+        },
+        {
+          id: "gl-9",
+          label: "9. FS/FT - Full Scam/Full Time",
+          html: `
+    <p class="gl-body"><strong>*Note</strong> — Khi bạn hạ Boss và nhận được 90s OT, đó gọi là Full Time.</p>
+    <div class="gl-callout">Này cũng có bot tính rồi, đếch quan tâm =))))</div>`,
+        },
+        {
+          id: "gl-10",
+          label: "10. thuật ngữ và định dạng sử dụng trong Timeline",
+          html: `
+    <table class="gl-table">
+      <tr><th>Thuật ngữ</th><th>Viết tắt</th><th>Mô tả</th></tr>
+      <tr><td class="bad">Auto Attack</td><td>AA</td><td>Là hoạt ảnh đánh thường của gái</td></tr>
+      <tr><td class="bad">Union Burst</td><td>UB</td><td>Kĩ năng nộ của gái</td></tr>
+      <tr><td class="bad">Skill rotation/cycle</td><td>-</td><td>Thứ tự mà một gái sử dụng AA hoặc Skill.</td></tr>
+      <tr><td class="bad">Cancel</td><td>-</td><td>Sử dụng UB khi gái đó bắt đầu sử dụng AA/Skill, trước khi AA/Skill đó có tác dụng.</td></tr>
+      <tr><td class="bad">Frame</td><td>-</td><td>Số lượng khung hình của game. 1 giây = 60 frame</td></tr>
+      <tr><td class="bad">Frame Tolerance:</td><td>-</td><td>Số lượng frame cho phép mà một action phải được thực hiện.</td></tr>
+      <tr><td class="bad">Skill activation Frame</td><td>-</td><td> Frame mà Skill đó bắt đầu có tác dụng.</td></tr>
+      <tr><td class="bad">Clock/Clocktick</td><td>-</td><td>Bấm ngay khi bộ đếm thời gian thay đổi</td></tr>
+      <tr><td class="bad">Yellow icon</td><td>-</td><td>Bấm ngay khi icon UB của unit sáng lên.</td></tr>
+      <tr><td class="bad">TL desync</td><td>-</td><td>Timeline không chạy đúng như đã định.</td></tr>
+    </table>`,
+        },
+      ];
+
+      // ── AUTH (Google Sheet qua Apps Script) ───────────────────────────
+      const SESSION_KEY = "clownhole_player";
+      const LOG_KEY = "clownhole_upload_log";
+      const DRIVE_VIDEO_KEY = "clownhole_drive_video_url";
+      //ĐỔI video URL mặc định nếu muốn, nhưng phải là link share của Google Drive (như ví dụ dưới)
+      const DEFAULT_DRIVE_VIDEO_URL =
+        "https://drive.google.com/file/d/17ra4YFg_RZfzO_mShFHs6otuhdJWoxLP/view";
+      // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
+      const AUTH_URL =
+        "https://script.google.com/macros/s/AKfycbzbUIVaNh2raKfIrJaxeYkPf2wdnJfZPv7i-7qroB3ihsESxPL3lMx_YdYVt3ME5bEuMQ/exec";
+
+      function showLoginScreen() {
+        document.getElementById("login-overlay").classList.remove("hidden");
+        document.getElementById("app-shell").classList.remove("visible");
+        document.getElementById("login-error").textContent = "";
+        document.getElementById("login-username").classList.remove("error");
+        document.getElementById("btn-login").disabled = false;
+        const saved = localStorage.getItem(SESSION_KEY);
+        document.getElementById("login-username").value = saved || "";
+        setTimeout(
+          () => document.getElementById("login-username").focus(),
+          100,
+        );
+      }
+
+      function enterApp(displayName) {
+        currentUser = displayName;
+        localStorage.setItem(SESSION_KEY, displayName);
+        document.getElementById("player-name").textContent = displayName;
+        document.getElementById("login-overlay").classList.add("hidden");
+        document.getElementById("app-shell").classList.add("visible");
+      }
+
+      function getCurrentUser() {
+        if (currentUser) return currentUser;
+        const saved = localStorage.getItem(SESSION_KEY);
+        if (saved) {
+          currentUser = saved;
+          return saved;
+        }
+        const label = document
+          .getElementById("player-name")
+          ?.textContent?.trim();
+        return label && label !== "Tên nhân vật" ? label : "";
+      }
+
+      async function checkUserOnServer(name) {
+        const res = await fetch(`${AUTH_URL}?user=${encodeURIComponent(name)}`);
+        if (!res.ok) throw new Error("network");
+        return res.json();
+      }
+
+      async function handleLogin(e) {
+        e.preventDefault();
+        const input = document.getElementById("login-username");
+        const errEl = document.getElementById("login-error");
+        const btn = document.getElementById("btn-login");
+        const name = input.value.trim();
+
+        input.classList.remove("error");
+        if (!name) {
+          errEl.textContent = "Vui lòng nhập tên tài khoản.";
+          input.classList.add("error");
+          return;
+        }
+        if (!AUTH_URL || AUTH_URL.includes("YOUR_SCRIPT_ID")) {
+          errEl.textContent = "Chưa cấu hình AUTH_URL trong file HTML.";
+          return;
+        }
+
+        btn.disabled = true;
+        errEl.textContent = "Đang kiểm tra...";
+
+        try {
+          const data = await checkUserOnServer(name);
+          if (data.ok) {
+            const displayName = data.displayName || name;
+            enterApp(displayName);
+            showToast(`Chào mừng, ${displayName}!`);
+          } else {
+            errEl.textContent =
+              "Tên không có trong danh sách. Liên hệ Leader nếu cần.";
+            input.classList.add("error");
+          }
+        } catch {
+          errEl.textContent = "Không kết nối được server. Thử lại sau.";
+          input.classList.add("error");
+        } finally {
+          btn.disabled = false;
+          if (errEl.textContent === "Đang kiểm tra...") errEl.textContent = "";
+        }
+      }
+
+      function logout() {
+        resetFormData();
+        showLoginScreen();
+      }
+
+      function initAuth() {
+        const saved = localStorage.getItem(SESSION_KEY);
+        if (saved) enterApp(saved);
+        else showLoginScreen();
+      }
+
+      // ── STATE ─────────────────────────────────────────────────────────
+      let currentUser = null;
+      let exportHistory = loadLogHistory();
+      let statusLogState = {
+        allItems: [],
+        searchName: "",
+        pageSize: 10,
+        pageNum: 1,
+        totalItems: 0,
+        totalPages: 0,
+        loading: false,
+        error: "",
+      };
+      let driveVideoState = {
+        inputUrl:
+          localStorage.getItem(DRIVE_VIDEO_KEY) || DEFAULT_DRIVE_VIDEO_URL,
+        fileId: "",
+        embedUrl: "",
+        loaded: false,
+        error: "",
+      };
+
+      function loadLogHistory() {
+        try {
+          return JSON.parse(localStorage.getItem(LOG_KEY) || "[]");
+        } catch {
+          return [];
+        }
+      }
+
+      function persistLogHistory() {
+        localStorage.setItem(LOG_KEY, JSON.stringify(exportHistory));
+      }
+
+      function escapeHtml(value) {
+        return String(value ?? "").replace(
+          /[&<>"']/g,
+          (char) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[char],
+        );
+      }
+
+      function extractDriveFileId(value) {
+        const input = String(value || "").trim();
+        if (!input) return "";
+
+        if (/^[a-zA-Z0-9_-]{20,}$/.test(input)) {
+          return input;
+        }
+
+        const patterns = [
+          /\/file\/d\/([a-zA-Z0-9_-]+)/,
+          /[?&]id=([a-zA-Z0-9_-]+)/,
+          /\/d\/([a-zA-Z0-9_-]+)/,
+        ];
+
+        for (const pattern of patterns) {
+          const match = input.match(pattern);
+          if (match?.[1]) return match[1];
+        }
+
+        return "";
+      }
+
+      function buildDrivePreviewUrl(fileId) {
+        return `https://drive.google.com/file/d/${fileId}/preview`;
+      }
+
+      function renderVideoView() {
+        const container = document.getElementById("video-container");
+        if (!container) return;
+
+        const frameHTML =
+          driveVideoState.loaded && driveVideoState.embedUrl
+            ? `
+          <div class="video-frame-wrap">
+            <iframe
+              class="video-frame"
+              src="${escapeHtml(driveVideoState.embedUrl)}"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
+          </div>
+        `
+            : "";
+
+        container.innerHTML = `
+          <div class="video-panel">
+            <div class="video-panel-header">
+              <span><i class="ti ti-video" aria-hidden="true"></i> Video</span>
+            </div>
+            <div class="video-panel-body">
+              ${frameHTML}
+            </div>
+          </div>
+        `;
+      }
+
+      function loadDriveVideo() {
+        const inputEl = document.getElementById("drive-video-url");
+        const nextUrl = inputEl
+          ? inputEl.value.trim()
+          : driveVideoState.inputUrl;
+        const fileId = extractDriveFileId(nextUrl);
+
+        driveVideoState.inputUrl = nextUrl;
+        localStorage.setItem(DRIVE_VIDEO_KEY, nextUrl);
+
+        if (!fileId) {
+          driveVideoState.fileId = "";
+          driveVideoState.embedUrl = "";
+          driveVideoState.loaded = false;
+          driveVideoState.error = "";
+          renderVideoView();
+          return;
+        }
+
+        driveVideoState.fileId = fileId;
+        driveVideoState.embedUrl = buildDrivePreviewUrl(fileId);
+        driveVideoState.loaded = true;
+        driveVideoState.error = "";
+        renderVideoView();
+      }
+
+      // ── BOSS INPUT / MAPPING ──────────────────────────────────────────
+      function parseTier4Input(raw) {
+        const value = raw.trim();
+        if (!value) return { valid: false, empty: true };
+        if (/^\d+$/.test(value)) {
+          return { valid: true, num: value };
+        }
+        return {
+          valid: false,
+          error: "Ô Comp chỉ nhập số comp (vd: 203). Note nhập ở ô bên cạnh.",
+        };
+      }
+
+      function parseTierScoreInput(raw) {
+        const value = raw.trim();
+        if (!value) return { valid: false, empty: true };
+        if (/^[0-3]$/.test(value)) {
+          return { valid: true, num: value };
+        }
+        return {
+          valid: false,
+          error: "Ô Comp chỉ nhập 0, 1, 2 hoặc 3. Note nhập ở ô bên cạnh.",
+        };
+      }
+
+      function bossColumn(prefix, bossNum) {
+        return `${prefix}${bossNum}`;
+      }
+
+      function sheetValue(prefix, num) {
+        return `${prefix}${num}`;
+      }
+
+      function collectCompData() {
+        const cells = {};
+        const errors = [];
+        let filledCount = 0;
+        let tier4Cant = false;
+        let tier4HasData = false;
+
+        CARDS.forEach((card, cardIdx) => {
+          const cardEl = document.querySelectorAll(".design-card")[cardIdx];
+          if (!cardEl) return;
+
+          const cantInput = cardEl.querySelector(".cant-check input");
+          if (cantInput?.checked) {
+            if (card.tier === 4) tier4Cant = true;
+            return;
+          }
+
+          card.checks.forEach((ch, bossIdx) => {
+            const input = cardEl.querySelectorAll(".boss-value-input")[bossIdx];
+            const noteInput =
+              cardEl.querySelectorAll(".boss-note-input")[bossIdx];
+            if (!input) return;
+
+            const raw = input.value.trim();
+            const note = (noteInput?.value || "").trim();
+            input.classList.remove("error");
+            noteInput?.classList.remove("error");
+
+            if (!raw) {
+              if (note) {
+                errors.push(
+                  `${card.title} · ${ch.id}: Nhập Comp trước khi nhập Note.`,
+                );
+                input.classList.add("error");
+                noteInput?.classList.add("error");
+              }
+              return;
+            }
+
+            const parsed =
+              card.tier === 4 ? parseTier4Input(raw) : parseTierScoreInput(raw);
+            if (!parsed.valid) {
+              errors.push(`${card.title} · ${ch.id}: ${parsed.error}`);
+              input.classList.add("error");
+              return;
+            }
+
+            filledCount++;
+            if (card.tier === 4) tier4HasData = true;
+
+            const col = bossColumn(card.prefix, ch.bossNum);
+            const value =
+              card.tier === 4
+                ? sheetValue(card.prefix, parsed.num)
+                : parsed.num;
+            cells[col] = {
+              value,
+              note,
+              tier: card.tier,
+              boss: ch.bossNum,
+              input: parsed.num,
+            };
+          });
+        });
+
+        return { cells, errors, filledCount, tier4Cant, tier4HasData };
+      }
+
+      function validateCompData() {
+        const data = collectCompData();
+        const errors = [...data.errors];
+
+        if (!data.tier4Cant && !data.tier4HasData) {
+          errors.push('Tier 4 bắt buộc: nhập comp hoặc tích "Can\'t".');
+        }
+
+        if (data.filledCount === 0 && !data.tier4Cant) {
+          errors.push("Chưa nhập dữ liệu comp nào.");
+        }
+
+        return {
+          valid: errors.length === 0,
+          errors,
+          cells: data.cells,
+          tier4Cant: data.tier4Cant,
+          filledCount: data.filledCount,
+        };
+      }
+
+      // ── BUILD UI ──────────────────────────────────────────────────────
+      function buildCards() {
+        const c = document.getElementById("cards-container");
+        c.innerHTML = "";
+        CARDS.forEach((card, cardIdx) => {
+          const checksHTML = `${card.checks
+            .map(
+              (ch, i) => `
+        <tr>
+          <td class="boss-col">
+            <span class="chk-id-badge">${ch.id}</span>
+          </td>
+          <td>
+            ${
+              card.tier === 4
+                ? `
+            <div class="boss-input-grid">
+              <label class="boss-input-block">
+                <span class="boss-field-label">Comp</span>
+                <input class="boss-input boss-value-input" type="text" inputmode="numeric"
+                  data-card="${cardIdx}" data-boss="${ch.bossNum}"
+                  oninput="updateProgress()">
+              </label>
+              <label class="boss-input-block">
+                <span class="boss-field-label">Note</span>
+                <textarea class="boss-input boss-note-input" rows="1"
+                  data-card="${cardIdx}" data-boss="${ch.bossNum}"
+                  oninput="updateProgress()"></textarea>
+              </label>
+            </div>
+            `
+                : `
+            <input class="boss-input boss-value-input" type="text" inputmode="numeric"
+              data-card="${cardIdx}" data-boss="${ch.bossNum}"
+              oninput="updateProgress()">
+            `
+            }
+          </td>
+        </tr>
+      `,
+            )
+            .join("")}
+
+      ${
+        card.tier === 4
+          ? `
+      <tr class="cant-row">
+        <td colspan="2">
+          <label class="cant-check">
+            <input type="checkbox" onchange="updateProgress()">
+            Can't đánh Tier 4
+          </label>
+        </td>
+      </tr>`
+          : ""
+      }
+    `;
+          c.innerHTML += `
+    <div class="design-card" data-tier="${card.tier}">
+      <div class="card-header">
+        <div class="card-num">${card.num}</div>
+        <div class="card-title-block">
+          <div class="card-title">${card.title}</div>
+          <div class="card-mantra">"${card.mantra}"</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-cols">
+          <div class="philosophy-block">
+            <div class="card-section-label">Mục tiêu</div>
+            <ul class="point-list">${card.philosophy.map((p) => `<li>${p}</li>`).join("")}</ul>
+          </div>
+          <div class="feel-block">
+            <div class="card-section-label">Hướng dẫn</div>
+            <ul class="point-list">${card.feel.map((f) => `<li>${f}</li>`).join("")}</ul>
+          </div>
+        </div>
+        <div class="anti-block">
+          <div class="card-section-label">NOTE:</div>
+          <ul class="anti-list">${card.anti.map((a) => `<li>${a}</li>`).join("")}</ul>
+        </div>
+        <div class="card-chk-section">
+          <div class="card-chk-label">Comp log · chỉ nhập số</div>
+          <table class="card-chk-table">
+            <thead><tr><th style="width:90px">Boss</th><th>${card.tier === 4 ? "Comp (số) + Note riêng" : "Comp (số)"}</th></tr></thead>
+            <tbody>${checksHTML}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>`;
+        });
+      }
+
+      function buildLogView() {
+        const c = document.getElementById("log-container");
+        const { searchName, pageSize, loading, error } = statusLogState;
+        const pageData = getStatusLogPageData();
+        const { items, totalItems, totalPages, safePageNum, visiblePages } =
+          pageData;
+
+        const rowsHTML = items.length
+          ? items
+              .map(
+                (item) => `
+          <tr>
+            <td>${escapeHtml(item.name)}</td>
+            <td>${escapeHtml(item.totalT2Hits)}</td>
+            <td>${escapeHtml(item.totalT3Hits)}</td>
+            <td>${escapeHtml(item.totalT4Hits)}</td>
+          </tr>`,
+              )
+              .join("")
+          : "";
+
+        const contentHTML = loading
+          ? '<div class="log-empty"><i class="ti ti-loader" style="font-size:28px;display:block;margin-bottom:8px;color:var(--grayM)"></i>Đang tải dữ liệu từ Google Sheet...</div>'
+          : error
+            ? `<div class="log-empty"><i class="ti ti-alert-circle" style="font-size:28px;display:block;margin-bottom:8px;color:var(--red)"></i>${escapeHtml(error)}</div>`
+            : items.length
+              ? `
+          <div class="log-summary">Tổng ${totalItems} dòng · Trang ${safePageNum}/${totalPages || 1}</div>
+          <div class="log-table-wrap">
+            <table class="log-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Total T2 Hits</th>
+                  <th>Total T3 Hits</th>
+                  <th>Total T4 Hits</th>
+                </tr>
+              </thead>
+              <tbody>${rowsHTML}</tbody>
+            </table>
+          </div>
+          <div class="log-pager">
+            <div class="log-pager-meta">Hiển thị ${items.length} / ${totalItems} dòng</div>
+            <div class="log-pager-controls">
+              <div class="log-field">
+                <label for="log-page-size">Page size</label>
+                <select id="log-page-size" onchange="changeLogPageSize(this.value)">
+                  ${[5, 10, 20, 50].map((size) => `<option value="${size}" ${pageSize === size ? "selected" : ""}>${size}</option>`).join("")}
+                </select>
+              </div>
+              <div class="log-pager-actions">
+                <button class="btn-log-action" onclick="changeLogPage(${safePageNum - 1})" ${safePageNum <= 1 ? "disabled" : ""}>Prev</button>
+                ${renderPageButtons(visiblePages, safePageNum)}
+                <button class="btn-log-action" onclick="changeLogPage(${safePageNum + 1})" ${safePageNum >= totalPages ? "disabled" : ""}>Next</button>
+              </div>
+            </div>
+          </div>`
+              : '<div class="log-empty"><i class="ti ti-history" style="font-size:28px;display:block;margin-bottom:8px;color:var(--grayM)"></i>Không có dữ liệu phù hợp trong tab Status All.</div>';
+
+        c.innerHTML = `
+  <div class="log-panel">
+    <div class="log-panel-header">
+      <span><i class="ti ti-history" aria-hidden="true"></i> Status All</span>
+      <span>${totalItems} dòng</span>
+    </div>
+    <div class="log-panel-body">
+      <div class="log-toolbar">
+        <div class="log-toolbar-main">
+          <div class="log-field">
+            <label for="log-search-name">Name</label>
+            <input id="log-search-name" type="text" placeholder="Tìm theo name" value="${escapeHtml(searchName)}" onkeydown="handleLogSearchKey(event)">
+          </div>
+          <div class="log-actions">
+            <button class="btn-log-action primary" onclick="applyLogFilters()">Tìm</button>
+          </div>
+        </div>
+      </div>
+      ${contentHTML}
+    </div>
+  </div>`;
+      }
+
+      function getStatusLogPageData() {
+        const nameQuery = statusLogState.searchName.trim().toLowerCase();
+        const filteredItems = statusLogState.allItems.filter((item) => {
+          if (!nameQuery) return true;
+          return String(item.name || "")
+            .toLowerCase()
+            .includes(nameQuery);
+        });
+        const totalItems = filteredItems.length;
+        const totalPages =
+          totalItems === 0
+            ? 0
+            : Math.ceil(totalItems / statusLogState.pageSize);
+        const safePageNum =
+          totalPages === 0 ? 1 : Math.min(statusLogState.pageNum, totalPages);
+        const startIndex = (safePageNum - 1) * statusLogState.pageSize;
+        const items = filteredItems.slice(
+          startIndex,
+          startIndex + statusLogState.pageSize,
+        );
+
+        statusLogState.pageNum = safePageNum;
+        statusLogState.totalItems = totalItems;
+        statusLogState.totalPages = totalPages;
+
+        return {
+          items,
+          totalItems,
+          totalPages,
+          safePageNum,
+          visiblePages: getVisibleLogPages(safePageNum, totalPages),
+        };
+      }
+
+      function getVisibleLogPages(currentPage, totalPages) {
+        if (totalPages <= 0) return [];
+        return [1, currentPage - 1, currentPage, currentPage + 1, totalPages]
+          .filter((page) => page >= 1 && page <= totalPages)
+          .filter((page, index, arr) => arr.indexOf(page) === index)
+          .sort((a, b) => a - b);
+      }
+
+      function renderPageButtons(pages, currentPage) {
+        if (!pages.length) return "";
+        return pages
+          .map((page, index) => {
+            const prevPage = index > 0 ? pages[index - 1] : null;
+            const gapHTML =
+              prevPage && page - prevPage > 1
+                ? '<span class="log-page-gap">...</span>'
+                : "";
+            return `${gapHTML}<button class="btn-log-action btn-page-num ${page === currentPage ? "active" : ""}" onclick="changeLogPage(${page})">${page}</button>`;
+          })
+          .join("");
+      }
+
+      async function fetchStatusLog() {
+        statusLogState.loading = true;
+        statusLogState.error = "";
+        buildLogView();
+
+        try {
+          const params = new URLSearchParams();
+          params.set("action", "status");
+
+          const res = await fetch(`${AUTH_URL}?${params.toString()}`);
+          if (!res.ok) throw new Error("network");
+          const data = await res.json();
+
+          if (!data.ok) {
+            throw new Error(data.error || "Không lấy được dữ liệu log.");
+          }
+
+          statusLogState.allItems = Array.isArray(data.items) ? data.items : [];
+        } catch (err) {
+          statusLogState.allItems = [];
+          statusLogState.totalItems = 0;
+          statusLogState.totalPages = 0;
+          statusLogState.error = err?.message || "Không kết nối được server.";
+        } finally {
+          statusLogState.loading = false;
+          buildLogView();
+        }
+      }
+
+      function applyLogFilters() {
+        statusLogState.searchName =
+          document.getElementById("log-search-name")?.value.trim() || "";
+        statusLogState.pageNum = 1;
+        buildLogView();
+      }
+
+      function handleLogSearchKey(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          applyLogFilters();
+        }
+      }
+
+      function changeLogPageSize(value) {
+        const nextSize = Number(value) || 10;
+        statusLogState.pageSize = nextSize;
+        statusLogState.pageNum = 1;
+        buildLogView();
+      }
+
+      function changeLogPage(nextPage) {
+        const maxPage = statusLogState.totalPages || 1;
+        statusLogState.pageNum = Math.min(Math.max(1, nextPage), maxPage);
+        buildLogView();
+      }
+
+      function buildGuideline() {
+        const nav = document.getElementById("guideline-nav");
+        const body = document.getElementById("guideline-body");
+        nav.innerHTML = GUIDELINE.map(
+          (s) =>
+            `<button class="gl-nav-btn" onclick="scrollToSection('${s.id}')">${s.label}</button>`,
+        ).join("");
+        body.innerHTML = GUIDELINE.map(
+          (s) => `
+    <div class="gl-section" id="${s.id}">
+      <div class="gl-section-title">${s.label}</div>
+      ${s.html}
+    </div>`,
+        ).join("");
+      }
+
+      // ── INTERACTIONS ──────────────────────────────────────────────────
+      function updateProgress() {
+        const result = validateCompData();
+        document.getElementById("bar-filled").textContent = result.filledCount;
+        document.getElementById("validation-msg").textContent = result.valid
+          ? ""
+          : result.errors[0];
+        document.getElementById("btn-complete").disabled = !result.valid;
+      }
+
+      function resetFormData() {
+        document.querySelectorAll(".boss-input").forEach((i) => {
+          i.value = "";
+          i.classList.remove("error");
+        });
+        document.querySelectorAll(".cant-check input").forEach((c) => {
+          c.checked = false;
+        });
+        updateProgress();
+      }
+
+      async function uploadToSheet(payload, user) {
+        // GET + tham số phẳng — GAS không hỗ trợ CORS cho POST từ localhost
+        const params = new URLSearchParams();
+        params.set("action", "upload");
+        params.set("user", user);
+        params.set("tier4Cant", payload.tier4Cant ? "1" : "0");
+
+        Object.entries(payload.cells).forEach(([col, data]) => {
+          params.set(col, data.value);
+          if (data.note) params.set(`${col}_note`, data.note);
+        });
+
+        const res = await fetch(`${AUTH_URL}?${params.toString()}`);
+        if (!res.ok) throw new Error("network");
+        return res.json();
+      }
+
+      async function uploadLevel() {
+        const result = validateCompData();
+        if (!result.valid) {
+          showToast(result.errors.join(" · "), true);
+          updateProgress();
+          return;
+        }
+
+        const user = getCurrentUser();
+        if (!user) {
+          showToast("Vui lòng đăng nhập lại.", true);
+          showLoginScreen();
+          return;
+        }
+
+        const btn = document.getElementById("btn-complete");
+        btn.disabled = true;
+
+        const payload = {
+          action: "upload",
+          tier4Cant: result.tier4Cant,
+          cells: result.cells,
+        };
+
+        try {
+          if (!AUTH_URL || AUTH_URL.includes("YOUR_SCRIPT_ID")) {
+            showToast("Chưa cấu hình AUTH_URL.", true);
+            return;
+          }
+
+          btn.innerHTML =
+            '<i class="ti ti-loader" aria-hidden="true"></i> Đang upload...';
+          const data = await uploadToSheet(payload, user);
+
+          if (data.ok) {
+            const entry = {
+              user,
+              time: new Date().toLocaleString("vi-VN"),
+              cells: result.cells,
+              tier4Cant: result.tier4Cant,
+            };
+            exportHistory.push(entry);
+            persistLogHistory();
+            resetFormData();
+            showToast("Đã cập nhật thành công");
+            fetchStatusLog();
+          } else {
+            const detail = [
+              data.error,
+              data.headers ? `Headers: ${data.headers}` : "",
+            ]
+              .filter(Boolean)
+              .join(" · ");
+            showToast(detail || "Upload thất bại.", true);
+            console.error("Upload failed:", data);
+          }
+        } catch {
+          showToast("Không kết nối được server. Thử lại sau.", true);
+        } finally {
+          btn.innerHTML =
+            '<i class="ti ti-cloud-upload" aria-hidden="true"></i> Upload';
+          updateProgress();
+        }
+      }
+
+      function switchToLogTab() {
+        const logBtn = document.querySelector(".tab-btn-log");
+        if (logBtn) switchTab("checklist", logBtn);
+      }
+
+      function switchTab(tab, btn) {
+        document
+          .querySelectorAll(".tab-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById(`tab-${tab}`).classList.add("active");
+        btn.classList.add("active");
+        const completeBar = document.querySelector(".complete-bar");
+        if (completeBar) {
+          completeBar.style.display = tab === "cards" ? "flex" : "none";
+        }
+        if (tab === "checklist") buildLogView();
+        if (tab === "video") renderVideoView();
+      }
+
+      function openGuideline() {
+        document.getElementById("guideline-overlay").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeGuideline() {
+        document.getElementById("guideline-overlay").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      function closeGuidelineOnOverlay(e) {
+        if (e.target === document.getElementById("guideline-overlay"))
+          closeGuideline();
+      }
+      function scrollToSection(id) {
+        document
+          .getElementById(id)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function goToLogPage() {
+        switchToLogTab();
+      }
+
+      function showToast(msg, isError) {
+        const t = document.getElementById("toast");
+        document.getElementById("toast-msg").textContent = msg;
+        t.classList.toggle("error", !!isError);
+        t.querySelector("i").className = isError
+          ? "ti ti-alert-circle"
+          : "ti ti-check";
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), isError ? 4000 : 2500);
+      }
+
+      // ── INIT ──────────────────────────────────────────────────────────
+      buildCards();
+      buildLogView();
+      loadDriveVideo();
+      buildGuideline();
+      updateProgress();
+      fetchStatusLog();
+      initAuth();
+    </script>
+  </body>
+</html>
