@@ -12,3 +12,9 @@ File hỗ trợ các chức năng cơ bản để member của Clan có thể lo
 > Dự án phi lợi nhuận nhưng mất tiền nên dm Aether
 
 ---
+## Cài đặt
+
+**Không cần cài đặt phức tạp, tải về chạy là được**:
+
+1. Vào trang **[Releases](https://github.com/HaitoAsaka/ClownHole_Cb_Log_Comp/releases)** → tải file
+   `Clown.Hole.Tool.html` **mới nhất là được (ᗜˬᗜ)**.
