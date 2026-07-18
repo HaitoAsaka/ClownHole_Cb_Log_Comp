@@ -771,6 +771,20 @@
       .video-panel-body {
         padding: 18px;
       }
+      .luce-cancel {
+        margin-bottom: 12px;
+      }
+      .luce-cancel-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--black);
+        margin: 0 0 6px 0;
+      }
+      .luce-cancel-desc {
+        font-size: 12px;
+        color: var(--gray);
+        margin: 0 0 12px 0;
+      }
       .video-frame-wrap {
         border: 0.5px solid var(--grayM);
         border-radius: var(--radius-lg);
@@ -1423,7 +1437,7 @@
                 CLOWN HOLE - Hướng dẫn sử dụng tool
               </div>
               <div class="guideline-panel-sub">
-                v1.01 · "Tất cả thông số sẽ được log lên Sheet của Clan."
+                v1.0.1 · "Tất cả thông số sẽ được log lên Sheet của Clan."
               </div>
             </div>
             <button
@@ -1512,7 +1526,7 @@
           prefix: "C",
           required: false,
           mantra:
-            "Nếu bạn đánh 6 con Tier 3 hoặc đánh Blitz 3-4 thì log tại đây",
+            "Nếu bạn đánh 6 con Tier 3 hoặc đánh Blitz 3-4 ngày đầu tiên (Day 1) thì log tại đây",
           philosophy: [
             "Log comp cho các boss Tier 3 mà acc có thể đánh",
             "Chỉ cần điền boss bạn thực sự có comp",
@@ -1520,7 +1534,7 @@
           ],
           feel: [
             "Nhập số comp tương ứng — hệ thống tự mapping lên Sheet",
-            "Có thể thêm ghi chú thời gian/EV ở dòng riêng",
+            "Các số có thể nhập gồm 0, 1, 2 hoặc 3 nhưng hạn chế đánh 1 hoặc 3 hit nhé!",
           ],
           anti: ["Không bắt buộc nếu acc không đánh Tier 3"],
           checks: [
@@ -1540,14 +1554,14 @@
           prefix: "B",
           required: false,
           mantra:
-            "Đây là phần cho các acc đánh Blitz, nếu acc bạn không đánh Blitz thì không cần điền",
+            "Đây là phần cho các acc đánh Blitz 2-4 ngày đầu tiên (Day 1), nếu acc bạn không đánh Blitz thì không cần điền",
           philosophy: [
             "Log comp Blitz cho acc có thể đánh Tier 2",
-            "Chỉ điền boss bạn thực sự có comp",
+            "Tương tự như Tier 3, chỉ cần điền khi bạn đánh Blitz 2-4 ngày đầu tiên (Day 1)",
           ],
           feel: [
             "Nhập số comp — hệ thống tự mapping lên Sheet",
-            "Ghi chú thời gian/EV để dòng riêng, không ghi đè cell",
+            "Các số có thể nhập gồm 0, 1, 2 hoặc 3 nhưng hạn chế đánh 1 hoặc 3 hit nhé!",
           ],
           anti: ["Không bắt buộc nếu acc không đánh Blitz"],
           checks: [
@@ -1569,6 +1583,7 @@
           label: "1. Đăng nhập",
           html: `
     <p class="gl-body"><strong>Mọi người đăng nhập bằng tên acc mình trong game</strong><br>Nếu nhập đúng mà không được thì liên hệ Leader - Aether</p>
+    <p class="gl-body"><strong>Liên hệ</strong><br>Việc set gái sẽ có role riêng: <strong>Set Char</strong> (Discord) nên mọi người có thể ping khi cần set bất kì gái nào vào Clan Battle hoặc bất kì mode chơi nào khác</p>
     <div class="gl-callout teal">"Tên acc là BẮT BUỘC - ngoài ra có thể điền thêm tên acc Fb hoặc Discord để mọi người dễ tag khi cần"</div>`,
         },
         {
@@ -1577,7 +1592,9 @@
           html: `
     <p class="gl-body"><strong>Hoàn thành việc log comp trước khi D1 của CB bắt đầu</strong><br>Để mọi người có thể theo dõi và có kế hoạch phù hợp. Riêng comp Tier 4 thì chỉ cần xem acc có đủ gái tương ứng hay không.</p>
     <p class="gl-body"><strong>Chi tiết thông tin</strong><br>Nếu log thông tin càng đầy đủ và chi tiết thì những ngày sau sẽ càng nhàn, nếu bận thì có thể được đánh hộ.</p>
-    <div class="gl-callout teal">Nếu có bất kì vấn đề gì về Cb cứ ping Aether (lead)</div>`,
+    <p class="gl-body"><strong>Lợi ích</strong><br>Weo cái này thì sẽ giúp mọi người dễ dàng theo dõi và quản lý comp của mình hơn. Ngoài ra việc nhờ Pilot (đánh hộ) sẽ được ưu tiên hơn nhé!</p>
+
+    <div class="gl-callout teal">Nếu có bất kì vấn đề gì về Clan Battle cứ ping Aether (lead)</div>`,
         },
         {
           id: "gl-3",
@@ -1610,7 +1627,7 @@
           label: "5. Giá trị ước tính (Estimated Value - EV)",
           html: `
     <p class="gl-body">Giá trị ước tính là giá trị mà damage của hit đánh dự kiến sẽ đạt được.</p>
-    <p class="gl-body">Một số comp sẽ có EV cố định, một số khác sẽ có sự chênh lệch phụ thuộc vào RNG và execute (các trường hợp này sẽ đều có Note.</p>
+    <p class="gl-body">Một số comp sẽ có EV cố định, một số khác sẽ có sự chênh lệch phụ thuộc vào RNG và execute (các trường hợp này sẽ đều có Note.)</p>
     <div class="gl-callout teal">Nếu damage của bạn thấp hơn rất nhiều so với St. Dev (Độ lệch chuẩn), thì bạn đã làm sai ở đâu đó. Hãy kiểm tra lại điều kiện của comp hoặc Timeline</div>`,
         },
         {
@@ -1641,7 +1658,7 @@
       <li><span class="gl-step-num">2</span><div><strong>Mất kết nối cũng sẽ dẫn đến một lần FQ</strong> — nếu lúc bạn hoàn thành hit vẫn chưa kết nối mạng lại và nó hiện Timeout thì là cúc</div></li>
       <li><span class="gl-step-num">3</span><div><strong>Black Box (BB)</strong> — chỉ một lượt đánh bị mất do FC lần thứ hai trong ngày, hoặc bỏ lượt, hoặc lượng damage gây ra thấp hơn rất nhiều so với EV</div></li>
     </ul>
-    <div class="gl-callout teal">Khi thiết kế, hỏi: nếu player thua level này, họ học được gì? Câu trả lời phải cụ thể.</div>`,
+    <div class="gl-callout teal">Mỗi acc chỉ được 1 FQ mỗi ngày, nên hãy cẩn thận.</div>`,
         },
         {
           id: "gl-9",
@@ -1787,14 +1804,36 @@
         loading: false,
         error: "",
       };
-      let driveVideoState = {
-        inputUrl:
-          localStorage.getItem(DRIVE_VIDEO_KEY) || DEFAULT_DRIVE_VIDEO_URL,
-        fileId: "",
-        embedUrl: "",
-        loaded: false,
-        error: "",
-      };
+      // Configure panels here. To add a new panel, append an object with `title`, `desc`, and optional `defaultUrl`.
+      const driveVideoConfigs = [
+        { storageSuffix: 0, title: "Luce Cancel", desc: "đây là mô tả", defaultUrl: DEFAULT_DRIVE_VIDEO_URL },
+        { storageSuffix: 1, title: "Ayane's Cheer Cancel", desc: "đây là mô tả", defaultUrl: "https://drive.google.com/file/d/1UHnDZ3tMrsTD8uqaxJNl3nI0DsaH8t5I/view?usp=sharing" },
+      ];
+
+      // Build states from configs and localStorage. Each panel persists its URL under DRIVE_VIDEO_KEY + '_' + storageSuffix
+      let driveVideoStates = driveVideoConfigs.map((cfg) => {
+        const saved = localStorage.getItem(DRIVE_VIDEO_KEY + "_" + cfg.storageSuffix);
+        const inputUrl = saved || cfg.defaultUrl || "";
+        return {
+          inputUrl,
+          fileId: "",
+          embedUrl: "",
+          loaded: false,
+          error: "",
+        };
+      });
+
+      // initialize states from stored URLs so if a URL exists we build its embed immediately
+      for (let i = 0; i < driveVideoStates.length; i++) {
+        const s = driveVideoStates[i];
+        const id = extractDriveFileId(s.inputUrl);
+        if (id) {
+          s.fileId = id;
+          s.embedUrl = buildDrivePreviewUrl(id);
+          s.loaded = true;
+          s.error = "";
+        }
+      }
 
       function loadLogHistory() {
         try {
@@ -1852,55 +1891,65 @@
         const container = document.getElementById("video-container");
         if (!container) return;
 
-        const frameHTML =
-          driveVideoState.loaded && driveVideoState.embedUrl
-            ? `
-          <div class="video-frame-wrap">
-            <iframe
-              class="video-frame"
-              src="${escapeHtml(driveVideoState.embedUrl)}"
-              allow="autoplay; fullscreen"
-              allowfullscreen
-            ></iframe>
-          </div>
-        `
-            : "";
+        const panels = driveVideoConfigs
+          .map((cfg, i) => {
+            const state = driveVideoStates[i] || {};
+            const frameHTML = state.loaded && state.embedUrl
+              ? `
+              <div class="video-frame-wrap">
+                <iframe
+                  class="video-frame"
+                  src="${escapeHtml(state.embedUrl)}"
+                  allow="autoplay; fullscreen"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            `
+              : "";
 
-        container.innerHTML = `
-          <div class="video-panel">
-            <div class="video-panel-header">
-              <span><i class="ti ti-video" aria-hidden="true"></i> Video</span>
-            </div>
-            <div class="video-panel-body">
-              ${frameHTML}
-            </div>
-          </div>
-        `;
+            return `
+              <div class="video-panel">
+                <div class="video-panel-header">
+                  <span><i class="ti ti-video" aria-hidden="true"></i> Video</span>
+                </div>
+                <div class="video-panel-body">
+                  <div class="luce-cancel">
+                    <div class="luce-cancel-title">${escapeHtml(cfg.title)}</div>
+                    <div class="luce-cancel-desc">${escapeHtml(cfg.desc || "")}</div>
+                  </div>
+                  ${frameHTML}
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+
+        container.innerHTML = panels;
       }
 
-      function loadDriveVideo() {
-        const inputEl = document.getElementById("drive-video-url");
-        const nextUrl = inputEl
-          ? inputEl.value.trim()
-          : driveVideoState.inputUrl;
+      function loadDriveVideo(index) {
+        const inputEl = document.getElementById("drive-video-url-" + index);
+        const state = driveVideoStates[index];
+        const cfg = driveVideoConfigs[index] || { storageSuffix: index };
+        const nextUrl = inputEl ? inputEl.value.trim() : state.inputUrl;
         const fileId = extractDriveFileId(nextUrl);
 
-        driveVideoState.inputUrl = nextUrl;
-        localStorage.setItem(DRIVE_VIDEO_KEY, nextUrl);
+        state.inputUrl = nextUrl;
+        localStorage.setItem(DRIVE_VIDEO_KEY + "_" + cfg.storageSuffix, nextUrl);
 
         if (!fileId) {
-          driveVideoState.fileId = "";
-          driveVideoState.embedUrl = "";
-          driveVideoState.loaded = false;
-          driveVideoState.error = "";
+          state.fileId = "";
+          state.embedUrl = "";
+          state.loaded = false;
+          state.error = "";
           renderVideoView();
           return;
         }
 
-        driveVideoState.fileId = fileId;
-        driveVideoState.embedUrl = buildDrivePreviewUrl(fileId);
-        driveVideoState.loaded = true;
-        driveVideoState.error = "";
+        state.fileId = fileId;
+        state.embedUrl = buildDrivePreviewUrl(fileId);
+        state.loaded = true;
+        state.error = "";
         renderVideoView();
       }
 
@@ -1925,7 +1974,7 @@
         }
         return {
           valid: false,
-          error: "Ô Comp chỉ nhập 0, 1, 2 hoặc 3. Note nhập ở ô bên cạnh.",
+          error: "Ô Comp chỉ nhập 0, 1, 2 hoặc 3. Hạn chế đánh hit lẻ.",
         };
       }
 
@@ -2490,7 +2539,8 @@
       // ── INIT ──────────────────────────────────────────────────────────
       buildCards();
       buildLogView();
-      loadDriveVideo();
+      // initialize each configured panel
+      driveVideoStates.forEach((_, i) => loadDriveVideo(i));
       buildGuideline();
       updateProgress();
       fetchStatusLog();
