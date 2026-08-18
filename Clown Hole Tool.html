@@ -104,10 +104,51 @@
         color: var(--orange);
         font-weight: 600;
       }
+      @media (max-width: 640px) {
+        .topbar {
+          padding: 0 12px;
+          height: 46px;
+        }
+        .topbar-left {
+          gap: 8px;
+        }
+        .topbar-logo {
+          font-size: 14px;
+        }
+        /* version subtitle is the least useful bit of info on a cramped
+           header — drop it first so the logo/pill/logout row fits one line */
+        .topbar-sub {
+          display: none;
+        }
+        .topbar-right {
+          gap: 6px;
+        }
+        .progress-pill {
+          padding: 3px 8px;
+          font-size: 11px;
+          max-width: 40vw;
+        }
+        .progress-pill span {
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .btn-reset {
+          padding: 5px 9px;
+          font-size: 11px;
+          gap: 4px;
+        }
+      }
       .main {
         max-width: 1100px;
         margin: 0 auto;
         padding: 24px 20px 100px;
+      }
+      @media (max-width: 640px) {
+        .main {
+          padding: 16px 14px 150px;
+        }
       }
       .tab-nav {
         display: flex;
@@ -319,6 +360,66 @@
         padding: 1px 5px;
         margin-left: 4px;
         font-weight: 600;
+      }
+      @media (max-width: 640px) {
+        /* Two hard floors were forcing the dashboard wider than a phone
+           screen and triggering horizontal scroll:
+           1) .cards-grid required each card to be at least 480px wide.
+           2) .boss-input-grid required a fixed 140px "Comp" column next to
+              the "Note" textarea inside the table cell.
+           Both switch to a single-column stack below, and paddings/fonts
+           shrink a notch so cards read comfortably at phone widths. */
+        .cards-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .card-header {
+          align-items: center;
+        }
+        .card-num {
+          font-size: 18px;
+          padding: 12px 14px;
+          min-width: 48px;
+        }
+        .card-title-block {
+          padding: 10px 12px;
+        }
+        .card-title {
+          font-size: 14px;
+        }
+        .card-mantra {
+          font-size: 11px;
+        }
+        .card-body {
+          padding: 12px;
+        }
+        .card-cols {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          margin-bottom: 10px;
+        }
+        .philosophy-block,
+        .feel-block,
+        .anti-block {
+          padding: 10px;
+        }
+        .card-chk-table {
+          font-size: 11px;
+        }
+        .boss-col {
+          width: 64px;
+        }
+        .chk-id-badge {
+          font-size: 13px;
+        }
+        .boss-input {
+          font-size: 12px;
+          padding: 7px 8px;
+        }
+        .boss-input-grid {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
       }
       /* CHECKLIST */
       .checklist-wrap {
@@ -1019,6 +1120,38 @@
         cursor: not-allowed;
         transform: none;
       }
+      @media (max-width: 640px) {
+        /* Bar wraps to two rows on mobile: status text on top, full-width
+           action buttons below — a single row can't fit all of it at 320-
+           400px wide, so trying to keep one line just clips/overflows. */
+        .complete-bar {
+          padding: 8px 12px;
+          flex-wrap: wrap;
+          row-gap: 8px;
+        }
+        .complete-bar-left {
+          flex: 1 1 100%;
+          width: 100%;
+        }
+        .complete-status {
+          white-space: normal;
+          font-size: 12px;
+        }
+        .validation-msg {
+          max-width: 100%;
+        }
+        .complete-bar-right {
+          flex: 1 1 100%;
+          width: 100%;
+        }
+        .btn-log-bar,
+        .btn-complete {
+          flex: 1;
+          justify-content: center;
+          padding: 9px 10px;
+          font-size: 12px;
+        }
+      }
       /* GUIDELINE */
       .btn-guideline {
         position: fixed;
@@ -1041,6 +1174,35 @@
       }
       .btn-guideline:hover {
         background: var(--orange);
+      }
+      .btn-scroll-top {
+        position: fixed;
+        bottom: 72px;
+        left: 20px;
+        background: var(--black);
+        color: var(--white);
+        border: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        transition: all 0.15s;
+      }
+      @media (max-width: 640px) {
+        /* the footer bar wraps to two rows on mobile (see .complete-bar),
+           so this floating button needs to clear a taller bar or it sits
+           on top of the action buttons */
+        .btn-scroll-top {
+          bottom: 104px;
+          left: 14px;
+          width: 38px;
+          height: 38px;
+        }
       }
       .guideline-overlay {
         display: none;
@@ -1508,25 +1670,8 @@
       </div>
 
       <button
+        class="btn-scroll-top"
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        style="
-          position: fixed;
-          bottom: 72px;
-          left: 20px;
-          background: var(--black);
-          color: var(--white);
-          border: none;
-          width: 42px;
-          height: 42px;
-          border-radius: 50%;
-          cursor: pointer;
-          z-index: 200;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
-          transition: all 0.15s;
-        "
         onmouseover="this.style.background = 'var(--orange)'"
         onmouseout="this.style.background = 'var(--black)'"
         aria-label="Go to top"
@@ -1664,7 +1809,7 @@
         },
         {
           id: "gl-4",
-          label: "4. Phân loại comp: Auto / Semi-Auto / Simple Manual / Manual",
+          label: "4. Phân loại comp",
           html: `
     <p class="gl-body">Đây là các thuật ngữ xuất hiện khi đánh tất cả các Timeline (TL), cụ thể như sau:</p>
     <table class="gl-table">
@@ -1678,7 +1823,7 @@
         },
         {
           id: "gl-5",
-          label: "5. Giá trị ước tính (Estimated Value - EV)",
+          label: "5. Estimated Value - EV",
           html: `
     <p class="gl-body">Giá trị ước tính là giá trị mà damage của hit đánh dự kiến sẽ đạt được.</p>
     <p class="gl-body">Một số comp sẽ có EV cố định, một số khác sẽ có sự chênh lệch phụ thuộc vào RNG và execute (các trường hợp này sẽ đều có Note.)</p>
@@ -1694,7 +1839,7 @@
         {
           id: "gl-7",
           label:
-            "7. OT/OVF/OF/COT/OVK: Overtime/Overflow/CarryOverTime/Overkill",
+            "7. Overkill",
           html: `
     <p class="gl-sub">Thường gọi là OT hoặc OVK thôi</p>
     <p class="gl-body">Khi hit đánh của bạn hạ được Boss, bạn sẽ nhận được overtime. Độ dài OT = thời gian còn lại + 20s</p>
@@ -1723,7 +1868,7 @@
         },
         {
           id: "gl-10",
-          label: "10. thuật ngữ và định dạng sử dụng trong Timeline",
+          label: "10. Thuật ngữ thường gặp trong Timeline",
           html: `
     <table class="gl-table">
       <tr><th>Thuật ngữ</th><th>Viết tắt</th><th>Mô tả</th></tr>
@@ -1851,6 +1996,11 @@
       let statusLogState = {
         allItems: [],
         searchName: "",
+        // Minimum-hits filters for the T2/T3/T4 columns. Empty string = no
+        // filter on that column; otherwise rows need totalT{2,3,4}Hits >= value.
+        minT2Hits: "",
+        minT3Hits: "",
+        minT4Hits: "",
         pageSize: 10,
         pageNum: 1,
         totalItems: 0,
@@ -2247,7 +2397,7 @@
         <div class="card-chk-section">
           <div class="card-chk-label">Comp log · chỉ nhập số</div>
           <table class="card-chk-table">
-            <thead><tr><th style="width:90px">Boss</th><th>${card.tier === 4 ? "Comp (số) + Note riêng" : "Comp (số)"}</th></tr></thead>
+            <thead><tr><th class="boss-col">Boss</th><th>${card.tier === 4 ? "Comp (số) + Note riêng" : "Comp (số)"}</th></tr></thead>
             <tbody>${checksHTML}</tbody>
           </table>
         </div>
@@ -2256,9 +2406,44 @@
         });
       }
 
+      // buildLogView() rebuilds the whole panel's innerHTML — including the
+      // filter <input>s — on every keystroke now that filtering is live.
+      // Without this, re-rendering would blow away focus/cursor position
+      // mid-type. Capture which log-toolbar input (if any) is focused, plus
+      // its cursor position, and restore both after the re-render.
+      function captureLogInputFocus() {
+        const active = document.activeElement;
+        if (!active || !active.id || !active.id.startsWith("log-search-"))
+          return null;
+        let selectionStart = null;
+        let selectionEnd = null;
+        try {
+          selectionStart = active.selectionStart;
+          selectionEnd = active.selectionEnd;
+        } catch {
+          // some input types (e.g. number) don't support text selection — ignore
+        }
+        return { id: active.id, selectionStart, selectionEnd };
+      }
+
+      function restoreLogInputFocus(saved) {
+        if (!saved) return;
+        const el = document.getElementById(saved.id);
+        if (!el) return;
+        el.focus();
+        if (typeof saved.selectionStart === "number") {
+          try {
+            el.setSelectionRange(saved.selectionStart, saved.selectionEnd);
+          } catch {
+            // ignore — not all input types support setSelectionRange
+          }
+        }
+      }
+
       function buildLogView() {
         const c = document.getElementById("log-container");
-        const { searchName, pageSize, loading, error } = statusLogState;
+        const { searchName, minT2Hits, minT3Hits, minT4Hits, pageSize, loading, error } =
+          statusLogState;
         const pageData = getStatusLogPageData();
         const { items, totalItems, totalPages, safePageNum, visiblePages } =
           pageData;
@@ -2315,6 +2500,8 @@
           </div>`
               : '<div class="log-empty"><i class="ti ti-history" style="font-size:28px;display:block;margin-bottom:8px;color:var(--grayM)"></i>Không có dữ liệu phù hợp trong tab Status All.</div>';
 
+        const savedFocus = captureLogInputFocus();
+
         c.innerHTML = `
   <div class="log-panel">
     <div class="log-panel-header">
@@ -2326,25 +2513,60 @@
         <div class="log-toolbar-main">
           <div class="log-field">
             <label for="log-search-name">Name</label>
-            <input id="log-search-name" type="text" placeholder="Tìm theo name" value="${escapeHtml(searchName)}" onkeydown="handleLogSearchKey(event)">
+            <input id="log-search-name" type="text" placeholder="Tìm theo name" value="${escapeHtml(searchName)}" oninput="scheduleLogFilterUpdate()" onkeydown="handleLogSearchKey(event)">
+          </div>
+          <div class="log-field">
+            <label for="log-search-t2">T2 Hits ≥</label>
+            <input id="log-search-t2" type="number" min="0" inputmode="numeric" placeholder="Min" value="${escapeHtml(minT2Hits)}" oninput="scheduleLogFilterUpdate()" onkeydown="handleLogSearchKey(event)">
+          </div>
+          <div class="log-field">
+            <label for="log-search-t3">T3 Hits ≥</label>
+            <input id="log-search-t3" type="number" min="0" inputmode="numeric" placeholder="Min" value="${escapeHtml(minT3Hits)}" oninput="scheduleLogFilterUpdate()" onkeydown="handleLogSearchKey(event)">
+          </div>
+          <div class="log-field">
+            <label for="log-search-t4">T4 Hits ≥</label>
+            <input id="log-search-t4" type="number" min="0" inputmode="numeric" placeholder="Min" value="${escapeHtml(minT4Hits)}" oninput="scheduleLogFilterUpdate()" onkeydown="handleLogSearchKey(event)">
           </div>
           <div class="log-actions">
-            <button class="btn-log-action primary" onclick="applyLogFilters()">Tìm</button>
+            <button class="btn-log-action" onclick="clearLogFilters()">Xóa lọc</button>
           </div>
         </div>
       </div>
       ${contentHTML}
     </div>
   </div>`;
+
+        restoreLogInputFocus(savedFocus);
+      }
+
+      // "" (empty) means no minimum set for that column. Anything else is
+      // parsed as a number; non-numeric input is treated as "no filter" too.
+      function parseMinHitsFilter(value) {
+        const trimmed = String(value ?? "").trim();
+        if (!trimmed) return null;
+        const num = Number(trimmed);
+        return Number.isFinite(num) ? num : null;
       }
 
       function getStatusLogPageData() {
         const nameQuery = statusLogState.searchName.trim().toLowerCase();
+        const minT2 = parseMinHitsFilter(statusLogState.minT2Hits);
+        const minT3 = parseMinHitsFilter(statusLogState.minT3Hits);
+        const minT4 = parseMinHitsFilter(statusLogState.minT4Hits);
         const filteredItems = statusLogState.allItems.filter((item) => {
-          if (!nameQuery) return true;
-          return String(item.name || "")
-            .toLowerCase()
-            .includes(nameQuery);
+          if (nameQuery) {
+            const matchesName = String(item.name || "")
+              .toLowerCase()
+              .includes(nameQuery);
+            if (!matchesName) return false;
+          }
+          if (minT2 !== null && Number(item.totalT2Hits || 0) < minT2)
+            return false;
+          if (minT3 !== null && Number(item.totalT3Hits || 0) < minT3)
+            return false;
+          if (minT4 !== null && Number(item.totalT4Hits || 0) < minT4)
+            return false;
+          return true;
         });
         const totalItems = filteredItems.length;
         const totalPages =
@@ -2426,13 +2648,38 @@
       function applyLogFilters() {
         statusLogState.searchName =
           document.getElementById("log-search-name")?.value.trim() || "";
+        statusLogState.minT2Hits =
+          document.getElementById("log-search-t2")?.value.trim() || "";
+        statusLogState.minT3Hits =
+          document.getElementById("log-search-t3")?.value.trim() || "";
+        statusLogState.minT4Hits =
+          document.getElementById("log-search-t4")?.value.trim() || "";
         statusLogState.pageNum = 1;
         buildLogView();
+      }
+
+      function clearLogFilters() {
+        statusLogState.searchName = "";
+        statusLogState.minT2Hits = "";
+        statusLogState.minT3Hits = "";
+        statusLogState.minT4Hits = "";
+        statusLogState.pageNum = 1;
+        buildLogView();
+      }
+
+      // Live filtering: re-apply on every keystroke instead of waiting for
+      // Enter/a button click. Debounced so a fast typist doesn't trigger a
+      // full re-render (and focus capture/restore) on every single character.
+      let logFilterDebounceTimer = null;
+      function scheduleLogFilterUpdate() {
+        clearTimeout(logFilterDebounceTimer);
+        logFilterDebounceTimer = setTimeout(applyLogFilters, 300);
       }
 
       function handleLogSearchKey(event) {
         if (event.key === "Enter") {
           event.preventDefault();
+          clearTimeout(logFilterDebounceTimer);
           applyLogFilters();
         }
       }
