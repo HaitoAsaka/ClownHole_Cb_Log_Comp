@@ -745,6 +745,17 @@
         text-align: center;
         padding: 32px 16px;
       }
+      /* VIDEO TAB
+         #video-container is a responsive grid: each panel comes from one
+         entry in the `driveVideoConfigs` array (see script section). Adding
+         a new object there (title/desc/defaultUrl) automatically renders a
+         new .video-panel here — no other markup changes needed. */
+      #video-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 16px;
+        align-items: start;
+      }
       .video-panel {
         background: var(--white);
         border-radius: var(--radius-lg);
@@ -786,17 +797,60 @@
         margin: 0 0 12px 0;
       }
       .video-frame-wrap {
+        position: relative;
+        width: 100%;
+        /* padding-top hack instead of `aspect-ratio` (unsupported on older
+           mobile browsers/webviews). Without it those browsers fall back to
+           the iframe's default ~150px height while the Drive player inside
+           still renders at full width, so it gets clipped by overflow:hidden
+           below — this is what was cutting the video off on phones. */
+        padding-top: 56.25%; /* 16:9 */
         border: 0.5px solid var(--grayM);
         border-radius: var(--radius-lg);
         overflow: hidden;
         background: #000;
       }
       .video-frame {
-        width: 100%;
-        aspect-ratio: 16 / 9;
+        /* Google Drive's own preview UI (loader, top-left menu chrome, etc.)
+           is drawn at fixed pixel sizes and doesn't reflow for tiny iframes —
+           on a phone-width iframe that chrome eats a big chunk of the height,
+           squashing/cropping the actual video. Fix: always render the iframe
+           at a comfortable desktop-like size (960x540, same 16:9 ratio) so
+           Drive's chrome stays proportional, then visually shrink the whole
+           thing with a CSS scale to fit the real container width. */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 960px;
+        height: 540px;
+        transform: scale(var(--video-scale, 1));
+        transform-origin: top left;
         border: none;
         display: block;
         background: #000;
+      }
+      @media (max-width: 640px) {
+        #video-container {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .video-panel-header {
+          padding: 10px 14px;
+          font-size: 13px;
+        }
+        .video-panel-body {
+          padding: 12px;
+        }
+        .luce-cancel-title {
+          font-size: 17px;
+        }
+        .luce-cancel-desc {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+        .video-frame-wrap {
+          border-radius: var(--radius);
+        }
       }
       .log-entry {
         border: 0.5px solid var(--grayM);
@@ -1804,10 +1858,19 @@
         loading: false,
         error: "",
       };
-      // Configure panels here. To add a new panel, append an object with `title`, `desc`, and optional `defaultUrl`.
+      // Video tab panels are 100% data-driven from this array — the container markup,
+      // grid layout and mobile styling are all generic (see #video-container / .video-panel
+      // in <style>) and never need to change.
+      //
+      // To add a new video: append ONE object below with a unique `storageSuffix`
+      // (never reuse/reorder existing suffixes — they key localStorage persistence),
+      // a `title`, an optional `desc`, and a `defaultUrl` pointing at the Google
+      // Drive share link. `renderVideoView()` maps over this array on every render,
+      // so the new panel/container appears automatically — no HTML/CSS/JS changes needed.
       const driveVideoConfigs = [
-        { storageSuffix: 0, title: "Luce Cancel", desc: "đây là mô tả", defaultUrl: DEFAULT_DRIVE_VIDEO_URL },
+        { storageSuffix: 0, title: "Luce Cancel", desc: "Cancel skill Luce của A múp (khi Textbox hiện lên và A múp bắt đầu giơ tay lên thì bấm UB)", defaultUrl: DEFAULT_DRIVE_VIDEO_URL },
         { storageSuffix: 1, title: "Ayane's Cheer Cancel", desc: "đây là mô tả", defaultUrl: "https://drive.google.com/file/d/1UHnDZ3tMrsTD8uqaxJNl3nI0DsaH8t5I/view?usp=sharing" },
+        // { storageSuffix: 2, title: "New Move Name", desc: "mô tả ngắn", defaultUrl: "https://drive.google.com/file/d/FILE_ID/view?usp=sharing" },
       ];
 
       // Build states from configs and localStorage. Each panel persists its URL under DRIVE_VIDEO_KEY + '_' + storageSuffix
@@ -1887,6 +1950,30 @@
         return `https://drive.google.com/file/d/${fileId}/preview`;
       }
 
+      // Must match the fixed width in the .video-frame CSS rule.
+      const VIDEO_FRAME_BASE_WIDTH = 960;
+
+      // Recomputes the CSS scale that shrinks each fixed-size (960x540)
+      // iframe down to fit its actual (often much narrower, on mobile)
+      // container width. Skips panels that are currently hidden
+      // (clientWidth 0, e.g. inactive tab) — they get synced next time
+      // they're rendered/shown instead of being scaled to nothing.
+      function syncVideoFrameScale() {
+        document
+          .querySelectorAll("#video-container .video-frame-wrap")
+          .forEach((wrap) => {
+            const w = wrap.clientWidth;
+            if (!w) return;
+            wrap.style.setProperty("--video-scale", w / VIDEO_FRAME_BASE_WIDTH);
+          });
+      }
+
+      let videoResizeTimer = null;
+      window.addEventListener("resize", () => {
+        clearTimeout(videoResizeTimer);
+        videoResizeTimer = setTimeout(syncVideoFrameScale, 150);
+      });
+
       function renderVideoView() {
         const container = document.getElementById("video-container");
         if (!container) return;
@@ -1925,6 +2012,7 @@
           .join("");
 
         container.innerHTML = panels;
+        syncVideoFrameScale();
       }
 
       function loadDriveVideo(index) {
