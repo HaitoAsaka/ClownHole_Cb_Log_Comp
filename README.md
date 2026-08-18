@@ -18,3 +18,4 @@ File hỗ trợ các chức năng cơ bản để member của Clan có thể lo
 
 1. Vào trang **[Releases](https://github.com/HaitoAsaka/ClownHole_Cb_Log_Comp/releases)** → tải file
    `Clown.Hole.Tool.html` **mới nhất là được (ᗜˬᗜ)**.
+2. Vào trang **[Website](https://clown-hole-cb-log-comp.vercel.app/Clown%20Hole%20Tool.html)** để sử dụng trực tiếp trên trình duyệt.
