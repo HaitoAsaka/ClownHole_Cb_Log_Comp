@@ -1,0 +1,13 @@
+# Google Apps Script backend (Code.gs) lives only in the Apps Script project
+# at script.google.com — it is intentionally never checked into this repo.
+# These entries are a safety net in case the project is ever managed locally
+# with `clasp` (clasp clone/pull would write these files into this folder).
+.clasp.json
+.clasprc.json
+appsscript.json
+*.gs
+
+# Local editor/OS noise
+.vscode/
+.DS_Store
+Thumbs.db

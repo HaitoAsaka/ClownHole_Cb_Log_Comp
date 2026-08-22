@@ -802,6 +802,12 @@
       .log-table tbody tr:last-child td {
         border-bottom: none;
       }
+      .log-row-clickable {
+        cursor: pointer;
+      }
+      .log-row-clickable:hover td {
+        background: var(--grayL);
+      }
       .log-pager {
         display: flex;
         justify-content: space-between;
@@ -1391,6 +1397,78 @@
         color: var(--red);
         font-weight: 600;
       }
+      /* MEMBER COMP PANEL */
+      .comp-boss-block {
+        margin-bottom: 22px;
+      }
+      .comp-boss-block:last-child {
+        margin-bottom: 0;
+      }
+      .comp-boss-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--black);
+        margin-bottom: 8px;
+      }
+      .comp-boss-note {
+        font-size: 12px;
+        color: var(--gray);
+        margin-bottom: 8px;
+        white-space: pre-line;
+      }
+      .comp-boss-empty {
+        font-size: 12px;
+        color: var(--gray);
+        font-style: italic;
+      }
+      .comp-char-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+      }
+      .comp-char-card {
+        background: var(--grayL);
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius);
+        padding: 8px;
+        text-align: center;
+      }
+      .comp-char-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 6px;
+        display: block;
+        background: var(--grayM);
+      }
+      .comp-char-name {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 4px;
+        overflow-wrap: break-word;
+      }
+      .comp-char-set {
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 4px;
+      }
+      .comp-char-set.set {
+        background: var(--tealL);
+        color: var(--teal);
+      }
+      .comp-char-set.off {
+        background: var(--redL);
+        color: var(--red);
+      }
+      .comp-char-star {
+        font-size: 10px;
+        color: var(--amber);
+      }
       /* TOAST */
       .toast {
         position: fixed;
@@ -1669,6 +1747,35 @@
         </div>
       </div>
 
+      <!-- Slides in when a member row is clicked on the Log tab; shows their
+           Tier 4 comp codes (D1-D5) cross-referenced against the "Test" sheet. -->
+      <div
+        class="guideline-overlay"
+        id="member-comp-overlay"
+        onclick="closeMemberCompOnOverlay(event)"
+      >
+        <div class="guideline-panel">
+          <div class="guideline-panel-header">
+            <div>
+              <div class="guideline-panel-title" id="member-comp-title">
+                Chi tiết comp
+              </div>
+              <div class="guideline-panel-sub">
+                Comp Tier 4 (D1-D5) · dữ liệu từ tab "Test"
+              </div>
+            </div>
+            <button
+              class="btn-close-panel"
+              onclick="closeMemberComp()"
+              aria-label="Đóng"
+            >
+              <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="guideline-panel-body" id="member-comp-body"></div>
+        </div>
+      </div>
+
       <button
         class="btn-scroll-top"
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
@@ -1894,9 +2001,7 @@
       const DEFAULT_DRIVE_VIDEO_URL =
         "https://drive.google.com/file/d/17ra4YFg_RZfzO_mShFHs6otuhdJWoxLP/view";
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
-      const AUTH_URL =
-        "https://script.google.com/macros/s/AKfycbzbUIVaNh2raKfIrJaxeYkPf2wdnJfZPv7i-7qroB3ihsESxPL3lMx_YdYVt3ME5bEuMQ/exec";
-
+      const AUTH_URL ="https://script.google.com/macros/s/AKfycbwZdgsDn9hGgII5QjzPSf9bQwFxd6a-1YCEG4VDH6AuOMxv2lxaPYhJPn15X1D2rJFltw/exec";
       function showLoginScreen() {
         document.getElementById("login-overlay").classList.remove("hidden");
         document.getElementById("app-shell").classList.remove("visible");
@@ -2448,17 +2553,25 @@
         const { items, totalItems, totalPages, safePageNum, visiblePages } =
           pageData;
 
+        // Rows with a name are clickable to open that member's comp detail
+        // panel. Using data-member-name + a delegated click listener (set up
+        // once on #log-container, see INIT) instead of an inline onclick —
+        // names can contain apostrophes (e.g. "Ayane's"), which would break
+        // out of an inline onclick's quoted string.
         const rowsHTML = items.length
           ? items
-              .map(
-                (item) => `
-          <tr>
+              .map((item) => {
+                const rowAttrs = item.name
+                  ? ` class="log-row-clickable" data-member-name="${escapeHtml(item.name)}"`
+                  : "";
+                return `
+          <tr${rowAttrs}>
             <td>${escapeHtml(item.name)}</td>
             <td>${escapeHtml(item.totalT2Hits)}</td>
             <td>${escapeHtml(item.totalT3Hits)}</td>
             <td>${escapeHtml(item.totalT4Hits)}</td>
-          </tr>`,
-              )
+          </tr>`;
+              })
               .join("")
           : "";
 
@@ -2850,6 +2963,136 @@
         if (e.target === document.getElementById("guideline-overlay"))
           closeGuideline();
       }
+
+      // ── MEMBER COMP PANEL ────────────────────────────────────────────
+      // comps: [{ boss, code, note, characters: [{name, setStatus, star, imageUrl}] }]
+      let memberCompState = {
+        user: "",
+        loading: false,
+        error: "",
+        comps: [],
+      };
+
+      function openMemberComp(name) {
+        if (!name) return;
+        memberCompState = { user: name, loading: true, error: "", comps: [] };
+        renderMemberCompPanel();
+        document.getElementById("member-comp-overlay").classList.add("open");
+        document.body.style.overflow = "hidden";
+        fetchMemberComp(name);
+      }
+
+      function closeMemberComp() {
+        document
+          .getElementById("member-comp-overlay")
+          .classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      function closeMemberCompOnOverlay(e) {
+        if (e.target === document.getElementById("member-comp-overlay"))
+          closeMemberComp();
+      }
+
+      async function fetchMemberComp(name) {
+        try {
+          const params = new URLSearchParams();
+          params.set("action", "memberComps");
+          params.set("user", name);
+          const res = await fetch(`${AUTH_URL}?${params.toString()}`);
+          if (!res.ok) throw new Error("network");
+          const data = await res.json();
+          if (!data.ok)
+            throw new Error(data.error || "Không lấy được dữ liệu comp.");
+          // Ignore a stale response if the user already switched to another member.
+          if (memberCompState.user !== name) return;
+          memberCompState.comps = Array.isArray(data.comps) ? data.comps : [];
+        } catch (err) {
+          if (memberCompState.user !== name) return;
+          memberCompState.error =
+            err?.message || "Không kết nối được server.";
+        } finally {
+          if (memberCompState.user === name) {
+            memberCompState.loading = false;
+            renderMemberCompPanel();
+          }
+        }
+      }
+
+      function renderCompCharacterCard(ch) {
+        const setClass =
+          String(ch.setStatus || "").toUpperCase() === "SET" ? "set" : "off";
+        const avatarHTML = ch.imageUrl
+          ? `<img class="comp-char-avatar" src="${escapeHtml(ch.imageUrl)}" alt="${escapeHtml(ch.name)}">`
+          : `<div class="comp-char-avatar"></div>`;
+        const starHTML =
+          ch.star !== null && ch.star !== undefined && ch.star !== ""
+            ? `<div class="comp-char-star">★ ${escapeHtml(ch.star)}</div>`
+            : "";
+        return `
+        <div class="comp-char-card">
+          ${avatarHTML}
+          <div class="comp-char-name">${escapeHtml(ch.name)}</div>
+          <div class="comp-char-set ${setClass}">${escapeHtml(ch.setStatus || "?")}</div>
+          ${starHTML}
+        </div>`;
+      }
+
+      function renderMemberCompPanel() {
+        const titleEl = document.getElementById("member-comp-title");
+        if (titleEl) {
+          titleEl.textContent = memberCompState.user
+            ? `Comp của ${memberCompState.user}`
+            : "Chi tiết comp";
+        }
+
+        const body = document.getElementById("member-comp-body");
+        if (!body) return;
+
+        if (memberCompState.loading) {
+          body.innerHTML =
+            '<div class="log-empty"><i class="ti ti-loader" style="font-size:28px;display:block;margin-bottom:8px;color:var(--grayM)"></i>Đang tải dữ liệu comp...</div>';
+          return;
+        }
+        if (memberCompState.error) {
+          body.innerHTML = `<div class="log-empty"><i class="ti ti-alert-circle" style="font-size:28px;display:block;margin-bottom:8px;color:var(--red)"></i>${escapeHtml(memberCompState.error)}</div>`;
+          return;
+        }
+        if (!memberCompState.comps.length) {
+          body.innerHTML =
+            '<div class="log-empty">Chưa có dữ liệu comp Tier 4.</div>';
+          return;
+        }
+
+        body.innerHTML = memberCompState.comps
+          .map((entry) => {
+            if (!entry.code) {
+              return `
+              <div class="comp-boss-block">
+                <div class="comp-boss-title">Boss ${entry.boss}</div>
+                <div class="comp-boss-empty">Chưa log comp cho boss này.</div>
+              </div>`;
+            }
+
+            const chars = Array.isArray(entry.characters)
+              ? entry.characters
+              : [];
+            const charsHTML = chars.map(renderCompCharacterCard).join("");
+
+            return `
+            <div class="comp-boss-block">
+              <div class="comp-boss-title">Boss ${entry.boss} · <span style="color:var(--orange)">${escapeHtml(entry.code)}</span></div>
+              ${entry.note ? `<div class="comp-boss-note">Note: ${escapeHtml(entry.note)}</div>` : ""}
+              ${
+                charsHTML
+                  ? `<div class="comp-char-grid">${charsHTML}</div>`
+                  : `<div class="comp-boss-empty">Không tìm thấy thông tin comp "${escapeHtml(entry.code)}" trên tab "Test".</div>`
+              }
+            </div>`;
+          })
+          .join("");
+      }
+
       function scrollToSection(id) {
         document
           .getElementById(id)
@@ -2874,6 +3117,12 @@
       // ── INIT ──────────────────────────────────────────────────────────
       buildCards();
       buildLogView();
+      // Delegated on the container (stable across buildLogView() rebuilds)
+      // rather than an inline onclick per row — see rowsHTML in buildLogView.
+      document.getElementById("log-container")?.addEventListener("click", (e) => {
+        const row = e.target.closest("tr[data-member-name]");
+        if (row) openMemberComp(row.dataset.memberName);
+      });
       // initialize each configured panel
       driveVideoStates.forEach((_, i) => loadDriveVideo(i));
       buildGuideline();
