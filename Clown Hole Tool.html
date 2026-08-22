@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clown Hole Clan Battle log comp</title>
+    <link rel="icon" type="image/jpeg" href="phrooo.jpg" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"
@@ -854,7 +855,7 @@
       }
       /* VIDEO TAB
          #video-container is a responsive grid: each panel comes from one
-         entry in the `driveVideoConfigs` array (see script section). Adding
+         entry in the `driveVideoConfigs` array (see video-config.js). Adding
          a new object there (title/desc/defaultUrl) automatically renders a
          new .video-panel here — no other markup changes needed. */
       #video-container {
@@ -1612,7 +1613,7 @@
       class="sr-only"
       style="position: absolute; width: 1px; height: 1px; overflow: hidden"
     >
-      FlowOut Level Design Tool
+      CLownHole - Clan Battle Log Companion Tool
     </h2>
 
     <div class="login-overlay" id="login-overlay">
@@ -1791,6 +1792,10 @@
       <i class="ti ti-check" aria-hidden="true"></i><span id="toast-msg"></span>
     </div>
 
+    <!-- Video links/descriptions live here, separate from the main app code,
+         so adding a new video doesn't mean editing this big file. Keep this
+         file next to Clown Hole Tool.html when copying/downloading the tool. -->
+    <script src="video-config.js"></script>
     <script>
       // ── DATA ──────────────────────────────────────────────────────────
       const CARDS = [
@@ -1997,9 +2002,8 @@
       const SESSION_KEY = "clownhole_player";
       const LOG_KEY = "clownhole_upload_log";
       const DRIVE_VIDEO_KEY = "clownhole_drive_video_url";
-      //ĐỔI video URL mặc định nếu muốn, nhưng phải là link share của Google Drive (như ví dụ dưới)
-      const DEFAULT_DRIVE_VIDEO_URL =
-        "https://drive.google.com/file/d/17ra4YFg_RZfzO_mShFHs6otuhdJWoxLP/view";
+      // DEFAULT_DRIVE_VIDEO_URL and driveVideoConfigs now live in video-config.js
+      // (loaded via <script src> above) — edit that file to add/change videos.
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
       const AUTH_URL ="https://script.google.com/macros/s/AKfycbwZdgsDn9hGgII5QjzPSf9bQwFxd6a-1YCEG4VDH6AuOMxv2lxaPYhJPn15X1D2rJFltw/exec";
       function showLoginScreen() {
@@ -2113,20 +2117,9 @@
         loading: false,
         error: "",
       };
-      // Video tab panels are 100% data-driven from this array — the container markup,
-      // grid layout and mobile styling are all generic (see #video-container / .video-panel
-      // in <style>) and never need to change.
-      //
-      // To add a new video: append ONE object below with a unique `storageSuffix`
-      // (never reuse/reorder existing suffixes — they key localStorage persistence),
-      // a `title`, an optional `desc`, and a `defaultUrl` pointing at the Google
-      // Drive share link. `renderVideoView()` maps over this array on every render,
-      // so the new panel/container appears automatically — no HTML/CSS/JS changes needed.
-      const driveVideoConfigs = [
-        { storageSuffix: 0, title: "Luce Cancel", desc: "Cancel skill Luce của A múp (khi Textbox hiện lên và A múp bắt đầu giơ tay lên thì bấm UB)", defaultUrl: DEFAULT_DRIVE_VIDEO_URL },
-        { storageSuffix: 1, title: "Ayane's Cheer Cancel", desc: "đây là mô tả", defaultUrl: "https://drive.google.com/file/d/1UHnDZ3tMrsTD8uqaxJNl3nI0DsaH8t5I/view?usp=sharing" },
-        // { storageSuffix: 2, title: "New Move Name", desc: "mô tả ngắn", defaultUrl: "https://drive.google.com/file/d/FILE_ID/view?usp=sharing" },
-      ];
+      // driveVideoConfigs (which panels to show) now lives in video-config.js,
+      // loaded via <script src> before this block — see comment there for how
+      // to add a new video. renderVideoView() below maps over that array.
 
       // Build states from configs and localStorage. Each panel persists its URL under DRIVE_VIDEO_KEY + '_' + storageSuffix
       let driveVideoStates = driveVideoConfigs.map((cfg) => {
