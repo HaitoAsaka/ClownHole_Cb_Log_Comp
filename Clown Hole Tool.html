@@ -639,6 +639,11 @@
       }
       .boss-note-input {
         min-height: 38px;
+        /* Height is driven by autoResizeTextarea() as content grows, not by
+           manual dragging — disable the drag handle and hide the scrollbar
+           that would otherwise flash before JS measures the content. */
+        resize: none;
+        overflow: hidden;
       }
       .boss-input-hint {
         font-size: 10px;
@@ -2005,7 +2010,7 @@
       // DEFAULT_DRIVE_VIDEO_URL and driveVideoConfigs now live in video-config.js
       // (loaded via <script src> above) — edit that file to add/change videos.
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
-      const AUTH_URL ="https://script.google.com/macros/s/AKfycbwZdgsDn9hGgII5QjzPSf9bQwFxd6a-1YCEG4VDH6AuOMxv2lxaPYhJPn15X1D2rJFltw/exec";
+      const AUTH_URL ="https://script.google.com/macros/s/AKfycbz96L5-NQU1L-fScveUavNurIhU_Jq8yKCprbiHWMIATeI13w71cdPxLWQTdXimAdChzQ/exec";
       function showLoginScreen() {
         document.getElementById("login-overlay").classList.remove("hidden");
         document.getElementById("app-shell").classList.remove("visible");
@@ -2291,15 +2296,12 @@
 
       // ── BOSS INPUT / MAPPING ──────────────────────────────────────────
       function parseTier4Input(raw) {
+        // Tier 4 Comp accepts any content now (not digits-only) — the sheet
+        // write path forces the cell to plain-text format so this can never
+        // be misread as a spreadsheet formula (see writeTierCells_ backend).
         const value = raw.trim();
         if (!value) return { valid: false, empty: true };
-        if (/^\d+$/.test(value)) {
-          return { valid: true, num: value };
-        }
-        return {
-          valid: false,
-          error: "Ô Comp chỉ nhập số comp (vd: 203). Note nhập ở ô bên cạnh.",
-        };
+        return { valid: true, num: value };
       }
 
       function parseTierScoreInput(raw) {
@@ -2438,7 +2440,7 @@
                 <span class="boss-field-label">Note</span>
                 <textarea class="boss-input boss-note-input" rows="1"
                   data-card="${cardIdx}" data-boss="${ch.bossNum}"
-                  oninput="updateProgress()"></textarea>
+                  oninput="updateProgress(); autoResizeTextarea(this)"></textarea>
               </label>
             </div>
             `
@@ -2829,10 +2831,20 @@
         document.getElementById("btn-complete").disabled = !result.valid;
       }
 
+      // Grows a note textarea to fit its content instead of showing a
+      // scrollbar or requiring a manual drag-resize. Reset height to "auto"
+      // first so it can shrink back down too (e.g. after deleting text),
+      // not just grow.
+      function autoResizeTextarea(el) {
+        el.style.height = "auto";
+        el.style.height = el.scrollHeight + "px";
+      }
+
       function resetFormData() {
         document.querySelectorAll(".boss-input").forEach((i) => {
           i.value = "";
           i.classList.remove("error");
+          i.style.height = ""; // undo any auto-grow from autoResizeTextarea
         });
         document.querySelectorAll(".cant-check input").forEach((c) => {
           c.checked = false;
