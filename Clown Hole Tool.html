@@ -23,6 +23,10 @@
         --purpleL: #eeedfe;
         --amber: #854f0b;
         --amberL: #faeeda;
+        --green: #2f7d32;
+        --greenL: #eaf6ea;
+        --blue: #2f5d8a;
+        --blueL: #dbe9f5;
         --gray: #444441;
         --grayL: #f1efe8;
         --grayM: #d3d1c7;
@@ -677,6 +681,20 @@
       }
       .tab-btn-video:hover:not(.active) {
         background: #c8832e;
+        color: var(--white);
+      }
+      .tab-btn-bosslog {
+        background: var(--purpleL);
+        color: var(--purple);
+        border-radius: var(--radius) var(--radius) 0 0;
+        font-weight: 600;
+      }
+      .tab-btn-bosslog.active {
+        background: var(--purple);
+        color: var(--white);
+      }
+      .tab-btn-bosslog:hover:not(.active) {
+        background: #443c99;
         color: var(--white);
       }
       .btn-upload {
@@ -1611,6 +1629,275 @@
       #app-shell.visible {
         display: block;
       }
+
+      /* BOSS LOG (data from Test.json) */
+      #bosslog-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .bosslog-hint {
+        font-size: 12px;
+        color: var(--gray);
+      }
+      .btn-bosslog-reload {
+        background: var(--purpleL);
+        color: var(--purple);
+        border: none;
+        border-radius: var(--radius);
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.15s;
+      }
+      .btn-bosslog-reload:hover {
+        background: var(--purple);
+        color: var(--white);
+      }
+      .bosslog-boss-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .bosslog-boss-tab {
+        background: var(--grayL);
+        color: var(--gray);
+        border: 1px solid var(--grayM);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .bosslog-boss-tab:hover:not(.active) {
+        background: var(--purpleL);
+        color: var(--purple);
+        border-color: var(--purple);
+      }
+      .bosslog-boss-tab.active {
+        background: var(--purple);
+        color: var(--white);
+        border-color: var(--purple);
+      }
+      .bosslog-boss-panel {
+        border: 1px solid var(--grayM);
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: var(--white);
+      }
+      .bosslog-boss-title {
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--black);
+        padding: 10px 14px;
+        background: var(--grayL);
+        border-bottom: 1px solid var(--grayM);
+      }
+      .bosslog-boss-title small {
+        font-weight: 500;
+        color: var(--gray);
+        margin-left: 6px;
+      }
+      .bosslog-comp-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 14px;
+      }
+      .bosslog-comp-block {
+        border: 1px solid var(--grayM);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .bosslog-comp-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--black);
+        background: var(--grayL);
+        padding: 6px 10px;
+        border-bottom: 1px solid var(--grayM);
+      }
+      .bosslog-comp-source {
+        font-weight: 500;
+        color: var(--gray);
+        margin-left: 6px;
+      }
+      .bosslog-table-wrap {
+        overflow-x: auto;
+      }
+      .bosslog-table {
+        width: 100%;
+        min-width: 640px;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: 12px;
+      }
+      .bosslog-table td {
+        border: 1px solid var(--grayM);
+        padding: 6px 8px;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .bosslog-id-cell {
+        background: var(--amber);
+        color: var(--white);
+        font-size: 22px;
+        font-weight: 800;
+      }
+      .bosslog-id-blank {
+        background: var(--blueL);
+      }
+      .bosslog-row-label {
+        background: var(--blueL);
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 11px;
+      }
+      .bosslog-score-header {
+        background: var(--amberL);
+        color: var(--amber);
+        font-weight: 700;
+      }
+      .bosslog-chara-cell {
+        background: var(--white);
+      }
+      .bosslog-chara-portrait {
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 4px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--grayM);
+        background: var(--grayL);
+        position: relative;
+      }
+      .bosslog-chara-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .bosslog-chara-fallback {
+        display: none;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--purple);
+        background: var(--purpleL);
+      }
+      .bosslog-chara-name {
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 1.25;
+        word-break: break-word;
+      }
+      .bosslog-damage-cell {
+        background: var(--greenL);
+        color: var(--green);
+        font-weight: 800;
+      }
+      .bosslog-damage-line {
+        font-size: 10px;
+        font-weight: 600;
+      }
+      .bosslog-damage-line + .bosslog-damage-line {
+        margin-top: 2px;
+      }
+      .bosslog-action-header-full {
+        background: var(--amber);
+        color: var(--white);
+        font-weight: 700;
+        text-align: left;
+        padding: 6px 10px;
+      }
+      .bosslog-action-row-full {
+        background: var(--amberL);
+        padding: 0;
+        vertical-align: top;
+      }
+      .bosslog-action-flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .bosslog-action-box {
+        flex: 1 1 160px;
+        min-width: 160px;
+        text-align: left;
+        font-size: 11px;
+        line-height: 1.5;
+        padding: 8px 10px;
+        border-right: 1px solid var(--grayM);
+        border-top: 1px solid var(--grayM);
+      }
+      .bosslog-action-box:last-child {
+        border-right: none;
+      }
+      .bosslog-action-tag {
+        display: inline-block;
+        background: var(--tealL);
+        color: var(--teal);
+        border-radius: 4px;
+        padding: 0 5px;
+        font-weight: 700;
+        font-size: 10px;
+        margin-left: 6px;
+      }
+      .bosslog-action-line {
+        white-space: pre-wrap;
+      }
+      .bosslog-action-link {
+        color: var(--orange);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .bosslog-action-link:hover {
+        text-decoration: underline;
+      }
+      .bosslog-remark-cta {
+        margin-top: 4px;
+        color: var(--purple);
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .bosslog-remark-cta:hover {
+        text-decoration: underline;
+      }
+      .bosslog-remark-text {
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      .bosslog-empty,
+      .bosslog-loading {
+        padding: 40px 16px;
+        text-align: center;
+        color: var(--gray);
+        font-size: 13px;
+      }
+      @media (max-width: 640px) {
+        .bosslog-boss-title {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1683,6 +1970,12 @@
           >
             <i class="ti ti-video" aria-hidden="true"></i> Video
           </button>
+          <button
+            class="tab-btn tab-btn-bosslog"
+            onclick="switchTab('bosslog', this)"
+          >
+            <i class="ti ti-sword" aria-hidden="true"></i> Boss Log
+          </button>
         </div>
         <div id="tab-cards" class="tab-panel active">
           <div class="cards-grid" id="cards-container"></div>
@@ -1692,6 +1985,9 @@
         </div>
         <div id="tab-video" class="tab-panel">
           <div id="video-container"></div>
+        </div>
+        <div id="tab-bosslog" class="tab-panel">
+          <div id="bosslog-container"></div>
         </div>
       </div>
 
@@ -1779,6 +2075,33 @@
             </button>
           </div>
           <div class="guideline-panel-body" id="member-comp-body"></div>
+        </div>
+      </div>
+
+      <!-- Slides in from the right when an Action note's "Xem chi tiết" is
+           clicked on the Boss Log tab; shows that comp's full remarks/TL text. -->
+      <div
+        class="guideline-overlay"
+        id="bosslog-remark-overlay"
+        onclick="closeBossLogRemarkOnOverlay(event)"
+      >
+        <div class="guideline-panel">
+          <div class="guideline-panel-header">
+            <div>
+              <div class="guideline-panel-title" id="bosslog-remark-title">
+                Chi tiết comp
+              </div>
+              <div class="guideline-panel-sub" id="bosslog-remark-sub"></div>
+            </div>
+            <button
+              class="btn-close-panel"
+              onclick="closeBossLogRemark()"
+              aria-label="Đóng"
+            >
+              <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="guideline-panel-body" id="bosslog-remark-body"></div>
         </div>
       </div>
 
@@ -2292,6 +2615,446 @@
         state.loaded = true;
         state.error = "";
         renderVideoView();
+      }
+
+      // ── BOSS LOG TAB (reads Test.json — clan battle boss/comp log) ─────
+      const BOSSLOG_URL = "Test.json";
+      const BOSSLOG_ACTIVE_BOSS_KEY = "clownhole_bosslog_active_boss";
+
+      // dictionary.txt (same folder) is the ONE reference for every
+      // translation used on this tab — boss names, character nicknames,
+      // skill/UE names, contributor handles, and general strategy
+      // vocabulary. It's plain text and hand-maintained by whoever manages
+      // the clan's data; each line is "<chữ gốc> = <bản dịch>", "#" starts a
+      // comment, and a translation of exactly "?" or "???" means "not
+      // figured out yet" and is skipped (left untranslated) rather than
+      // literally inserting a "?". Nothing is hardcoded here anymore —
+      // editing dictionary.txt and reloading the page is the only thing
+      // needed to add or fix a translation.
+      // Loaded once, lazily, the first time the Boss Log tab is opened —
+      // see loadBossLogDictionaryFile()'s caller in switchTab().
+      let bossLogDictionary = [];
+      let bossLogDictionarySorted = [];
+      let bossLogDictionaryLoaded = false;
+
+      function parseBossLogDictionaryFile(text) {
+        return text
+          .split("\n")
+          .map((line) => line.trim())
+          .filter((line) => line && !line.startsWith("#"))
+          .map((line) => {
+            const idx = line.indexOf("=");
+            if (idx === -1) return null;
+            return [line.slice(0, idx).trim(), line.slice(idx + 1).trim()];
+          })
+          .filter(
+            (entry) =>
+              entry && entry[0] && entry[1] && entry[1] !== "?" && entry[1] !== "???",
+          );
+      }
+
+      async function loadBossLogDictionaryFile() {
+        bossLogDictionaryLoaded = true;
+        try {
+          const res = await fetch("dictionary.txt");
+          if (!res.ok) throw new Error("network");
+          bossLogDictionary = parseBossLogDictionaryFile(await res.text());
+        } catch {
+          bossLogDictionary = [];
+        } finally {
+          // Longest `from` string first, so a compound term (e.g. "战斗开始")
+          // and one of its own substrings (e.g. "开始") can be listed in any
+          // order in the file without the shorter one firing first and
+          // breaking up the compound.
+          bossLogDictionarySorted = [...bossLogDictionary].sort(
+            (a, b) => b[0].length - a[0].length,
+          );
+          buildBossLogView();
+        }
+      }
+
+      // "万" is a literal CJK unit meaning ×10,000 (e.g. "250万" = 2,500,000)
+      // — used in remarks like "SET-250万". Since it's a real multiplier,
+      // not vocabulary, expand it arithmetically (append 4 zeros, comma the
+      // result) rather than putting it in the word dictionary above.
+      function bossLogExpandManUnit(text) {
+        return text.replace(/(\d+)万/g, (_, digits) =>
+          `${(Number(digits) * 10000).toLocaleString("en-US")}`,
+        );
+      }
+
+      // Applies the dictionary above to a string, longest term first.
+      // Callers that need to fall back to the original (e.g. as a tooltip)
+      // should keep the raw string around themselves — this only returns
+      // the translated version. Not a real translator: anything outside
+      // this dictionary (mainly character nicknames still marked "?" in
+      // dictionary.txt) is left untouched.
+      function translateToEnglish(text) {
+        let out = bossLogExpandManUnit(String(text ?? ""));
+        bossLogDictionarySorted.forEach(([from, to]) => {
+          out = out.split(from).join(to);
+        });
+        return out;
+      }
+
+      let bossLogState = {
+        loading: false,
+        error: "",
+        bosses: [], // raw entries from Test.json's top-level `data` array
+        activeBossId: Number(localStorage.getItem(BOSSLOG_ACTIVE_BOSS_KEY)) || null,
+      };
+
+      async function fetchBossLog() {
+        bossLogState.loading = true;
+        bossLogState.error = "";
+        buildBossLogView();
+
+        try {
+          const res = await fetch(BOSSLOG_URL);
+          if (!res.ok) throw new Error("network");
+          const json = await res.json();
+          if (!Array.isArray(json?.data)) throw new Error("format");
+          bossLogState.bosses = json.data;
+          if (
+            !bossLogState.bosses.some((b) => b.id === bossLogState.activeBossId)
+          ) {
+            bossLogState.activeBossId = bossLogState.bosses[0]?.id ?? null;
+          }
+        } catch {
+          bossLogState.bosses = [];
+          bossLogState.error =
+            "Không tải được Test.json. Kiểm tra file có tồn tại cạnh Clown Hole Tool.html và trang đang chạy qua http(s), không phải mở trực tiếp file://.";
+        } finally {
+          bossLogState.loading = false;
+          buildBossLogView();
+        }
+      }
+
+      function changeBossLogActiveBoss(bossId) {
+        bossLogState.activeBossId = Number(bossId);
+        localStorage.setItem(BOSSLOG_ACTIVE_BOSS_KEY, String(bossId));
+        buildBossLogView();
+      }
+
+      // Prefers a link's 2nd note line (the submitter/source tag, e.g.
+      // "情報会 孝之" or "油管 スギさん"), falling back to the 1st line.
+      function bossLogLinkSourceLabel(link) {
+        const lines = (link?.name || "")
+          .split("\n")
+          .map((s) => s.trim())
+          .filter(Boolean);
+        return lines[1] || lines[0] || "";
+      }
+
+      // Label for a comp block — same idea, but for the task's first link,
+      // falling back to a generic index when there's no usable text at all.
+      function bossLogTaskLabel(task, idx) {
+        return (
+          bossLogLinkSourceLabel((task.links || [])[0]) || `Comp ${idx + 1}`
+        );
+      }
+
+      // Registry of { title, sub, text } populated while rendering the
+      // active boss's comps — each entry backs one "Xem chi tiết" click in
+      // an Action box, opening that link's full remarks/TL text in the
+      // right-side panel (reusing the same slide-in pattern as the member
+      // comp detail panel). Reset once per full panel rebuild so indices
+      // always match what's currently in the DOM.
+      let bossLogRemarkRegistry = [];
+
+      function openBossLogRemarkByIndex(idx) {
+        const entry = bossLogRemarkRegistry[idx];
+        if (!entry) return;
+        document.getElementById("bosslog-remark-title").textContent =
+          entry.title || "Chi tiết comp";
+        document.getElementById("bosslog-remark-sub").textContent =
+          entry.sub || "";
+        document.getElementById("bosslog-remark-body").innerHTML =
+          `<div class="bosslog-remark-text">${escapeHtml(translateToEnglish(entry.text))}</div>`;
+        document
+          .getElementById("bosslog-remark-overlay")
+          .classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeBossLogRemark() {
+        document
+          .getElementById("bosslog-remark-overlay")
+          .classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      function closeBossLogRemarkOnOverlay(e) {
+        if (e.target === document.getElementById("bosslog-remark-overlay")) {
+          closeBossLogRemark();
+        }
+      }
+
+      // Test.json's score fields (autoDamage/halfAutoDamage/easyManualDamage/
+      // task.damage) store the clan-battle score with the last 4 zeros
+      // dropped — e.g. 47100 means 471,000,000 points. Convert back to
+      // millions and abbreviate: 47100 → "471m".
+      function bossLogFormatScoreMillion(raw) {
+        const millions = Math.round((raw / 100) * 10) / 10;
+        const text = Number.isInteger(millions)
+          ? String(millions)
+          : millions.toFixed(1);
+        return `${text}m`;
+      }
+
+      // Same conversion, applied inline to any 4+ digit run found in a
+      // string (a comp's first note line, e.g. "全set 47100" or
+      // "47445/51300") — 1-3 digit numbers (TP levels, CR ranks, ranks,
+      // markers) are always shorter than this and pass through untouched.
+      function bossLogConvertScoreNumbers(text) {
+        return text.replace(/\d{4,}/g, (digits) =>
+          bossLogFormatScoreMillion(Number(digits)),
+        );
+      }
+
+      function bossLogDamageLines(task) {
+        const modes = [
+          ["Auto", task.autoDamage],
+          ["Half-Auto", task.halfAutoDamage],
+          ["Manual", task.easyManualDamage],
+        ].filter(([, v]) => v !== null && v !== undefined);
+        if (task.damage) modes.push(["Best", task.damage]);
+        if (!modes.length) return '<div class="bosslog-damage-line">-</div>';
+        return modes
+          .map(
+            ([label, v]) =>
+              `<div class="bosslog-damage-line" title="${escapeHtml(v)} pts">${modes.length > 1 ? escapeHtml(label) + ": " : ""}${escapeHtml(bossLogFormatScoreMillion(v))}</div>`,
+          )
+          .join("");
+      }
+
+      // One box per link — a task with several links (several submitted
+      // sources for the same comp) gets one box per source, laid out side
+      // by side under a single shared "Action" header. `context` (boss +
+      // comp labels) is only used to title the remark detail panel below.
+      function bossLogActionBoxHTML(link, context) {
+        const lines = (link.name || "")
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean)
+          .map((l, i) => {
+            // The score number(s) always live on the first line — plain
+            // ("47100"), "全set "-prefixed, two attempts separated by "/",
+            // or after a win/loss marker ("oxoox 49564"). Convert those,
+            // leave every other line (source tag, TP level, CR list) as-is.
+            const display = i === 0 ? bossLogConvertScoreNumbers(l) : l;
+            return `<div class="bosslog-action-line" title="${escapeHtml(l)}">${escapeHtml(translateToEnglish(display))}</div>`;
+          });
+        if (link.link) {
+          lines.push(
+            `<a class="bosslog-action-link" href="${escapeHtml(link.link)}" target="_blank" rel="noopener">🔗 Link</a>`,
+          );
+        }
+        if ((link.remarks || "").trim()) {
+          const idx =
+            bossLogRemarkRegistry.push({
+              title: context?.bossLabel || "Chi tiết comp",
+              sub:
+                bossLogLinkSourceLabel(link) ||
+                context?.compLabel ||
+                "",
+              text: link.remarks,
+            }) - 1;
+          lines.push(
+            `<div class="bosslog-remark-cta" onclick="openBossLogRemarkByIndex(${idx})"><i class="ti ti-notes" aria-hidden="true"></i> Xem chi tiết</div>`,
+          );
+        }
+        return `<div class="bosslog-action-box">${lines.join("")}</div>`;
+      }
+
+      function bossLogActionBoxesHTML(task, context) {
+        const links = task.links || [];
+        if (links.length) {
+          return links
+            .map((link) => bossLogActionBoxHTML(link, context))
+            .join("");
+        }
+        if (task.remarks) {
+          return `<div class="bosslog-action-box"><div class="bosslog-action-line" title="${escapeHtml(task.remarks)}">${escapeHtml(translateToEnglish(task.remarks))}</div></div>`;
+        }
+        return '<div class="bosslog-action-box">-</div>';
+      }
+
+      // Character portraits are pulled from estertion's public PCR asset
+      // mirror. Its filenames are keyed by a "unit id" that shares the
+      // chara_id (the top 4 digits of our `prefabId`) but replaces the last
+      // 2 digits with a rarity-TIER variant instead of the specific costume
+      // number Test.json uses — the art only changes at the 4★ and 6★
+      // breakpoints, so there are just 3 variant files per costume:
+      // …11 (rarity 1-3), …31 (rarity 4-5), …61 (rarity 6). Confirmed by
+      // hand against several charas/rarities from Test.json (e.g. prefabId
+      // 100301 + rarity 6 → icon 100361; prefabId 122101 + rarity 5 → 122131).
+      const BOSSLOG_ICON_BASE = "https://redive.estertion.win/icon/unit/";
+
+      function bossLogCharaIconUrl(chara) {
+        const rarity = chara.currentRarity ?? chara.rarity ?? 3;
+        const tier = rarity >= 6 ? 6 : rarity >= 4 ? 3 : 1;
+        const charaId = Math.floor((chara.prefabId || 0) / 100) * 100;
+        return `${BOSSLOG_ICON_BASE}${charaId + tier * 10 + 1}.webp`;
+      }
+
+      function bossLogCharaInitial(name) {
+        const trimmed = String(name || "").trim();
+        return trimmed ? trimmed[0].toUpperCase() : "?";
+      }
+
+      // One comp (task) rendered as its own mini score/rank/action table.
+      function renderBossLogTaskTable(boss, task, idx) {
+        const charas = task.charas || [];
+        const charaCols = charas.length || 1;
+        const rawLabel = bossLogTaskLabel(task, idx);
+
+        const nameCells = charas
+          .map(
+            (c) => `
+        <td class="bosslog-chara-cell">
+          <div class="bosslog-chara-portrait">
+            <img src="${escapeHtml(bossLogCharaIconUrl(c))}" alt="" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="bosslog-chara-fallback">${escapeHtml(bossLogCharaInitial(c.unitName))}</div>
+          </div>
+          <div class="bosslog-chara-name">${escapeHtml(c.unitName)}</div>
+        </td>`,
+          )
+          .join("");
+        const rankCells = charas
+          .map((c) => `<td>${escapeHtml(c.rank ?? "-")}</td>`)
+          .join("");
+        const starCells = charas
+          .map((c) => `<td>${escapeHtml(c.currentRarity ?? "-")}</td>`)
+          .join("");
+        const ueCells = charas.map(() => `<td>-</td>`).join("");
+
+        const totalCols = charaCols + 3; // id(2) + chara cols + damage(1)
+        const autoTag = (task.canAuto || []).length
+          ? '<span class="bosslog-action-tag">Auto</span>'
+          : "";
+
+        return `
+    <div class="bosslog-comp-block">
+      <div class="bosslog-comp-label">
+        Comp ${idx + 1}
+        <span class="bosslog-comp-source" title="${escapeHtml(rawLabel)}">${escapeHtml(translateToEnglish(rawLabel))}</span>
+      </div>
+      <div class="bosslog-table-wrap">
+        <table class="bosslog-table">
+          <colgroup>
+            <col style="width:56px">
+            <col style="width:56px">
+            ${charas.map(() => `<col style="width:96px">`).join("")}
+            <col style="width:70px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="bosslog-id-cell" rowspan="2" colspan="2">${boss.id}</td>
+              <td class="bosslog-score-header" colspan="${charaCols}">Score</td>
+              <td class="bosslog-damage-cell" rowspan="2">${bossLogDamageLines(task)}</td>
+            </tr>
+            <tr>
+              ${nameCells}
+            </tr>
+            <tr>
+              <td class="bosslog-id-blank"></td>
+              <td class="bosslog-row-label">Rank</td>
+              ${rankCells}
+            </tr>
+            <tr>
+              <td class="bosslog-id-blank"></td>
+              <td class="bosslog-row-label"><i class="ti ti-star" aria-hidden="true"></i></td>
+              ${starCells}
+            </tr>
+            <tr>
+              <td class="bosslog-id-blank"></td>
+              <td class="bosslog-row-label">UE</td>
+              ${ueCells}
+            </tr>
+            <tr>
+              <td class="bosslog-action-header-full" colspan="${totalCols}">Action ${autoTag}</td>
+            </tr>
+            <tr>
+              <td class="bosslog-action-row-full" colspan="${totalCols}">
+                <div class="bosslog-action-flex">${bossLogActionBoxesHTML(task, {
+                  bossLabel: `#${boss.index ?? ""} ${translateToEnglish(boss.unitName)}`,
+                  compLabel: `Comp ${idx + 1}`,
+                })}</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+      }
+
+      // All comps for the currently active boss.
+      function renderBossLogBossPanel(boss) {
+        bossLogRemarkRegistry = []; // rebuilt fresh for this render pass
+        const tasks = boss.tasks || [];
+        if (!tasks.length) {
+          return '<div class="bosslog-empty">Boss này chưa có comp nào.</div>';
+        }
+        return `
+      <div class="bosslog-boss-title">
+        #${escapeHtml(boss.index ?? "")}
+        <span title="${escapeHtml(boss.unitName)}">${escapeHtml(translateToEnglish(boss.unitName))}</span>
+        <small>ID ${boss.id}${boss.server ? " · " + escapeHtml(String(boss.server).toUpperCase()) : ""} · ${tasks.length} comp</small>
+      </div>
+      <div class="bosslog-comp-list">
+        ${tasks.map((task, i) => renderBossLogTaskTable(boss, task, i)).join("")}
+      </div>
+    `;
+      }
+
+      function buildBossLogView() {
+        const container = document.getElementById("bosslog-container");
+        if (!container) return;
+
+        if (bossLogState.loading) {
+          container.innerHTML = `<div class="bosslog-loading"><i class="ti ti-loader" aria-hidden="true"></i> Đang tải Test.json...</div>`;
+          return;
+        }
+        if (bossLogState.error) {
+          container.innerHTML = `
+      <div id="bosslog-toolbar">
+        <span class="bosslog-hint" style="color:var(--red)">${escapeHtml(bossLogState.error)}</span>
+        <button class="btn-bosslog-reload" onclick="fetchBossLog()"><i class="ti ti-refresh" aria-hidden="true"></i> Thử lại</button>
+      </div>`;
+          return;
+        }
+        if (!bossLogState.bosses.length) {
+          container.innerHTML = `<div class="bosslog-empty">Chưa có dữ liệu.</div>`;
+          return;
+        }
+
+        const activeBoss =
+          bossLogState.bosses.find((b) => b.id === bossLogState.activeBossId) ||
+          bossLogState.bosses[0];
+
+        container.innerHTML = `
+      <div id="bosslog-toolbar">
+        <span class="bosslog-hint">Dữ liệu từ Test.json · ${bossLogState.bosses.length} boss</span>
+        <button class="btn-bosslog-reload" onclick="fetchBossLog()"><i class="ti ti-refresh" aria-hidden="true"></i> Tải lại</button>
+      </div>
+      <div class="bosslog-boss-nav">
+        ${bossLogState.bosses
+          .map(
+            (b) => `
+        <button class="bosslog-boss-tab ${b.id === activeBoss.id ? "active" : ""}"
+          onclick="changeBossLogActiveBoss(${b.id})" title="${escapeHtml(b.unitName)}">
+          #${escapeHtml(b.index ?? "")} ${escapeHtml(translateToEnglish(b.unitName))}
+        </button>`,
+          )
+          .join("")}
+      </div>
+      <div class="bosslog-boss-panel">
+        ${renderBossLogBossPanel(activeBoss)}
+      </div>
+    `;
       }
 
       // ── BOSS INPUT / MAPPING ──────────────────────────────────────────
@@ -2954,6 +3717,14 @@
         }
         if (tab === "checklist") buildLogView();
         if (tab === "video") renderVideoView();
+        if (tab === "bosslog") {
+          if (!bossLogDictionaryLoaded) loadBossLogDictionaryFile();
+          if (!bossLogState.bosses.length && !bossLogState.loading) {
+            fetchBossLog();
+          } else {
+            buildBossLogView();
+          }
+        }
       }
 
       function openGuideline() {
