@@ -728,6 +728,28 @@
         align-items: center;
         justify-content: space-between;
       }
+      .log-panel-header-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn-log-reload {
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: var(--radius);
+        padding: 6px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.15s;
+      }
+      .btn-log-reload:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
       .log-panel-body {
         padding: 16px 18px;
       }
@@ -1030,28 +1052,6 @@
         border-collapse: collapse;
       }
 
-      /* row cuối đẩy xuống đáy */
-      .cant-row td {
-        height: 40px;
-        position: relative;
-      }
-
-      /* label nằm góc phải dưới */
-      .cant-check {
-        position: absolute;
-        right: 10px;
-        bottom: 6px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 15px;
-      }
-      .cant-check input[type="checkbox"] {
-        width: 16px;
-        height: 16px;
-        transform: scale(1.2); /* 👈 tăng/giảm size */
-        cursor: pointer;
-      }
       /* BOTTOM BAR */
       .complete-bar {
         position: fixed;
@@ -1070,8 +1070,10 @@
       .complete-bar-left {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 6px 12px;
         flex: 1;
+        flex-wrap: wrap;
+        min-width: 0;
       }
       .complete-status {
         font-size: 13px;
@@ -1080,6 +1082,44 @@
       }
       .complete-status strong {
         color: var(--orange);
+      }
+      /* Always-visible breakdown of every comp currently logged, shown on
+         every tab (not just Dashboard) — see renderCompDetailBar(). Forced
+         onto its own row under .complete-status (flex-basis 100% inside
+         the wrapping flex parent above); scrolls horizontally instead of
+         growing the fixed bottom bar taller. */
+      .complete-detail {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+      .complete-detail-empty {
+        font-size: 12px;
+        color: var(--gray);
+        font-style: italic;
+        white-space: nowrap;
+      }
+      .complete-detail-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: var(--grayL);
+        border: 1px solid var(--grayM);
+        color: var(--black);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .complete-detail-badge.is-tier4 {
+        background: var(--tealL);
+        border-color: var(--tealM);
+        color: var(--teal);
       }
       .level-input-wrap {
         display: flex;
@@ -1466,6 +1506,22 @@
         display: block;
         background: var(--grayM);
       }
+      /* Shown in place of .comp-char-avatar when its <img> 404s (see
+         renderMemberCompCharCard) — same size/shape, initial-letter
+         fallback, mirrors .bosslog-chara-fallback on the Boss Log tab. */
+      .comp-char-avatar-fallback {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        margin: 0 auto 6px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: var(--grayM);
+        color: var(--white);
+        font-weight: 700;
+        font-size: 20px;
+      }
       .comp-char-name {
         font-size: 11px;
         font-weight: 600;
@@ -1489,9 +1545,33 @@
         background: var(--redL);
         color: var(--red);
       }
+      .comp-char-set.rank {
+        background: var(--grayL);
+        color: var(--black);
+      }
       .comp-char-star {
         font-size: 10px;
         color: var(--amber);
+      }
+      /* One picked comp's block inside a Boss <N> section of the member
+         comp panel — subId + the source's note lines, then its character
+         grid (see renderMemberCompPickHTML). */
+      .comp-pick-block {
+        margin-bottom: 14px;
+      }
+      .comp-pick-block:last-child {
+        margin-bottom: 0;
+      }
+      .comp-pick-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 6px;
+        flex-wrap: wrap;
+      }
+      .comp-pick-summary {
+        font-size: 12px;
+        color: var(--gray);
       }
       /* TOAST */
       .toast {
@@ -1854,6 +1934,83 @@
         font-size: 10px;
         margin-left: 6px;
       }
+      .bosslog-action-id {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--orange);
+        margin-bottom: 3px;
+      }
+      .bosslog-select-btn {
+        margin-top: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: var(--radius);
+        border: 1px solid var(--teal);
+        color: var(--teal);
+        background: var(--white);
+        cursor: pointer;
+      }
+      .bosslog-select-btn:hover {
+        background: var(--tealL);
+      }
+      .bosslog-select-btn.is-selected {
+        background: var(--teal);
+        color: var(--white);
+      }
+      /* Tier 4 selected-comp list — shown in the Comp - Tier 4 card on the
+         Boss Log tab, one row per comp picked via a bosslog-select-btn. */
+      .tier4-selected-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px;
+        background: var(--grayL);
+        border: 1px solid var(--grayM);
+        border-radius: 0 0 var(--radius) var(--radius);
+      }
+      .tier4-selected-empty {
+        font-size: 12px;
+        color: var(--gray);
+        padding: 4px 0;
+      }
+      .tier4-selected-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--white);
+        border: 1px solid var(--grayM);
+        border-radius: var(--radius);
+        padding: 6px 8px;
+        font-size: 12px;
+      }
+      .tier4-selected-id {
+        font-family: "Courier New", monospace;
+        font-weight: 700;
+        color: var(--orange);
+        white-space: nowrap;
+      }
+      .tier4-selected-boss {
+        flex: 1;
+        color: var(--black);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .tier4-selected-remove {
+        border: none;
+        background: none;
+        color: var(--red);
+        cursor: pointer;
+        font-size: 15px;
+        line-height: 1;
+        padding: 2px;
+        flex-shrink: 0;
+      }
       .bosslog-action-line {
         white-space: pre-wrap;
       }
@@ -1987,6 +2144,12 @@
           <div id="video-container"></div>
         </div>
         <div id="tab-bosslog" class="tab-panel">
+          <!-- Comp - Tier 4 log card lives here (moved from Dashboard) so
+               members can cross-check it against the D<boss><letter> comps
+               browsed just below. Built once by buildTier4Card() — kept
+               out of #bosslog-container so switching the active boss below
+               doesn't wipe typed input. -->
+          <div class="cards-grid" id="bosslog-tier4-container"></div>
           <div id="bosslog-container"></div>
         </div>
       </div>
@@ -1997,6 +2160,10 @@
             Comp đã nhập: <strong id="bar-filled">0</strong> &nbsp;|&nbsp;
             <span id="validation-msg" class="validation-msg"></span>
           </div>
+          <!-- Always-visible breakdown of every comp currently logged
+               (Tier 2/3 per-boss values + Tier 4 picks) — see
+               renderCompDetailBar(). Shown on every tab, not just Dashboard. -->
+          <div class="complete-detail" id="complete-detail"></div>
         </div>
         <div class="complete-bar-right">
           <button class="btn-log-bar" onclick="goToLogPage()">
@@ -2050,7 +2217,7 @@
       </div>
 
       <!-- Slides in when a member row is clicked on the Log tab; shows their
-           Tier 4 comp codes (D1-D5) cross-referenced against the "Test" sheet. -->
+           Tier 4 picks (D1-D5) with character rosters resolved from Test.json. -->
       <div
         class="guideline-overlay"
         id="member-comp-overlay"
@@ -2063,7 +2230,7 @@
                 Chi tiết comp
               </div>
               <div class="guideline-panel-sub">
-                Comp Tier 4 (D1-D5) · dữ liệu từ tab "Test"
+                Comp Tier 4 (D1-D5) · dữ liệu từ Test.json
               </div>
             </div>
             <button
@@ -2133,21 +2300,18 @@
           tier: 4,
           prefix: "D",
           required: true,
-          mantra: "Acc có khả năng đánh TẤT CẢ boss nào - Log tại đây",
+          mantra: "Acc có khả năng đánh TẤT CẢ boss nào - Chọn comp ở tab Boss Log",
           philosophy: [
             "Check xem acc có đủ comp đánh boss tương ứng hay không",
             "Nếu acc chỉ có 4 gái → có thể mượn gái thứ 5 trong clan",
             "Check các điều kiện của comp (nếu có) - chi tiết trong guideline",
           ],
           feel: [
-            "Có thể log cả 5 boss nếu acc đủ comp tương ứng",
-            "Cụ thể comp tương ứng trên Sheet của Chef (ví dụ: D501)",
-            "Nếu comp của bạn không lấy từ Chef → Thêm comp đó vào Sheet nhé! - chi tiết xem guideline",
+            "Qua tab Boss Log, bấm \"Chọn\" dưới mỗi comp acc có thể đánh — không giới hạn số lượng, kể cả nhiều comp trên cùng 1 boss",
+            "Danh sách comp đã chọn hiện ngay tại đây, có thể bỏ chọn bất kỳ lúc nào trước khi Upload",
+            "Không thấy comp phù hợp trên Sheet của Chef → báo lại để thêm vào - chi tiết xem guideline",
           ],
-          anti: [
-            "BẮT BUỘC phải hoàn thành trước khi DAY 1 bắt đầu",
-            "Nếu không thể đánh Tier 4 → tích Checkbox ở dưới",
-          ],
+          anti: ["BẮT BUỘC phải hoàn thành trước khi DAY 1 bắt đầu"],
           checks: [
             { id: "Boss 1", bossNum: 1 },
             { id: "Boss 2", bossNum: 2 },
@@ -2155,8 +2319,6 @@
             { id: "Boss 4", bossNum: 4 },
             { id: "Boss 5", bossNum: 5 },
           ],
-          inputHint: "Chỉ nhập 0, 1, 2 hoặc 3.",
-          placeholder: "203",
         },
         {
           num: "02",
@@ -2330,10 +2492,11 @@
       const SESSION_KEY = "clownhole_player";
       const LOG_KEY = "clownhole_upload_log";
       const DRIVE_VIDEO_KEY = "clownhole_drive_video_url";
+      const TIER4_SELECTED_KEY = "clownhole_tier4_selected";
       // DEFAULT_DRIVE_VIDEO_URL and driveVideoConfigs now live in video-config.js
       // (loaded via <script src> above) — edit that file to add/change videos.
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
-      const AUTH_URL ="https://script.google.com/macros/s/AKfycbz96L5-NQU1L-fScveUavNurIhU_Jq8yKCprbiHWMIATeI13w71cdPxLWQTdXimAdChzQ/exec";
+      const AUTH_URL ="https://script.google.com/macros/s/AKfycbzFImjMeFDS3j4y1-XmDHCagse28aXUE8v0q4Zu5fLwJb9C4F3e6D8ehaaBTiObLzSYqQ/exec";
       function showLoginScreen() {
         document.getElementById("login-overlay").classList.remove("hidden");
         document.getElementById("app-shell").classList.remove("visible");
@@ -2430,6 +2593,30 @@
       // ── STATE ─────────────────────────────────────────────────────────
       let currentUser = null;
       let exportHistory = loadLogHistory();
+
+      // Tier 4 comps the member picked via a "Chọn" button on the Boss Log
+      // tab (see bossLogActionBoxHTML) — replaces the old free-text Tier 4
+      // input. Unlimited: any number of comps across any boss. Each entry
+      // is exactly what gets JSON-encoded and sent to the sheet on submit
+      // (see uploadToSheet()) — { subId, compId, bossId, bossIndex,
+      // bossName, taskId, linkIndex, link }, `link` being that comp's raw
+      // Test.json link object.
+      let tier4SelectedComps = loadTier4Selection();
+
+      function loadTier4Selection() {
+        try {
+          return JSON.parse(localStorage.getItem(TIER4_SELECTED_KEY) || "[]");
+        } catch {
+          return [];
+        }
+      }
+
+      function persistTier4Selection() {
+        localStorage.setItem(
+          TIER4_SELECTED_KEY,
+          JSON.stringify(tier4SelectedComps),
+        );
+      }
       let statusLogState = {
         allItems: [],
         searchName: "",
@@ -2754,6 +2941,28 @@
         );
       }
 
+      // Spreadsheet-style column letters from a 0-based index: 0→A, 25→Z,
+      // 26→AA, ... — used so a boss with more than 26 comps still gets a
+      // unique, ever-increasing letter instead of colliding or breaking.
+      function bossLogColumnLabel(idx) {
+        let n = idx + 1;
+        let out = "";
+        while (n > 0) {
+          const rem = (n - 1) % 26;
+          out = String.fromCharCode(65 + rem) + out;
+          n = Math.floor((n - 1) / 26);
+        }
+        return out;
+      }
+
+      // Stable per-comp identifier: D<boss number><comp letter>, e.g. the
+      // 1st boss's 1st comp is D1A, its 2nd comp D1B, the 2nd boss's 1st
+      // comp D2A. Each link (submitted source) inside a comp is then
+      // D1A1, D1A2, ... — see bossLogActionBoxesHTML below.
+      function bossLogTaskId(boss, idx) {
+        return `D${boss.index ?? "?"}${bossLogColumnLabel(idx)}`;
+      }
+
       // Registry of { title, sub, text } populated while rendering the
       // active boss's comps — each entry backs one "Xem chi tiết" click in
       // an Action box, opening that link's full remarks/TL text in the
@@ -2761,6 +2970,65 @@
       // comp detail panel). Reset once per full panel rebuild so indices
       // always match what's currently in the DOM.
       let bossLogRemarkRegistry = [];
+
+      // Registry of { subId, compId, bossId, bossIndex, bossName, taskId,
+      // linkIndex, link } — one entry per rendered "Chọn" button, backing
+      // toggleTier4Selection(idx) below. Reset alongside
+      // bossLogRemarkRegistry each full panel rebuild.
+      let bossLogTier4EntryRegistry = [];
+
+      // Builds the "Chọn"/"Đã chọn" button for one comp (link), registering
+      // its snapshot so toggleTier4Selection() can find it by index. `link`
+      // is that comp's raw Test.json link object — it's exactly what gets
+      // stored (and later sent to the sheet) for this pick. Returns "" when
+      // there's no subId/boss to key the pick on.
+      function bossLogSelectButtonHTML(subId, context, link, linkIndex) {
+        if (!subId || !context?.boss) return "";
+        const entryIdx =
+          bossLogTier4EntryRegistry.push({
+            subId,
+            compId: context.compId,
+            bossId: context.boss.id,
+            bossIndex: context.boss.index,
+            bossName: context.boss.unitName,
+            taskId: context.taskId,
+            linkIndex,
+            link,
+          }) - 1;
+        const isSelected = tier4SelectedComps.some((c) => c.subId === subId);
+        return `
+      <button type="button" class="bosslog-select-btn${isSelected ? " is-selected" : ""}"
+        onclick="toggleTier4Selection(${entryIdx})">
+        <i class="ti ${isSelected ? "ti-check" : "ti-plus"}" aria-hidden="true"></i>
+        ${isSelected ? "Đã chọn" : "Chọn"}
+      </button>`;
+      }
+
+      // Toggles one comp pick on/off by its registry index (see
+      // bossLogSelectButtonHTML above), persists the updated selection, and
+      // re-renders both the comp browser (button state) and the Comp -
+      // Tier 4 card (selected-comp list) to match.
+      function toggleTier4Selection(idx) {
+        const entry = bossLogTier4EntryRegistry[idx];
+        if (!entry) return;
+        const pos = tier4SelectedComps.findIndex(
+          (c) => c.subId === entry.subId,
+        );
+        if (pos === -1) tier4SelectedComps.push(entry);
+        else tier4SelectedComps.splice(pos, 1);
+        persistTier4Selection();
+        buildBossLogView();
+        buildTier4Card();
+        updateProgress();
+      }
+
+      function removeTier4Selection(idx) {
+        tier4SelectedComps.splice(idx, 1);
+        persistTier4Selection();
+        buildTier4Card();
+        buildBossLogView();
+        updateProgress();
+      }
 
       function openBossLogRemarkByIndex(idx) {
         const entry = bossLogRemarkRegistry[idx];
@@ -2832,7 +3100,10 @@
       // sources for the same comp) gets one box per source, laid out side
       // by side under a single shared "Action" header. `context` (boss +
       // comp labels) is only used to title the remark detail panel below.
-      function bossLogActionBoxHTML(link, context) {
+      // `subId` (e.g. "D1A1") identifies this specific link within its comp.
+      // `linkIndex` is this link's position in task.links — stored on the
+      // Tier 4 pick, if this box gets a "Chọn" button (see bossLogSelectButtonHTML).
+      function bossLogActionBoxHTML(link, context, subId, linkIndex) {
         const lines = (link.name || "")
           .split("\n")
           .map((l) => l.trim())
@@ -2855,27 +3126,51 @@
             bossLogRemarkRegistry.push({
               title: context?.bossLabel || "Chi tiết comp",
               sub:
-                bossLogLinkSourceLabel(link) ||
-                context?.compLabel ||
-                "",
+                [subId, bossLogLinkSourceLabel(link) || context?.compLabel]
+                  .filter(Boolean)
+                  .join(" · "),
               text: link.remarks,
             }) - 1;
           lines.push(
             `<div class="bosslog-remark-cta" onclick="openBossLogRemarkByIndex(${idx})"><i class="ti ti-notes" aria-hidden="true"></i> Xem chi tiết</div>`,
           );
         }
-        return `<div class="bosslog-action-box">${lines.join("")}</div>`;
+        const idBadge = subId
+          ? `<div class="bosslog-action-id">${escapeHtml(subId)}</div>`
+          : "";
+        const selectBtn = bossLogSelectButtonHTML(subId, context, link, linkIndex);
+        return `<div class="bosslog-action-box">${idBadge}${lines.join("")}${selectBtn}</div>`;
       }
 
       function bossLogActionBoxesHTML(task, context) {
         const links = task.links || [];
         if (links.length) {
           return links
-            .map((link) => bossLogActionBoxHTML(link, context))
+            .map((link, i) =>
+              bossLogActionBoxHTML(
+                link,
+                context,
+                context?.compId ? `${context.compId}${i + 1}` : undefined,
+                i,
+              ),
+            )
             .join("");
         }
         if (task.remarks) {
-          return `<div class="bosslog-action-box"><div class="bosslog-action-line" title="${escapeHtml(task.remarks)}">${escapeHtml(translateToEnglish(task.remarks))}</div></div>`;
+          const subId = context?.compId ? `${context.compId}1` : undefined;
+          const idBadge = subId
+            ? `<div class="bosslog-action-id">${escapeHtml(subId)}</div>`
+            : "";
+          // Synthetic link snapshot — the task has no real `links` entry to
+          // point a pick at, so build a minimal one from its remarks text.
+          const fallbackLink = { name: "", link: "", remarks: task.remarks };
+          const selectBtn = bossLogSelectButtonHTML(
+            subId,
+            context,
+            fallbackLink,
+            0,
+          );
+          return `<div class="bosslog-action-box">${idBadge}<div class="bosslog-action-line" title="${escapeHtml(task.remarks)}">${escapeHtml(translateToEnglish(task.remarks))}</div>${selectBtn}</div>`;
         }
         return '<div class="bosslog-action-box">-</div>';
       }
@@ -2908,6 +3203,7 @@
         const charas = task.charas || [];
         const charaCols = charas.length || 1;
         const rawLabel = bossLogTaskLabel(task, idx);
+        const compId = bossLogTaskId(boss, idx);
 
         const nameCells = charas
           .map(
@@ -2938,7 +3234,7 @@
         return `
     <div class="bosslog-comp-block">
       <div class="bosslog-comp-label">
-        Comp ${idx + 1}
+        ${escapeHtml(compId)}
         <span class="bosslog-comp-source" title="${escapeHtml(rawLabel)}">${escapeHtml(translateToEnglish(rawLabel))}</span>
       </div>
       <div class="bosslog-table-wrap">
@@ -2951,7 +3247,7 @@
           </colgroup>
           <tbody>
             <tr>
-              <td class="bosslog-id-cell" rowspan="2" colspan="2">${boss.id}</td>
+              <td class="bosslog-id-cell" rowspan="2" colspan="2">${escapeHtml(compId)}</td>
               <td class="bosslog-score-header" colspan="${charaCols}">Score</td>
               <td class="bosslog-damage-cell" rowspan="2">${bossLogDamageLines(task)}</td>
             </tr>
@@ -2980,7 +3276,10 @@
               <td class="bosslog-action-row-full" colspan="${totalCols}">
                 <div class="bosslog-action-flex">${bossLogActionBoxesHTML(task, {
                   bossLabel: `#${boss.index ?? ""} ${translateToEnglish(boss.unitName)}`,
-                  compLabel: `Comp ${idx + 1}`,
+                  compLabel: compId,
+                  compId,
+                  boss,
+                  taskId: task.id,
                 })}</div>
               </td>
             </tr>
@@ -2994,6 +3293,7 @@
       // All comps for the currently active boss.
       function renderBossLogBossPanel(boss) {
         bossLogRemarkRegistry = []; // rebuilt fresh for this render pass
+        bossLogTier4EntryRegistry = []; // same — see toggleTier4Selection()
         const tasks = boss.tasks || [];
         if (!tasks.length) {
           return '<div class="bosslog-empty">Boss này chưa có comp nào.</div>';
@@ -3058,15 +3358,6 @@
       }
 
       // ── BOSS INPUT / MAPPING ──────────────────────────────────────────
-      function parseTier4Input(raw) {
-        // Tier 4 Comp accepts any content now (not digits-only) — the sheet
-        // write path forces the cell to plain-text format so this can never
-        // be misread as a spreadsheet formula (see writeTierCells_ backend).
-        const value = raw.trim();
-        if (!value) return { valid: false, empty: true };
-        return { valid: true, num: value };
-      }
-
       function parseTierScoreInput(raw) {
         const value = raw.trim();
         if (!value) return { valid: false, empty: true };
@@ -3083,51 +3374,29 @@
         return `${prefix}${bossNum}`;
       }
 
-      function sheetValue(prefix, num) {
-        return `${prefix}${num}`;
-      }
-
       function collectCompData() {
         const cells = {};
         const errors = [];
         let filledCount = 0;
-        let tier4Cant = false;
-        let tier4HasData = false;
 
+        // Tier 3 / Tier 2 — one free-text score per boss, unchanged.
         CARDS.forEach((card, cardIdx) => {
-          const cardEl = document.querySelectorAll(".design-card")[cardIdx];
-          if (!cardEl) return;
+          if (card.tier === 4) return; // handled below via tier4SelectedComps
 
-          const cantInput = cardEl.querySelector(".cant-check input");
-          if (cantInput?.checked) {
-            if (card.tier === 4) tier4Cant = true;
-            return;
-          }
+          const cardEl = document.querySelector(
+            `.design-card[data-card-idx="${cardIdx}"]`,
+          );
+          if (!cardEl) return;
 
           card.checks.forEach((ch, bossIdx) => {
             const input = cardEl.querySelectorAll(".boss-value-input")[bossIdx];
-            const noteInput =
-              cardEl.querySelectorAll(".boss-note-input")[bossIdx];
             if (!input) return;
 
             const raw = input.value.trim();
-            const note = (noteInput?.value || "").trim();
             input.classList.remove("error");
-            noteInput?.classList.remove("error");
+            if (!raw) return;
 
-            if (!raw) {
-              if (note) {
-                errors.push(
-                  `${card.title} · ${ch.id}: Nhập Comp trước khi nhập Note.`,
-                );
-                input.classList.add("error");
-                noteInput?.classList.add("error");
-              }
-              return;
-            }
-
-            const parsed =
-              card.tier === 4 ? parseTier4Input(raw) : parseTierScoreInput(raw);
+            const parsed = parseTierScoreInput(raw);
             if (!parsed.valid) {
               errors.push(`${card.title} · ${ch.id}: ${parsed.error}`);
               input.classList.add("error");
@@ -3135,16 +3404,10 @@
             }
 
             filledCount++;
-            if (card.tier === 4) tier4HasData = true;
-
             const col = bossColumn(card.prefix, ch.bossNum);
-            const value =
-              card.tier === 4
-                ? sheetValue(card.prefix, parsed.num)
-                : parsed.num;
             cells[col] = {
-              value,
-              note,
+              value: parsed.num,
+              note: "",
               tier: card.tier,
               boss: ch.bossNum,
               input: parsed.num,
@@ -3152,18 +3415,29 @@
           });
         });
 
-        return { cells, errors, filledCount, tier4Cant, tier4HasData };
+        // Tier 4 — picked via "Chọn" buttons on the Boss Log tab, unlimited
+        // count. tier4Comps is exactly what uploadToSheet() JSON-encodes.
+        const tier4HasData = tier4SelectedComps.length > 0;
+        filledCount += tier4SelectedComps.length;
+
+        return {
+          cells,
+          errors,
+          filledCount,
+          tier4HasData,
+          tier4Comps: tier4SelectedComps,
+        };
       }
 
       function validateCompData() {
         const data = collectCompData();
         const errors = [...data.errors];
 
-        if (!data.tier4Cant && !data.tier4HasData) {
-          errors.push('Tier 4 bắt buộc: nhập comp hoặc tích "Can\'t".');
+        if (!data.tier4HasData) {
+          errors.push("Tier 4 bắt buộc: chọn ít nhất 1 comp.");
         }
 
-        if (data.filledCount === 0 && !data.tier4Cant) {
+        if (data.filledCount === 0) {
           errors.push("Chưa nhập dữ liệu comp nào.");
         }
 
@@ -3171,70 +3445,40 @@
           valid: errors.length === 0,
           errors,
           cells: data.cells,
-          tier4Cant: data.tier4Cant,
+          tier4Comps: data.tier4Comps,
           filledCount: data.filledCount,
         };
       }
 
       // ── BUILD UI ──────────────────────────────────────────────────────
-      function buildCards() {
-        const c = document.getElementById("cards-container");
-        c.innerHTML = "";
-        CARDS.forEach((card, cardIdx) => {
-          const checksHTML = `${card.checks
-            .map(
-              (ch, i) => `
+      // One card's full markup (header + philosophy/feel/anti + comp log
+      // table). `cardIdx` must be the card's position in CARDS — that's
+      // the id collectCompData() uses to find this card back via
+      // data-card-idx, regardless of which container/tab it ends up
+      // mounted in (Tier 4's card lives on the Boss Log tab instead of
+      // the Dashboard's #cards-container — see buildTier4Card() below —
+      // so its DOM position no longer matches its CARDS index).
+      // Tier 3 / Tier 2 only now — Tier 4 no longer has per-boss text
+      // inputs (see buildTier4Card() and its selected-comp list instead).
+      function buildCardHTML(card, cardIdx) {
+        const checksHTML = card.checks
+          .map(
+            (ch) => `
         <tr>
           <td class="boss-col">
             <span class="chk-id-badge">${ch.id}</span>
           </td>
           <td>
-            ${
-              card.tier === 4
-                ? `
-            <div class="boss-input-grid">
-              <label class="boss-input-block">
-                <span class="boss-field-label">Comp</span>
-                <input class="boss-input boss-value-input" type="text" inputmode="numeric"
-                  data-card="${cardIdx}" data-boss="${ch.bossNum}"
-                  oninput="updateProgress()">
-              </label>
-              <label class="boss-input-block">
-                <span class="boss-field-label">Note</span>
-                <textarea class="boss-input boss-note-input" rows="1"
-                  data-card="${cardIdx}" data-boss="${ch.bossNum}"
-                  oninput="updateProgress(); autoResizeTextarea(this)"></textarea>
-              </label>
-            </div>
-            `
-                : `
             <input class="boss-input boss-value-input" type="text" inputmode="numeric"
               data-card="${cardIdx}" data-boss="${ch.bossNum}"
               oninput="updateProgress()">
-            `
-            }
           </td>
         </tr>
       `,
-            )
-            .join("")}
-
-      ${
-        card.tier === 4
-          ? `
-      <tr class="cant-row">
-        <td colspan="2">
-          <label class="cant-check">
-            <input type="checkbox" onchange="updateProgress()">
-            Can't đánh Tier 4
-          </label>
-        </td>
-      </tr>`
-          : ""
-      }
-    `;
-          c.innerHTML += `
-    <div class="design-card" data-tier="${card.tier}">
+          )
+          .join("");
+        return `
+    <div class="design-card" data-tier="${card.tier}" data-card-idx="${cardIdx}">
       <div class="card-header">
         <div class="card-num">${card.num}</div>
         <div class="card-title-block">
@@ -3260,13 +3504,89 @@
         <div class="card-chk-section">
           <div class="card-chk-label">Comp log · chỉ nhập số</div>
           <table class="card-chk-table">
-            <thead><tr><th class="boss-col">Boss</th><th>${card.tier === 4 ? "Comp (số) + Note riêng" : "Comp (số)"}</th></tr></thead>
+            <thead><tr><th class="boss-col">Boss</th><th>Comp (số)</th></tr></thead>
             <tbody>${checksHTML}</tbody>
           </table>
         </div>
       </div>
     </div>`;
-        });
+      }
+
+      // Dashboard tab: Tier 3 / Tier 2 only — Tier 4 moved to the Boss Log
+      // tab (see buildTier4Card()).
+      function buildCards() {
+        const c = document.getElementById("cards-container");
+        c.innerHTML = CARDS.map((card, cardIdx) =>
+          card.tier === 4 ? "" : buildCardHTML(card, cardIdx),
+        ).join("");
+      }
+
+      // Renders the list of currently picked Tier 4 comps (tier4SelectedComps)
+      // inside the Comp - Tier 4 card — see buildTier4Card().
+      function tier4SelectedListHTML() {
+        if (!tier4SelectedComps.length) {
+          return '<div class="tier4-selected-empty">Chưa chọn comp nào — bấm "Chọn" ở danh sách comp bên dưới.</div>';
+        }
+        return tier4SelectedComps
+          .map(
+            (entry, i) => `
+        <div class="tier4-selected-row">
+          <span class="tier4-selected-id">${escapeHtml(entry.subId)}</span>
+          <span class="tier4-selected-boss" title="${escapeHtml(entry.bossName)}">#${escapeHtml(entry.bossIndex)} ${escapeHtml(translateToEnglish(entry.bossName))}</span>
+          <button type="button" class="tier4-selected-remove" onclick="removeTier4Selection(${i})" aria-label="Bỏ chọn">
+            <i class="ti ti-x" aria-hidden="true"></i>
+          </button>
+        </div>`,
+          )
+          .join("");
+      }
+
+      // Comp - Tier 4's card, rendered on the Boss Log tab so members can
+      // cross-check the D<boss><letter> comps browsed just below while
+      // logging which one they run. Picks are made via "Chọn" buttons down
+      // in the comp browser (bossLogSelectButtonHTML) — this card just
+      // lists what's been picked so far, plus the "Can't" fallback.
+      //
+      // Built once here (not by buildBossLogView(), which replaces
+      // #bosslog-container's innerHTML on every boss switch/reload) so it
+      // isn't wiped by that; toggleTier4Selection()/removeTier4Selection()
+      // re-call it directly whenever the selection changes.
+      function buildTier4Card() {
+        const c = document.getElementById("bosslog-tier4-container");
+        if (!c) return;
+        const cardIdx = CARDS.findIndex((card) => card.tier === 4);
+        if (cardIdx === -1) return;
+        const card = CARDS[cardIdx];
+        c.innerHTML = `
+    <div class="design-card" data-tier="4" data-card-idx="${cardIdx}">
+      <div class="card-header">
+        <div class="card-num">${card.num}</div>
+        <div class="card-title-block">
+          <div class="card-title">${card.title}</div>
+          <div class="card-mantra">"${card.mantra}"</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-cols">
+          <div class="philosophy-block">
+            <div class="card-section-label">Mục tiêu</div>
+            <ul class="point-list">${card.philosophy.map((p) => `<li>${p}</li>`).join("")}</ul>
+          </div>
+          <div class="feel-block">
+            <div class="card-section-label">Hướng dẫn</div>
+            <ul class="point-list">${card.feel.map((f) => `<li>${f}</li>`).join("")}</ul>
+          </div>
+        </div>
+        <div class="anti-block">
+          <div class="card-section-label">NOTE:</div>
+          <ul class="anti-list">${card.anti.map((a) => `<li>${a}</li>`).join("")}</ul>
+        </div>
+        <div class="card-chk-section">
+          <div class="card-chk-label">Comp đã chọn (${tier4SelectedComps.length})</div>
+          <div class="tier4-selected-list">${tier4SelectedListHTML()}</div>
+        </div>
+      </div>
+    </div>`;
       }
 
       // buildLogView() rebuilds the whole panel's innerHTML — including the
@@ -3377,7 +3697,10 @@
   <div class="log-panel">
     <div class="log-panel-header">
       <span><i class="ti ti-history" aria-hidden="true"></i> Status All</span>
-      <span>${totalItems} dòng</span>
+      <div class="log-panel-header-right">
+        <span>${totalItems} dòng</span>
+        <button class="btn-log-reload" onclick="fetchStatusLog()"><i class="ti ti-refresh" aria-hidden="true"></i> Tải lại</button>
+      </div>
     </div>
     <div class="log-panel-body">
       <div class="log-toolbar">
@@ -3585,6 +3908,34 @@
       }
 
       // ── INTERACTIONS ──────────────────────────────────────────────────
+      // Always-visible breakdown of every comp currently logged, in the
+      // footer bar — one badge per Tier 2/3 boss cell plus one per picked
+      // Tier 4 comp (see updateProgress() below, which calls this on every
+      // tab, any time comp data changes).
+      function renderCompDetailBar(result) {
+        const el = document.getElementById("complete-detail");
+        if (!el) return;
+
+        const badges = [];
+
+        Object.entries(result.cells).forEach(([col, data]) => {
+          badges.push(
+            `<span class="complete-detail-badge" title="Tier ${escapeHtml(data.tier)} · Boss ${escapeHtml(data.boss)}">${escapeHtml(col)}: ${escapeHtml(data.value)}</span>`,
+          );
+        });
+
+        (result.tier4Comps || []).forEach((entry) => {
+          const title = `#${entry.bossIndex ?? ""} ${entry.bossName || ""}`.trim();
+          badges.push(
+            `<span class="complete-detail-badge is-tier4" title="${escapeHtml(title)}">${escapeHtml(entry.subId)}</span>`,
+          );
+        });
+
+        el.innerHTML = badges.length
+          ? badges.join("")
+          : '<span class="complete-detail-empty">Chưa có comp nào được log.</span>';
+      }
+
       function updateProgress() {
         const result = validateCompData();
         document.getElementById("bar-filled").textContent = result.filledCount;
@@ -3592,6 +3943,7 @@
           ? ""
           : result.errors[0];
         document.getElementById("btn-complete").disabled = !result.valid;
+        renderCompDetailBar(result);
       }
 
       // Grows a note textarea to fit its content instead of showing a
@@ -3609,9 +3961,10 @@
           i.classList.remove("error");
           i.style.height = ""; // undo any auto-grow from autoResizeTextarea
         });
-        document.querySelectorAll(".cant-check input").forEach((c) => {
-          c.checked = false;
-        });
+        tier4SelectedComps = [];
+        persistTier4Selection();
+        buildTier4Card();
+        buildBossLogView(); // clears every "Đã chọn" button back to "Chọn"
         updateProgress();
       }
 
@@ -3620,7 +3973,10 @@
         const params = new URLSearchParams();
         params.set("action", "upload");
         params.set("user", user);
-        params.set("tier4Cant", payload.tier4Cant ? "1" : "0");
+        // Tier 4 is an unlimited pick list rather than one cell per boss,
+        // so it can't reuse the flat cells map below — sent as one
+        // JSON-encoded array instead (see writeTier4Comps_ server-side).
+        params.set("tier4Comps", JSON.stringify(payload.tier4Comps || []));
 
         Object.entries(payload.cells).forEach(([col, data]) => {
           params.set(col, data.value);
@@ -3652,7 +4008,7 @@
 
         const payload = {
           action: "upload",
-          tier4Cant: result.tier4Cant,
+          tier4Comps: result.tier4Comps,
           cells: result.cells,
         };
 
@@ -3671,7 +4027,7 @@
               user,
               time: new Date().toLocaleString("vi-VN"),
               cells: result.cells,
-              tier4Cant: result.tier4Cant,
+              tier4Comps: result.tier4Comps,
             };
             exportHistory.push(entry);
             persistLogHistory();
@@ -3711,11 +4067,13 @@
           .forEach((b) => b.classList.remove("active"));
         document.getElementById(`tab-${tab}`).classList.add("active");
         btn.classList.add("active");
-        const completeBar = document.querySelector(".complete-bar");
-        if (completeBar) {
-          completeBar.style.display = tab === "cards" ? "flex" : "none";
-        }
-        if (tab === "checklist") buildLogView();
+        // The footer bar (progress + comp detail + Upload) shows on every
+        // tab now, not just Dashboard — .complete-bar's CSS default is
+        // display:flex already, so nothing to toggle here.
+        // Re-fetch every time the tab is opened (not just re-render cached
+        // state) — Status All changes whenever anyone on the clan uploads,
+        // so a cached view could be showing another member's stale count.
+        if (tab === "checklist") fetchStatusLog();
         if (tab === "video") renderVideoView();
         if (tab === "bosslog") {
           if (!bossLogDictionaryLoaded) loadBossLogDictionaryFile();
@@ -3741,7 +4099,12 @@
       }
 
       // ── MEMBER COMP PANEL ────────────────────────────────────────────
-      // comps: [{ boss, code, note, characters: [{name, setStatus, star, imageUrl}] }]
+      // comps: [{ boss, code, note, picks: [{ subId, compId, bossId,
+      // bossIndex, bossName, taskId, linkIndex, link }] }] — `picks` is
+      // exactly what writeTier4Comps_ (Apps Script) stored in the cell
+      // note when the member submitted. Character rosters are resolved
+      // straight from Test.json (bossLogState.bosses) by taskId, not from
+      // the old "Test" Google Sheet tab — see renderMemberCompPickHTML.
       let memberCompState = {
         user: "",
         loading: false,
@@ -3755,7 +4118,23 @@
         renderMemberCompPanel();
         document.getElementById("member-comp-overlay").classList.add("open");
         document.body.style.overflow = "hidden";
-        fetchMemberComp(name);
+        if (!bossLogDictionaryLoaded) loadBossLogDictionaryFile();
+        // Test.json needs to be loaded before picks can be resolved to
+        // character rosters — fetch it if the Boss Log tab hasn't been
+        // opened yet this session.
+        const ensureBossLog =
+          bossLogState.bosses.length || bossLogState.loading
+            ? Promise.resolve()
+            : fetchBossLog();
+        // Both need to land before rendering, so picks can resolve their
+        // character rosters from bossLogState.bosses right away — flip
+        // loading off only once, together, rather than flickering between
+        // "loaded but boss data missing" and the real final state.
+        Promise.all([ensureBossLog, fetchMemberComp(name)]).finally(() => {
+          if (memberCompState.user !== name) return;
+          memberCompState.loading = false;
+          renderMemberCompPanel();
+        });
       }
 
       function closeMemberComp() {
@@ -3770,6 +4149,9 @@
           closeMemberComp();
       }
 
+      // Note: no longer flips memberCompState.loading/renders on its own —
+      // openMemberComp() awaits this alongside fetchBossLog() and does a
+      // single final render once both land (see there).
       async function fetchMemberComp(name) {
         try {
           const params = new URLSearchParams();
@@ -3787,30 +4169,88 @@
           if (memberCompState.user !== name) return;
           memberCompState.error =
             err?.message || "Không kết nối được server.";
-        } finally {
-          if (memberCompState.user === name) {
-            memberCompState.loading = false;
-            renderMemberCompPanel();
-          }
         }
       }
 
-      function renderCompCharacterCard(ch) {
-        const setClass =
-          String(ch.setStatus || "").toUpperCase() === "SET" ? "set" : "off";
-        const avatarHTML = ch.imageUrl
-          ? `<img class="comp-char-avatar" src="${escapeHtml(ch.imageUrl)}" alt="${escapeHtml(ch.name)}">`
-          : `<div class="comp-char-avatar"></div>`;
-        const starHTML =
-          ch.star !== null && ch.star !== undefined && ch.star !== ""
-            ? `<div class="comp-char-star">★ ${escapeHtml(ch.star)}</div>`
-            : "";
+      // Test.json's chara shape ({prefabId, unitName, rank, currentRarity}),
+      // reusing the same icon-URL derivation and fallback pattern as the
+      // Boss Log tab's own character portraits (bossLogCharaIconUrl /
+      // bossLogCharaInitial) — this is the same source data now, just
+      // rendered here for one member's picked comp instead of the browser.
+      function renderMemberCompCharCard(chara) {
         return `
         <div class="comp-char-card">
-          ${avatarHTML}
-          <div class="comp-char-name">${escapeHtml(ch.name)}</div>
-          <div class="comp-char-set ${setClass}">${escapeHtml(ch.setStatus || "?")}</div>
-          ${starHTML}
+          <img class="comp-char-avatar" src="${escapeHtml(bossLogCharaIconUrl(chara))}" alt="" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="comp-char-avatar-fallback">${escapeHtml(bossLogCharaInitial(chara.unitName))}</div>
+          <div class="comp-char-name">${escapeHtml(chara.unitName)}</div>
+          <div class="comp-char-set rank">Rank ${escapeHtml(chara.rank ?? "-")}</div>
+          <div class="comp-char-star">★ ${escapeHtml(chara.currentRarity ?? "-")}</div>
+        </div>`;
+      }
+
+      // One picked comp (one entry from a boss's `picks`) — looks its task
+      // up in Test.json (bossLogState.bosses, by taskId) for the character
+      // roster, and shows the source's own note lines underneath the subId.
+      function renderMemberCompPickHTML(pick) {
+        const boss = bossLogState.bosses.find((b) => b.id === pick.bossId);
+        const task = boss?.tasks?.find((t) => t.id === pick.taskId);
+        const charas = task?.charas || [];
+        const charsHTML = charas.map(renderMemberCompCharCard).join("");
+
+        const link = pick.link || {};
+        const summary = (link.name || "")
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean)
+          .map((l, i) =>
+            escapeHtml(
+              translateToEnglish(i === 0 ? bossLogConvertScoreNumbers(l) : l),
+            ),
+          )
+          .join(" · ");
+
+        return `
+        <div class="comp-pick-block">
+          <div class="comp-pick-header">
+            <span class="bosslog-action-id">${escapeHtml(pick.subId || "")}</span>
+            ${summary ? `<span class="comp-pick-summary">${summary}</span>` : ""}
+          </div>
+          ${
+            charsHTML
+              ? `<div class="comp-char-grid">${charsHTML}</div>`
+              : `<div class="comp-boss-empty">Không tìm thấy comp "${escapeHtml(pick.subId || "")}" trong Test.json (dữ liệu có thể đã đổi).</div>`
+          }
+          ${(link.remarks || "").trim() ? `<div class="comp-boss-note">${escapeHtml(translateToEnglish(link.remarks))}</div>` : ""}
+        </div>`;
+      }
+
+      // One Boss <N> section of the panel. `entry.picks` (JSON stored by
+      // writeTier4Comps_ in the cell note) is the norm now; a bare `code`
+      // with no picks means either nothing logged, or a comp typed before
+      // this migration (plain-text note) that can no longer be resolved.
+      function renderMemberCompBossBlock(entry) {
+        if (entry.picks && entry.picks.length) {
+          return `
+        <div class="comp-boss-block">
+          <div class="comp-boss-title">Boss ${entry.boss}</div>
+          ${entry.picks.map(renderMemberCompPickHTML).join("")}
+        </div>`;
+        }
+
+        if (!entry.code) {
+          return `
+        <div class="comp-boss-block">
+          <div class="comp-boss-title">Boss ${entry.boss}</div>
+          <div class="comp-boss-empty">Chưa log comp cho boss này.</div>
+        </div>`;
+        }
+
+        return `
+        <div class="comp-boss-block">
+          <div class="comp-boss-title">Boss ${entry.boss} · <span style="color:var(--orange)">${escapeHtml(entry.code)}</span></div>
+          ${entry.note ? `<div class="comp-boss-note">Note: ${escapeHtml(entry.note)}</div>` : ""}
+          <div class="comp-boss-empty">Comp này được log trước bản cập nhật mới, không còn tra được chi tiết.</div>
         </div>`;
       }
 
@@ -3841,31 +4281,7 @@
         }
 
         body.innerHTML = memberCompState.comps
-          .map((entry) => {
-            if (!entry.code) {
-              return `
-              <div class="comp-boss-block">
-                <div class="comp-boss-title">Boss ${entry.boss}</div>
-                <div class="comp-boss-empty">Chưa log comp cho boss này.</div>
-              </div>`;
-            }
-
-            const chars = Array.isArray(entry.characters)
-              ? entry.characters
-              : [];
-            const charsHTML = chars.map(renderCompCharacterCard).join("");
-
-            return `
-            <div class="comp-boss-block">
-              <div class="comp-boss-title">Boss ${entry.boss} · <span style="color:var(--orange)">${escapeHtml(entry.code)}</span></div>
-              ${entry.note ? `<div class="comp-boss-note">Note: ${escapeHtml(entry.note)}</div>` : ""}
-              ${
-                charsHTML
-                  ? `<div class="comp-char-grid">${charsHTML}</div>`
-                  : `<div class="comp-boss-empty">Không tìm thấy thông tin comp "${escapeHtml(entry.code)}" trên tab "Test".</div>`
-              }
-            </div>`;
-          })
+          .map(renderMemberCompBossBlock)
           .join("");
       }
 
@@ -3892,6 +4308,7 @@
 
       // ── INIT ──────────────────────────────────────────────────────────
       buildCards();
+      buildTier4Card();
       buildLogView();
       // Delegated on the container (stable across buildLogView() rebuilds)
       // rather than an inline onclick per row — see rowsHTML in buildLogView.
