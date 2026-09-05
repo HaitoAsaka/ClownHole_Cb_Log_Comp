@@ -6,7 +6,7 @@
 .clasprc.json
 appsscript.json
 *.gs
-app scrips.txt
+app scripts.txt
 
 # Local editor/OS noise
 .vscode/
