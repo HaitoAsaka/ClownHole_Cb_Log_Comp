@@ -899,13 +899,23 @@
         padding: 32px 16px;
       }
       /* VIDEO TAB
-         #video-container is a responsive grid: each panel comes from one
-         entry in the `driveVideoConfigs` array (see video-config.js). Adding
-         a new object there (title/desc/defaultUrl) automatically renders a
-         new .video-panel here — no other markup changes needed. */
-      #video-container {
+         #video-container holds a toolbar (reload button) plus .video-grid,
+         a responsive grid where each panel comes from one row of the
+         "Video" sheet (Link/Tiêu đề/Mô tả — see handleVideosRequest_ in
+         the Apps Script backend and fetchVideoList()/renderVideoView()
+         below). Adding a row there automatically renders a new
+         .video-panel here — no code changes needed. */
+      .video-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .video-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
         align-items: start;
       }
@@ -983,7 +993,7 @@
         background: #000;
       }
       @media (max-width: 640px) {
-        #video-container {
+        .video-grid {
           grid-template-columns: 1fr;
           gap: 12px;
         }
@@ -2097,7 +2107,7 @@
       <div class="topbar">
         <div class="topbar-left">
           <div class="topbar-logo">CLOWN HOLE</div>
-          <div class="topbar-sub">CLAN BATTLE LOG COMP v1.0.1</div>
+          <div class="topbar-sub">CLAN BATTLE LOG COMP v2.0.0</div>
         </div>
         <div class="topbar-right">
           <div class="progress-pill">
@@ -2287,10 +2297,6 @@
       <i class="ti ti-check" aria-hidden="true"></i><span id="toast-msg"></span>
     </div>
 
-    <!-- Video links/descriptions live here, separate from the main app code,
-         so adding a new video doesn't mean editing this big file. Keep this
-         file next to Clown Hole Tool.html when copying/downloading the tool. -->
-    <script src="video-config.js"></script>
     <script>
       // ── DATA ──────────────────────────────────────────────────────────
       const CARDS = [
@@ -2491,12 +2497,9 @@
       // ── AUTH (Google Sheet qua Apps Script) ───────────────────────────
       const SESSION_KEY = "clownhole_player";
       const LOG_KEY = "clownhole_upload_log";
-      const DRIVE_VIDEO_KEY = "clownhole_drive_video_url";
       const TIER4_SELECTED_KEY = "clownhole_tier4_selected";
-      // DEFAULT_DRIVE_VIDEO_URL and driveVideoConfigs now live in video-config.js
-      // (loaded via <script src> above) — edit that file to add/change videos.
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
-      const AUTH_URL ="https://script.google.com/macros/s/AKfycbzFImjMeFDS3j4y1-XmDHCagse28aXUE8v0q4Zu5fLwJb9C4F3e6D8ehaaBTiObLzSYqQ/exec";
+      const AUTH_URL ="https://script.google.com/macros/s/AKfycbyvCxyPs7K3eIIU2-P07WgRkbycRUbY-trt0XoNMDY3rwlnh8vForScCkLCPkad2zUHCw/exec";
       function showLoginScreen() {
         document.getElementById("login-overlay").classList.remove("hidden");
         document.getElementById("app-shell").classList.remove("visible");
@@ -2534,7 +2537,7 @@
 
       async function checkUserOnServer(name) {
         const res = await fetch(`${AUTH_URL}?user=${encodeURIComponent(name)}`);
-        if (!res.ok) throw new Error("network");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       }
 
@@ -2632,32 +2635,39 @@
         loading: false,
         error: "",
       };
-      // driveVideoConfigs (which panels to show) now lives in video-config.js,
-      // loaded via <script src> before this block — see comment there for how
-      // to add a new video. renderVideoView() below maps over that array.
+      // Video tab state — fetched from the "Video" sheet (see
+      // handleVideosRequest_ backend, fetchVideoList()/renderVideoView()
+      // below). Replaces the old hardcoded video-config.js array.
+      let videoListState = {
+        loading: false,
+        error: "",
+        videos: [], // [{ title, desc, url }]
+      };
 
-      // Build states from configs and localStorage. Each panel persists its URL under DRIVE_VIDEO_KEY + '_' + storageSuffix
-      let driveVideoStates = driveVideoConfigs.map((cfg) => {
-        const saved = localStorage.getItem(DRIVE_VIDEO_KEY + "_" + cfg.storageSuffix);
-        const inputUrl = saved || cfg.defaultUrl || "";
-        return {
-          inputUrl,
-          fileId: "",
-          embedUrl: "",
-          loaded: false,
-          error: "",
-        };
-      });
+      // Caches server responses per browser tab session (sessionStorage:
+      // cleared when the tab/window actually closes, but survives a
+      // reload) — so switching back to the Log/Video tab, or reloading the
+      // page, reuses what was already fetched instead of hitting the
+      // (occasionally flaky) Apps Script web app again. Each fetch*()
+      // function below checks this first and only calls the network when
+      // there's nothing cached yet or the "Tải lại" button forces it.
+      const SESSION_CACHE_PREFIX = "clownhole_session_";
 
-      // initialize states from stored URLs so if a URL exists we build its embed immediately
-      for (let i = 0; i < driveVideoStates.length; i++) {
-        const s = driveVideoStates[i];
-        const id = extractDriveFileId(s.inputUrl);
-        if (id) {
-          s.fileId = id;
-          s.embedUrl = buildDrivePreviewUrl(id);
-          s.loaded = true;
-          s.error = "";
+      function loadSessionCache(key) {
+        try {
+          const raw = sessionStorage.getItem(SESSION_CACHE_PREFIX + key);
+          return raw ? JSON.parse(raw) : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function saveSessionCache(key, data) {
+        try {
+          sessionStorage.setItem(SESSION_CACHE_PREFIX + key, JSON.stringify(data));
+        } catch {
+          // sessionStorage full/unavailable (e.g. private browsing) — the
+          // fetch itself already succeeded, so just skip caching it.
         }
       }
 
@@ -2737,25 +2747,80 @@
         videoResizeTimer = setTimeout(syncVideoFrameScale, 150);
       });
 
+      // `forceReload` (from the "Tải lại" button) skips the session cache
+      // and re-fetches for real; a plain tab switch does not.
+      async function fetchVideoList(forceReload) {
+        if (!forceReload) {
+          const cached = loadSessionCache("videos");
+          if (cached) {
+            videoListState.videos = cached;
+            videoListState.loading = false;
+            videoListState.error = "";
+            renderVideoView();
+            return;
+          }
+        }
+
+        videoListState.loading = true;
+        videoListState.error = "";
+        renderVideoView();
+
+        try {
+          const params = new URLSearchParams();
+          params.set("action", "videos");
+          const res = await fetch(`${AUTH_URL}?${params.toString()}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || "Không lấy được danh sách video.");
+          videoListState.videos = Array.isArray(data.videos) ? data.videos : [];
+          saveSessionCache("videos", videoListState.videos);
+        } catch (err) {
+          videoListState.videos = [];
+          videoListState.error = err?.message || "Không kết nối được server.";
+        } finally {
+          videoListState.loading = false;
+          renderVideoView();
+        }
+      }
+
       function renderVideoView() {
         const container = document.getElementById("video-container");
         if (!container) return;
 
-        const panels = driveVideoConfigs
-          .map((cfg, i) => {
-            const state = driveVideoStates[i] || {};
-            const frameHTML = state.loaded && state.embedUrl
+        const toolbarHTML = `
+      <div class="video-toolbar">
+        <span class="bosslog-hint">Dữ liệu từ Sheet "Video"${videoListState.videos.length ? ` · ${videoListState.videos.length} video` : ""}</span>
+        <button class="btn-bosslog-reload" onclick="fetchVideoList(true)"><i class="ti ti-refresh" aria-hidden="true"></i> Tải lại</button>
+      </div>`;
+
+        if (videoListState.loading) {
+          container.innerHTML = `${toolbarHTML}<div class="log-empty"><i class="ti ti-loader" style="font-size:28px;display:block;margin-bottom:8px;color:var(--grayM)"></i>Đang tải danh sách video...</div>`;
+          return;
+        }
+        if (videoListState.error) {
+          container.innerHTML = `${toolbarHTML}<div class="log-empty"><i class="ti ti-alert-circle" style="font-size:28px;display:block;margin-bottom:8px;color:var(--red)"></i>${escapeHtml(videoListState.error)}</div>`;
+          return;
+        }
+        if (!videoListState.videos.length) {
+          container.innerHTML = `${toolbarHTML}<div class="log-empty">Chưa có video nào trên Sheet "Video".</div>`;
+          return;
+        }
+
+        const panels = videoListState.videos
+          .map((v) => {
+            const fileId = extractDriveFileId(v.url);
+            const frameHTML = fileId
               ? `
               <div class="video-frame-wrap">
                 <iframe
                   class="video-frame"
-                  src="${escapeHtml(state.embedUrl)}"
+                  src="${escapeHtml(buildDrivePreviewUrl(fileId))}"
                   allow="autoplay; fullscreen"
                   allowfullscreen
                 ></iframe>
               </div>
             `
-              : "";
+              : `<div class="comp-boss-empty">Link Drive không hợp lệ hoặc để trống.</div>`;
 
             return `
               <div class="video-panel">
@@ -2764,8 +2829,8 @@
                 </div>
                 <div class="video-panel-body">
                   <div class="luce-cancel">
-                    <div class="luce-cancel-title">${escapeHtml(cfg.title)}</div>
-                    <div class="luce-cancel-desc">${escapeHtml(cfg.desc || "")}</div>
+                    <div class="luce-cancel-title">${escapeHtml(v.title)}</div>
+                    <div class="luce-cancel-desc">${escapeHtml(v.desc || "")}</div>
                   </div>
                   ${frameHTML}
                 </div>
@@ -2774,34 +2839,8 @@
           })
           .join("");
 
-        container.innerHTML = panels;
+        container.innerHTML = `${toolbarHTML}<div class="video-grid">${panels}</div>`;
         syncVideoFrameScale();
-      }
-
-      function loadDriveVideo(index) {
-        const inputEl = document.getElementById("drive-video-url-" + index);
-        const state = driveVideoStates[index];
-        const cfg = driveVideoConfigs[index] || { storageSuffix: index };
-        const nextUrl = inputEl ? inputEl.value.trim() : state.inputUrl;
-        const fileId = extractDriveFileId(nextUrl);
-
-        state.inputUrl = nextUrl;
-        localStorage.setItem(DRIVE_VIDEO_KEY + "_" + cfg.storageSuffix, nextUrl);
-
-        if (!fileId) {
-          state.fileId = "";
-          state.embedUrl = "";
-          state.loaded = false;
-          state.error = "";
-          renderVideoView();
-          return;
-        }
-
-        state.fileId = fileId;
-        state.embedUrl = buildDrivePreviewUrl(fileId);
-        state.loaded = true;
-        state.error = "";
-        renderVideoView();
       }
 
       // ── BOSS LOG TAB (reads Test.json — clan battle boss/comp log) ─────
@@ -2844,7 +2883,7 @@
         bossLogDictionaryLoaded = true;
         try {
           const res = await fetch("dictionary.txt");
-          if (!res.ok) throw new Error("network");
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
           bossLogDictionary = parseBossLogDictionaryFile(await res.text());
         } catch {
           bossLogDictionary = [];
@@ -2898,7 +2937,7 @@
 
         try {
           const res = await fetch(BOSSLOG_URL);
-          if (!res.ok) throw new Error("network");
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const json = await res.json();
           if (!Array.isArray(json?.data)) throw new Error("format");
           bossLogState.bosses = json.data;
@@ -3699,7 +3738,7 @@
       <span><i class="ti ti-history" aria-hidden="true"></i> Status All</span>
       <div class="log-panel-header-right">
         <span>${totalItems} dòng</span>
-        <button class="btn-log-reload" onclick="fetchStatusLog()"><i class="ti ti-refresh" aria-hidden="true"></i> Tải lại</button>
+        <button class="btn-log-reload" onclick="fetchStatusLog(true)"><i class="ti ti-refresh" aria-hidden="true"></i> Tải lại</button>
       </div>
     </div>
     <div class="log-panel-body">
@@ -3810,7 +3849,21 @@
           .join("");
       }
 
-      async function fetchStatusLog() {
+      // `forceReload` (from the "Tải lại" button, and after a successful
+      // Upload) skips the session cache and re-fetches for real; a plain
+      // tab switch does not.
+      async function fetchStatusLog(forceReload) {
+        if (!forceReload) {
+          const cached = loadSessionCache("statuslog");
+          if (cached) {
+            statusLogState.allItems = cached;
+            statusLogState.loading = false;
+            statusLogState.error = "";
+            buildLogView();
+            return;
+          }
+        }
+
         statusLogState.loading = true;
         statusLogState.error = "";
         buildLogView();
@@ -3820,7 +3873,7 @@
           params.set("action", "status");
 
           const res = await fetch(`${AUTH_URL}?${params.toString()}`);
-          if (!res.ok) throw new Error("network");
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const data = await res.json();
 
           if (!data.ok) {
@@ -3828,6 +3881,7 @@
           }
 
           statusLogState.allItems = Array.isArray(data.items) ? data.items : [];
+          saveSessionCache("statuslog", statusLogState.allItems);
         } catch (err) {
           statusLogState.allItems = [];
           statusLogState.totalItems = 0;
@@ -3984,7 +4038,7 @@
         });
 
         const res = await fetch(`${AUTH_URL}?${params.toString()}`);
-        if (!res.ok) throw new Error("network");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       }
 
@@ -4033,7 +4087,10 @@
             persistLogHistory();
             resetFormData();
             showToast("Đã cập nhật thành công");
-            fetchStatusLog();
+            // Force a real re-fetch (bypass the session cache) — this
+            // upload just changed Status All for real, so the cached
+            // snapshot from earlier this session is now stale.
+            fetchStatusLog(true);
           } else {
             const detail = [
               data.error,
@@ -4070,11 +4127,11 @@
         // The footer bar (progress + comp detail + Upload) shows on every
         // tab now, not just Dashboard — .complete-bar's CSS default is
         // display:flex already, so nothing to toggle here.
-        // Re-fetch every time the tab is opened (not just re-render cached
-        // state) — Status All changes whenever anyone on the clan uploads,
-        // so a cached view could be showing another member's stale count.
+        // Both use the sessionStorage cache from loadSessionCache() — the
+        // real fetch only happens once per browser tab session (or when
+        // "Tải lại" is clicked), not on every tab switch.
         if (tab === "checklist") fetchStatusLog();
-        if (tab === "video") renderVideoView();
+        if (tab === "video") fetchVideoList();
         if (tab === "bosslog") {
           if (!bossLogDictionaryLoaded) loadBossLogDictionaryFile();
           if (!bossLogState.bosses.length && !bossLogState.loading) {
@@ -4158,7 +4215,7 @@
           params.set("action", "memberComps");
           params.set("user", name);
           const res = await fetch(`${AUTH_URL}?${params.toString()}`);
-          if (!res.ok) throw new Error("network");
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const data = await res.json();
           if (!data.ok)
             throw new Error(data.error || "Không lấy được dữ liệu comp.");
@@ -4316,11 +4373,13 @@
         const row = e.target.closest("tr[data-member-name]");
         if (row) openMemberComp(row.dataset.memberName);
       });
-      // initialize each configured panel
-      driveVideoStates.forEach((_, i) => loadDriveVideo(i));
+      // Video/Log data is fetched lazily, on first switch to that tab (see
+      // switchTab()) — not eagerly here. Dashboard is the tab shown at
+      // load, so firing both requests immediately just means 2+
+      // simultaneous hits on the Apps Script web app before anyone's even
+      // looked at either tab, for no benefit.
       buildGuideline();
       updateProgress();
-      fetchStatusLog();
       initAuth();
     </script>
   </body>
