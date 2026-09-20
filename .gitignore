@@ -6,8 +6,13 @@
 .clasprc.json
 appsscript.json
 *.gs
+app scripts.txt
 
 # Local editor/OS noise
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Agent-skills scaffolding (local-only config)
+CLAUDE.md
+docs/agents/
