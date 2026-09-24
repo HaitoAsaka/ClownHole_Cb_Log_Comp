@@ -58,7 +58,7 @@
 香菜 = Aoi
 充电宝 = Saren
 雌小鬼 = S.Fubuki
-狐狸 = Maho (Girl und Panzer)
+狐狸 = Maho (DreamPark)
 熊锤 = Ayane
 妹法 = Akari
 姐法 = Yori
@@ -127,7 +127,7 @@
 チャレンジ = Challenge
 聖枪 = Holy Spear
 圣锤 = Holy Hammer
-扇子 = Fan
+扇子 = Ninon
 ダイフク = ?
 不死随意 = ?
 怨恨取消 = ?
@@ -203,65 +203,62 @@
 死 = Die
 全 = _All_
 
-フロストハウンド
-ティオス
-藍那
-ー
-卯月
+卯月 = Uzuki
 じぇ
 リョウ
-付与后
+付与后 = sau khi nhận
 闇猫
-たつきちゃ
-ん
-风
+たつきちゃん
+风 = Gió
 属性技能强化
-页目全
-个
-物理
-初动
-智
-专用
-丽莎
-花凛
-ー操作ー
+页目全 = full
+个 = cấp
+物理 = vật lý
+初动 = Yêu cầu
+智 = Tomo
+专用 = UE
+丽莎 = Liza
+花凛 = Karin
+ー操作ー = ーTimelineー
 みみ
 みんみん
-ピンキー后
+ピンキー后 = Sau skill 2
 ふら
 サブ
-优衣
+优衣 = Yui
 ーー
 ーーー
 アワりん
-宝石兔
-春弓
-妹弓
+宝石兔 = Kururu
+春弓 = Rino New Year
+妹弓 = Rino New Year
 ランドスロース
 クァール
-偶像
+偶像 = Nozomi (Summer)
 蒼の深淵
 諫山冥
-つらなぎ取消
-花
-エイド取消
-ヴィラネススマイル
-后
-ソウルストリーム后
+つらなぎ取消 = Skip skill 1
+花 = Neneka
+エイド取消 = skip skill 2
+ヴィラネススマイル = Kyouka skill 1
+后 = Sau khi
+ソウルストリーム后 = Sau khi Violet dùng skill 1
 ジャッカルシーフ
 ヒロカズ
-次
-蜘蛛女
-看到小凤或吃货普攻后
+次 = lần
+蜘蛛女 = Arachne
+看到 = Khi thấy
+或 = hoặc
+xcw = Kyouka
 ーーーー
 のっぽん
-蛇盾后
-財禍
+蛇盾后 = sau skill 2
+財禍 = skill 1 Arachne
 リンクス
-白糸取消
-蛇盾
-回避
-人无毒
+白糸取消 = skip skill 2 của Arachne
+蛇盾 = skill 2 Nephi=Nera
+回避 = né đòn
+人无毒 = người không dính độc
 リンクス后
 リカバリ
 カルマ后
@@ -282,7 +279,7 @@
 庭炎后
 适当
 没有则吃货后
-战斗结束
+战斗结束 = Battle End
 前
 自动发动
 万
@@ -298,8 +295,8 @@
 怨恨
 普攻取消稍快
 晶閃初段
-未央
-富婆
+未央 = Mio (IdolMaster)
+富婆 = Creditta
 クロスピンボルト后
 ダークガーゴイル
 よるにんじんにるよ
@@ -308,10 +305,10 @@
 银莲中
 カプチノ
 クレソンおっぺぇすこすこ侍
-狱三家
+狱三家 = Misogi & Mimi & Kyoka
 ルーチェ取消
-诗夏
-水鉄砲
+诗夏 = Shinatsu
+水鉄砲 = Qulia (Summer)
 目押
 水やりショット
 挥下手腕时
@@ -319,33 +316,33 @@
 本体剑
 时
 结束
-アウレア
 没有则
 不够
-礼妈
-亚里莎
-妈
-グラットン
-クローチェ
-サブマリン
+礼妈 = Rima
+亚里莎 = Arisa
+妈 = Kokkoro
+クローチェ（サブマリン） = Croche (Sub Marin)
 バリスタ
 おちゃ
-光
-水机
-章鱼妹
-圣千
+光 = Light
+水机 = Croche (Sub Marin)
+章鱼妹 = Rurui
+圣千 = Chika Christmas
 押
-归位
+归位 = Idle status
 バーニング
 解除
 ナリ
 真穗解除
 机娘解除
 不
-哈哈剑
-猫拳
-圣伊
-水星
+哈哈剑 = Akino
+猫拳 = Hiyori
+圣伊 = Illya (Christmas)
+水星 = Hatsune (Summer)
 星法
-兔子
+兔子 = Mimi
 デザート
+アウレア = chiêu Aurea
+没有则TP不够 = không đủ TP
+お団子 = Alter
