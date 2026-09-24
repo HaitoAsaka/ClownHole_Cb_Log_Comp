@@ -340,7 +340,7 @@ xcw = Kyouka
 猫拳 = Hiyori
 圣伊 = Illya (Christmas)
 水星 = Hatsune (Summer)
-星法
+星法 = Hatsune (Summer)
 兔子 = Mimi
 デザート
 アウレア = chiêu Aurea
