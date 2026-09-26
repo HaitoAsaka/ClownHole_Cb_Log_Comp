@@ -832,10 +832,18 @@
               "index": 2,
               "damage": 0,
               "type": 10
+            },
+            {
+              "name": "oooxx 36250\nWorryChefs D1003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 3,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 39000,
+          "autoDamage": 36200,
           "halfAutoDamage": null,
           "easyManualDamage": 42400,
           "images": []
@@ -900,7 +908,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "oooox",
+          "exRemarks": "oxooo",
           "links": [
             {
               "type": 20,
@@ -909,10 +917,18 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "oxooo 36600\nWorryChefs D1001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 39000,
+          "autoDamage": 36000,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -1768,7 +1784,8 @@
           "id": 17623,
           "canAuto": [
             50,
-            10
+            10,
+            20
           ],
           "stage": 6,
           "damage": 43100,
@@ -1825,7 +1842,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "",
+          "exRemarks": "xxoxx",
           "links": [
             {
               "type": 50,
@@ -1842,10 +1859,18 @@
               "index": 1,
               "damage": 0,
               "type": 10
+            },
+            {
+              "name": "xxoxx 35430\nWorryChefs D1005",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": null,
+          "autoDamage": 35400,
           "halfAutoDamage": null,
           "easyManualDamage": 41200,
           "images": []
@@ -1996,7 +2021,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "xooxo",
+          "exRemarks": "xooxx",
           "links": [
             {
               "type": 20,
@@ -2013,10 +2038,18 @@
               "index": 1,
               "damage": 0,
               "type": 40
+            },
+            {
+              "name": "xooxx 35910\nWorryChefs D1004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 32300,
+          "autoDamage": 35900,
           "halfAutoDamage": 34300,
           "easyManualDamage": null,
           "images": []
@@ -2113,6 +2146,169 @@
           "autoDamage": null,
           "halfAutoDamage": 11800,
           "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17706,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 125101,
+              "unitName": "Tamaki (Cafe)",
+              "rarity": 5,
+              "searchAreaWidth": 825,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91718,
+              "talentId": 3
+            },
+            {
+              "prefabId": 104001,
+              "unitName": "Aoi",
+              "rarity": 6,
+              "searchAreaWidth": 785,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91719,
+              "talentId": 3
+            },
+            {
+              "prefabId": 140401,
+              "unitName": "Liza",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91720,
+              "talentId": 3
+            },
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91721,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91722,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoooo",
+          "links": [
+            {
+              "type": 20,
+              "name": "xoooo 36460\nWorryChefs D1002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 36400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17715,
+          "canAuto": [
+            10,
+            50
+          ],
+          "stage": 6,
+          "damage": 44000,
+          "charas": [
+            {
+              "prefabId": 104001,
+              "unitName": "Aoi",
+              "rarity": 6,
+              "searchAreaWidth": 785,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91763,
+              "talentId": 3
+            },
+            {
+              "prefabId": 140401,
+              "unitName": "Liza",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91764,
+              "talentId": 3
+            },
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91765,
+              "talentId": 3
+            },
+            {
+              "prefabId": 102001,
+              "unitName": "Mimi",
+              "rarity": 6,
+              "searchAreaWidth": 360,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91766,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91767,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "",
+          "links": [
+            {
+              "type": 10,
+              "name": "44000\n油管 エレガントスマイル\n",
+              "link": "https://www.youtube.com/watch?v=TPg55h9zLZ0",
+              "remarks": "XOOXX 自动ON\n\n1:18 兔子 自动OFF\n\n(1:10 菲欧 → 丽莎)\n\n★1:09 香菜 普攻取消迟一点\n丽莎跳起，丽莎和香菜都拿出弓\n\n(1:08 敌UB)\n\n★1:08〜7 静流 普攻取消 敌UB全部数字貼\n→ OXOXO 自动ON\n\n1:00 兔子 自动OFF\n\n(0:57 香菜 109目押快了这里是56s，减伤害)\n\n★0:57〜6 丽莎 普攻取消稍快 香菜UB2位数\n→ 自动ON\n\n0:50 兔子 OOXOO 自动OFF\n\n0:36 兔子 OOOOO\n→ 菲欧 OOXOO\n\n★0:11 菲欧 ルーチェ取消稍快\n快一点可以让后面春姐頭突き更早生效\n\n0:02 丽莎后 +800万",
+              "index": 1,
+              "damage": 0
+            },
+            {
+              "type": 50,
+              "name": "42000\n油管 エレガントスマイル\n2-3押",
+              "link": "https://www.youtube.com/watch?v=TPg55h9zLZ0",
+              "remarks": "XOOXX 自动ON\n\n1:18 兔子 自动OFF\n\n(1:10 菲欧 → 丽莎)\n\n★1:09 香菜 普攻取消迟一点\n丽莎跳起，丽莎和香菜都拿出弓\n\n(1:08 敌UB)\n\n★1:08〜7 静流 普攻取消 敌UB全部数字\n→ OXOXO 自动ON\n\n1:00 兔子 自动OFF\n\n(0:57 香菜 109目押快了这里是56s，减伤害)\n\n0:56 菲欧 OOXXO 自动ON\n\n0:50 兔子 OOXOO 自动OFF\n\n0:36 兔子 OOOOO\n→ 菲欧 OOXOO\n\n★0:11〜10 菲欧 ルーチェ取消\n10s兔子UB后菲欧SET可\n5s兔子在頭突きdebuff前，减伤害\n\n0:02 丽莎后 +800万",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": 42000,
           "images": []
         }
       ]
@@ -2262,7 +2458,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "ooxox TP8.2",
+          "exRemarks": "oooox TP8.2",
           "links": [
             {
               "type": 20,
@@ -2287,10 +2483,18 @@
               "index": 2,
               "damage": 0,
               "type": 10
+            },
+            {
+              "name": "oooox 38570\nWorryChefs D2002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 3,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 42200,
+          "autoDamage": 38500,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -2415,10 +2619,18 @@
               "index": 6,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "oooxo 44840\nWorryChefs D2001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 7,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 49200,
+          "autoDamage": 44800,
           "halfAutoDamage": 49100,
           "easyManualDamage": 60400,
           "images": []
@@ -2569,7 +2781,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "xoooo",
+          "exRemarks": "oooxx",
           "links": [
             {
               "type": 20,
@@ -2578,10 +2790,18 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "oooxx 37880\nWorryChefs D2003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 38000,
+          "autoDamage": 37800,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -3363,6 +3583,391 @@
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
+        },
+        {
+          "id": 17705,
+          "canAuto": [
+            50
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 138801,
+              "unitName": "Shiori (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 571,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91713,
+              "talentId": 2
+            },
+            {
+              "prefabId": 107601,
+              "unitName": "Kokkoro (Summer)",
+              "rarity": 6,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91714,
+              "talentId": 2
+            },
+            {
+              "prefabId": 111501,
+              "unitName": "Christina (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 265,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91715,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91716,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91717,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "TP8.2+",
+          "links": [
+            {
+              "type": 50,
+              "name": "48820/55100\n油管 Dedsu Desu\nTP8.2+",
+              "link": "https://www.youtube.com/watch?v=9EYw0NI6bE8",
+              "remarks": "XOOXX 自动ON\n1:13\t水栞\tOOOOX\n59\t水切噜\tOXXXX\n52\t水栞\tXXOXX\n43\t水栞\tSET OXOOO\n42\t水切噜\tOOXXO 自动OFF\n42\t水栞\tXOXXO 自动ON\n30\t水紫\n29\t水紫\tXXXXO 自动OFF\n29\t水栞\t水紫后UBOK (25帧+) \n\t↳ 自动 ON #之后是水切噜，不是圣克、水妈\t\n26\t圣克\tOOXOO\n17\t水切噜\tOOXXO 自动OFF\n17\t水紫\tOOXXX 自动ON\n16\t圣克\t自动OFF\t\n16\t水栞\n15\t水栞\n15\t圣克开始普攻后自动ON\t\n15\t水切噜\tOXXOX\n4\t圣克\tXOOOO\n1\t水栞\t最后UB, 后无伤害",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": 55100,
+          "images": []
+        },
+        {
+          "id": 17707,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91723,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133801,
+              "unitName": "Neneka (Alpha)",
+              "rarity": 5,
+              "searchAreaWidth": 759,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91724,
+              "talentId": 5
+            },
+            {
+              "prefabId": 118201,
+              "unitName": "Misora",
+              "rarity": 5,
+              "searchAreaWidth": 730,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91725,
+              "talentId": 5
+            },
+            {
+              "prefabId": 122301,
+              "unitName": "Vampy",
+              "rarity": 6,
+              "searchAreaWidth": 564,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91726,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91727,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxoox",
+          "links": [
+            {
+              "type": 20,
+              "name": "oxoox 34680\nWorryChefs D2004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17708,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 108401,
+              "unitName": "Chika (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 770,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91728,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138801,
+              "unitName": "Shiori (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 571,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91729,
+              "talentId": 2
+            },
+            {
+              "prefabId": 117201,
+              "unitName": "Nozomi (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 417,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91730,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91731,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91732,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xooxo",
+          "links": [
+            {
+              "type": 20,
+              "name": "xooxo 31750\nWorryChefs D2005",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 31700,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17713,
+          "canAuto": [
+            40
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 138801,
+              "unitName": "Shiori (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 571,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91753,
+              "talentId": 2
+            },
+            {
+              "prefabId": 117301,
+              "unitName": "Chika (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 520,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91754,
+              "talentId": 2
+            },
+            {
+              "prefabId": 117001,
+              "unitName": "Eriko (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 407,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91755,
+              "talentId": 2
+            },
+            {
+              "prefabId": 108601,
+              "unitName": "Ayane (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 190,
+              "rank": 42,
+              "currentRarity": 3,
+              "id": 91756,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91757,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "21s5000",
+          "links": [
+            {
+              "type": 40,
+              "name": "21s5000\n情報会 miz\n",
+              "link": "",
+              "remarks": "三星圣锤\n〇〇ー〇ー、自动ON开始\n\n1:17　病娇　自动OFF\n1:12　圣锤　〇〇ー〇〇",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": 5000,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17714,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 10700,
+          "charas": [
+            {
+              "prefabId": 111401,
+              "unitName": "Luna",
+              "rarity": 5,
+              "searchAreaWidth": 765,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91758,
+              "talentId": 5
+            },
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91759,
+              "talentId": 5
+            },
+            {
+              "prefabId": 139801,
+              "unitName": "Sheffy (Wahrer Drache)",
+              "rarity": 5,
+              "searchAreaWidth": 386,
+              "rank": 42,
+              "currentRarity": 3,
+              "id": 91760,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91761,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91762,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "30s10741 TP8.2",
+          "links": [
+            {
+              "type": 10,
+              "name": "30s10741\n油管 ネブソク\nTP8.2",
+              "link": "https://www.youtube.com/watch?v=lzQkZ0F-Jd0",
+              "remarks": "紫罗兰  ★5 R42 全部 CR15\n格蕾斯   ★5 R42 全部 CR15\n龙菲 ★3 R42 全部 CR15\n水若菜  ★5 R42 全部 CR15\n露娜 ★5  R42 全部 专用MAX CR0\n\n◆职阶强化\n增幅者  初动TPLv8★2\n\n⚠️雪菲★注意⚠️\n◆TL\n1:30 开始(ー〇〇〇〇)\n1:18 若菜 (ーー〇〇〇)\n1:17 格蕾斯\n\n1:16 若菜  普攻取消 (ー〇〇〇〇)\n\n1:15 露娜  普攻取消 雪菲UB后×\n    →雪菲\n    →格蕾斯\n1:13 若菜\n    →若菜\n\n1:11 露娜  怨恨取消 ※1 (〇〇〇〇〇)\n1:10 雪菲\n    →紫罗兰\n1:08 雪菲\n    →雪菲\n1:04 雪菲\n1:02 露娜\n1:01 若菜\n    →格蕾斯\n\n\n\n※1\n最速×、稍慢一些。\n1:08雪菲2次则成功。\n快了雪菲1次、慢了充若菜。",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
         }
       ]
     },
@@ -3436,7 +4041,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set TP8.2/10.0+",
+          "exRemarks": "xoxxo TP8.2+/10.0+",
           "links": [
             {
               "type": 20,
@@ -3509,13 +4114,61 @@
               "index": 8,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "54000\n油管 kiyozi\nTP8.2\nCR全15",
+              "link": "https://www.youtube.com/watch?v=BpxhlYQdHjI",
+              "remarks": "TP8-2 MS158\nCR ALL15\n\n01:30 战斗开始\n01:18 涅妃　自动\n01:17 蜘蛛女　自动\n01:13 吃货\n★01:09 小凤　毒伤害后且庭園前　稍快更好些　※1\n如果错了就改半自动\n\n01:09 艾拉\n01:09 艾拉\n01:06 涅妃\n01:04 吃货\n01:04 蜘蛛女\n\n～～～01:03 ジャッカルシーフ～～～\n\n★01:01 艾拉　普攻后\n01:01 艾拉\n★00:54 小凤　リカバリー取消稍快　※1\n00:52 涅妃\n00:51 蜘蛛女\n00:51 艾拉　#リンクスbuff后\n00:51 艾拉\n00:50 吃货\n★00:44 艾拉　普攻后\n00:41 吃货\n★00:41 涅妃　UBok　蛇盾后\n★00:39 小凤　毒伤害后且BOSS技能Hit前　※1 普攻取消必要\n00:39 蜘蛛女\n\n～～～00:37 ジャッカルシーフ～～～\n00:37 艾拉　#バーニング后\n00:37 艾拉\n\n00:30 吃货\n00:30 涅妃\n★00:29 艾拉　普攻后\n00:28 蜘蛛女\n★00:20 艾拉　リンクスbuff后\n00:20 艾拉\n★00:19 小凤　毒伤害后且BOSS技能Hit前\n00:17 吃货\n00:16 涅妃\n00:15 蜘蛛女\n\n～～～00:14 ジャッカルシーフ～～～\n\n★00:13 艾拉　普攻后\n00:13 艾拉\n00:06 小凤\n00:04 吃货\n★00:03 涅妃　蛇盾后\n00:01 蜘蛛女\n00:01 艾拉\n00:01 艾拉\n\n00:00 战斗结束\n\n※1　01:09和00:54的小凤越早，39s的容错越多。\n如果全是最速，紧靠蜘蛛女的UB就能不中毒，但是很难。还是靠小凤的盾更好一些。",
+              "index": 9,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "57087\n油管 noppon (のっぽん)\n单押 TP10.1\nCR全15",
+              "link": "https://www.youtube.com/watch?v=hbH8ZPDiEZE",
+              "remarks": "全员CR15　MS158　TP10-1\n火吃 5-42\n艾拉 5-42\n小凤 5-42\n涅妃 5-41\n蜘蛛女 5-42\n----\n1:30 战斗开始\n1:19 涅妃#蛇盾后\n  → 蜘蛛女#財禍buff\n1:12 火吃\n1:10 小凤#普攻取消\n1:09 艾拉　自动#リンクス　728\n  → 艾拉\n1:08 涅妃#普攻取消\n1:07 蜘蛛女　#白糸取消\n1:05 火吃\n\n1:03 ジャッカルシーフ　#財禍TP　蛇盾　普攻　回避　普攻　7261　4人无毒\n\n1:02 艾拉 #リンクス后\n  → 艾拉　812\n0:55 涅妃\n  → 小凤#リカバリbuff后\n → 蜘蛛女 #カルマ后\n → 艾拉 844 #普攻后 下个是リンクス\n  → 艾拉 844\n0:54 火吃 \n0:46 艾拉#普攻取消 815\n0:44 涅妃  #蛇盾后\n0:43 火吃 #守護\n  → 小凤 #リカバリbuff\n0:39 蜘蛛女 ★毒伤害后且全体攻击前　秒数确认\n  → 艾拉#バーニング取消 880\n  → 艾拉　881\n\n0:35 ジャッカルシーフ #財禍buff　蛇盾后　リカバリ　回避　スラッシュ后　28180 4人无毒\n\n0:32 艾拉　#　842\n0:31 涅妃 #普攻取消　秒数不对则39s押的不对\n0:30 小凤　#リカバリ取消\n0:29 蜘蛛女　#カルマ取消\n0:27 火吃  自动\n0:25 艾拉 #リンクス取消 841\n  → 艾拉 \n0:18 火吃#守護后\n  → 艾拉 #普攻后\n0:17 蜘蛛女\n  → 小凤\n0:16 涅妃　自动\n\n\n0:15 ジャッカルシーフ#白糸取消 待机　リカバリ后　回避　普攻取消 4人无毒\n\n0:09 艾拉　#普攻取消\n → 艾拉\n0:06 火吃　自动\n0:03 蜘蛛女#カルマ取消\n0:02 小凤自动\n0:01 涅妃　自动　\n~涅妃UB伤害后～艾拉UB开始止+3500~\n  → 艾拉931\n  → 艾拉\n\n0:00 战斗结束",
+              "index": 10,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "xoxxo 38830\nWorryChefs D3001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 11,
+              "damage": 0,
+              "type": 20
+            },
+            {
+              "name": "51568\n情報会 闇猫\nTP8.2\nCR全15",
+              "link": "",
+              "remarks": "1:30开始 ◯◯◯ー◯  自动 ON\n1:02艾拉(2次)  ー◯ーー◯自动 OFF\n0:52涅妃 ◯◯◯ー◯\n0:50蜘蛛女 ◯◯◯◯◯\n0:34艾拉(2次)  ー◯◯ー◯\n0:27涅妃  ー◯◯◯◯  自动 ON\n0:22蜘蛛女 ◯◯◯◯◯  自动 OFF\n0:11艾拉 ◯◯◯ー◯\n0:05火吃 ◯◯◯◯◯",
+              "index": 12,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "53557\n油管 あじ\n0-1押 TP8.2+",
+              "link": "https://www.youtube.com/watch?v=FCxMrgwnVmQ",
+              "remarks": "【TP高大概8-4以上】\nーー〇ー〇　自动ON\n\n1:18 涅妃　ー〇〇ー〇 \n1:02 艾拉ー〇ー〇〇 自动OFF\n\n-----\n【TP低】\n〇〇〇ー〇　自动ON\n\n1:02 艾拉　ー〇ー〇〇 自动OFF\n\n\n-----\n\n0:52 涅妃　ー〇〇〇〇 \n0:48 吃货　 〇〇〇〇〇 \n0:45 艾拉※2次 〇〇ーー〇\n\n0:38 小凤　★フェニックスbuff后　敌攻击2次左右\n　　　　　　　\n0:38 涅妃　　　 〇〇〇〇〇\n0:24 艾拉※2次 〇〇ーー〇\n0:17 敌ＵＢ　　 〇〇〇ー〇\n0:14 涅妃　　　 〇〇〇〇〇\n\n\n※※※1s艾拉UB　+1720万※※※\n \n\n\n\n以下目押0\n \n【TP高　大概8-4以上】\nーー〇ー〇　自动ON\n\n1:18 涅妃　 ー〇〇ー〇 \n1:02 艾拉　 ー〇ー〇〇 自动OFF\n\n-----\n【TP低】\n〇〇〇ー〇　自动ON\n\n1:02 艾拉　 　ー〇ー〇〇 自动OFF\n\n\n-----\n\n0:52 涅妃　 　　ー〇〇〇〇 \n0:48 吃货　　　〇〇〇〇〇 \n0:45 艾拉※2次 〇〇〇ー〇　　　　　　　\n0:38 涅妃　　　 〇〇〇〇〇\n0:24 艾拉※2次 〇〇ーー〇\n0:17 敌ＵＢ　　 〇〇〇ー〇\n0:14 涅妃　　　〇〇〇〇〇",
+              "index": 13,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "53400\n油管 たつきちゃん\n四押 TP9.1",
+              "link": "https://www.youtube.com/watch?v=i7hAVtZeJzM",
+              "remarks": "1:30开始ー◯◯ー◯　自动 ON\n　1:02　艾拉(2次)　ー◯ーー◯自动 OFF\n　0:52　涅妃　◯◯◯ー◯\n　0:50　蜘蛛女　◯◯◯ー◯\n☆0;42　艾拉　普攻后　◯◯◯ー◯\n☆0:33　艾拉　普攻后(2次)  ー◯◯ー◯\n☆0:25　艾拉　バーニング后(2次)  ー◯◯ー◯自动 ON\n　0:22　蜘蛛女　◯◯◯ー◯  自动 OFF\n　0:17　小凤　　◯◯◯◯◯\n　0:17　艾拉(2次)　◯◯◯ー◯\n☆0:08　艾拉　リンクス后　◯◯◯◯◯",
+              "index": 14,
+              "damage": 0,
+              "type": 10
             }
           ],
           "type": 2,
-          "autoDamage": 42400,
+          "autoDamage": 38800,
           "images": [],
-          "halfAutoDamage": 46400,
-          "easyManualDamage": 49900
+          "halfAutoDamage": 51500,
+          "easyManualDamage": 57000
         },
         {
           "id": 17509,
@@ -3731,7 +4384,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "xooxx",
           "links": [
             {
               "type": 20,
@@ -3740,10 +4393,18 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "xooxx 37210\nWorryChefs D3002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 39700,
+          "autoDamage": 37200,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -4202,7 +4863,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "ooxoo",
+          "exRemarks": "xoxxx",
           "links": [
             {
               "type": 20,
@@ -4211,6 +4872,14 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "xoxxx 32850\nWorryChefs D3004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
@@ -4664,7 +5333,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "xooox",
+          "exRemarks": "xooxx",
           "links": [
             {
               "type": 20,
@@ -4673,6 +5342,14 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "xooxx 36520\nWorryChefs D3003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
@@ -4831,6 +5508,83 @@
           ],
           "type": 2,
           "autoDamage": 25200,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17709,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91733,
+              "talentId": 1
+            },
+            {
+              "prefabId": 129701,
+              "unitName": "Nephi Nela",
+              "rarity": 5,
+              "searchAreaWidth": 540,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91734,
+              "talentId": 1
+            },
+            {
+              "prefabId": 134701,
+              "unitName": "Ho-oh",
+              "rarity": 5,
+              "searchAreaWidth": 490,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91735,
+              "talentId": 1
+            },
+            {
+              "prefabId": 135501,
+              "unitName": "Aira",
+              "rarity": 5,
+              "searchAreaWidth": 213,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91736,
+              "talentId": 1
+            },
+            {
+              "prefabId": 138301,
+              "unitName": "Pecorine (Astraea)",
+              "rarity": 5,
+              "searchAreaWidth": 142,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91737,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xxxoo",
+          "links": [
+            {
+              "type": 20,
+              "name": "xxxoo 29650\nWorryChefs D3005",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 29600,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -5375,10 +6129,18 @@
               "index": 5,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "全set 36420\nWorryChefs D4005",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 6,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 39300,
+          "autoDamage": 36400,
           "halfAutoDamage": null,
           "easyManualDamage": 50600,
           "images": []
@@ -5464,7 +6226,8 @@
           "id": 17579,
           "canAuto": [
             40,
-            10
+            10,
+            20
           ],
           "stage": 6,
           "damage": 60200,
@@ -5521,7 +6284,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "TP9.4+/10+",
+          "exRemarks": "oooxo TP9.4+/10+",
           "links": [
             {
               "type": 40,
@@ -5538,10 +6301,26 @@
               "index": 1,
               "damage": 0,
               "type": 10
+            },
+            {
+              "name": "oooxo 38770\nWorryChefs D4002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
+            },
+            {
+              "name": "55800\n油管 ブラくま\nTP10+\nCR全15 非1f版",
+              "link": "https://www.youtube.com/watch?v=CW38SDs8GXc",
+              "remarks": "属性Lv&节点最大\n大师159\n破防者左下9-0・他8-2\n减益者debuff9-2・他8-2\n增幅者TP10-0・防御8-2・HP8-0\n掩护者全8-2\nーーーーー\n\n\n■\n1:22　涅妃\n☆1:20　姬塔　トリプル取消稍快\n1:12　白菜　//待机启动　没断普继续，断普但是慢了看最下面\n☆1:11〜1:10　狱三家　ダンシングdebuff后　//アウレア2段稍快\n1:09　水菲\n1:04　姬塔\n☆1:02　白菜\n⇒涅妃\n⇒姬塔\n⇒狱三家　OK提示、ダンシングdebuff稍快　//慢-400\n0:55　狱三家　//ダンシングdebuff后アウレア启动\n0:54　水菲　//汐沓后バリア启动\n⇒白菜\n☆0:53　姬塔　普攻Hit稍快\n☆0:47　姬塔　涅妃OK提示\n0:44　涅妃　\"自动\"\n☆0:43　狱三家　トライ1Hit后\n0:40　白菜　//バリアTP后アウレア前启动\n⇒水菲　//待机中アウレア启动\n0:37　姬塔　\"自动\"\n⇒狱三家　//トライ2Hit后时机\n☆0:29　姬塔　秒数最速、普攻取消　//30最迟可\n⇒涅妃　金剛buff稍快　//狱三家待机\n⇒白菜\n⇒狱三家\n0:27　水菲　//普攻取消\n0:25　姬塔　//バリア前アウレア启动\n⇒白菜\n0:24　狱三家\n0:21　姬塔\n0:14　涅妃\n☆0:12　水菲　氷菓buff稍快\n0:11　白菜\n⇒狱三家\n0:09　姬塔\n0:07　姬塔\n0:05　狱三家　//击飞前トライ开始\n0:02　白菜\n⇒涅妃\n⇒狱三家　//待机\n0:01　白菜\n⇒水菲\n⇒姬塔\nーーーーー\n1:11普攻取消但慢：\n白菜SET到最后\n0:55狱三家到白菜后\n0:54水菲到汐沓后\n43狱三家到トライ2Hit后，其余可合流",
+              "index": 3,
+              "damage": 0,
+              "type": 10
             }
           ],
           "type": 2,
-          "autoDamage": null,
+          "autoDamage": 38700,
           "halfAutoDamage": 52400,
           "easyManualDamage": null,
           "images": []
@@ -5607,7 +6386,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "oxooo",
           "links": [
             {
               "type": 50,
@@ -5624,10 +6403,18 @@
               "index": 1,
               "damage": 0,
               "type": 20
+            },
+            {
+              "name": "oxooo 41100\nWorryChefs D4001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 33000,
+          "autoDamage": 41100,
           "halfAutoDamage": null,
           "easyManualDamage": 48100,
           "images": []
@@ -5867,7 +6654,7 @@
           "id": 17600,
           "canAuto": [
             20,
-            40
+            50
           ],
           "stage": 6,
           "damage": null,
@@ -5924,7 +6711,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "xoooo",
+          "exRemarks": "xooxo TP8.0+",
           "links": [
             {
               "type": 20,
@@ -5935,18 +6722,34 @@
               "damage": 0
             },
             {
-              "name": "41980/\nWorryChefs D403",
+              "name": "44480/52230\nWorryChefs D403\n不押 TP8.0+",
               "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
-              "remarks": "1:30\tXOXXX 自动 ON\n1:14\t武璃亚 -> OOOXX\n1:00\t武璃亚 -> OXOXO\n0:45\t武璃亚 -> XOOXX 自动 OFF\n0:34\t水莲 -> 自动 ON\n0:31\t梦狐 -> OOOXO\n0:22\t武璃亚 -> OXOXO\n0:02\t武猪妹 最后UB, +5.3m after",
+              "remarks": "1:30\tXOXXX 自动 ON\n1:14\t武璃亚 -> OOOXX\n1:00\t武璃亚 -> OXOXO 自动 OFF\n0:46\t梦狐 -> OOOXO\n0:45\t武璃亚 -> XOOOO 自动 ON\n0:31\t梦狐 -> OOOXX 自动 OFF\n0:22\t水莲 -> OOOOO\n\t武璃亚 -> OXOOX\n0:11\t武莉莉 -> OXOOO\n0:06\t梦狐 -> OOOOO\n0:02\t武猪妹 最后 UB, +7.2m",
               "index": 1,
               "damage": 0,
-              "type": 40
+              "type": 50
+            },
+            {
+              "name": "45120/52980\nWorryChefs D41\n三押 TP8.0+",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "XXXXX 自动OFF\n1:19\t水莲\t莉莉生成一个圈 \n\t↳ 自动 ON # SET-200万\n1:14\t武璃亚\tOOOXX\n1:00\t武璃亚\tOXXXO 自动OFF\n0:49\t武猪妹\t满押OK[50f] # SET-150万\n0:46\t梦狐\tOOOXO\n0:45\t武璃亚\tXOOOX 自动ON\n0:33\t武莉莉\t#关SET准备手动连点武璃亚\t\n0:33~0:32\t武璃亚\t手动连点 (延迟1f-9f) # SET-300万\t\n0:31\t梦狐\tOOOXX 自动OFF\n0:22\t水莲\tOOOOO\n0:22\t武璃亚\tOXOOX\n0:11\t武莉莉\tOXOOO\n0:06\t梦狐\tOOOOO\n0:02\t武猪妹\t最后UB, +7.2m",
+              "index": 2,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "xooxo 37940\nWorryChefs D4003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 3,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 41000,
+          "autoDamage": 37900,
           "halfAutoDamage": 41900,
-          "easyManualDamage": null,
+          "easyManualDamage": 52900,
           "images": []
         },
         {
@@ -6564,6 +7367,160 @@
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
+        },
+        {
+          "id": 17710,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134601,
+              "unitName": "Aoi (Pilot)",
+              "rarity": 5,
+              "searchAreaWidth": 526,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91738,
+              "talentId": 4
+            },
+            {
+              "prefabId": 138201,
+              "unitName": "Nephi Nela (Buddha)",
+              "rarity": 5,
+              "searchAreaWidth": 502,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91739,
+              "talentId": 4
+            },
+            {
+              "prefabId": 134801,
+              "unitName": "Tsumugi (Geo Gehenna)",
+              "rarity": 5,
+              "searchAreaWidth": 485,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91740,
+              "talentId": 4
+            },
+            {
+              "prefabId": 180801,
+              "unitName": "Misogi & Mimi & Kyoka",
+              "rarity": 5,
+              "searchAreaWidth": 465,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91741,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135101,
+              "unitName": "Sheffy (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 143,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91742,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxooo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oxooo 36970\nWorryChefs D4004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 36900,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17711,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101601,
+              "unitName": "Suzuna",
+              "rarity": 6,
+              "searchAreaWidth": 705,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91743,
+              "talentId": 4
+            },
+            {
+              "prefabId": 134601,
+              "unitName": "Aoi (Pilot)",
+              "rarity": 5,
+              "searchAreaWidth": 526,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91744,
+              "talentId": 4
+            },
+            {
+              "prefabId": 138201,
+              "unitName": "Nephi Nela (Buddha)",
+              "rarity": 5,
+              "searchAreaWidth": 502,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91745,
+              "talentId": 4
+            },
+            {
+              "prefabId": 105701,
+              "unitName": "Djeeta",
+              "rarity": 6,
+              "searchAreaWidth": 245,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91746,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135101,
+              "unitName": "Sheffy (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 143,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91747,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooxo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooxo 35330\nWorryChefs D4006",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 35300,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
         }
       ]
     },
@@ -6867,7 +7824,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "ooxoo",
           "links": [
             {
               "type": 20,
@@ -6908,10 +7865,18 @@
               "index": 3,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "ooxoo 38540\nWorryChefs D5001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 5,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 43200,
+          "autoDamage": 38500,
           "halfAutoDamage": 53300,
           "easyManualDamage": 54800,
           "images": []
@@ -7174,10 +8139,18 @@
               "index": 1,
               "damage": 0,
               "type": 20
+            },
+            {
+              "name": "全set 34040\nWorryChefs D5002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 36100,
+          "autoDamage": 34000,
           "halfAutoDamage": 43400,
           "easyManualDamage": null,
           "images": []
@@ -7492,7 +8465,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "oxooo",
           "links": [
             {
               "type": 20,
@@ -7509,10 +8482,18 @@
               "index": 1,
               "damage": 0,
               "type": 40
+            },
+            {
+              "name": "oxooo 29380\nWorryChefs D5004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 27000,
+          "autoDamage": 29300,
           "halfAutoDamage": 41400,
           "easyManualDamage": null,
           "images": []
@@ -7923,7 +8904,8 @@
         {
           "id": 17689,
           "canAuto": [
-            40
+            40,
+            20
           ],
           "stage": 6,
           "damage": null,
@@ -7980,7 +8962,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "",
+          "exRemarks": "xxooo",
           "links": [
             {
               "type": 40,
@@ -7989,12 +8971,97 @@
               "remarks": "1:30\tXXOOO 自动 ON\n1:03\t水紫 > OFF 水紫\n0:44\t水紫 > OXOOO\n0:22\t水机 > OOXOO\n0:16\t水紫 > OXOOX\n0:03\t水千 > SET 水紫",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "xxooo 32830\nWorryChefs D5003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": null,
+          "autoDamage": 32800,
           "halfAutoDamage": 36800,
           "easyManualDamage": 38200,
+          "images": []
+        },
+        {
+          "id": 17712,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140301,
+              "unitName": "Tia",
+              "rarity": 5,
+              "searchAreaWidth": 744,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91748,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138801,
+              "unitName": "Shiori (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 571,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91749,
+              "talentId": 2
+            },
+            {
+              "prefabId": 136901,
+              "unitName": "Rurui",
+              "rarity": 5,
+              "searchAreaWidth": 409,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91750,
+              "talentId": 2
+            },
+            {
+              "prefabId": 140601,
+              "unitName": "クローチェ（サブマリン）",
+              "rarity": 5,
+              "searchAreaWidth": 400,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91751,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91752,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxxoo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oxxoo 27150\nWorryChefs D5005",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 27100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
           "images": []
         }
       ]

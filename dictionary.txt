@@ -321,7 +321,7 @@ xcw = Kyouka
 礼妈 = Rima
 亚里莎 = Arisa
 妈 = Kokkoro
-クローチェ（サブマリン） = Croche (Sub Marin)
+クローチェ（サブマリン）= Croche (Sub Marin)
 バリスタ
 おちゃ
 光 = Light

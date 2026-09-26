@@ -1893,6 +1893,89 @@
         line-height: 1.25;
         word-break: break-word;
       }
+      /* Roster filter bar (renderBossLogCharaFilterBar) — one chip per
+         unique character across the active boss's comps. Selecting a chip
+         marks that character as "owned"; the comp list below then only
+         shows comps where at least BOSSLOG_MIN_CHARA_MATCH of the 5 are
+         selected. */
+      .bosslog-chara-filter {
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--grayM);
+        background: var(--grayL);
+      }
+      .bosslog-chara-filter-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+      }
+      .bosslog-chara-filter-hint {
+        font-size: 12px;
+        color: var(--gray);
+      }
+      .bosslog-chara-filter-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .bosslog-chara-filter-chip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 56px;
+        gap: 2px;
+        padding: 4px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        background: none;
+        cursor: pointer;
+        opacity: 0.45;
+        transition: all 0.15s;
+      }
+      .bosslog-chara-filter-chip:hover {
+        opacity: 0.8;
+      }
+      .bosslog-chara-filter-chip.is-selected {
+        opacity: 1;
+        border-color: var(--teal);
+        background: var(--tealL);
+      }
+      .bosslog-chara-filter-portrait {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--grayM);
+        background: var(--white);
+        position: relative;
+      }
+      .bosslog-chara-filter-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .bosslog-chara-filter-fallback {
+        display: none;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 15px;
+        color: var(--purple);
+        background: var(--purpleL);
+      }
+      .bosslog-chara-filter-name {
+        font-size: 9px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.15;
+        word-break: break-word;
+        color: var(--black);
+      }
       .bosslog-damage-cell {
         background: var(--greenL);
         color: var(--green);
@@ -2930,6 +3013,46 @@
         activeBossId: Number(localStorage.getItem(BOSSLOG_ACTIVE_BOSS_KEY)) || null,
       };
 
+      // Roster filter (renderBossLogCharaFilterBar): which characters this
+      // account owns, keyed by prefabId (unique per costume — "Aoi (Pilot)"
+      // and the base "Aoi" are different prefabIds, matching how comps
+      // require a specific costume). Global across every boss, not reset
+      // when switching the active one, since owning a character isn't
+      // boss-specific. Persisted so it survives a reload.
+      const BOSSLOG_OWNED_CHARAS_KEY = "clownhole_bosslog_owned_charas";
+      const BOSSLOG_MIN_CHARA_MATCH = 4;
+
+      function loadBossLogOwnedCharas() {
+        try {
+          const raw = JSON.parse(localStorage.getItem(BOSSLOG_OWNED_CHARAS_KEY) || "[]");
+          return new Set(Array.isArray(raw) ? raw : []);
+        } catch {
+          return new Set();
+        }
+      }
+
+      let bossLogOwnedCharas = loadBossLogOwnedCharas();
+
+      function persistBossLogOwnedCharas() {
+        localStorage.setItem(
+          BOSSLOG_OWNED_CHARAS_KEY,
+          JSON.stringify([...bossLogOwnedCharas]),
+        );
+      }
+
+      function toggleBossLogOwnedChara(prefabId) {
+        if (bossLogOwnedCharas.has(prefabId)) bossLogOwnedCharas.delete(prefabId);
+        else bossLogOwnedCharas.add(prefabId);
+        persistBossLogOwnedCharas();
+        buildBossLogView();
+      }
+
+      function clearBossLogOwnedCharas() {
+        bossLogOwnedCharas.clear();
+        persistBossLogOwnedCharas();
+        buildBossLogView();
+      }
+
       async function fetchBossLog() {
         bossLogState.loading = true;
         bossLogState.error = "";
@@ -3237,6 +3360,60 @@
         return trimmed ? trimmed[0].toUpperCase() : "?";
       }
 
+      // Every distinct character (by prefabId — see bossLogOwnedCharas)
+      // appearing across any comp for this boss, first-seen chara object
+      // kept for its portrait/name, sorted by translated display name.
+      function bossLogUniqueCharasForBoss(boss) {
+        const seen = new Map();
+        (boss.tasks || []).forEach((task) => {
+          (task.charas || []).forEach((c) => {
+            if (c.prefabId != null && !seen.has(c.prefabId)) seen.set(c.prefabId, c);
+          });
+        });
+        return [...seen.values()].sort((a, b) =>
+          translateToEnglish(a.unitName).localeCompare(translateToEnglish(b.unitName)),
+        );
+      }
+
+      // The "which characters do I own" filter bar shown above a boss's
+      // comp list — toggling a chip re-renders the whole panel (see
+      // toggleBossLogOwnedChara), which both flips this chip's highlight
+      // and re-filters the comp list below to BOSSLOG_MIN_CHARA_MATCH+.
+      function renderBossLogCharaFilterBar(boss) {
+        const charas = bossLogUniqueCharasForBoss(boss);
+        if (!charas.length) return "";
+
+        const chips = charas
+          .map((c) => {
+            const displayName = translateToEnglish(c.unitName);
+            const selected = bossLogOwnedCharas.has(c.prefabId);
+            return `
+        <button type="button" class="bosslog-chara-filter-chip${selected ? " is-selected" : ""}"
+          onclick="toggleBossLogOwnedChara(${c.prefabId})" title="${escapeHtml(c.unitName)}">
+          <div class="bosslog-chara-filter-portrait">
+            <img src="${escapeHtml(bossLogCharaIconUrl(c))}" alt="" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="bosslog-chara-filter-fallback">${escapeHtml(bossLogCharaInitial(displayName))}</div>
+          </div>
+          <div class="bosslog-chara-filter-name">${escapeHtml(displayName)}</div>
+        </button>`;
+          })
+          .join("");
+
+        const hint = bossLogOwnedCharas.size
+          ? `Đã chọn ${bossLogOwnedCharas.size} nhân vật — chỉ hiện comp có ≥${BOSSLOG_MIN_CHARA_MATCH}/5 nhân vật đã chọn`
+          : "Chọn các nhân vật acc bạn có — chưa chọn gì thì hiện tất cả comp";
+
+        return `
+    <div class="bosslog-chara-filter">
+      <div class="bosslog-chara-filter-header">
+        <span class="bosslog-chara-filter-hint">${escapeHtml(hint)}</span>
+        <button class="btn-log-action" onclick="clearBossLogOwnedCharas()">Xóa lọc</button>
+      </div>
+      <div class="bosslog-chara-filter-grid">${chips}</div>
+    </div>`;
+      }
+
       // One comp (task) rendered as its own mini score/rank/action table.
       function renderBossLogTaskTable(boss, task, idx) {
         const charas = task.charas || [];
@@ -3245,17 +3422,22 @@
         const compId = bossLogTaskId(boss, idx);
 
         const nameCells = charas
-          .map(
-            (c) => `
+          .map((c) => {
+            // Most charas[].unitName values already arrive pre-translated
+            // from the data source, but not all (e.g. newer characters
+            // still show raw Japanese) — always run it through the
+            // dictionary too, same as every other label on this tab.
+            const displayName = translateToEnglish(c.unitName);
+            return `
         <td class="bosslog-chara-cell">
           <div class="bosslog-chara-portrait">
             <img src="${escapeHtml(bossLogCharaIconUrl(c))}" alt="" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="bosslog-chara-fallback">${escapeHtml(bossLogCharaInitial(c.unitName))}</div>
+            <div class="bosslog-chara-fallback">${escapeHtml(bossLogCharaInitial(displayName))}</div>
           </div>
-          <div class="bosslog-chara-name">${escapeHtml(c.unitName)}</div>
-        </td>`,
-          )
+          <div class="bosslog-chara-name" title="${escapeHtml(c.unitName)}">${escapeHtml(displayName)}</div>
+        </td>`;
+          })
           .join("");
         const rankCells = charas
           .map((c) => `<td>${escapeHtml(c.rank ?? "-")}</td>`)
@@ -3337,14 +3519,42 @@
         if (!tasks.length) {
           return '<div class="bosslog-empty">Boss này chưa có comp nào.</div>';
         }
+
+        // Roster filter — keep each task's original index (i) alongside it
+        // so renderBossLogTaskTable still gets the same idx it always did;
+        // compId (D<boss><letter>) is derived from position in the FULL
+        // task list, and must stay stable regardless of what's filtered
+        // out, since it's also what a saved Tier 4 pick's subId points at.
+        const hasCharaFilter = bossLogOwnedCharas.size > 0;
+        const visibleEntries = tasks
+          .map((task, i) => ({ task, i }))
+          .filter(({ task }) => {
+            if (!hasCharaFilter) return true;
+            const matchCount = (task.charas || []).filter((c) =>
+              bossLogOwnedCharas.has(c.prefabId),
+            ).length;
+            return matchCount >= BOSSLOG_MIN_CHARA_MATCH;
+          });
+
+        const countLabel = hasCharaFilter
+          ? `${visibleEntries.length}/${tasks.length} comp phù hợp`
+          : `${tasks.length} comp`;
+
+        const compListHTML = visibleEntries.length
+          ? visibleEntries
+              .map(({ task, i }) => renderBossLogTaskTable(boss, task, i))
+              .join("")
+          : `<div class="bosslog-empty">Không có comp nào thỏa ≥${BOSSLOG_MIN_CHARA_MATCH}/5 nhân vật đã chọn.</div>`;
+
         return `
       <div class="bosslog-boss-title">
         #${escapeHtml(boss.index ?? "")}
         <span title="${escapeHtml(boss.unitName)}">${escapeHtml(translateToEnglish(boss.unitName))}</span>
-        <small>ID ${boss.id}${boss.server ? " · " + escapeHtml(String(boss.server).toUpperCase()) : ""} · ${tasks.length} comp</small>
+        <small>ID ${boss.id}${boss.server ? " · " + escapeHtml(String(boss.server).toUpperCase()) : ""} · ${countLabel}</small>
       </div>
+      ${renderBossLogCharaFilterBar(boss)}
       <div class="bosslog-comp-list">
-        ${tasks.map((task, i) => renderBossLogTaskTable(boss, task, i)).join("")}
+        ${compListHTML}
       </div>
     `;
       }
@@ -4235,12 +4445,15 @@
       // bossLogCharaInitial) — this is the same source data now, just
       // rendered here for one member's picked comp instead of the browser.
       function renderMemberCompCharCard(chara) {
+        // Same dictionary fallback as the Boss Log tab's own roster — not
+        // every unitName arrives pre-translated (see renderBossLogTaskTable).
+        const displayName = translateToEnglish(chara.unitName);
         return `
         <div class="comp-char-card">
           <img class="comp-char-avatar" src="${escapeHtml(bossLogCharaIconUrl(chara))}" alt="" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="comp-char-avatar-fallback">${escapeHtml(bossLogCharaInitial(chara.unitName))}</div>
-          <div class="comp-char-name">${escapeHtml(chara.unitName)}</div>
+          <div class="comp-char-avatar-fallback">${escapeHtml(bossLogCharaInitial(displayName))}</div>
+          <div class="comp-char-name" title="${escapeHtml(chara.unitName)}">${escapeHtml(displayName)}</div>
           <div class="comp-char-set rank">Rank ${escapeHtml(chara.rank ?? "-")}</div>
           <div class="comp-char-star">★ ${escapeHtml(chara.currentRarity ?? "-")}</div>
         </div>`;
