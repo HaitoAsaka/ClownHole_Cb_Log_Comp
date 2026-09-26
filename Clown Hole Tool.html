@@ -1860,6 +1860,14 @@
       .bosslog-chara-cell {
         background: var(--white);
       }
+      /* This character is marked "missing" in the roster filter — flags
+         which member(s) a comp that only qualified at 4/5 is short. */
+      .bosslog-chara-cell.is-missing {
+        background: var(--orange);
+      }
+      .bosslog-chara-cell.is-missing .bosslog-chara-name {
+        color: var(--white);
+      }
       .bosslog-chara-portrait {
         width: 52px;
         height: 52px;
@@ -1869,6 +1877,9 @@
         border: 1px solid var(--grayM);
         background: var(--grayL);
         position: relative;
+      }
+      .bosslog-chara-cell.is-missing .bosslog-chara-portrait {
+        border-color: var(--white);
       }
       .bosslog-chara-portrait img {
         width: 100%;
@@ -1931,16 +1942,19 @@
         border: 1px solid transparent;
         background: none;
         cursor: pointer;
-        opacity: 0.45;
+        opacity: 1;
         transition: all 0.15s;
       }
       .bosslog-chara-filter-chip:hover {
         opacity: 0.8;
       }
-      .bosslog-chara-filter-chip.is-selected {
-        opacity: 1;
-        border-color: var(--teal);
-        background: var(--tealL);
+      /* Marked "missing" (this account doesn't have them) — dimmed +
+         red, since not-selected (the default, opacity 1 above) means
+         "you have this one" now. */
+      .bosslog-chara-filter-chip.is-missing {
+        opacity: 0.45;
+        border-color: var(--red);
+        background: var(--redL);
       }
       .bosslog-chara-filter-portrait {
         width: 44px;
@@ -2582,7 +2596,7 @@
       const LOG_KEY = "clownhole_upload_log";
       const TIER4_SELECTED_KEY = "clownhole_tier4_selected";
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
-      const AUTH_URL ="https://script.google.com/macros/s/AKfycbyvCxyPs7K3eIIU2-P07WgRkbycRUbY-trt0XoNMDY3rwlnh8vForScCkLCPkad2zUHCw/exec";
+      const AUTH_URL ="https://script.google.com/macros/s/AKfycbxM4UiDFUNr7DKMMeq_LOe6TAWn1bFFBbQWh-8NkwCFCd1xcQ0Q1YL9Azu2eiD7OXxJ6w/exec";
       function showLoginScreen() {
         document.getElementById("login-overlay").classList.remove("hidden");
         document.getElementById("app-shell").classList.remove("visible");
@@ -2603,6 +2617,11 @@
         document.getElementById("player-name").textContent = displayName;
         document.getElementById("login-overlay").classList.add("hidden");
         document.getElementById("app-shell").classList.add("visible");
+        // Covers both a fresh login and a restored session (initAuth()
+        // calls this too) — either way, pull this account's saved roster
+        // filter from the Members sheet instead of trusting only this
+        // browser's localStorage.
+        fetchCharaHave(displayName);
       }
 
       function getCurrentUser() {
@@ -2667,6 +2686,28 @@
 
       function logout() {
         resetFormData();
+        // Persist whatever roster changes this session made — same save
+        // path as closing the tab (see saveCharaHaveBeacon), just
+        // triggered by the Logout button instead of pagehide/
+        // visibilitychange. Must run before clearing bossLogMissingCharas
+        // below and before the session's username is gone.
+        saveCharaHaveBeacon(getCurrentUser());
+
+        // Then wipe it locally — the roster filter is per-account, not
+        // per-browser, so the next login on this device (possibly a
+        // different member) must start from nothing, not inherit whoever
+        // was just logged in.
+        bossLogMissingCharas.clear();
+        bossLogMissingCharasDirty = false;
+        persistBossLogMissingCharas();
+        buildBossLogView();
+
+        // Actually end the session — without this, SESSION_KEY stays set
+        // and initAuth() silently logs the same account back in on the
+        // next page load (or getCurrentUser() keeps returning it via
+        // `currentUser`), undoing everything above.
+        currentUser = null;
+        localStorage.removeItem(SESSION_KEY);
         showLoginScreen();
       }
 
@@ -3014,43 +3055,133 @@
       };
 
       // Roster filter (renderBossLogCharaFilterBar): which characters this
-      // account owns, keyed by prefabId (unique per costume — "Aoi (Pilot)"
-      // and the base "Aoi" are different prefabIds, matching how comps
-      // require a specific costume). Global across every boss, not reset
-      // when switching the active one, since owning a character isn't
-      // boss-specific. Persisted so it survives a reload.
-      const BOSSLOG_OWNED_CHARAS_KEY = "clownhole_bosslog_owned_charas";
+      // account does NOT have, keyed by prefabId (unique per costume —
+      // "Aoi (Pilot)" and the base "Aoi" are different prefabIds, matching
+      // how comps require a specific costume). Selecting a chip marks it
+      // missing rather than owned — most accounts own far more characters
+      // than they're missing, so this is the smaller set to click through.
+      // Global across every boss, not reset when switching the active
+      // one, since this isn't boss-specific. Persisted so it survives a
+      // reload. NOTE: still saved server-side under the "Char have" note/
+      // `charaHave` action name (unchanged) — only the local meaning of
+      // "selected" flipped from owned to missing.
+      const BOSSLOG_MISSING_CHARAS_KEY = "clownhole_bosslog_missing_charas";
       const BOSSLOG_MIN_CHARA_MATCH = 4;
 
-      function loadBossLogOwnedCharas() {
+      function loadBossLogMissingCharas() {
         try {
-          const raw = JSON.parse(localStorage.getItem(BOSSLOG_OWNED_CHARAS_KEY) || "[]");
+          const raw = JSON.parse(localStorage.getItem(BOSSLOG_MISSING_CHARAS_KEY) || "[]");
           return new Set(Array.isArray(raw) ? raw : []);
         } catch {
           return new Set();
         }
       }
 
-      let bossLogOwnedCharas = loadBossLogOwnedCharas();
+      let bossLogMissingCharas = loadBossLogMissingCharas();
 
-      function persistBossLogOwnedCharas() {
+      // Set whenever the selection changes; cleared once saveCharaHaveBeacon()
+      // successfully hands it to sendBeacon (see there) — lets the
+      // tab-close save skip a no-op write when nothing actually changed.
+      let bossLogMissingCharasDirty = false;
+
+      function persistBossLogMissingCharas() {
         localStorage.setItem(
-          BOSSLOG_OWNED_CHARAS_KEY,
-          JSON.stringify([...bossLogOwnedCharas]),
+          BOSSLOG_MISSING_CHARAS_KEY,
+          JSON.stringify([...bossLogMissingCharas]),
         );
       }
 
-      function toggleBossLogOwnedChara(prefabId) {
-        if (bossLogOwnedCharas.has(prefabId)) bossLogOwnedCharas.delete(prefabId);
-        else bossLogOwnedCharas.add(prefabId);
-        persistBossLogOwnedCharas();
+      function toggleBossLogMissingChara(prefabId) {
+        if (bossLogMissingCharas.has(prefabId)) bossLogMissingCharas.delete(prefabId);
+        else bossLogMissingCharas.add(prefabId);
+        bossLogMissingCharasDirty = true;
+        persistBossLogMissingCharas();
         buildBossLogView();
       }
 
-      function clearBossLogOwnedCharas() {
-        bossLogOwnedCharas.clear();
-        persistBossLogOwnedCharas();
+      function clearBossLogMissingCharas() {
+        bossLogMissingCharas.clear();
+        bossLogMissingCharasDirty = true;
+        persistBossLogMissingCharas();
         buildBossLogView();
+      }
+
+      // prefabId -> raw unitName, scanned from whatever boss data is
+      // currently loaded — used only to make the "Char have" sheet note
+      // human-readable (see saveCharaHaveBeacon), not for the filter logic
+      // itself (which only needs the prefabId).
+      function bossLogCharaNameMap() {
+        const map = new Map();
+        bossLogState.bosses.forEach((boss) => {
+          (boss.tasks || []).forEach((task) => {
+            (task.charas || []).forEach((c) => {
+              if (c.prefabId != null && !map.has(c.prefabId)) {
+                map.set(c.prefabId, c.unitName);
+              }
+            });
+          });
+        });
+        return map;
+      }
+
+      // Fire-and-forget save of the current roster selection (the missing
+      // characters — see above) to this member's "Char have" note on the
+      // Members sheet — called when the tab is closed/hidden (see the
+      // pagehide/visibilitychange listeners in INIT) and from logout(),
+      // not on every toggle, per how this was asked for. sendBeacon (not
+      // fetch) because the pagehide case may already have the page
+      // tearing down — it's the one API browsers guarantee to still
+      // attempt sending; reused as-is for logout() since it's simplest to
+      // have one save path rather than two.
+      function saveCharaHaveBeacon(user) {
+        if (!user || !bossLogMissingCharasDirty) return;
+        if (typeof navigator.sendBeacon !== "function") return;
+
+        const nameMap = bossLogCharaNameMap();
+        const charas = [...bossLogMissingCharas].map((prefabId) => ({
+          prefabId,
+          unitName: nameMap.get(prefabId) || "",
+        }));
+
+        const params = new URLSearchParams();
+        params.set("action", "saveCharaHave");
+        params.set("user", user);
+        params.set("charas", JSON.stringify(charas));
+
+        const sent = navigator.sendBeacon(`${AUTH_URL}?${params.toString()}`, "");
+        if (sent) bossLogMissingCharasDirty = false;
+      }
+
+      // Pulled on every login (fresh or restored session — see enterApp())
+      // so the roster filter follows the account across devices/browsers
+      // instead of staying stuck to whichever one last saved it.
+      async function fetchCharaHave(user) {
+        if (!user) return;
+        try {
+          const params = new URLSearchParams();
+          params.set("action", "charaHave");
+          params.set("user", user);
+          const res = await fetch(`${AUTH_URL}?${params.toString()}`);
+          if (!res.ok) return;
+          const data = await res.json();
+          if (!data.ok || !Array.isArray(data.charaHave)) return;
+
+          // Union with whatever's already local, never replace — an empty
+          // or smaller note (e.g. this account's very first sync, or one
+          // saved from a device with less picked) must not erase a
+          // selection already sitting in this browser's localStorage.
+          const serverIds = data.charaHave
+            .map((c) => (c && typeof c === "object" ? c.prefabId : c))
+            .filter((id) => id != null);
+          const before = bossLogMissingCharas.size;
+          serverIds.forEach((id) => bossLogMissingCharas.add(id));
+          if (bossLogMissingCharas.size !== before) {
+            persistBossLogMissingCharas();
+            buildBossLogView(); // no-op if the Boss Log tab hasn't been built yet
+          }
+        } catch {
+          // best-effort — keep whatever's already in localStorage on failure
+        }
       }
 
       async function fetchBossLog() {
@@ -3360,7 +3491,7 @@
         return trimmed ? trimmed[0].toUpperCase() : "?";
       }
 
-      // Every distinct character (by prefabId — see bossLogOwnedCharas)
+      // Every distinct character (by prefabId — see bossLogMissingCharas)
       // appearing across any comp for this boss, first-seen chara object
       // kept for its portrait/name, sorted by translated display name.
       function bossLogUniqueCharasForBoss(boss) {
@@ -3375,10 +3506,11 @@
         );
       }
 
-      // The "which characters do I own" filter bar shown above a boss's
-      // comp list — toggling a chip re-renders the whole panel (see
-      // toggleBossLogOwnedChara), which both flips this chip's highlight
-      // and re-filters the comp list below to BOSSLOG_MIN_CHARA_MATCH+.
+      // The "which characters is my account missing" filter bar shown
+      // above a boss's comp list — toggling a chip re-renders the whole
+      // panel (see toggleBossLogMissingChara), which both flips this
+      // chip's highlight and re-filters the comp list below to only
+      // comps that still leave BOSSLOG_MIN_CHARA_MATCH+ characters owned.
       function renderBossLogCharaFilterBar(boss) {
         const charas = bossLogUniqueCharasForBoss(boss);
         if (!charas.length) return "";
@@ -3386,10 +3518,10 @@
         const chips = charas
           .map((c) => {
             const displayName = translateToEnglish(c.unitName);
-            const selected = bossLogOwnedCharas.has(c.prefabId);
+            const selected = bossLogMissingCharas.has(c.prefabId);
             return `
-        <button type="button" class="bosslog-chara-filter-chip${selected ? " is-selected" : ""}"
-          onclick="toggleBossLogOwnedChara(${c.prefabId})" title="${escapeHtml(c.unitName)}">
+        <button type="button" class="bosslog-chara-filter-chip${selected ? " is-missing" : ""}"
+          onclick="toggleBossLogMissingChara(${c.prefabId})" title="${escapeHtml(c.unitName)}">
           <div class="bosslog-chara-filter-portrait">
             <img src="${escapeHtml(bossLogCharaIconUrl(c))}" alt="" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
@@ -3400,15 +3532,19 @@
           })
           .join("");
 
-        const hint = bossLogOwnedCharas.size
-          ? `Đã chọn ${bossLogOwnedCharas.size} nhân vật — chỉ hiện comp có ≥${BOSSLOG_MIN_CHARA_MATCH}/5 nhân vật đã chọn`
-          : "Chọn các nhân vật acc bạn có — chưa chọn gì thì hiện tất cả comp";
+        // Not escaped below (unlike almost everything else on this tab) —
+        // this is app-authored text, never user/sheet input, and needs
+        // its <b> tag to survive into the DOM instead of showing as
+        // literal "&lt;b&gt;".
+        const hint = bossLogMissingCharas.size
+          ? `Đã đánh dấu ${bossLogMissingCharas.size} nhân vật <b>KHÔNG CÓ</b> — chỉ hiện comp vẫn còn ≥${BOSSLOG_MIN_CHARA_MATCH}/5 nhân vật bạn có`
+          : "Chọn các Char acc bạn <b>KHÔNG CÓ</b> — chưa chọn gì thì hiện tất cả comp";
 
         return `
     <div class="bosslog-chara-filter">
       <div class="bosslog-chara-filter-header">
-        <span class="bosslog-chara-filter-hint">${escapeHtml(hint)}</span>
-        <button class="btn-log-action" onclick="clearBossLogOwnedCharas()">Xóa lọc</button>
+        <span class="bosslog-chara-filter-hint">${hint}</span>
+        <button class="btn-log-action" onclick="clearBossLogMissingCharas()">Xóa lọc</button>
       </div>
       <div class="bosslog-chara-filter-grid">${chips}</div>
     </div>`;
@@ -3428,8 +3564,13 @@
             // still show raw Japanese) — always run it through the
             // dictionary too, same as every other label on this tab.
             const displayName = translateToEnglish(c.unitName);
+            // Highlight this whole cell when it's one of the roster-filter's
+            // marked-missing characters — e.g. a comp that only qualifies
+            // at 4/5 (see renderBossLogBossPanel's threshold) shows exactly
+            // which one you're short.
+            const isMissing = bossLogMissingCharas.has(c.prefabId);
             return `
-        <td class="bosslog-chara-cell">
+        <td class="bosslog-chara-cell${isMissing ? " is-missing" : ""}">
           <div class="bosslog-chara-portrait">
             <img src="${escapeHtml(bossLogCharaIconUrl(c))}" alt="" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
@@ -3525,15 +3666,23 @@
         // compId (D<boss><letter>) is derived from position in the FULL
         // task list, and must stay stable regardless of what's filtered
         // out, since it's also what a saved Tier 4 pick's subId points at.
-        const hasCharaFilter = bossLogOwnedCharas.size > 0;
+        //
+        // Selection now marks characters MISSING, not owned (see
+        // bossLogMissingCharas) — a comp still qualifies as long as
+        // subtracting its missing members leaves BOSSLOG_MIN_CHARA_MATCH+
+        // actually-owned ones. Nothing selected = missing 0 out of every
+        // comp = every comp already qualifies, same "show everything"
+        // default as before.
+        const hasCharaFilter = bossLogMissingCharas.size > 0;
         const visibleEntries = tasks
           .map((task, i) => ({ task, i }))
           .filter(({ task }) => {
             if (!hasCharaFilter) return true;
-            const matchCount = (task.charas || []).filter((c) =>
-              bossLogOwnedCharas.has(c.prefabId),
+            const charas = task.charas || [];
+            const missingCount = charas.filter((c) =>
+              bossLogMissingCharas.has(c.prefabId),
             ).length;
-            return matchCount >= BOSSLOG_MIN_CHARA_MATCH;
+            return charas.length - missingCount >= BOSSLOG_MIN_CHARA_MATCH;
           });
 
         const countLabel = hasCharaFilter
@@ -3544,7 +3693,7 @@
           ? visibleEntries
               .map(({ task, i }) => renderBossLogTaskTable(boss, task, i))
               .join("")
-          : `<div class="bosslog-empty">Không có comp nào thỏa ≥${BOSSLOG_MIN_CHARA_MATCH}/5 nhân vật đã chọn.</div>`;
+          : `<div class="bosslog-empty">Không có comp nào còn đủ ≥${BOSSLOG_MIN_CHARA_MATCH}/5 nhân vật bạn có.</div>`;
 
         return `
       <div class="bosslog-boss-title">
@@ -3586,7 +3735,7 @@
 
         container.innerHTML = `
       <div id="bosslog-toolbar">
-        <span class="bosslog-hint">Dữ liệu từ CB104.json · ${bossLogState.bosses.length} boss</span>
+        <span class="bosslog-hint">Data cho ${escapeHtml(BOSSLOG_URL)} · ${bossLogState.bosses.length} boss</span>
         <button class="btn-bosslog-reload" onclick="fetchBossLog()"><i class="ti ti-refresh" aria-hidden="true"></i> Tải lại</button>
       </div>
       <div class="bosslog-boss-nav">
@@ -4594,6 +4743,21 @@
       buildGuideline();
       updateProgress();
       initAuth();
+
+      // Save the roster filter (Boss Log's "which characters do I have")
+      // to the sheet right as the member leaves — pagehide covers normal
+      // tab/browser close, visibilitychange's "hidden" case is the more
+      // reliable signal on mobile (backgrounding a tab there doesn't
+      // always fire pagehide). Both call the same beacon; the dirty-flag
+      // check inside makes a harmless no-op of whichever fires second.
+      window.addEventListener("pagehide", () => {
+        saveCharaHaveBeacon(getCurrentUser());
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          saveCharaHaveBeacon(getCurrentUser());
+        }
+      });
     </script>
   </body>
 </html>
