@@ -106,10 +106,11 @@
           "id": 17494,
           "canAuto": [
             20,
-            50
+            50,
+            10
           ],
           "stage": 6,
-          "damage": null,
+          "damage": 44200,
           "charas": [
             {
               "prefabId": 104001,
@@ -180,12 +181,28 @@
               "index": 1,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "43766\n油管 あじ\n单押",
+              "link": "https://www.youtube.com/watch?v=NjymJoHsX7U",
+              "remarks": "1:30 ー〇〇〇〇 自动OFF\n\n1:19 兔子　 ー〇〇〇ー\n1:12 丽莎 ー〇〇〇〇\n\n1:11 香菜 ☆ポイズン后 \n　　　　　　 ーーー〇ー\n\n1:01 若菜 ー〇ー〇ー\n　　　丽莎 ー〇ー〇〇 自动ON\n　　　兔子　 ー〇ー〇ー\n0:53 兔子 　　　　　　 自动OFF\n0:49 若菜 〇ー〇〇〇\n　　　兔子　 ﻿〇ー〇〇ー \n0:37 若菜 〇〇〇〇ー 自动ON\n0:36 兔子　 〇ー〇〇〇\n0:31 菲欧 〇ーー〇ー\n0:20 兔子　 　　　 　　自动OFF\n0:14 若菜 〇〇〇〇ー 自动ON\n　　　兔子　 　　　 　　自动OFF\n0:06 丽莎 〇〇〇〇〇\n　　　兔子　 〇〇〇〇ー\n0:03 若菜 〇〇〇〇〇\n\n==0:02 BOSSUB 止+800==",
+              "index": 2,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "44204\n油管 ちょこ\n",
+              "link": "https://www.youtube.com/watch?v=M9HkwwdaQlk",
+              "remarks": "1:30 (－〇〇〇〇)　自动OFF\n1:19 兔子　   －〇〇〇－\n1:12 丽莎　 －〇〇〇〇\n☆1:11 香菜 ポイズン后 －〇－〇－ ※1\n1:01 若菜　－〇－〇〇\n     →兔子　－〇－〇－\n☆0:59 香菜　'ポイズン后※2 \n☆0:56 菲欧　'TP付与后 #BOSS被击时更好？※3\n0:53 丽莎　－〇－〇〇\n     →兔子　〇－〇〇－\n☆0:48 兔子　'若菜UB3位数左右　【自动ON】\n　　　　　　　(フィータbuff后且0:47敌UB兔子普攻取消~hit)\n\n0:39 丽莎　【自动OFF】\n0:37 若菜　〇－〇〇〇\n\n(0:29 若菜)\n☆0:28 丽莎　'普攻取消    〇－－〇〇\n\n0:20 兔子　〇－－〇－\n\n0:14 若菜　〇－〇〇－\n(0:14 菲欧)\n☆0:14 丽莎　技能后(菲欧后UBOK) 〇〇〇〇〇\n    →兔子　〇〇〇〇－\n\n0:07 丽莎　〇〇〇〇〇\n　　 →兔子　〇〇〇〇－\n\n0:03 若菜　〇〇〇〇〇\n────\n止\n0:02フロストハウンド　+900",
+              "index": 3,
+              "damage": 0,
+              "type": 10
             }
           ],
           "type": 2,
           "autoDamage": 35600,
           "halfAutoDamage": null,
-          "easyManualDamage": 41200,
+          "easyManualDamage": 43700,
           "images": []
         },
         {
@@ -2232,7 +2249,7 @@
             50
           ],
           "stage": 6,
-          "damage": 44000,
+          "damage": 45000,
           "charas": [
             {
               "prefabId": 104001,
@@ -2303,6 +2320,14 @@
               "remarks": "XOOXX 自动ON\n\n1:18 兔子 自动OFF\n\n(1:10 菲欧 → 丽莎)\n\n★1:09 香菜 普攻取消迟一点\n丽莎跳起，丽莎和香菜都拿出弓\n\n(1:08 敌UB)\n\n★1:08〜7 静流 普攻取消 敌UB全部数字\n→ OXOXO 自动ON\n\n1:00 兔子 自动OFF\n\n(0:57 香菜 109目押快了这里是56s，减伤害)\n\n0:56 菲欧 OOXXO 自动ON\n\n0:50 兔子 OOXOO 自动OFF\n\n0:36 兔子 OOOOO\n→ 菲欧 OOXOO\n\n★0:11〜10 菲欧 ルーチェ取消\n10s兔子UB后菲欧SET可\n5s兔子在頭突きdebuff前，减伤害\n\n0:02 丽莎后 +800万",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "45000\n油管 aki",
+              "link": "https://www.youtube.com/watch?v=eLJUYqllLWc",
+              "remarks": "春姐 ★5 Lv406 RANK42 CR15\n兔子 ★6 Lv401 RANK42 CR6\n菲欧 ★5 Lv406 RANK42 CR15\n丽莎 ★5 Lv401 RANK42 CR0\n香菜 ★6 Lv401 RANK42 CR6\n----\n◆UB发动时间\n01:30 战斗开始\n01:15 兔子　頭突きdebuff后稍快\n01:10 菲欧\n01:10 丽莎\n01:09 香菜　普攻取消迟一点(丽莎跳起，丽莎和香菜都拿出弓)\n\n01:08 BOSSUB//兔子…普攻后\n\n01:08-07 静流　普攻取消\n01:03 兔子　自动\n01:00 兔子　自动\n00:57 香菜\n00:57-56 丽莎　普攻取消稍快\n00:56 菲欧\n00:55 静流//普攻取消\n00:50 丽莎//ファータ启动\n00:50 兔子//アタック前\n00:49 兔子//アタックTP\n\n00:47 BOSSUB//兔子…普攻后　菲欧…普攻后\n\n00:45 香菜\n00:42 静流//普攻取消\n00:38 丽莎//ハンド取消\n00:36 兔子\n00:36 菲欧\n00:33 香菜\n00:32 兔子\n00:29 静流//普攻取消\n00:27 丽莎//サークルTP\n\n00:26 BOSSUB\n\n00:22 香菜\n00:20 兔子\n00:18 菲欧　速度buff后稍快//越快16兔子容错越大\n00:16 静流//普攻取消\n00:16 兔子　ファータbuff后最速\n00:15 丽莎//ファータ启动且サークル取消\n00:09 香菜\n00:09 兔子//エール后\n00:05 静流　頭突きdebuff后\n00:05 兔子//アタック后\n00:02 丽莎//サークル取消\n\n00:02 BOSSUB\n\n00:00 战斗结束\n\nEL,ES最大値\nMS…159\nRM…ATT(8-4,8-3,8-4,8-3) \n         HEA(8-3,8-3,8-3,8-3)\n         TAN(8-2,8-3,8-3,8-3) \n         JAM(8-3,8-3,8-3,8-3)",
+              "index": 2,
+              "damage": 0,
+              "type": 10
             }
           ],
           "type": 2,
@@ -3968,6 +3993,83 @@
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
+        },
+        {
+          "id": 17716,
+          "canAuto": [
+            40
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91768,
+              "talentId": 5
+            },
+            {
+              "prefabId": 111401,
+              "unitName": "Luna",
+              "rarity": 5,
+              "searchAreaWidth": 765,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91769,
+              "talentId": 5
+            },
+            {
+              "prefabId": 102201,
+              "unitName": "Yori",
+              "rarity": 6,
+              "searchAreaWidth": 575,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91770,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100601,
+              "unitName": "Akari",
+              "rarity": 6,
+              "searchAreaWidth": 570,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 91771,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 91772,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "21s5431 TP8.2",
+          "links": [
+            {
+              "type": 40,
+              "name": "21s5431\n油管 ネブソク\nTP8.2",
+              "link": "https://www.youtube.com/watch?v=ykEnZotKcNg",
+              "remarks": "紫罗兰  ★5 R42 全部 CR15\n妹法  ★6 R42 全部 专用SP CR15\n姐法  ★6  R42 全部 专用SP CR15\n露娜 ★5  R42 全部 专用MAX CR0\n哥唯  ★5 R42 全部 CR15\n\n◆职阶强化\n增幅者  初动TPLv8★2\n\n◆TL\n1:30 开始(〇ーー〇〇)\n1:23 妹法\n1:18 xcw\n    →xcw\n1:13 妹法\n    →xcw\n    →xcw (〇〇〇〇〇)\n    →姐法\n    →露娜\n1:11 妹法\n    →姐法\n1:10 紫罗兰",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": 5400,
+          "easyManualDamage": null,
+          "images": []
         }
       ]
     },
@@ -4487,6 +4589,14 @@
               "index": 1,
               "damage": 0,
               "type": 20
+            },
+            {
+              "name": "35719\nWorryChefs D303\nTP10+",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoyEiwcXwj281hetXlJTwicXdU8efilfmGfOLYsy7UjQkwWXfiHl9xZiN6v_vUq8XJ0m1pLYxz8-2I/pubhtml",
+              "remarks": "1:30\tOXOXO 自动 ON\n1:18\t刹鬼 > SET 刹鬼\n59\t刹鬼 > OOOXO\n46\t沙猫 > OXOOO\n32\t黑姐 > OFF 黑姐\n17\t沙猫 > OOOXX\n9\t刹鬼 > SET 刹鬼\n2\t水若菜 最后UB +11.4m after",
+              "index": 2,
+              "damage": 0,
+              "type": 40
             }
           ],
           "type": 2,

@@ -16,3 +16,6 @@ Thumbs.db
 # Agent-skills scaffolding (local-only config)
 CLAUDE.md
 docs/agents/
+
+# Local data-fetch script
+fetch_cb.py
