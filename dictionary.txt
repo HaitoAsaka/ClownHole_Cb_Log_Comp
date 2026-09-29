@@ -31,7 +31,6 @@
 
 # Tên nhân vật — chỉ là đoán, chưa đối chiếu được
 媞雅 = Tia
-缇雅 = Tia
 莉莉 = Lily
 春电 = Saren (New Year)
 武璃亚 = Quria (Valkyrie)
@@ -58,7 +57,7 @@
 香菜 = Aoi
 充电宝 = Saren
 雌小鬼 = S.Fubuki
-狐狸 = Maho (DreamPark)
+狐狸 = Maho 
 熊锤 = Ayane
 妹法 = Akari
 姐法 = Yori
@@ -74,7 +73,7 @@
 水菲 = Sheffy (Summer)
 白菜 = Aoi (Pilot)
 ゆきだる = Yukidaru
-梦狐 = Maho (Dream Park)
+梦狐 = Maho 
 小凤 = Houou
 千歌 = Chika
 哥唯 = Kyouka (Gothic)
@@ -346,3 +345,5 @@ xcw = Kyouka
 アウレア = chiêu Aurea
 没有则TP不够 = không đủ TP
 お団子 = Alter
+美穗 = Miho
+第二 = third
