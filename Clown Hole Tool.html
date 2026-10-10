@@ -2391,6 +2391,40 @@
       .bosslog-action-line {
         white-space: pre-wrap;
       }
+      .dame-est {
+        margin-top: 6px;
+        padding: 4px 6px;
+        border-radius: 6px;
+        background: var(--tealL);
+        color: var(--teal);
+      }
+      .dame-est.is-missing {
+        background: var(--grayL);
+        color: var(--gray);
+      }
+      .dame-est-value {
+        font-weight: 700;
+        font-size: 12px;
+      }
+      .dame-est-label {
+        font-weight: 400;
+        font-size: 10px;
+      }
+      .dame-est-note {
+        font-size: 10px;
+        font-style: italic;
+      }
+      .dame-est-warn {
+        margin-top: 3px;
+        font-size: 10px;
+        font-weight: 600;
+      }
+      .dame-est-warn.is-low {
+        color: var(--red);
+      }
+      .dame-est-warn.is-high {
+        color: var(--amber);
+      }
       .bosslog-action-link {
         color: var(--orange);
         text-decoration: none;
@@ -3459,6 +3493,173 @@
         }
       }
 
+      // ── Dame estimate (Tier 4 Dame check) ─────────────────────────────
+      // Tạm đọc từ dame_check.txt thay cho tab "Tier 4 Dame check" trên
+      // Sheet (cột G = điều kiện acc). Loaded lazily alongside the
+      // dictionary the first time the Boss Log tab opens.
+      //
+      // Công thức (hệ số fit từ dame thật của Aether / LuxionVN / Mjhieu,
+      // sai số trung bình ~±7% — fit lại khi có thêm dữ liệu):
+      //   P    = Σ weight × (chỉ số / max)            (0..1, "độ mạnh acc")
+      //   Base = A, hoặc A→B nội suy khi P vượt P0     (A/B = số Thường/Tối đa của guide)
+      //   Est  = K × Base × (P / P0)^GAMMA
+      const DAME_MODEL = {
+        max: { ele: 1250, page: 8, ms: 128, rm: 12, tp: 12 },
+        weight: { ele: 0.35, page: 0.15, rm: 0.25, tp: 0.2, ms: 0.05 },
+        K: 1.124,
+        GAMMA: 1.8,
+        P0: 0.9,
+        // TP lệch mốc cố định (vd "TP8.2") quá ngưỡng này → cảnh báo; với
+        // mốc "TP8.2+" thì cao hơn mốc quá TP_HIGH_GAP mới cảnh báo.
+        TP_FIXED_TOL: 0.3,
+        TP_HIGH_GAP: 1.5,
+      };
+      let dameCheckStats = new Map(); // lower-cased acc name → stats object
+      let dameCheckLoaded = false;
+
+      // "Ele 1145, Page 8, MS89, RM 7.4, TP9.5" → { ele, page, ms, rm, tp }.
+      // "Page7S7" = page 7, ô 7 → 7 + 7/8. Returns null when a stat is
+      // missing, so a half-filled cell falls back to "chưa log" rather
+      // than producing a skewed estimate.
+      function parseDameCheckStats(text) {
+        const num = (re) => {
+          const m = text.match(re);
+          return m ? Number(m[1]) : NaN;
+        };
+        const pageMatch = text.match(/Page\s*(\d+)(?:\s*S\s*(\d+))?/i);
+        const stats = {
+          ele: num(/Ele\s*(\d+(?:\.\d+)?)/i),
+          page: pageMatch
+            ? Number(pageMatch[1]) + (pageMatch[2] ? Number(pageMatch[2]) / 8 : 0)
+            : NaN,
+          ms: num(/MS\s*(\d+(?:\.\d+)?)/i),
+          rm: num(/RM\s*(\d+(?:\.\d+)?)/i),
+          tp: num(/TP\s*(\d+(?:\.\d+)?)/i),
+        };
+        return Object.values(stats).some((v) => Number.isNaN(v)) ? null : stats;
+      }
+
+      function parseDameCheckFile(text) {
+        const map = new Map();
+        text.split("\n").forEach((raw) => {
+          if (!raw.trim() || raw.trim().startsWith("#")) return;
+          const cols = raw.replace(/\r$/, "").split("\t");
+          const name = (cols[0] || "").trim();
+          const stats = parseDameCheckStats(cols[6] || "");
+          if (name && stats) map.set(name.toLowerCase(), stats);
+        });
+        return map;
+      }
+
+      async function loadDameCheckFile() {
+        dameCheckLoaded = true;
+        try {
+          const res = await fetch("dame_check.txt");
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          dameCheckStats = parseDameCheckFile(await res.text());
+        } catch {
+          dameCheckStats = new Map();
+        } finally {
+          buildBossLogView();
+        }
+      }
+
+      function dameAccountPower(s) {
+        const { max, weight } = DAME_MODEL;
+        let sum = 0;
+        let total = 0;
+        for (const key of Object.keys(weight)) {
+          sum += weight[key] * Math.min(s[key] / max[key], 1);
+          total += weight[key];
+        }
+        return sum / total;
+      }
+
+      // Guide score from a link's first note line: "xoooo 36460",
+      // "54460/60400" (Thường/Tối đa), "37096/", "全set 42428".
+      function dameGuideScores(link) {
+        const first = (link?.name || "").split("\n")[0] || "";
+        const m = first.match(/(\d{4,})(?:\s*\/\s*(\d{4,}))?/);
+        if (!m) return null;
+        return { a: Number(m[1]), b: m[2] ? Number(m[2]) : null };
+      }
+
+      function dameEstimate(scores, stats) {
+        const { K, GAMMA, P0 } = DAME_MODEL;
+        const p = dameAccountPower(stats);
+        let base = scores.a;
+        if (scores.b) {
+          const t = Math.min(Math.max((p - P0) / (1 - P0), 0), 1);
+          base = scores.a + (scores.b - scores.a) * t;
+        }
+        return K * base * Math.pow(p / P0, GAMMA);
+      }
+
+      // TP notes: "TP8.2" (mốc cố định), "TP8.2+" (tối thiểu),
+      // "TP6.5-8.5" (khoảng), "TP82" (= 8.2). Read from the link's own
+      // note lines, falling back to the comp's exRemarks.
+      function dameTpRequirements(link, task) {
+        const parse = (text) =>
+          [...text.matchAll(/TP\s*(\d+(?:\.\d+)?)\s*(\+)?(?:\s*[-~]\s*(\d+(?:\.\d+)?))?/gi)].map(
+            (m) => {
+              const fix = (v) => (v > 20 ? v / 10 : v);
+              return {
+                min: fix(Number(m[1])),
+                max: m[3] ? fix(Number(m[3])) : null,
+                plus: Boolean(m[2]),
+              };
+            },
+          );
+        const own = parse((link?.name || "").split("\n").slice(1).join(" "));
+        return own.length ? own : parse(task?.exRemarks || "");
+      }
+
+      function dameTpWarning(reqs, tp) {
+        if (!reqs.length) return null;
+        const { TP_FIXED_TOL, TP_HIGH_GAP } = DAME_MODEL;
+        const label = (r) =>
+          r.max !== null ? `TP${r.min}-${r.max}` : `TP${r.min}${r.plus ? "+" : ""}`;
+        const ok = (r) => {
+          if (r.max !== null) return tp >= r.min && tp <= r.max;
+          if (r.plus) return tp >= r.min && tp - r.min <= TP_HIGH_GAP;
+          return Math.abs(tp - r.min) <= TP_FIXED_TOL;
+        };
+        // Several notes (e.g. "TP8.2+/10.0+") are alternatives — any match is fine.
+        if (reqs.some(ok)) return null;
+        const lowest = Math.min(...reqs.map((r) => r.min));
+        const tooLow = tp < lowest;
+        return {
+          level: tooLow ? "low" : "high",
+          text: `TP acc ${tp} ${tooLow ? "thấp hơn" : "lệch so với"} mốc ${reqs.map(label).join("/")}${tooLow ? "" : " — timing UB có thể khác"}`,
+        };
+      }
+
+      function dameEstimateHTML(link, task) {
+        const scores = dameGuideScores(link);
+        if (!scores) return "";
+        const user = getCurrentUser();
+        const stats = user ? dameCheckStats.get(String(user).trim().toLowerCase()) : null;
+        const fmt = bossLogFormatScoreMillion;
+        if (!stats) {
+          const base = scores.b ? `${fmt(scores.a)} – ${fmt(scores.b)}` : fmt(scores.a);
+          return `<div class="dame-est is-missing">
+            <div class="dame-est-value">Dame gốc: ${escapeHtml(base)}</div>
+            <div class="dame-est-note">Acc chưa log điều kiện ở Tier 4 Dame check</div>
+          </div>`;
+        }
+        const est = dameEstimate(scores, stats);
+        const power = dameAccountPower(stats);
+        const tip = `Guide ${fmt(scores.a)}${scores.b ? "/" + fmt(scores.b) : ""} · độ mạnh acc ${(power * 100).toFixed(1)}%`;
+        const warn = dameTpWarning(dameTpRequirements(link, task), stats.tp);
+        const warnHTML = warn
+          ? `<div class="dame-est-warn is-${warn.level}"><i class="ti ti-alert-triangle" aria-hidden="true"></i> ${escapeHtml(warn.text)}</div>`
+          : "";
+        return `<div class="dame-est" title="${escapeHtml(tip)}">
+          <div class="dame-est-value">≈ ${escapeHtml(fmt(est))} <span class="dame-est-label">ước tính</span></div>
+          ${warnHTML}
+        </div>`;
+      }
+
       // "万" is a literal CJK unit meaning ×10,000 (e.g. "250万" = 2,500,000)
       // — used in remarks like "SET-250万". Since it's a real multiplier,
       // not vocabulary, expand it arithmetically (append 4 zeros, comma the
@@ -3868,7 +4069,8 @@
           ? `<div class="bosslog-action-id">${escapeHtml(subId)}</div>`
           : "";
         const selectBtn = bossLogSelectButtonHTML(subId, context, link, linkIndex);
-        return `<div class="bosslog-action-box">${idBadge}${lines.join("")}${selectBtn}</div>`;
+        const dameEst = dameEstimateHTML(link, context?.task);
+        return `<div class="bosslog-action-box">${idBadge}${lines.join("")}${dameEst}${selectBtn}</div>`;
       }
 
       function bossLogActionBoxesHTML(task, context) {
@@ -4077,6 +4279,7 @@
                   compLabel: compId,
                   compId,
                   boss,
+                  task,
                   taskId: task.id,
                 })}</div>
               </td>
@@ -4929,6 +5132,7 @@
         if (tab === "video") fetchVideoList();
         if (tab === "bosslog") {
           if (!bossLogDictionaryLoaded) loadBossLogDictionaryFile();
+          if (!dameCheckLoaded) loadDameCheckFile();
           if (!bossLogState.bosses.length && !bossLogState.loading) {
             fetchBossLog();
           } else {
