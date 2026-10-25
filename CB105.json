@@ -1,0 +1,6268 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "id": 795,
+      "prefabId": 301204,
+      "unitName": "グレーターゴーレム",
+      "server": "jp",
+      "index": 1,
+      "tasks": [
+        {
+          "id": 17777,
+          "canAuto": [
+            40,
+            50,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92068,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92069,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92070,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92071,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92072,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 40,
+              "name": "55200\nb站 ケーキ食べますか\nCR全15",
+              "link": "https://www.bilibili.com/video/av117490440996734/",
+              "remarks": "CR15/15/15/15/15 MS164\n伤害相关的职业9.2，无TP要求\n\nOXOOX  Auto off\n116 水猪 OOOOX  Auto on\n107 诗夏 OOOOO\n054 水猪 XOXOO\n048 菲欧 OOXOO\n034 水猪 OOOOX\n029 诗夏 OOOOO\n013 菲欧 XOOOX\n001 亚里沙 OOOOO",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "51010\n情報会 たくみたん\n单押\nCR 0/6/0/0/0",
+              "link": "",
+              "remarks": "XOOOO\n1:07菲欧 ルーチェ取消(猶予大)\n全SET",
+              "index": 1,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "全set 44233\n情報会 ag",
+              "link": "",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
+            },
+            {
+              "name": "51500\n油管 さんだ\n不押",
+              "link": "https://www.youtube.com/watch?v=GVqfv85z8Oc",
+              "remarks": "属性等级:风Lv1250\n属性技能强化:8页目全\n大师技能:155个(属性2%UP)\n职阶强化:【增幅者】初动TPLv8☆3\n\n\n诗夏　Lv409 ☆5 RANK42全部　  　　　　　     CR15\n若菜　Lv409 ☆6 RANK42全部    专用1LvMAX    CR15\n水猪妹 Lv404 ☆5 RANK42全部　专用1LvMAX    CR6\n亚里莎　Lv404 ☆5 RANK42全部    专用1SP　    　CR6\n菲欧　　Lv409 ☆5 RANK42全部　　　　　　       CR15\n \nー操作ー\n开始UBSET:若菜、猪妹、菲欧\n自动OFF\n1:16　　猪妹　　诗夏、亚里莎SET\n1:14　　菲欧　　菲欧OFF\n1:07　　若菜　　菲欧SET、自动ON\n0:54　　猪妹　　猪妹、菲欧OFF\n0:48　　菲欧　　菲欧SET\n0:34　　猪妹　　猪妹SET、诗夏OFF、自动OFF\n0:30　　菲欧　　诗夏SET\n0:13　　菲欧　　诗夏、菲欧OFF\n0:01　　猪妹　　诗夏、菲欧SET\n\n\n【お団子ver.】\n1:30　　　　　　　〇ー〇〇ー　OFF\n1:16　　猪妹　　　〇〇〇〇〇\n1:14　　菲欧　　　ー〇〇〇〇\n1:07　　若菜　　　〇〇〇〇〇　ON\n0:54　　猪妹　　　ー〇ー〇〇\n0:48　　菲欧　　　〇〇ー〇〇\n0:34　　猪妹　　　〇〇〇〇ー　OFF\n0:30　　菲欧　　　〇〇〇〇〇\n0:13　　菲欧　　　ー〇〇〇ー\n0:01　　猪妹　　　〇〇〇〇〇",
+              "index": 3,
+              "damage": 0,
+              "type": 50
+            }
+          ],
+          "type": 2,
+          "autoDamage": 44000,
+          "images": [],
+          "halfAutoDamage": 55200,
+          "easyManualDamage": 51000
+        },
+        {
+          "id": 17778,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92073,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92074,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92075,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92076,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92077,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 41282\n情報会 ティオス(・8・)",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 41200,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17779,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92078,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92079,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92080,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135301,
+              "unitName": "Qulia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 413,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92081,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92082,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 34988\n情報会 シンch\nCR全15",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34900,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17813,
+          "canAuto": [
+            10,
+            40
+          ],
+          "stage": 6,
+          "damage": 23000,
+          "charas": [
+            {
+              "prefabId": 108401,
+              "unitName": "Chika (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 770,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92248,
+              "talentId": 2
+            },
+            {
+              "prefabId": 117301,
+              "unitName": "Chika (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 520,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92249,
+              "talentId": 2
+            },
+            {
+              "prefabId": 181201,
+              "unitName": "Sheffy (Princess)",
+              "rarity": 5,
+              "searchAreaWidth": 368,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92250,
+              "talentId": 2
+            },
+            {
+              "prefabId": 111501,
+              "unitName": "Christina (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 265,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92251,
+              "talentId": 2
+            },
+            {
+              "prefabId": 108601,
+              "unitName": "Ayane (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 190,
+              "rank": 42,
+              "currentRarity": 4,
+              "id": 92252,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "33s23050",
+          "links": [
+            {
+              "name": "33s15000\n油管 sagoosoiya",
+              "link": "https://www.youtube.com/watch?v=lIgwlr4UjSs",
+              "remarks": "全员R42\nCRRANK:熊锤6 / 圣千6 / 他0\n专用装备:熊锤SP,★5 / 克300,★5 / 水千300,★5 / 圣千SP,★5\n\n属性等级:全1250\n属性技能:8页目 完了\n大师技能:116\n职阶强化:全Lv8★2\n\n1:30 ooxoo 自动OFF\n1:22 水千　 oxxoo\n1:16 圣千 ooxoo\n1:16 熊锤　 oxxox 自动ON\n1:13 熊锤　 oxooo 自动OFF\n\n1:11 熊锤　 oxoox\n1:10 水千　 普攻取消稍快\n\n1:07 克　 ooooo\n1:03 熊锤　 oooox\n1:02 熊锤　 エール取消 ooooo",
+              "index": 1,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "type": 10,
+              "name": "33s21007\n油管 ネブソク",
+              "link": "https://www.youtube.com/watch?v=IOlr9YkBxLw",
+              "remarks": "圣锤 ★4 R42 全部 专用SP 专用2★5 CR15\n圣克  ★5  R42 全部 专用2★5 CR3\n白菲 ★5 R42 全部 CR15\n水千 ★5 R42 全部 专用MAX 专用2★5 CR0\n圣千 ★5 R42 全部 专用SP 专用2★5 CR15\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n⚠️熊锤★注意⚠️\n◆TL\n1:30 开始(〇〇ー〇ー)\n1:22 圣千\n    →水千歌 (〇ーー〇ー)\n1:18 克 (〇ーー〇〇)\n    →熊锤\n1:16 圣千 (〇〇ー〇〇) 自动ON\n    →水千歌\n    →熊锤\n1:15 雪菲 (〇ーー〇〇) 自动OFF\n1:13 熊锤\n1:12 熊锤 (〇ーー〇ー)\n1:10 熊锤 エールbuff后 (〇〇〇〇〇)\n    →水千歌\n1:09 熊锤\n1:07 熊锤 (〇〇〇〇〇)\n    →克\n    →雪菲\n    →熊锤\n1:06 圣千\n    →水千歌\n\n1:06 敌UB\n\n1:05 雪菲\n1:04 熊锤\n    →熊锤\n    →水千歌\n    →熊锤\n1:03 熊锤 (〇〇〇〇ー)\n1:02 熊锤  エール取消 (〇〇〇〇〇)\n1:01 熊锤\n1:00 熊锤\n0:59 熊锤\n    →熊锤\n    →熊锤\n    →克\n0:58 雪菲",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "33s23050\n油管 ネブソク",
+              "link": "https://www.youtube.com/watch?v=guLRZgi0m_w",
+              "remarks": "圣锤 ★3 R42 全部 专用SP 专用2★5 CR15\n圣克  ★5  R42 全部 专用2★5 CR3\n白菲 ★5 R42 全部 CR15\n水千 ★5 R42 全部 专用MAX 专用2★5 CR0\n圣千 ★5 R42 全部 专用SP 专用2★5 CR15\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n⚠️熊锤★注意⚠️\n◆TL\n1:30 开始(〇〇ー〇〇)\n1:22 圣千\n    →水千歌 (〇ーー〇〇)\n1:19 熊锤\n1:18 熊锤\n    →克\n1:17 熊锤\n1:16 圣千 (〇〇ー〇〇) 自动ON\n    →水千歌\n1:15 雪菲\n    →熊锤 (〇ー〇〇ー) 自动OFF\n\n1:13 熊锤  普攻HIT后迟一点 (〇ー〇〇〇)\n1:12 熊锤 (〇ー〇〇ー)\n\n1:10 水千歌  普攻取消最速× 自动ON\n1:09 熊锤 (〇〇〇〇〇)  自动OFF\n1:08 熊锤\n    →熊锤\n1:07 熊锤\n    →克\n    →雪菲\n    →熊锤 (〇〇〇〇ー)\n1:06 圣千\n    →水千歌\n\n1:06 敌UB (〇〇〇〇〇)\n\n1:05 雪菲\n1:04 熊锤\n    →水千歌\n    →熊锤\n1:03 熊锤\n    →熊锤\n1:02 熊锤 (〇〇〇〇ー)\n1:01 熊锤  エール取消 (〇〇〇〇〇)\n    →熊锤\n    →熊锤\n0:59 熊锤\n    →克\n0:58 熊锤\n    →雪菲",
+              "index": 2,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "34s24500\n油管 kiyozi\n",
+              "link": "https://www.youtube.com/watch?v=CmWkCxeLmSM",
+              "remarks": "⚠圣锤★3\n水千歌CR3 这之外CR15\n\n1:30 战斗开始(〇〇ー〇〇) 自动OFF\n\n1:22 水千 (〇ーー〇〇)\n1:16 圣千 (〇〇ー〇〇) 自动ON\n1:15 熊锤 (〇〇〇〇ー) 自动OFF\n1:13 水千 (〇〇〇〇〇)\n1:07 熊锤(2次)  (〇〇〇〇ー)\n\n1:06 BOSSUB (〇〇〇ー〇)\n\n0:58 熊锤(〇ー〇〇〇)\n0:57 雪菲(〇〇〇〇〇)",
+              "index": 3,
+              "damage": 0,
+              "type": 40
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": 24500,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17821,
+          "canAuto": [
+            40
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92288,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92289,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92290,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92291,
+              "talentId": 3
+            },
+            {
+              "prefabId": 115501,
+              "unitName": "Kokkoro (Ceremonial)",
+              "rarity": 5,
+              "searchAreaWidth": 533,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92292,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "21s6314",
+          "links": [
+            {
+              "type": 40,
+              "name": "21s6314\n油管 ネブソク",
+              "link": "https://www.youtube.com/watch?v=N1KY_sAiC70",
+              "remarks": "礼妈 ★5 R42 全部 专用MAX 专用2★5 CR3\n若菜  ★5 R42 全部 专用MAX CR15\n水猪妹  ★5  R42 全部 专用MAX CR15\n亚里莎  ★6 R42 全部 专用SP CR6\n菲欧  ★5  R42 全部 CR15\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(〇ー〇〇ー) 自动ON\n1:21 妈\n1:18 亚里莎 (〇〇〇〇〇)\n1:16 猪妹\n    →妈 (〇〇〇〇ー)\n1:15 若菜\n1:14 菲欧\n    →亚里莎\n1:11 猪妹 (〇〇〇〇〇)\n    →妈\n1:10 亚里莎",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": 6300,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17856,
+          "canAuto": [
+            50,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 117301,
+              "unitName": "Chika (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 520,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92461,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138901,
+              "unitName": "Grace (Bunny)",
+              "rarity": 5,
+              "searchAreaWidth": 429,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92462,
+              "talentId": 2
+            },
+            {
+              "prefabId": 131601,
+              "unitName": "Riri (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 399,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92463,
+              "talentId": 2
+            },
+            {
+              "prefabId": 111501,
+              "unitName": "Christina (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 265,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92464,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92465,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooox",
+          "links": [
+            {
+              "type": 50,
+              "name": "49324\n情報会 Dedsu\n不押\nCR0/3/15/15/15",
+              "link": "",
+              "remarks": "CR: 0/3/15/15/15\nTP: any\n\n \n1:30    OOOOX    自动 OFF\n1:13    格蕾斯　> OOOXO 自动 ON\n0:56    切噜　　> OOOXX\n0:35    千歌　　　> XOOOX\n0:25    切噜　　> XOXXO\n        格蕾斯　> XOOXO\n        千歌　　　> OOOXO\n0:16    克　　> OOOOO\n0:11    格蕾斯　> OXOOO\n0:04    千歌　　　> XOOXO",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "oooox 32000\n油管 Eruru",
+              "link": "http://youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 32000,
+          "halfAutoDamage": null,
+          "easyManualDamage": 49300,
+          "images": []
+        },
+        {
+          "id": 17857,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92466,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92467,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130701,
+              "unitName": "Kyouka (Spring)",
+              "rarity": 5,
+              "searchAreaWidth": 563,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92468,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92469,
+              "talentId": 3
+            },
+            {
+              "prefabId": 115501,
+              "unitName": "Kokkoro (Ceremonial)",
+              "rarity": 5,
+              "searchAreaWidth": 533,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92470,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 37600\n油管 クローバー【Clover】\nCR 15/6/0/6/6",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 37600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17858,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 104201,
+              "unitName": "Chika",
+              "rarity": 6,
+              "searchAreaWidth": 790,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92471,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92472,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92473,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92474,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92475,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 37400\n油管 クローバー【Clover】\nCR 6/15/6/15/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 37400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17859,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92476,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92477,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92478,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92479,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92480,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 37200\n油管 クローバー【Clover】\nCR 15/6/15/6/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 37200,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17860,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 104201,
+              "unitName": "Chika",
+              "rarity": 6,
+              "searchAreaWidth": 790,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92481,
+              "talentId": 3
+            },
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92482,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92483,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92484,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92485,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 36700\n油管 クローバー【Clover】\nCR 6/15/15/15/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 36700,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17861,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92486,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92487,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92488,
+              "talentId": 3
+            },
+            {
+              "prefabId": 115501,
+              "unitName": "Kokkoro (Ceremonial)",
+              "rarity": 5,
+              "searchAreaWidth": 533,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92489,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92490,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 35900\n油管 クローバー【Clover】\nCR 15/15/6/6/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 35900,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17869,
+          "canAuto": [
+            50
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 108401,
+              "unitName": "Chika (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 770,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92526,
+              "talentId": 2
+            },
+            {
+              "prefabId": 140301,
+              "unitName": "Tia",
+              "rarity": 5,
+              "searchAreaWidth": 744,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92527,
+              "talentId": 2
+            },
+            {
+              "prefabId": 117201,
+              "unitName": "Nozomi (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 417,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92528,
+              "talentId": 2
+            },
+            {
+              "prefabId": 136901,
+              "unitName": "Rurui",
+              "rarity": 5,
+              "searchAreaWidth": 409,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92529,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92530,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "TP9.3",
+          "links": [
+            {
+              "type": 50,
+              "name": "52450\n情報会 miz\n双押 TP9.3\nCR全15",
+              "link": "",
+              "remarks": "◯－◯◯◯、自动ON开始\n\n1:20　　切噜\n－－◯◯－\n1:07　　千歌\n－－◯◯◯\n0:59　　偶像\n－－－◯－\n0:54　　切噜\n－－－◯◯\n0:50　　切噜\n－－◯◯◯\n0:47　　偶像\n－－－◯◯\n0:38　　切噜\n－－◯◯◯\n0:25　　偶像\n－－－◯◯\n0:20　　切噜\n－－◯－◯\n0:20　　偶像\n－－－－◯\n0:10　　章鱼妹\n－－－◯◯\n0:08　　章鱼妹\n－－◯◯－\n※0:05　切噜　うぃんどみるhit后\n※0:01　切噜　うぃんどみるhit后",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": 52400,
+          "images": []
+        },
+        {
+          "id": 17871,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92536,
+              "talentId": 3
+            },
+            {
+              "prefabId": 137601,
+              "unitName": "Kokkoro (Little Guidance)",
+              "rarity": 5,
+              "searchAreaWidth": 733,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92537,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92538,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92539,
+              "talentId": 3
+            },
+            {
+              "prefabId": 115501,
+              "unitName": "Kokkoro (Ceremonial)",
+              "rarity": 5,
+              "searchAreaWidth": 533,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92540,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoooo",
+          "links": [
+            {
+              "type": 20,
+              "name": "xoooo 36500\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 36500,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17872,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92541,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92542,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130701,
+              "unitName": "Kyouka (Spring)",
+              "rarity": 5,
+              "searchAreaWidth": 563,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92543,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92544,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92545,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoooo",
+          "links": [
+            {
+              "type": 20,
+              "name": "xoooo 34100\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17873,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 137601,
+              "unitName": "Kokkoro (Little Guidance)",
+              "rarity": 5,
+              "searchAreaWidth": 733,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92546,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92547,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92548,
+              "talentId": 3
+            },
+            {
+              "prefabId": 115501,
+              "unitName": "Kokkoro (Ceremonial)",
+              "rarity": 5,
+              "searchAreaWidth": 533,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92549,
+              "talentId": 3
+            },
+            {
+              "prefabId": 105901,
+              "unitName": "Kokkoro",
+              "rarity": 6,
+              "searchAreaWidth": 500,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92550,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 33100\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 33100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 796,
+      "prefabId": 326100,
+      "unitName": "ターボファング",
+      "server": "jp",
+      "index": 2,
+      "tasks": [
+        {
+          "id": 17780,
+          "canAuto": [
+            50,
+            10
+          ],
+          "stage": 6,
+          "damage": 54800,
+          "charas": [
+            {
+              "prefabId": 106901,
+              "unitName": "Kaiser Insight",
+              "rarity": 5,
+              "searchAreaWidth": 660,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92083,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140701,
+              "unitName": "Saren (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 431,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92084,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135701,
+              "unitName": "Hiyori (Salasaria)",
+              "rarity": 5,
+              "searchAreaWidth": 291,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92085,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92086,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135901,
+              "unitName": "Satsuki",
+              "rarity": 5,
+              "searchAreaWidth": 219,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92087,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "TP8.2+",
+          "links": [
+            {
+              "type": 50,
+              "name": "54000\n油管 クローン\n单押 TP9.3",
+              "link": "https://www.youtube.com/watch?v=n6DswexpaB0",
+              "remarks": "属性1250 节点 8页目 第8合流 大师162\n职阶(左上,右上,左下,右下)\n攻击者/8-4,8-3,8-4,8-3\n破防者/9-0,8-4,8-4,8-4\n减益者/8-3,8-3,8-3,9-2\n增幅者　/8-3,8-3,8-3,9-3\n\n初动TP9-3\n \n1:30 ✕〇〇〇〇 ON\n0:55 霸瞳 ✕〇〇〇✕\n0:49 格蕾斯 ✕〇〇〇〇\n0:49 刹鬼　 ✕〇〇✕✕\n☆0:39 刹鬼　斧头放下 \n0:34 格蕾斯 ✕〇〇〇〇",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "52790\n情報会 鞘戸詩音\n不押 TP8.3\nCR6/15/6/15/15",
+              "link": "",
+              "remarks": "1:30 战斗开始　－〇〇〇〇　“自动ON”\n\n1:15 充电宝　　　－－〇〇〇\n1:00 刹鬼　　　－－〇〇－\n0:49 格蕾斯　　－－〇－〇\n0:46 猫拳　　　－－－－〇\n0:34 格蕾斯　　－－〇〇－\n0:29 霸瞳　　－〇〇〇－\n     充电宝　　　－〇〇〇〇\n     刹鬼　　　－〇〇〇－\n0:18 充电宝　　　－－－〇〇\n0:12 充电宝　　　－〇〇〇〇 ",
+              "index": 1,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "53645\n情報会 クローン393\n单押 死刹鬼用",
+              "link": "",
+              "remarks": "1:30 ✕〇〇〇〇 ON\n1:15 ✕✕〇〇〇 \n0:55 霸瞳 ✕✕〇〇✕\n0:49 格蕾斯 ✕✕〇〇〇\n0:49 刹鬼　 ✕✕〇✕✕\n☆0:39 刹鬼　斧头放下\n0:34 格蕾斯 ✕✕〇〇〇\n0:29 猫拳　 ✕〇〇〇✕\n0:21 格蕾斯 ✕〇〇〇〇\n                                              --以下ふら(サブ)追加\n0:13 刹鬼　 ✕〇〇✕✕\n☆0:08 格蕾斯 ドロップbuff后\n　　　　　　　　✕〇〇〇✕\n0:06 格蕾斯 ✕〇〇〇〇",
+              "index": 2,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "54811\n情報会 DESTINY\nTP8.2",
+              "link": "",
+              "remarks": "TP8-2\ndebuff10-1\n\nX〇〇〇〇　ON\n\n01:19　刹鬼\n01:18　格蕾斯\n01:16　猫拳　(普攻取消)\n01:16　格蕾斯\n01:15　充电宝　ＸＸ〇〇〇\n01:11　刹鬼\n01:10　霸瞳\n01:09　猫拳\n01:06　充电宝\n01:02　格蕾斯\n01:00　刹鬼　ＸＸＸ〇〇　OFF\n\n00:57★猫拳　普攻取消　ＸＸＸ〇〇　ON　※1\n※秒数目押\n\n00:57　充电宝\n00:55　霸瞳　　Ｘ〇Ｘ〇Ｘ\n00:49　格蕾斯　　Ｘ〇Ｘ〇〇\n00:49　刹鬼　Ｘ〇ＸＸＸ\n\n---00:48 ターボファング---\n\n00:44　猫拳\n00:43　充电宝\n00:40　霸瞳\n\n00:39★刹鬼　引き独鈷后\n※斧头挥下来\n\n00:34　猫拳　〇Ｘ〇〇Ｘ　OFF\n00:34　格蕾斯\n00:29　霸瞳　　〇〇〇〇Ｘ\n00:29　充电宝\n\n00:29★刹鬼　普攻取消最速　Ｘ〇Ｘ〇〇　ON\n※充电宝UB伤害4位数\n\n00:22　格蕾斯\n00:21　猫拳　Ｘ〇Ｘ〇〇　OFF\n00:20　刹鬼　\n00:20　格蕾斯　　Ｘ〇Ｘ〇〇　ON\n00:19　充电宝\n00:18　霸瞳　　Ｘ〇Ｘ〇Ｘ　OFF\n00:12　充电宝　\n✔充电宝UB时刹鬼奉献唱名确认\n→有则SET\n→没有则手动连点\n00:12　刹鬼　Ｘ〇ＸＸ〇　ON\n　(奉献取消〇、待机△→少点伤害)\n00:11　猫拳\n\n---00:10 ターボファング---\n\n00:08★霸瞳　　debuff后　Ｘ〇Ｘ〇〇\n※格蕾斯ドロップ落地\n\n00:08　格蕾斯　　(ドロップbuff后)\n00:06　格蕾斯\n00:05　刹鬼　\n00:05　充电宝　\n00:01　霸瞳　　\n00:01　猫拳　※2\n\n※1、58最迟或57最速则18霸瞳会变成20(自动)\n→这种情况霸瞳之后自动、08格蕾斯目押ドロップ、大概没差？\n\n※2、这里很极限，0:11猫拳目押在刹鬼UB伤害全部数字前，比自动更稳妥。",
+              "index": 3,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "55198\n情報会 クローン393\n不押 TP9.3",
+              "link": "",
+              "remarks": "1:30 ✕✕〇〇〇 ON\n1:00 刹鬼　 ✕〇〇〇✕\n0:49 格蕾斯 ✕〇〇〇〇\n0:49 刹鬼　 ✕〇〇✕✕\n0:34 格蕾斯 〇✕✕〇✕ OFF\n0:29 霸瞳 ✕〇✕〇✕ \n0:29 充电宝　 ✕〇〇〇✕ ON\n0:19 充电宝　 ✕✕✕〇〇\n0:12 充电宝　 ✕〇〇〇〇\n0:07 霸瞳 ✕〇✕〇✕ OFF\n0:03 充电宝　 ✕〇〇〇〇\n\n以下+400\n0:11 刹鬼　 ✕〇✕✕✕\n☆0:08 格蕾斯 ドロップbuff后\n0:07 霸瞳 ✕〇✕〇✕ OFF\n0:03 充电宝　 ✕〇〇〇〇",
+              "index": 4,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "53239\n情報会 鞘戸詩音\n不押 TP8.3\nCR6/15/6/15/15",
+              "link": "",
+              "remarks": "`1:30 战斗开始　－〇〇〇〇　“自动ON”\n\n1:15 充电宝　　　－－〇〇〇\n1:00 刹鬼　　　－－〇〇－\n0:49 格蕾斯　　－－〇－〇\n0:46 猫拳　　　－－－－〇\n0:34 格蕾斯　　－－〇〇－\n0:29 霸瞳　　－〇〇〇－\n     充电宝　　　－〇〇〇〇\n     刹鬼　　　－〇〇〇－　“自动OFF”\n0:18 充电宝　　　－－－〇〇　“自动ON”\n0:12 充电宝　　　－〇〇〇〇 ",
+              "index": 5,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "55574\n情報会 クローン393\n不押 TP9.3",
+              "link": "",
+              "remarks": "1:30 ✕✕〇〇〇 ON\n1:00 刹鬼　 ✕〇〇〇✕\n0:49 格蕾斯 ✕〇〇〇〇\n0:49 刹鬼　 ✕〇〇✕✕\n0:34 格蕾斯 ✕✕〇〇✕ OFF\n0:29 猫拳　 ✕〇〇〇✕ \n0:29 充电宝　 ✕〇〇〇✕ ON\n0:19 充电宝　 ✕✕✕‪‪✕‬〇\n0:12 充电宝　 ✕〇〇‪‪✕‬〇\n0:07 霸瞳 ✕〇✕〇✕ OFF\n0:03 充电宝　 ✕〇〇〇〇",
+              "index": 6,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "45471\n情報会 si\n不押 TP8.1\n弱骑士",
+              "link": "",
+              "remarks": "MS121 TP8-3 debuff强化8-1\nCR 9/15/6/15/15\n \n1:30 ✕✕〇〇〇 ON\n\n1:00 刹鬼　 ✕〇〇〇✕\n0:49 格蕾斯 ✕〇〇〇〇\n0:49 刹鬼　 ✕〇〇✕✕\n0:46 猫拳　 ✕〇✕✕✕\n0:34 格蕾斯 〇✕✕〇✕ \n0:33 猫拳　 〇✕✕〇✕  OFF\n0:29 霸瞳　 ✕〇✕〇✕ \n0:29 充电宝　 ✕〇〇〇✕ ON\n0:19 充电宝　 ✕✕✕〇〇\n0:12 充电宝　 ✕〇〇〇〇\n0:07 霸瞳 　✕〇✕〇✕ OFF\n0:03 充电宝　 ✕〇〇〇〇",
+              "index": 7,
+              "damage": 0,
+              "type": 50
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "images": [],
+          "halfAutoDamage": null,
+          "easyManualDamage": 55500
+        },
+        {
+          "id": 17781,
+          "canAuto": [
+            40,
+            50,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92088,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133801,
+              "unitName": "Neneka (Alpha)",
+              "rarity": 5,
+              "searchAreaWidth": 759,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92089,
+              "talentId": 5
+            },
+            {
+              "prefabId": 112001,
+              "unitName": "Kyaru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 690,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92090,
+              "talentId": 5
+            },
+            {
+              "prefabId": 122301,
+              "unitName": "Vampy",
+              "rarity": 6,
+              "searchAreaWidth": 564,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92091,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92092,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxoox",
+          "links": [
+            {
+              "type": 40,
+              "name": "48661\n情報会 たくみたん\nTP8.5\nCR15/15/15/3/15",
+              "link": "",
+              "remarks": "1:30　XOOOX　自动ON\n1:10　似似花　XXOOX\n1:09　紫罗兰　OXOOX",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "46620\n情報会 Bluvel\n单押",
+              "link": "",
+              "remarks": "1:30 开始      ○○○○‐ 自动ON\n1:21 似似花     ○○‐○‐\n1:09 紫罗兰 自动OFF\n☆1:07~1:06 ティターニアブライト唱名后自动ON\n1:05 似似花     ○○○○‐\n0:12 似似花     ‐‐○○○\n0:01 紫罗兰 ○‐○○○",
+              "index": 1,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "oxoox 46462\n情報会 ag",
+              "link": "",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
+            },
+            {
+              "name": "47900\n油管 さんだ\nTP8.3",
+              "link": "https://www.youtube.com/watch?v=NfUlA4lcssI",
+              "remarks": "属性等级:暗Lv1250\n属性技能强化:8页目全\n大师技能:155个(属性2%UP)\n职阶强化:【增幅者】初动TPLv8☆3\n\n\n紫罗兰  Lv409 ☆5 RANK42全部                   CR15\n斑比      Lv404 ☆6 RANK42全部    专用1LvMAX          CR3\n春黑     Lv409 ☆5 RANK42全部 专用1LvMAX  专用2☆5   CR15\nα花      Lv409 ☆5 RANK42全部    专用1LvMAX            CR15\n哥唯      Lv404 ☆5 RANK42全部                              CR6\n\nー操作ー\n开始UBSET:斑比、黑猫、似似花\n自动ON\n1:09  紫罗兰    xcw SET\n0:42  斑比  紫罗兰SET\n    紫罗兰    紫罗兰OFF\n0:22  似似花    似似花OFF\n\n\n【お団子ver.】\n1:30              ー〇〇〇ー ON\n1:09  紫罗兰    〇〇〇〇ー\n0:42  斑比     〇〇〇〇〇\n    紫罗兰      〇〇〇〇ー\n0:22  似似花    〇ー〇〇ー",
+              "index": 3,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "47900\n情報会 カプチノ\n单押 TP高用",
+              "link": "",
+              "remarks": "1:30　　　　　　ーー〇〇ー　自动 OFF\n1:16    ☆似似花　时间目押(※1) 自动 ON\n1:09　　紫罗兰　〇〇〇〇ー\n0:42　　斑比　　〇〇〇〇〇\n　　　　紫罗兰　〇〇〇〇ー\n0:22　　似似花　〇ー〇〇ー\n\n(※1) 1:16跳秒后，太慢NG",
+              "index": 4,
+              "damage": 0,
+              "type": 50
+            }
+          ],
+          "type": 2,
+          "autoDamage": 46400,
+          "halfAutoDamage": 48600,
+          "easyManualDamage": 46600,
+          "images": []
+        },
+        {
+          "id": 17782,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140701,
+              "unitName": "Saren (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 431,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92093,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140101,
+              "unitName": "Fubuki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 376,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92094,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135701,
+              "unitName": "Hiyori (Salasaria)",
+              "rarity": 5,
+              "searchAreaWidth": 291,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92095,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92096,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92097,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxxoo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oxxoo 44163\n情報会 クローン\n全CR15",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 44100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17783,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92098,
+              "talentId": 1
+            },
+            {
+              "prefabId": 132801,
+              "unitName": "Lyrael (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 750,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92099,
+              "talentId": 1
+            },
+            {
+              "prefabId": 134501,
+              "unitName": "Croce (Aerial)",
+              "rarity": 5,
+              "searchAreaWidth": 719,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92100,
+              "talentId": 1
+            },
+            {
+              "prefabId": 127801,
+              "unitName": "Wurm",
+              "rarity": 5,
+              "searchAreaWidth": 706,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92101,
+              "talentId": 1
+            },
+            {
+              "prefabId": 127701,
+              "unitName": "Lind",
+              "rarity": 5,
+              "searchAreaWidth": 693,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92102,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 29486\n情報会 heddo",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 29400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17784,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92103,
+              "talentId": 1
+            },
+            {
+              "prefabId": 132801,
+              "unitName": "Lyrael (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 750,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92104,
+              "talentId": 1
+            },
+            {
+              "prefabId": 134501,
+              "unitName": "Croce (Aerial)",
+              "rarity": 5,
+              "searchAreaWidth": 719,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92105,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92106,
+              "talentId": 1
+            },
+            {
+              "prefabId": 136401,
+              "unitName": "Yui (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 382,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92107,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 30032\n情報会 heddo",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 30000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17785,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92108,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135701,
+              "unitName": "Hiyori (Salasaria)",
+              "rarity": 5,
+              "searchAreaWidth": 291,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92109,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92110,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135901,
+              "unitName": "Satsuki",
+              "rarity": 5,
+              "searchAreaWidth": 219,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92111,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92112,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 34114\n情報会 もんもん\nCR 15/15/15/3/15",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17786,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92113,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133601,
+              "unitName": "Medusa",
+              "rarity": 5,
+              "searchAreaWidth": 445,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92114,
+              "talentId": 5
+            },
+            {
+              "prefabId": 139801,
+              "unitName": "Sheffy (Wahrer Drache)",
+              "rarity": 5,
+              "searchAreaWidth": 386,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92115,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92116,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92117,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 34327\n情報会 ティオス(・8・)",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34300,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17787,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92118,
+              "talentId": 5
+            },
+            {
+              "prefabId": 139101,
+              "unitName": "Kyaru (Hadou Tensei)",
+              "rarity": 5,
+              "searchAreaWidth": 770,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92119,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133801,
+              "unitName": "Neneka (Alpha)",
+              "rarity": 5,
+              "searchAreaWidth": 759,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92120,
+              "talentId": 5
+            },
+            {
+              "prefabId": 122301,
+              "unitName": "Vampy",
+              "rarity": 6,
+              "searchAreaWidth": 564,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92121,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92122,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "",
+          "links": [
+            {
+              "type": 20,
+              "name": "42853\n情報会 Bluvel",
+              "link": "",
+              "remarks": "紫罗兰以外SET\nTP9.0+(似似花也不SET)",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 42800,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17788,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 136001,
+              "unitName": "Arachne",
+              "rarity": 5,
+              "searchAreaWidth": 732,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92123,
+              "talentId": 1
+            },
+            {
+              "prefabId": 129701,
+              "unitName": "Nephi Nela",
+              "rarity": 5,
+              "searchAreaWidth": 540,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92124,
+              "talentId": 1
+            },
+            {
+              "prefabId": 116701,
+              "unitName": "Aoi (Work)",
+              "rarity": 5,
+              "searchAreaWidth": 527,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92125,
+              "talentId": 1
+            },
+            {
+              "prefabId": 135501,
+              "unitName": "Aira",
+              "rarity": 5,
+              "searchAreaWidth": 213,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92126,
+              "talentId": 1
+            },
+            {
+              "prefabId": 138301,
+              "unitName": "Pecorine (Astraea)",
+              "rarity": 5,
+              "searchAreaWidth": 142,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92127,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 34182\n情報会 シンch\nCR全15",
+              "link": "",
+              "remarks": "紫罗兰以外SET\nTP9.0+(似似花也不SET)",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17815,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 6200,
+          "charas": [
+            {
+              "prefabId": 111401,
+              "unitName": "Luna",
+              "rarity": 5,
+              "searchAreaWidth": 765,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92258,
+              "talentId": 5
+            },
+            {
+              "prefabId": 101601,
+              "unitName": "Suzuna",
+              "rarity": 6,
+              "searchAreaWidth": 705,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92259,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92260,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139701,
+              "unitName": "Precia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 500,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92261,
+              "talentId": 4
+            },
+            {
+              "prefabId": 103401,
+              "unitName": "Yukari",
+              "rarity": 6,
+              "searchAreaWidth": 405,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92262,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "22s6206 TP9.0",
+          "links": [
+            {
+              "type": 10,
+              "name": "22s6206\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=-X0SaHV6Ue8",
+              "remarks": "黄骑  ★6 R42 全部 专用SP CR6\n武猪妹  ★5  R42 全部 CR15\n水莲  ★5 R42 全部 专用MAX CR15\n暴击弓  ★6  R42 全部 专用SP 专用2★5 CR15\n露娜 ★5  R42 全部 专用MAX CR0\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(ーー〇〇ー)\n\n1:23 暴击弓  カリスマオーラbuff后 (ー〇〇〇ー)\n1:22 银莲\n1:19 暴击弓\n    →暴击弓\n1:18 暴击弓\n1:17 猪妹\n    →暴击弓\n1:13 暴击弓 (ー〇〇〇〇)\n    →黄骑\n    →暴击弓\n\n1:11 露娜  怨恨取消\n1:09 暴击弓\n    →暴击弓",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17822,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92293,
+              "talentId": 5
+            },
+            {
+              "prefabId": 139801,
+              "unitName": "Sheffy (Wahrer Drache)",
+              "rarity": 5,
+              "searchAreaWidth": 386,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92294,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140101,
+              "unitName": "Fubuki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 376,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92295,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92296,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100701,
+              "unitName": "Miyako",
+              "rarity": 6,
+              "searchAreaWidth": 125,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92297,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 30000\n油管 taki2 taki",
+              "link": "https://www.youtube.com/watch?v=AzexNYJnKrc",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 30000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17823,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 8300,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92298,
+              "talentId": 5
+            },
+            {
+              "prefabId": 111401,
+              "unitName": "Luna",
+              "rarity": 5,
+              "searchAreaWidth": 765,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92299,
+              "talentId": 5
+            },
+            {
+              "prefabId": 102201,
+              "unitName": "Yori",
+              "rarity": 6,
+              "searchAreaWidth": 575,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92300,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100601,
+              "unitName": "Akari",
+              "rarity": 6,
+              "searchAreaWidth": 570,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92301,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92302,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "TP9.0 22s8309",
+          "links": [
+            {
+              "type": 10,
+              "name": "22s8309\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=45e69BfwfI4",
+              "remarks": "紫罗兰  ★5 R42 全部 CR15\n妹法  ★6 R42 全部 专用SP CR15\n姐法  ★6  R42 全部 专用SP CR15\n露娜 ★5  R42 全部 专用MAX CR0\n哥唯  ★5 R42 全部 CR15\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(〇ーー〇〇)\n1:23 妹法\n1:19 xcw\n    →xcw\n1:13 妹法\n    →xcw\n    →xcw (〇ー〇〇〇)\n    →姐法\n1:11 妹法 (〇〇ー〇〇)\n    →露娜\n\n1:11 姐法  露娜ソルコン开始后\n1:10 紫罗兰\n1:09 xcw\n    →xcw",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17862,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 133601,
+              "unitName": "Medusa",
+              "rarity": 5,
+              "searchAreaWidth": 445,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92491,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140101,
+              "unitName": "Fubuki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 376,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92492,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135701,
+              "unitName": "Hiyori (Salasaria)",
+              "rarity": 5,
+              "searchAreaWidth": 291,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92493,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92494,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100701,
+              "unitName": "Miyako",
+              "rarity": 6,
+              "searchAreaWidth": 125,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92495,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 39400\n油管 クローバー【Clover】\nCR 6/9/6/15/6",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17874,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140701,
+              "unitName": "Saren (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 431,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92551,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140101,
+              "unitName": "Fubuki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 376,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92552,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135701,
+              "unitName": "Hiyori (Salasaria)",
+              "rarity": 5,
+              "searchAreaWidth": 291,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92553,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92554,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100701,
+              "unitName": "Miyako",
+              "rarity": 6,
+              "searchAreaWidth": 125,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92555,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooxo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooxo 39500\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39500,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17875,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92556,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133601,
+              "unitName": "Medusa",
+              "rarity": 5,
+              "searchAreaWidth": 445,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92557,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140101,
+              "unitName": "Fubuki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 376,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92558,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92559,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100701,
+              "unitName": "Miyako",
+              "rarity": 6,
+              "searchAreaWidth": 125,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92560,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooxo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooxo 39100\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17876,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92561,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133601,
+              "unitName": "Medusa",
+              "rarity": 5,
+              "searchAreaWidth": 445,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92562,
+              "talentId": 5
+            },
+            {
+              "prefabId": 139801,
+              "unitName": "Sheffy (Wahrer Drache)",
+              "rarity": 5,
+              "searchAreaWidth": 386,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92563,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92564,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100701,
+              "unitName": "Miyako",
+              "rarity": 6,
+              "searchAreaWidth": 125,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92565,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooxo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooxo 35000\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 35000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17877,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 136001,
+              "unitName": "Arachne",
+              "rarity": 5,
+              "searchAreaWidth": 732,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92566,
+              "talentId": 1
+            },
+            {
+              "prefabId": 129701,
+              "unitName": "Nephi Nela",
+              "rarity": 5,
+              "searchAreaWidth": 540,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92567,
+              "talentId": 1
+            },
+            {
+              "prefabId": 134701,
+              "unitName": "Ho-oh",
+              "rarity": 5,
+              "searchAreaWidth": 490,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92568,
+              "talentId": 1
+            },
+            {
+              "prefabId": 134901,
+              "unitName": "Kanon",
+              "rarity": 5,
+              "searchAreaWidth": 196,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92569,
+              "talentId": 1
+            },
+            {
+              "prefabId": 138301,
+              "unitName": "Pecorine (Astraea)",
+              "rarity": 5,
+              "searchAreaWidth": 142,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92570,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 33900\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 33900,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17878,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 106901,
+              "unitName": "Kaiser Insight",
+              "rarity": 5,
+              "searchAreaWidth": 660,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92571,
+              "talentId": 5
+            },
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92572,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135701,
+              "unitName": "Hiyori (Salasaria)",
+              "rarity": 5,
+              "searchAreaWidth": 291,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92573,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92574,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135901,
+              "unitName": "Satsuki",
+              "rarity": 5,
+              "searchAreaWidth": 219,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92575,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 32500\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 32500,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 797,
+      "prefabId": 305900,
+      "unitName": "マダムプリズム",
+      "server": "jp",
+      "index": 3,
+      "tasks": [
+        {
+          "id": 17789,
+          "canAuto": [
+            50,
+            40,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92128,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92129,
+              "talentId": 4
+            },
+            {
+              "prefabId": 131001,
+              "unitName": "Maho (Dream Park)",
+              "rarity": 5,
+              "searchAreaWidth": 702,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92130,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92131,
+              "talentId": 4
+            },
+            {
+              "prefabId": 138201,
+              "unitName": "Nephi Nela (Buddha)",
+              "rarity": 5,
+              "searchAreaWidth": 502,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92132,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoooo TP8.3+",
+          "links": [
+            {
+              "type": 50,
+              "name": "57500\n油管 さんだ\n不押 TP8.3\nCR全15",
+              "link": "https://www.youtube.com/watch?v=zGZrDbOayYA",
+              "remarks": "属性等级:光Lv1250\n属性技能强化:8页目全\n大师技能:150个(物理1%UP)\n职阶强化:【增幅者】初动TPLv8☆3\n\n\n涅妃　    Lv409 ☆5 RANK42全部　  　　　　　    CR15\n修驴　　Lv409 ☆5 RANK42全部 　　　　　　 　CR15\n梦狐　   Lv409 ☆5 RANK42全部　专用1LvMAX    CR15\n春电   　 Lv409 ☆5 RANK42全部    专用1LvMAX    CR15\n光精灵　Lv409 ☆5 RANK42全部　　　　　　       CR15\n\nー操作ー\n开始UBSET:涅妃、狐狸、充电宝\n自动ON\n1:11　　充电宝　　光精灵SET\n0:59　　充电宝　　驴SET、充电宝OFF\n0:53　　驴　　　　充电宝SET\n0:48　　狐狸　　　涅妃、狐狸OFF\n0:37　　充电宝　　充电宝OFF\n0:32　　驴　　　　狐狸SET\n　　　　光精灵　　充电宝SET、狐狸OFF\n0:17　　驴　　　　涅妃、狐狸SET、驴、充电宝OFF\n0:16　　光精灵　　充电宝SET\n0:12　　光精灵　　驴SET\n0:08　　充电宝　　充电宝OFF\n0:04　　光精灵　　充电宝SET\n\n\n【お団子ver.】\n1:30　　　　　　　ー〇〇ー〇　ON\n1:11　　充电宝　　〇〇〇ー〇\n0:59　　充电宝　　〇ー〇〇〇\n0:53　　驴　　　　〇〇〇〇〇\n0:48　　狐狸　　　〇〇ー〇ー\n0:37　　充电宝　　〇ーー〇ー\n0:32　　驴　　　　〇ー〇〇ー\n　　　　光精灵　　〇〇ー〇ー\n0:17　　驴　　　　〇ー〇ー〇\n0:16　　光精灵　　〇〇〇ー〇\n0:12　　光精灵　　〇〇〇〇〇\n0:08　　充电宝　　〇ー〇〇〇\n0:04　　光精灵　　〇〇〇〇〇",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "51234\n情報会 れおんまる\nTP8.4\nCR全6",
+              "link": "",
+              "remarks": "【－〇〇－〇】　自动ON\n\n1:11 充电宝　【〇〇〇－〇】\n0:59 充电宝　【〇－〇〇〇】\n0:53 驴　　　【〇〇〇〇〇】\n0:48 狐狸　　【〇〇－〇－】\n0:32 驴　　　【〇〇〇〇－】\n0:32 狐狸　　【〇〇－〇－】\n0:17 驴　　　【〇〇〇－〇】\n0:12 光精灵【〇〇〇〇〇】",
+              "index": 1,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "57700\n油管 さんだ\n单押 TP8.3\nCR全15",
+              "link": "https://www.youtube.com/watch?v=bYEOI8Dl3S8",
+              "remarks": "属性等级:光Lv1250\n属性技能强化:8页目全\n大师技能:150个(物理1%UP)\n职阶强化:【增幅者】初动TPLv8☆3\n\n\n鬼妃　     Lv409 ☆5 RANK42全部　  　　　　　    CR15\n修驴　　Lv409 ☆5 RANK42全部 　　　　　　 　CR15\n梦狐　  　Lv409 ☆5 RANK42全部　专用1LvMAX    CR15\n春电   　 Lv409 ☆5 RANK42全部    专用1LvMAX    CR15\n光精灵　Lv409 ☆5 RANK42全部　　　　　　       CR15\n\nー操作ー\n开始UBSET:涅妃、狐狸、充电宝\n自动ON\n1:11　　充电宝　　光精灵SET\n0:59　　充电宝　　驴SET、充电宝OFF\n0:53　　驴　　　　充电宝SET\n0:37　　充电宝　　涅妃、狐狸、充电宝OFF\n0:32　　驴　　　　狐狸SET\n　　　　光精灵　　充电宝SET、驴、狐狸OFF\n0:19　　☆充电宝UB后、狐狸TP减少\n　　　　　　　　　狐狸SET\n0:17　　光精灵　　驴SET\n　　　　驴　　　　涅妃SET、驴、充电宝OFF　　　　\n0:16　　光精灵　　充电宝SET\n0:12　　光精灵　　驴SET、充电宝OFF\n\n\n【お団子ver.】\n1:30　　　　　　　ー〇〇ー〇　ON\n1:11　　充电宝　　〇〇〇ー〇\n0:59　　充电宝　　〇ー〇〇〇\n0:53　　驴　　　　〇〇〇〇〇\n0:37　　充电宝　　〇ーー〇ー\n0:32　　驴　　　　〇ー〇〇ー\n　　　　光精灵　　〇〇ーーー\n0:19　　☆充电宝UB后、狐狸TP减少\n　　　　　　　　　〇〇〇ーー\n0:17　　光精灵　　〇〇〇〇ー\n　　　　驴　　　　〇ー〇ー〇\n0:16　　光精灵　　〇〇〇ー〇\n0:12　　光精灵　　〇ー〇〇〇",
+              "index": 2,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "xoooo 43500\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 3,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 43500,
+          "images": [],
+          "halfAutoDamage": 51000,
+          "easyManualDamage": 57700
+        },
+        {
+          "id": 17790,
+          "canAuto": [
+            40,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 100201,
+              "unitName": "Yui",
+              "rarity": 6,
+              "searchAreaWidth": 800,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92133,
+              "talentId": 4
+            },
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92134,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92135,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113801,
+              "unitName": "Yori (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 531,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92136,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92137,
+              "talentId": 4
+            }
+          ],
+          "remarks": "全8.3+cr12天姐能活",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 40,
+              "name": "58000\n油管 たつきちゃん\nCR全15",
+              "link": "https://www.youtube.com/watch?v=gy5EXo-h7NM",
+              "remarks": "ALL CR15 TP9-4\n\n----\n◆队伍編成\n天妹 ★5 Lv409 RANK42\n天姐 ★5 Lv409 RANK42\n春电 ★5 Lv409 RANK42\n光精灵 ★5 Lv409 RANK42\n优衣 ★6 Lv409 RANK42\n----\n◆UB发动时间\n✕◯◯◯✕　自动 ON\n1:12　光精灵　✕◯◯◯◯",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "全set 52000\n情報会 Astordor",
+              "link": "",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 52000,
+          "halfAutoDamage": 58000,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17791,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92138,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92139,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92140,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92141,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92142,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 46622\n情報会 たつきちゃん\nTP9.4\nCR全15",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 46600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17792,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 100201,
+              "unitName": "Yui",
+              "rarity": 6,
+              "searchAreaWidth": 800,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92143,
+              "talentId": 4
+            },
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92144,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92145,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92146,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113801,
+              "unitName": "Yori (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 531,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92147,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 37818\n情報会 heddo",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 37800,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17793,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92148,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92149,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92150,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92151,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92152,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 41888\n情報会 heddo",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 41800,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17794,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92153,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92154,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92155,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92156,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92157,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 41092\n情報会 ヤンヤン　ヤンパパ\nTP9.0\nCR全15",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 41000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17795,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92158,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92159,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92160,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92161,
+              "talentId": 4
+            },
+            {
+              "prefabId": 111901,
+              "unitName": "Kokkoro (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 159,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92162,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 39421\nヴァッシュ Bluvel",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17796,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 100201,
+              "unitName": "Yui",
+              "rarity": 6,
+              "searchAreaWidth": 800,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92163,
+              "talentId": 4
+            },
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92164,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92165,
+              "talentId": 4
+            },
+            {
+              "prefabId": 131001,
+              "unitName": "Maho (Dream Park)",
+              "rarity": 5,
+              "searchAreaWidth": 702,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92166,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92167,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 35266\n情報会 ティオス(・8・)",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 35200,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17797,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 100201,
+              "unitName": "Yui",
+              "rarity": 6,
+              "searchAreaWidth": 800,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92168,
+              "talentId": 4
+            },
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92169,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92170,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113801,
+              "unitName": "Yori (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 531,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92171,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92172,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 39880\nヴァッシュ ぞんび",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39800,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17816,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 9900,
+          "charas": [
+            {
+              "prefabId": 111401,
+              "unitName": "Luna",
+              "rarity": 5,
+              "searchAreaWidth": 765,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92263,
+              "talentId": 5
+            },
+            {
+              "prefabId": 101601,
+              "unitName": "Suzuna",
+              "rarity": 6,
+              "searchAreaWidth": 705,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92264,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92265,
+              "talentId": 4
+            },
+            {
+              "prefabId": 134801,
+              "unitName": "Tsumugi (Geo Gehenna)",
+              "rarity": 5,
+              "searchAreaWidth": 485,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92266,
+              "talentId": 4
+            },
+            {
+              "prefabId": 103401,
+              "unitName": "Yukari",
+              "rarity": 6,
+              "searchAreaWidth": 405,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92267,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "22s9982 TP9.0",
+          "links": [
+            {
+              "type": 10,
+              "name": "22s9982\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=vIIuK6FH1Ds",
+              "remarks": "黄骑  ★6 R42 全部 专用SP CR6\n光裁 ★5 R42 全部 专用MAX CR3\n水莲  ★5 R42 全部 专用MAX CR15\n暴击弓  ★6  R42 全部 专用SP 专用2★5 CR15\n露娜 ★5  R42 全部 专用MAX CR0\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(ーー〇〇ー)\n\n1:23 暴击弓  カリスマオーラbuff后\n1:21 银莲\n1:20 暴击弓  ダーツHIT后 (ー〇〇〇ー)\n1:18 暴击弓\n    →暴击弓 (ーー〇〇ー)\n1:17 裁缝\n1:16 暴击弓  普攻HIT后 (ー〇〇〇ー)\n1:13 暴击弓\n    →暴击弓\n\n1:11 露娜  怨恨取消 ※1\n1:09 暴击弓\n    →暴击弓",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17824,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 22000,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92303,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92304,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92305,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92306,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92307,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "47s22012 TP9.0",
+          "links": [
+            {
+              "type": 10,
+              "name": "47s22012\n油管 芽須夏希\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=M69WE2dTX7U",
+              "remarks": "1:30　战斗开始　[✕〇〇✕✕]OFF\n\n1:21　水莲　[✕〇〇〇✕]OFF\n　　⇒天妹\n　　⇒春电\n1:18　武璃亚　[〇〇〇〇〇]OFF\n　　⇒光精灵\n1:15　天妹\n1:14　春电\n1:09　水莲\n　　⇒天妹\n1:08　光精灵\n\n===【1:06 敌UB】===\n\n1:06　武璃亚\n　　⇒春电\n1:01　天妹\n0:56　春电\n0:53　天妹\n0:52　水莲\n0:48　光精灵　[〇✕〇〇〇]OFF\n0:45　春电　普攻Hit后\n\n===【0:45 敌UB】===\n0:44　天妹\n\n武璃亚　　R42最强　CR15\n天妹　R42最强　CR15\n水莲　　　R42最强　CR15\n春电　　R42最强　CR15\n光精灵　　　　R42最强　CR15\n\n属性Lv1250\n属性技能8/8MAX\n大师163\n\n■掩护者\n不死随意\n\n■攻击者\n全:9-0\n\n■增幅者\n初动TP:9-0\n他:8-3\n\n■增益者\nbuff强化:9-2\n他:8-3",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17863,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 100201,
+              "unitName": "Yui",
+              "rarity": 6,
+              "searchAreaWidth": 800,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92496,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92497,
+              "talentId": 4
+            },
+            {
+              "prefabId": 131001,
+              "unitName": "Maho (Dream Park)",
+              "rarity": 5,
+              "searchAreaWidth": 702,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92498,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113801,
+              "unitName": "Yori (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 531,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92499,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92500,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 38400\n油管 クローバー【Clover】\nCR 6/15/6/15/6",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 38400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17864,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92501,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92502,
+              "talentId": 4
+            },
+            {
+              "prefabId": 109201,
+              "unitName": "Anne",
+              "rarity": 5,
+              "searchAreaWidth": 630,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92503,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92504,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92505,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 33400\n油管 クローバー【Clover】\nCR 9/15/6/15/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 33400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17870,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 22200,
+          "charas": [
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92531,
+              "talentId": 4
+            },
+            {
+              "prefabId": 131001,
+              "unitName": "Maho (Dream Park)",
+              "rarity": 5,
+              "searchAreaWidth": 702,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92532,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92533,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92534,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92535,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "44s22287 TP9.0",
+          "links": [
+            {
+              "type": 10,
+              "name": "44s22287\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=a_nyg1bkRlo",
+              "remarks": "武璃亚   ★5 R42 全部 CR15\n天妹  ★5  R42 全部 专用MAX 专用2★5 CR15\n水莲  ★5 R42 全部 专用MAX CR15\n梦狐 ★5 R42 全部 专用MAX CR15\n春电 ★5 R42 全部 专用MAX CR15\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(ー〇ーーー)\n1:21 狐狸 (ー〇〇ー〇)\n    →可璃亚\n    →银莲 (ー〇ーーー)\n\n1:19 妹法  シュートHIT后\n    →充电宝  コーリングフェザーHIT后\n\n1:14 妹法  シュートHIT后\n\n1:11 狐狸 (ー〇〇〇ー)\n    →银莲\n1:09 妹法\n    →充电宝  普攻取消\n\n1:06 敌UB (〇〇〇〇〇)\n\n1:06 可璃亚\n1:01 妹法\n1:00 充电宝 (ーー〇〇〇)\n0:52 妹法\n0:47 银莲 (〇〇〇〇〇)\n    →狐狸\n    →充电宝",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17879,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 100201,
+              "unitName": "Yui",
+              "rarity": 6,
+              "searchAreaWidth": 800,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92576,
+              "talentId": 4
+            },
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92577,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92578,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92579,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92580,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 35000\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 35000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17880,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101601,
+              "unitName": "Suzuna",
+              "rarity": 6,
+              "searchAreaWidth": 705,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92581,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92582,
+              "talentId": 4
+            },
+            {
+              "prefabId": 134601,
+              "unitName": "Aoi (Pilot)",
+              "rarity": 5,
+              "searchAreaWidth": 526,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92583,
+              "talentId": 4
+            },
+            {
+              "prefabId": 134801,
+              "unitName": "Tsumugi (Geo Gehenna)",
+              "rarity": 5,
+              "searchAreaWidth": 485,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92584,
+              "talentId": 4
+            },
+            {
+              "prefabId": 111901,
+              "unitName": "Kokkoro (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 159,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92585,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 32600\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 32600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17881,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92586,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92587,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92588,
+              "talentId": 4
+            },
+            {
+              "prefabId": 113701,
+              "unitName": "Akari (Angel)",
+              "rarity": 5,
+              "searchAreaWidth": 530,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92589,
+              "talentId": 4
+            },
+            {
+              "prefabId": 139601,
+              "unitName": "Qulia (Valkyria)",
+              "rarity": 5,
+              "searchAreaWidth": 150,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92590,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 33000\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 33000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17882,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92591,
+              "talentId": 5
+            },
+            {
+              "prefabId": 118101,
+              "unitName": "Ranpha",
+              "rarity": 5,
+              "searchAreaWidth": 782,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92592,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133801,
+              "unitName": "Neneka (Alpha)",
+              "rarity": 5,
+              "searchAreaWidth": 759,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92593,
+              "talentId": 5
+            },
+            {
+              "prefabId": 180601,
+              "unitName": "Kyaru (Princess)",
+              "rarity": 5,
+              "searchAreaWidth": 747,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92594,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92595,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 32200\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 32200,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 798,
+      "prefabId": 326200,
+      "unitName": "アーク・デアム",
+      "server": "jp",
+      "index": 4,
+      "tasks": [
+        {
+          "id": 17798,
+          "canAuto": [
+            40,
+            50,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92173,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140001,
+              "unitName": "Creditta (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 730,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92174,
+              "talentId": 1
+            },
+            {
+              "prefabId": 109401,
+              "unitName": "Grea",
+              "rarity": 5,
+              "searchAreaWidth": 525,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92175,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92176,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92177,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set TP8.3+ 爱梅斯攻击最高",
+          "links": [
+            {
+              "type": 40,
+              "name": "46457\n情報会 クローン\nTP9.3",
+              "link": "",
+              "remarks": "1:30 ✕〇〇〇✕ ON\n1:20 爱梅斯 〇〇〇〇✕",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "50450\n情報会 鞘戸詩音\n不押 TP8.3\nCR15/15/6/15/6",
+              "link": "",
+              "remarks": "1:30 战斗开始　〇〇〇〇〇　“自动OFF”\n\n1:10 爱梅斯　〇〇〇－〇\n1:01 富婆　　〇〇〇〇〇\n0:44 富婆　　〇－－〇〇\n0:33 爱梅斯　〇〇－〇〇\n     富婆　　　〇〇〇〇〇\n     龙姬　　　〇〇－〇〇\n0:24 爱梅斯　〇〇〇〇〇\n0:17 爱梅斯　〇〇〇－〇\n0:14 富婆　　〇〇－〇〇\n0:10 爱梅斯　〇〇〇〇〇 ",
+              "index": 1,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "49205\n情報会 湯秋\nTP9.0+",
+              "link": "",
+              "remarks": "1:30 －〇〇〇－ ON\n1:20 爱梅斯 〇〇〇〇－\n1:12 富婆　〇－〇〇－\n0:51 美穗　〇〇〇〇－\n0:44 龙姬　〇〇－〇－\n0:35 龙姬　〇〇〇〇－\n0:10 美穗　　〇〇－〇－ 自动OFF\n0:03 爱梅斯　〇〇〇〇－",
+              "index": 2,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "49512\n情報会 Bluvel\n0-1押 TP9.0",
+              "link": "",
+              "remarks": "1:30 开始　　　 ‐○‐○‐ 自动OFF\n1:20 爱梅斯　　 ○○‐○‐ #是龙姬则降她攻击\n1:12 富婆 ○○○○‐ 自动ON\n1:11 爱梅斯　　 ○○‐‐‐ 自动OFF\n1:02 狐狸　　　 ○○○○○\n   → 龙姬　　 ○‐‐○○\n0:54 爱梅斯　　 ○‐○○○\n0:52 美穗　　　 ○○○○○\n   → 富婆 ○‐○○○\n0:42 爱梅斯　　 ○○○○○\n   → 富婆 ‐‐○○○ 自动ON\n0:33 美穗　　　 ○○‐○○ 自动OFF\n   → 富婆 ○‐○○○\n0:22 安　　　 ○○○○○\n0:20 爱梅斯　　 ‐○○‐○ 自动ON\n0:17 爱梅斯　　 ○○‐○○\n0:10 爱梅斯　　 ○○○○○\n以下+700\n0:22 安　　　 ‐○○‐○\n★0:19 爱梅斯(回复TP前) ‐○○○○ #回复唱名\n0:19 爱梅斯(2次) ○○○○○ #是待机则成功\n0:18 龙姬　　 ○○‐○○\n0:10 爱梅斯　　 ○○○○○",
+              "index": 3,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "全set 36700\n油管 クローバー【Clover】\nCR 6/6/9/6/6",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 4,
+              "damage": 0,
+              "type": 20
+            },
+            {
+              "name": "53377\n情報会 鞘戸詩音\n不押 TP8.3\nCR15/15/6/15/6",
+              "link": "",
+              "remarks": "1:30 战斗开始　－〇〇〇－　“自动ON”\n\n1:12 富婆　－〇〇〇〇\n1:10 爱梅斯－〇〇－〇\n1:01 富婆　－〇〇〇〇\n0:52 龙姬　－〇－〇〇\n0:44 富婆　－－〇〇〇\n0:33 美穗　－〇〇〇〇\n0:29 龙姬　－－－〇〇\n0:24 爱梅斯－〇－〇〇\n0:23 龙姬　〇〇〇〇〇\n0:14 富婆　〇－〇〇〇",
+              "index": 5,
+              "damage": 0,
+              "type": 50
+            }
+          ],
+          "type": 2,
+          "autoDamage": 36700,
+          "images": [],
+          "halfAutoDamage": 49200,
+          "easyManualDamage": 53300
+        },
+        {
+          "id": 17799,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92178,
+              "talentId": 1
+            },
+            {
+              "prefabId": 136001,
+              "unitName": "Arachne",
+              "rarity": 5,
+              "searchAreaWidth": 732,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92179,
+              "talentId": 1
+            },
+            {
+              "prefabId": 129701,
+              "unitName": "Nephi Nela",
+              "rarity": 5,
+              "searchAreaWidth": 540,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92180,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92181,
+              "talentId": 1
+            },
+            {
+              "prefabId": 135501,
+              "unitName": "Aira",
+              "rarity": 5,
+              "searchAreaWidth": 213,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92182,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 33675\n情報会 ばすたか",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 33600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17800,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92183,
+              "talentId": 1
+            },
+            {
+              "prefabId": 136001,
+              "unitName": "Arachne",
+              "rarity": 5,
+              "searchAreaWidth": 732,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92184,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139301,
+              "unitName": "Maho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 700,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92185,
+              "talentId": 1
+            },
+            {
+              "prefabId": 109401,
+              "unitName": "Grea",
+              "rarity": 5,
+              "searchAreaWidth": 525,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92186,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92187,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 25026\nヴァッシュ フウスナ",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 25000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17801,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140001,
+              "unitName": "Creditta (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 730,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92188,
+              "talentId": 1
+            },
+            {
+              "prefabId": 134501,
+              "unitName": "Croce (Aerial)",
+              "rarity": 5,
+              "searchAreaWidth": 719,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92189,
+              "talentId": 1
+            },
+            {
+              "prefabId": 109401,
+              "unitName": "Grea",
+              "rarity": 5,
+              "searchAreaWidth": 525,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92190,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92191,
+              "talentId": 1
+            },
+            {
+              "prefabId": 136401,
+              "unitName": "Yui (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 382,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92192,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 31639\n情報会 hoshiya\nCR 0 15 6 0 0",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 31600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17802,
+          "canAuto": [
+            40,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 131001,
+              "unitName": "Maho (Dream Park)",
+              "rarity": 5,
+              "searchAreaWidth": 702,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92193,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137901,
+              "unitName": "Rino (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 684,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92194,
+              "talentId": 4
+            },
+            {
+              "prefabId": 107001,
+              "unitName": "Neneka",
+              "rarity": 5,
+              "searchAreaWidth": 660,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92195,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92196,
+              "talentId": 4
+            },
+            {
+              "prefabId": 130901,
+              "unitName": "Kururu",
+              "rarity": 5,
+              "searchAreaWidth": 440,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92197,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoxoo TP8.3",
+          "links": [
+            {
+              "type": 40,
+              "name": "34739\n情報会 RYUKI\nTP8.3",
+              "link": "",
+              "remarks": "开始 xoxoo　自动ON\n1:04 狐狸　全SET",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "xoxoo 28800\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 28800,
+          "halfAutoDamage": 34700,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17803,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 132301,
+              "unitName": "Louise-Marie",
+              "rarity": 5,
+              "searchAreaWidth": 754,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92198,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140001,
+              "unitName": "Creditta (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 730,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92199,
+              "talentId": 1
+            },
+            {
+              "prefabId": 109401,
+              "unitName": "Grea",
+              "rarity": 5,
+              "searchAreaWidth": 525,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92200,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92201,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92202,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 40176\n情報会 じぇ\nCR 6-15-9-15-6",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 40100,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17804,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92203,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140001,
+              "unitName": "Creditta (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 730,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92204,
+              "talentId": 1
+            },
+            {
+              "prefabId": 134501,
+              "unitName": "Croce (Aerial)",
+              "rarity": 5,
+              "searchAreaWidth": 719,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92205,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92206,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92207,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 29031\n情報会 ファイストスレーグル23時\nCR 6ｰ6ｰ6ｰ15ｰ6",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 29000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17805,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92208,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140001,
+              "unitName": "Creditta (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 730,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92209,
+              "talentId": 1
+            },
+            {
+              "prefabId": 109401,
+              "unitName": "Grea",
+              "rarity": 5,
+              "searchAreaWidth": 525,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92210,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92211,
+              "talentId": 1
+            },
+            {
+              "prefabId": 136401,
+              "unitName": "Yui (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 382,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92212,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 36309\n情報会 クァール",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 36300,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17817,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 13700,
+          "charas": [
+            {
+              "prefabId": 131001,
+              "unitName": "Maho (Dream Park)",
+              "rarity": 5,
+              "searchAreaWidth": 702,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92268,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137901,
+              "unitName": "Rino (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 684,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92269,
+              "talentId": 4
+            },
+            {
+              "prefabId": 135401,
+              "unitName": "Anemone (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 553,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92270,
+              "talentId": 4
+            },
+            {
+              "prefabId": 112401,
+              "unitName": "Uzuki (IM@S CG)",
+              "rarity": 5,
+              "searchAreaWidth": 453,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92271,
+              "talentId": 4
+            },
+            {
+              "prefabId": 130901,
+              "unitName": "Kururu",
+              "rarity": 5,
+              "searchAreaWidth": 440,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92272,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "33s13709 TP9.0",
+          "links": [
+            {
+              "type": 10,
+              "name": "33s13709\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=PimB1H2vM7k",
+              "remarks": "宝石兔  ★5 R42 全部 专用MAX CR3\n卯月  ★5  R42 全部 专用MAX 专用2★5 CR15\n水莲  ★5 R42 全部 专用MAX CR15\n春弓  ★5  R42 全部 CR15     会死则下EX\n梦狐 ★5 R42 全部 专用MAX CR6\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(〇ー〇〇ー)\n1:23 卯月 (〇ー〇ーー)\n1:21 银莲\n    →狐狸 (〇〇〇〇〇)\n    →宝石兔\n    →卯月\n    →妹弓 (〇ー〇ー〇)\n1:13 银莲\n1:11 狐狸 (〇ー〇〇〇)\n    →卯月\n    →宝石兔\n\n1:10 妹弓  スピニングトップシュートHIT后 (〇ー〇ーー)\n\n1:07 敌UB  ※1\n\n1:00 狐狸 (〇〇ー〇ー)\n    →卯月\n0:59 妹弓 (〇〇ー〇〇)\n    →宝石兔",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17865,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92506,
+              "talentId": 1
+            },
+            {
+              "prefabId": 132301,
+              "unitName": "Louise-Marie",
+              "rarity": 5,
+              "searchAreaWidth": 754,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92507,
+              "talentId": 1
+            },
+            {
+              "prefabId": 109401,
+              "unitName": "Grea",
+              "rarity": 5,
+              "searchAreaWidth": 525,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92508,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92509,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92510,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 32900\n油管 クローバー【Clover】\nCR 6/6/9/6/6",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 32900,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17883,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139301,
+              "unitName": "Maho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 700,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92596,
+              "talentId": 1
+            },
+            {
+              "prefabId": 129701,
+              "unitName": "Nephi Nela",
+              "rarity": 5,
+              "searchAreaWidth": 540,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92597,
+              "talentId": 1
+            },
+            {
+              "prefabId": 116701,
+              "unitName": "Aoi (Work)",
+              "rarity": 5,
+              "searchAreaWidth": 527,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92598,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92599,
+              "talentId": 1
+            },
+            {
+              "prefabId": 108101,
+              "unitName": "Shinobu (Halloween)",
+              "rarity": 5,
+              "searchAreaWidth": 440,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92600,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 30600\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 30600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": 799,
+      "prefabId": 300201,
+      "unitName": "レサトパルト",
+      "server": "jp",
+      "index": 5,
+      "tasks": [
+        {
+          "id": 17806,
+          "canAuto": [
+            40,
+            50,
+            10,
+            20
+          ],
+          "stage": 6,
+          "damage": 54800,
+          "charas": [
+            {
+              "prefabId": 117201,
+              "unitName": "Nozomi (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 417,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92213,
+              "talentId": 2
+            },
+            {
+              "prefabId": 123301,
+              "unitName": "Nea",
+              "rarity": 6,
+              "searchAreaWidth": 350,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92214,
+              "talentId": 2
+            },
+            {
+              "prefabId": 111501,
+              "unitName": "Christina (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 265,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92215,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92216,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92217,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "ooxoo TP8.3+",
+          "links": [
+            {
+              "type": 40,
+              "name": "48865\nヴァッシュ カルキうに\n",
+              "link": "",
+              "remarks": "1:30　〇〇✕✕〇　自动OFF\n\n1:12　偶像　〇〇✕〇〇　自动ON\n0:22　切噜　〇〇〇〇〇\n0:18　克　✕〇✕〇〇\n0:10　水紫(UB2次)　〇〇✕〇〇\n,　　　偶像 　〇〇〇〇〇\n0:07　克　〇〇✕〇〇　自动OFF\n0:02　水紫　〇〇〇〇〇",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "52400\n油管 ちょこ\n单押",
+              "link": "https://www.youtube.com/watch?v=FxHPpzKIzCs",
+              "remarks": "1:30 OOXOO 自动ON\n0:55 克 OOOOX\n0:47 紫罗兰 XOOOO\n0:43 切噜 XOOOX 自动OFF\n(0:41 克)\n⭐︎ 0:40 つらなぎ取消 OOOOX※1\n(0:29 克)※2\n0:29 克OOXOX  自动ON\n0:23 切噜 OOOXO\n0:17 紫罗兰 OOOOO\n0:17 切噜 OOOXO\n0:07 紫罗兰 OOOOO\n\n \n※1 0:39可\n※1目押难可以0:40跳秒后自动ON\n0:40 偶像 OOOOO\n0:40 紫罗兰 OOOOX 以后相同\n\n※2 0:30 克可",
+              "index": 1,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "50264\n油管 あじ\n不押 TP9.3+\n弱骑士",
+              "link": "https://www.youtube.com/watch?v=AFThR7AvO_s",
+              "remarks": "CR 15 9 15 15 15\n \n〇〇ー〇〇 自动ON\n\n0:55 克 自动OFF\n0:50 紫罗兰 〇〇〇〇〇\n0:48 偶像 ー〇ー〇〇 自动ON\n0:42 克 〇〇ー〇〇\n0:40 偶像 〇〇〇〇〇\n　　 克 ー〇ー〇〇\n0:30 小黄　  〇〇〇〇〇\n　　 克 ー〇ーーー (※2次 不安场合见下)\n0:17 小黄　  〇〇〇〇〇\n0:16 偶像 ー〇〇〇ー\n0:06 克 〇〇〇〇ー\n \n\n0:30的顺序是\n小黄 〇〇〇〇〇 →克→偶像\n→紫罗兰→切噜→小黄→克 ー〇ーーー\n不要错了",
+              "index": 2,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "54102\n情報会 鞘戸詩音\nTP8.3\nCR全15",
+              "link": "",
+              "remarks": " 练度低会死切噜\n\n1:30 战斗开始   　〇〇－－〇　“自动OFF”\n\n1:12 偶像　　　   〇〇－〇〇　“自动ON”\n0:22 切噜　   　　〇〇〇〇〇\n0:18 克　 　 　 －〇－〇〇\n0:10 紫罗兰(2次)　〇〇－〇〇\n     偶像  　　 　〇〇〇〇〇\n0:07 克　　   　〇〇－〇〇　“自动OFF”\n0:02 紫罗兰  　　〇〇〇〇〇 ",
+              "index": 3,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "54000\n油管 たくみたん\n单押 TP8.5+\nCR全15",
+              "link": "https://www.youtube.com/watch?v=ERkTRAgk0mk",
+              "remarks": "  练度低会死切噜\n\n1:30 开始时　   －〇－－〇　“自动OFF”\n\n★1:12 偶像 断普/半蹲时　　〇〇－〇〇　“自动ON”\n0:22 切噜　   　〇〇〇〇〇\n0:18 克　 　 　 －〇－〇〇\n0:10 紫罗兰(2次)　〇〇－〇〇\n     偶像  　　 　〇〇〇〇〇\n0:07 克　　   　〇〇－〇〇　“自动OFF”\n0:02 紫罗兰  　〇〇〇〇〇 ",
+              "index": 4,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "54800\n油管 たつきちゃん\n",
+              "link": "https://www.youtube.com/watch?v=wWAYbIkdY2M",
+              "remarks": "1:30 战斗开始\n1:12 偶像　普攻取消最速\n1:11 切噜　切噜落地\n1:02 小黄\n1:02 克\n0:56 紫罗兰\n\n0:56 レサトパルト 2200\n\n0:56 偶像\n0:55 切噜\n0:55 克　自动\n0:52 小黄\n0:50 克　自动\n0:47 切噜\n0:47 紫罗兰\n0:46 小黄\n0:46 偶像\n0:46 克　自动\n0:45 紫罗兰\n0:45 偶像\n0:45 切噜\n0:45 小黄\n0:44 克　自动\n0:39 克　自动\n0:35 小黄\n0:34 偶像\n0:34 切噜\n0:33 克　自动\n0:32 紫罗兰\n0:32 切噜\n0:32 小黄\n0:31 偶像\n0:31 克　自动\n0:24 小黄\n\n0:24 レサトパルト 27400\n\n0:24 切噜\n0:23 紫罗兰\n0:22 偶像\n0:22 克\n0:22 切噜\n0:22 小黄\n0:21 克　普攻hit稍快\n0:20 紫罗兰\n0:20 偶像\n0:18 克\n0:16 小黄\n0:15 切噜\n0:15 克　克归位稍快\n0:10 紫罗兰\n0:10 偶像　普攻hit稍快\n0:10 紫罗兰\n0:10 切噜\n0:10 小黄\n0:10 克\n0:02 偶像　TP付与稍快\n0:07 克\n0:03 切噜　#SET、普攻后\n0:03 小黄\n0:03 克\n0:02 紫罗兰",
+              "index": 5,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "52000\n情報会 ちょこ\nTP8.4+",
+              "link": "",
+              "remarks": "1:30 XOXOO 自动OFF\n1:02 小黄 自动ON\n0:52 克 OOXOO\n0:22 切噜 OOOOO\n0:18 克 XOXOO\n0:10 紫罗兰(2次)　OOXOO\n          偶像  OOOOO\n0:07 克 OOXOO　自动OFF\n0:02 紫罗兰  OOOOO ",
+              "index": 6,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "ooxoo 40800\n油管 クローバー【Clover】\nCR 6/6/6/12/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 7,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 40800,
+          "images": [],
+          "halfAutoDamage": 54100,
+          "easyManualDamage": 54000
+        },
+        {
+          "id": 17807,
+          "canAuto": [
+            50,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 129301,
+              "unitName": "Yuni (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 708,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92218,
+              "talentId": 2
+            },
+            {
+              "prefabId": 123301,
+              "unitName": "Nea",
+              "rarity": 6,
+              "searchAreaWidth": 350,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92219,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92220,
+              "talentId": 2
+            },
+            {
+              "prefabId": 107901,
+              "unitName": "Tamaki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 225,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92221,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92222,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set TP9.4",
+          "links": [
+            {
+              "type": 50,
+              "name": "47000\n油管 たつきちゃん\n三押 TP9.4\nCR全15",
+              "link": "https://youtu.be/mLDwUM61QPA",
+              "remarks": "紫罗兰 ★5 Lv409 RANK42\n猫剑 ★5 Lv409 RANK42\n切噜 ★5 Lv409 RANK42\n小黄 ★6 Lv404 RANK42\n优妮 ★5 Lv409 RANK42\n----\n◆UB发动时间\nOOOXO OFF\n1:14 猫剑　时间目押　 OOOOO\n1:03 猫剑　OOOXO\n0:55 优妮　OOOOO\n0:48 猫剑　OXXXO\n0:43 优妮　OOXXO\n　　小黄　OOOXO\n         切噜 OOOXO ON\n0:36 猫剑　OOXXO OFF\n0:31 小黄　OXXXO\n0:28 优妮　OOXXO\n          小黄 OOOXX\n          切噜　OOXOX\n0:25 紫罗兰　つらなぎ取消　OOXOO\n0:18 切噜　切噜落地\n0:16 猫剑　 OXXXO\n         优妮　OOXXO\n         小黄   OOOXO\n          切噜　OOXOO\n0:07 猫剑　 OOXXO\n0:02 紫罗兰　OXXXO\n          优妮　OOXXO\n         小黄  　OOOXO\n     　切噜　 OOOOO\n\n\n\n1:30 战斗开始\n1:16 优妮　　\n1:16 切噜　\n1:14 猫剑　秒数目押\n1:03 猫剑　\n0:59 小黄　　\n\n0:56 レサトパルト\n\n0:55 优妮　　\n0:55 猫剑　\n0:51 切噜　\n0:50 紫罗兰　\n0:49 小黄　　\n0:48 猫剑　\n0:43 紫罗兰　\n0:43 优妮　　\n0:43 小黄　　\n0:43 切噜　\n0:42 猫剑　自动\n0:36 猫剑　自动\n0:33 优妮　　\n0:31 小黄　　\n0:29 紫罗兰　\n0:28 优妮　　\n0:28 小黄　　\n0:28 切噜　\n0:28 猫剑　\n0:26 猫剑　\n0:25 紫罗兰　つらなぎ取消\n\n00:22 レサトパルト\n\n0:19 优妮\n0:19 小黄\n0:18 切噜　切噜落地\n0:16 猫剑\n0:16 紫罗兰\n0:16 优妮\n0:16 小黄\n0:16 切噜\n0:14 猫剑\n0:07 猫剑\n0:04 优妮\n0:03 小黄\n0:02 紫罗兰\n0:02 优妮\n0:02 小黄\n0:02 切噜\n0:02 猫剑\n\n0:00 战斗结束",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "全set 37578\n情報会 痩せたいゼリー",
+              "link": "",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 37500,
+          "halfAutoDamage": null,
+          "easyManualDamage": 47000,
+          "images": []
+        },
+        {
+          "id": 17808,
+          "canAuto": [
+            40,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 135801,
+              "unitName": "Yukino",
+              "rarity": 5,
+              "searchAreaWidth": 830,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92223,
+              "talentId": 2
+            },
+            {
+              "prefabId": 140301,
+              "unitName": "Tia",
+              "rarity": 5,
+              "searchAreaWidth": 744,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92224,
+              "talentId": 2
+            },
+            {
+              "prefabId": 133701,
+              "unitName": "Labyrista (Alpha)",
+              "rarity": 5,
+              "searchAreaWidth": 717,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92225,
+              "talentId": 2
+            },
+            {
+              "prefabId": 132501,
+              "unitName": "Sono",
+              "rarity": 5,
+              "searchAreaWidth": 636,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92226,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92227,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xooxo",
+          "links": [
+            {
+              "type": 40,
+              "name": "40993\n情報会 ちょこ\nCR全15",
+              "link": "",
+              "remarks": "1:30 XOOXO 自动ON\n0:57 紫罗兰 OOOOO\n0:57 雪女 XOXXX\n0:43 雪女  OOOOX\n0:38 紫罗兰 OOOOO",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "xooxo 33500\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 33500,
+          "halfAutoDamage": 40900,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17809,
+          "canAuto": [
+            50,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140401,
+              "unitName": "Liza",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92228,
+              "talentId": 3
+            },
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92229,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92230,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92231,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92232,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxooo",
+          "links": [
+            {
+              "type": 50,
+              "name": "47814\n情報会 たくみたん\n双押",
+              "link": "",
+              "remarks": "1:30 OXOOO 自动ON\n0:41 猪妹 OXXOO 自动ON\n★0:30 猪妹 たねれんしゃHIT后 OXXOO 自动ON\n★0:22 猪妹 たねれんしゃHIT后 OXOOO 自动ON",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "oxooo 46005\n情報会 闇猫\nCR 15/15/6/15/15",
+              "link": "",
+              "remarks": "风1250／第56合流(上限)／大师163个\n\n破防者:攻击UPLv9星3、爆伤UPLv9星4、暴击UPLv8星4、普攻攻击Lv8星3\n增益者:HPUPLv8星3、魔防UPLv8星3、　　物防UPLv8星3、buff强化Lv9星2\n治疗者　:HPUPLv8星3、魔防UPLv8星3、　　物防UPLv8星3、回复强化Lv8星3\n妨碍者　:HPUPLv8星3、异常状态命中Lv8星4、　攻击UPLv8星3、异常状态抵抗Lv8星3\n\n诗夏:ＣＲ15\n若菜:ＣＲ15\n猪妹:ＣＲ6\n菲欧:ＣＲ15\n丽莎:ＣＲ15\n\n \n菲欧以外ＳＥＴ",
+              "index": 1,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 46000,
+          "halfAutoDamage": null,
+          "easyManualDamage": 47800,
+          "images": []
+        },
+        {
+          "id": 17810,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 129301,
+              "unitName": "Yuni (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 708,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92233,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138801,
+              "unitName": "Shiori (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 571,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92234,
+              "talentId": 2
+            },
+            {
+              "prefabId": 123301,
+              "unitName": "Nea",
+              "rarity": 6,
+              "searchAreaWidth": 350,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92235,
+              "talentId": 2
+            },
+            {
+              "prefabId": 107901,
+              "unitName": "Tamaki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 225,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92236,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92237,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 37685\n情報会 痩せたいゼリー",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 37600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17811,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 118501,
+              "unitName": "Karin",
+              "rarity": 5,
+              "searchAreaWidth": 787,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92238,
+              "talentId": 3
+            },
+            {
+              "prefabId": 140401,
+              "unitName": "Liza",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92239,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92240,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92241,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92242,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 45587\n情報会 miz",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 45500,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17812,
+          "canAuto": [
+            40,
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140401,
+              "unitName": "Liza",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92243,
+              "talentId": 3
+            },
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92244,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92245,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92246,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92247,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxooo",
+          "links": [
+            {
+              "type": 40,
+              "name": "39346\nヴァッシュ きくらげ  (古･戦･AI)",
+              "link": "",
+              "remarks": "自动ON　丽莎SET\n1:12   猪妹　猪妹SET\n1:11   诗夏　诗夏SET\n1:09  静流　静流SET",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "type": 20,
+              "name": "全set 36572\nヴァッシュ きくらげ  (古･戦･AI)",
+              "link": "",
+              "remarks": "",
+              "index": 1,
+              "damage": 0
+            },
+            {
+              "name": "oxooo 36000\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 36500,
+          "halfAutoDamage": 39300,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17814,
+          "canAuto": [
+            10
+          ],
+          "stage": 6,
+          "damage": 8700,
+          "charas": [
+            {
+              "prefabId": 110301,
+              "unitName": "Saren (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 585,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92253,
+              "talentId": 2
+            },
+            {
+              "prefabId": 107601,
+              "unitName": "Kokkoro (Summer)",
+              "rarity": 6,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92254,
+              "talentId": 2
+            },
+            {
+              "prefabId": 117001,
+              "unitName": "Eriko (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 407,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92255,
+              "talentId": 2
+            },
+            {
+              "prefabId": 108601,
+              "unitName": "Ayane (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 190,
+              "rank": 42,
+              "currentRarity": 3,
+              "id": 92256,
+              "talentId": 2
+            },
+            {
+              "prefabId": 112501,
+              "unitName": "Rin (IM@S CG)",
+              "rarity": 5,
+              "searchAreaWidth": 153,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92257,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "22s8743 TP9.0",
+          "links": [
+            {
+              "type": 10,
+              "name": "22s8743\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=Pu0LDe8AoUE",
+              "remarks": "凛  ★5  R42 全部 专用MAX 专用2★5 CR3\n圣锤 ★3 R42 全部 专用SP 专用2★5 CR15\n水病  ★5  R42 全部 专用MAX 专用2★5 CR6\n水妈 ★6 R42 全部 专用MAX 专用2★5 CR3\n水电 ★5 R42 全部 专用MAX 专用2★5 CR6\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n⚠️熊锤★注意⚠️\n◆TL\n1:30 开始(〇〇ー〇〇)\n1:21 充电宝\n    →凛\n1:19 熊锤 (〇〇ーー〇)\n\n1:18 熊锤  普攻取消\n1:17 熊锤  エール取消 最速× ※1\n\n1:16 妈 (〇〇〇〇〇)\n    →熊锤\n    →病娇\n    →熊锤 (〇〇〇ー〇)\n\n1:14 熊锤  圣锤ラッシュ后\n1:13 熊锤  普攻取消\n1:12 熊锤  エール取消 (〇〇〇〇〇)\n1:10 熊锤\n1:09 熊锤\n    →熊锤",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17827,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140301,
+              "unitName": "Tia",
+              "rarity": 5,
+              "searchAreaWidth": 744,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92318,
+              "talentId": 2
+            },
+            {
+              "prefabId": 131601,
+              "unitName": "Riri (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 399,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92319,
+              "talentId": 2
+            },
+            {
+              "prefabId": 123301,
+              "unitName": "Nea",
+              "rarity": 6,
+              "searchAreaWidth": 350,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92320,
+              "talentId": 2
+            },
+            {
+              "prefabId": 107501,
+              "unitName": "Pecorine (Summer)",
+              "rarity": 6,
+              "searchAreaWidth": 235,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92321,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92322,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 25000\n油管 taki2 taki",
+              "link": "https://www.youtube.com/watch?v=fVKFrWH4QM8",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 25000,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17866,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140301,
+              "unitName": "Tia",
+              "rarity": 5,
+              "searchAreaWidth": 744,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92511,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138901,
+              "unitName": "Grace (Bunny)",
+              "rarity": 5,
+              "searchAreaWidth": 429,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92512,
+              "talentId": 2
+            },
+            {
+              "prefabId": 131601,
+              "unitName": "Riri (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 399,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92513,
+              "talentId": 2
+            },
+            {
+              "prefabId": 107501,
+              "unitName": "Pecorine (Summer)",
+              "rarity": 6,
+              "searchAreaWidth": 235,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92514,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92515,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoooo",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 36100\n油管 クローバー【Clover】\nCR 9/6/6/6/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "xoooo 39700\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39700,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17867,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 131601,
+              "unitName": "Riri (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 399,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92516,
+              "talentId": 2
+            },
+            {
+              "prefabId": 123301,
+              "unitName": "Nea",
+              "rarity": 6,
+              "searchAreaWidth": 350,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92517,
+              "talentId": 2
+            },
+            {
+              "prefabId": 111501,
+              "unitName": "Christina (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 265,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92518,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92519,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92520,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "ooxoo",
+          "links": [
+            {
+              "type": 20,
+              "name": "ooxoo 34400\n油管 クローバー【Clover】\nCR 6/6/6/12/15",
+              "link": "https://www.youtube.com/watch?v=gZ4Z9h3KDj0",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17868,
+          "canAuto": [
+            40,
+            50
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140401,
+              "unitName": "Liza",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92521,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135201,
+              "unitName": "Precia (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 548,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92522,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130101,
+              "unitName": "Wakana",
+              "rarity": 5,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92523,
+              "talentId": 3
+            },
+            {
+              "prefabId": 105901,
+              "unitName": "Kokkoro",
+              "rarity": 6,
+              "searchAreaWidth": 500,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92524,
+              "talentId": 3
+            },
+            {
+              "prefabId": 135601,
+              "unitName": "Shinatsu",
+              "rarity": 5,
+              "searchAreaWidth": 198,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92525,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "",
+          "links": [
+            {
+              "type": 40,
+              "name": "55568\n情報会 miz\nCR全15",
+              "link": "",
+              "remarks": "－－◯◯◯、自动ON开始\n\n0:56　猪妹\n－◯◯◯◯\n0:17　若菜\n◯◯◯◯◯",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "55668\n情報会 たくみたん",
+              "link": "",
+              "remarks": "－－◯◯◯、自动ON开始\n\n0:56　猪妹\n－◯◯◯◯\n0:17　若菜\n◯◯◯◯◯　自动OFF\n0:12　诗夏\nOOOOX\n0:05　若菜\nOOOOO",
+              "index": 1,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "56661\n情報会 たくみたん\n不押",
+              "link": "",
+              "remarks": "1:30 　ーー〇〇〇　ON\n\n1:11 猪妹 〇ー〇〇〇\n1:11 丽莎 ーー〇〇〇\n1:00 诗夏 〇ー〇〇〇\n0:51 丽莎 ー〇〇〇〇\n0:41 若菜 〇〇〇〇〇\n0:34 丽莎 ー〇〇〇ー\n0:30 若菜 ー〇〇〇〇\n0:30 诗夏 ー〇〇〇ー\n0:20 妈 〇〇〇〇ー\n0:20 丽莎 〇〇〇〇〇",
+              "index": 2,
+              "damage": 0,
+              "type": 50
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": 55500,
+          "easyManualDamage": 56600,
+          "images": []
+        },
+        {
+          "id": 17884,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140301,
+              "unitName": "Tia",
+              "rarity": 5,
+              "searchAreaWidth": 744,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92601,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138901,
+              "unitName": "Grace (Bunny)",
+              "rarity": 5,
+              "searchAreaWidth": 429,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92602,
+              "talentId": 2
+            },
+            {
+              "prefabId": 140601,
+              "unitName": "Croce (Submarine)",
+              "rarity": 5,
+              "searchAreaWidth": 400,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92603,
+              "talentId": 2
+            },
+            {
+              "prefabId": 131601,
+              "unitName": "Riri (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 399,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92604,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92605,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoooo",
+          "links": [
+            {
+              "type": 20,
+              "name": "xoooo 35700\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 35700,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17885,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140301,
+              "unitName": "Tia",
+              "rarity": 5,
+              "searchAreaWidth": 744,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92606,
+              "talentId": 2
+            },
+            {
+              "prefabId": 131601,
+              "unitName": "Riri (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 399,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92607,
+              "talentId": 2
+            },
+            {
+              "prefabId": 181201,
+              "unitName": "Sheffy (Princess)",
+              "rarity": 5,
+              "searchAreaWidth": 368,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92608,
+              "talentId": 2
+            },
+            {
+              "prefabId": 107501,
+              "unitName": "Pecorine (Summer)",
+              "rarity": 6,
+              "searchAreaWidth": 235,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92609,
+              "talentId": 2
+            },
+            {
+              "prefabId": 138001,
+              "unitName": "Violet (Isanami)",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92610,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "xoooo",
+          "links": [
+            {
+              "type": 20,
+              "name": "xoooo 34700\n油管 Eruru",
+              "link": "https://www.youtube.com/watch?v=Up2PQY7GtJM",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 34700,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        }
+      ]
+    }
+  ],
+  "msg": ""
+}

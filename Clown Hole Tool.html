@@ -1990,7 +1990,7 @@
         display: block;
       }
 
-      /* BOSS LOG (data from CB104.json) */
+      /* BOSS LOG (data from CB105.json) */
       #bosslog-toolbar {
         display: flex;
         align-items: center;
@@ -2523,8 +2523,14 @@
 
       <div class="main">
         <div class="tab-nav">
-          <button class="tab-btn active" onclick="switchTab('cards', this)">
-            <i class="ti ti-layout-cards" aria-hidden="true"></i> Dashboard
+          <button
+            class="tab-btn tab-btn-bosslog active"
+            onclick="switchTab('bosslog', this)"
+          >
+            <i class="ti ti-sword" aria-hidden="true"></i> Dashboard
+          </button>
+          <button class="tab-btn" onclick="switchTab('cards', this)">
+            <i class="ti ti-bolt" aria-hidden="true"></i> Blitz
           </button>
           <button
             class="tab-btn tab-btn-log"
@@ -2539,19 +2545,13 @@
             <i class="ti ti-video" aria-hidden="true"></i> Video
           </button>
           <button
-            class="tab-btn tab-btn-bosslog"
-            onclick="switchTab('bosslog', this)"
-          >
-            <i class="ti ti-sword" aria-hidden="true"></i> Boss Log
-          </button>
-          <button
             class="tab-btn tab-btn-contrib"
             onclick="switchTab('contributor', this)"
           >
             <i class="ti ti-trophy" aria-hidden="true"></i> Contributor
           </button>
         </div>
-        <div id="tab-cards" class="tab-panel active">
+        <div id="tab-cards" class="tab-panel">
           <div class="cards-grid" id="cards-container"></div>
         </div>
         <div id="tab-checklist" class="tab-panel">
@@ -2560,7 +2560,7 @@
         <div id="tab-video" class="tab-panel">
           <div id="video-container"></div>
         </div>
-        <div id="tab-bosslog" class="tab-panel">
+        <div id="tab-bosslog" class="tab-panel active">
           <!-- Comp - Tier 4 log card lives here (moved from Dashboard) so
                members can cross-check it against the D<boss><letter> comps
                browsed just below. Built once by buildTier4Card() — kept
@@ -2695,7 +2695,7 @@
       </div>
 
       <!-- Slides in when a member row is clicked on the Log tab; shows their
-           Tier 4 picks (D1-D5) with character rosters resolved from CB104.json. -->
+           Tier 4 picks (D1-D5) with character rosters resolved from CB105.json. -->
       <div
         class="guideline-overlay"
         id="member-comp-overlay"
@@ -2708,7 +2708,7 @@
                 Chi tiết comp
               </div>
               <div class="guideline-panel-sub">
-                Comp Tier 4 (D1-D5) · dữ liệu từ CB104.json
+                Comp Tier 4 (D1-D5) · dữ liệu từ CB105.json
               </div>
             </div>
             <button
@@ -2774,14 +2774,14 @@
           tier: 4,
           prefix: "D",
           required: true,
-          mantra: "Acc có khả năng đánh TẤT CẢ boss nào - Chọn comp ở tab Boss Log",
+          mantra: "Acc có khả năng đánh TẤT CẢ boss nào - Chọn comp ở tab Dashboard",
           philosophy: [
             "Check xem acc có đủ comp đánh boss tương ứng hay không",
             "Nếu acc chỉ có 4 gái → có thể mượn gái thứ 5 trong clan",
             "Check các điều kiện của comp (nếu có) - chi tiết trong guideline",
           ],
           feel: [
-            "Qua tab Boss Log, bấm \"Chọn\" dưới mỗi comp acc có thể đánh — không giới hạn số lượng, kể cả nhiều comp trên cùng 1 boss",
+            "Qua tab Dashboard, bấm \"Chọn\" dưới mỗi comp acc có thể đánh — không giới hạn số lượng, kể cả nhiều comp trên cùng 1 boss",
             "Danh sách comp đã chọn hiện ngay tại đây, có thể bỏ chọn bất kỳ lúc nào trước khi Upload",
             "Không thấy comp phù hợp trên Sheet của Chef → báo lại để thêm vào - chi tiết xem guideline",
           ],
@@ -3197,7 +3197,7 @@
       // is exactly what gets JSON-encoded and sent to the sheet on submit
       // (see uploadToSheet()) — { subId, compId, bossId, bossIndex,
       // bossName, taskId, linkIndex, link }, `link` being that comp's raw
-      // CB104.json link object.
+      // CB105.json link object.
       let tier4SelectedComps = loadTier4Selection();
 
       function loadTier4Selection() {
@@ -3437,8 +3437,8 @@
         syncVideoFrameScale();
       }
 
-      // ── BOSS LOG TAB (reads CB104.json — clan battle boss/comp log) ─────
-      const BOSSLOG_URL = "CB104.json";
+      // ── BOSS LOG TAB (reads CB105.json — clan battle boss/comp log) ─────
+      const BOSSLOG_URL = "CB105.json";
       const BOSSLOG_ACTIVE_BOSS_KEY = "clownhole_bosslog_active_boss";
 
       // dictionary.txt (same folder) is the ONE reference for every
@@ -3687,7 +3687,7 @@
       let bossLogState = {
         loading: false,
         error: "",
-        bosses: [], // raw entries from CB104.json's top-level `data` array
+        bosses: [], // raw entries from CB105.json's top-level `data` array
         activeBossId: Number(localStorage.getItem(BOSSLOG_ACTIVE_BOSS_KEY)) || null,
       };
 
@@ -3840,7 +3840,7 @@
         } catch {
           bossLogState.bosses = [];
           bossLogState.error =
-            "Không tải được CB104.json. Kiểm tra file có tồn tại cạnh Clown Hole Tool.html và trang đang chạy qua http(s), không phải mở trực tiếp file://.";
+            "Không tải được CB105.json. Kiểm tra file có tồn tại cạnh Clown Hole Tool.html và trang đang chạy qua http(s), không phải mở trực tiếp file://.";
         } finally {
           bossLogState.loading = false;
           buildBossLogView();
@@ -3909,7 +3909,7 @@
 
       // Builds the "Chọn"/"Đã chọn" button for one comp (link), registering
       // its snapshot so toggleTier4Selection() can find it by index. `link`
-      // is that comp's raw CB104.json link object — it's exactly what gets
+      // is that comp's raw CB105.json link object — it's exactly what gets
       // stored (and later sent to the sheet) for this pick. Returns "" when
       // there's no subId/boss to key the pick on.
       function bossLogSelectButtonHTML(subId, context, link, linkIndex) {
@@ -3988,7 +3988,7 @@
         }
       }
 
-      // CB104.json's score fields (autoDamage/halfAutoDamage/easyManualDamage/
+      // CB105.json's score fields (autoDamage/halfAutoDamage/easyManualDamage/
       // task.damage) store the clan-battle score with the last 4 zeros
       // dropped — e.g. 47100 means 471,000,000 points. Convert back to
       // millions and abbreviate: 47100 → "471m".
@@ -4110,10 +4110,10 @@
       // mirror. Its filenames are keyed by a "unit id" that shares the
       // chara_id (the top 4 digits of our `prefabId`) but replaces the last
       // 2 digits with a rarity-TIER variant instead of the specific costume
-      // number CB104.json uses — the art only changes at the 4★ and 6★
+      // number CB105.json uses — the art only changes at the 4★ and 6★
       // breakpoints, so there are just 3 variant files per costume:
       // …11 (rarity 1-3), …31 (rarity 4-5), …61 (rarity 6). Confirmed by
-      // hand against several charas/rarities from CB104.json (e.g. prefabId
+      // hand against several charas/rarities from CB105.json (e.g. prefabId
       // 100301 + rarity 6 → icon 100361; prefabId 122101 + rarity 5 → 122131).
       const BOSSLOG_ICON_BASE = "https://redive.estertion.win/icon/unit/";
 
@@ -4352,7 +4352,7 @@
         if (!container) return;
 
         if (bossLogState.loading) {
-          container.innerHTML = `<div class="bosslog-loading"><i class="ti ti-loader" aria-hidden="true"></i> Đang tải CB104.json...</div>`;
+          container.innerHTML = `<div class="bosslog-loading"><i class="ti ti-loader" aria-hidden="true"></i> Đang tải CB105.json...</div>`;
           return;
         }
         if (bossLogState.error) {
@@ -5159,7 +5159,7 @@
       // bossIndex, bossName, taskId, linkIndex, link }] }] — `picks` is
       // exactly what writeTier4Comps_ (Apps Script) stored in the cell
       // note when the member submitted. Character rosters are resolved
-      // straight from CB104.json (bossLogState.bosses) by taskId, not from
+      // straight from CB105.json (bossLogState.bosses) by taskId, not from
       // the old "Test" Google Sheet tab — see renderMemberCompPickHTML.
       let memberCompState = {
         user: "",
@@ -5175,7 +5175,7 @@
         document.getElementById("member-comp-overlay").classList.add("open");
         document.body.style.overflow = "hidden";
         if (!bossLogDictionaryLoaded) loadBossLogDictionaryFile();
-        // CB104.json needs to be loaded before picks can be resolved to
+        // CB105.json needs to be loaded before picks can be resolved to
         // character rosters — fetch it if the Boss Log tab hasn't been
         // opened yet this session.
         const ensureBossLog =
@@ -5228,7 +5228,7 @@
         }
       }
 
-      // CB104.json's chara shape ({prefabId, unitName, rank, currentRarity}),
+      // CB105.json's chara shape ({prefabId, unitName, rank, currentRarity}),
       // reusing the same icon-URL derivation and fallback pattern as the
       // Boss Log tab's own character portraits (bossLogCharaIconUrl /
       // bossLogCharaInitial) — this is the same source data now, just
@@ -5249,7 +5249,7 @@
       }
 
       // One picked comp (one entry from a boss's `picks`) — looks its task
-      // up in CB104.json (bossLogState.bosses, by taskId) for the character
+      // up in CB105.json (bossLogState.bosses, by taskId) for the character
       // roster, and shows the source's own note lines underneath the subId.
       function renderMemberCompPickHTML(pick) {
         const boss = bossLogState.bosses.find((b) => b.id === pick.bossId);
@@ -5278,7 +5278,7 @@
           ${
             charsHTML
               ? `<div class="comp-char-grid">${charsHTML}</div>`
-              : `<div class="comp-boss-empty">Không tìm thấy comp "${escapeHtml(pick.subId || "")}" trong CB104.json (dữ liệu có thể đã đổi).</div>`
+              : `<div class="comp-boss-empty">Không tìm thấy comp "${escapeHtml(pick.subId || "")}" trong CB105.json (dữ liệu có thể đã đổi).</div>`
           }
           ${(link.remarks || "").trim() ? `<div class="comp-boss-note">${escapeHtml(translateToEnglish(link.remarks))}</div>` : ""}
         </div>`;
@@ -5376,13 +5376,16 @@
         if (row) openMemberComp(row.dataset.memberName);
       });
       // Video/Log data is fetched lazily, on first switch to that tab (see
-      // switchTab()) — not eagerly here. Dashboard is the tab shown at
-      // load, so firing both requests immediately just means 2+
-      // simultaneous hits on the Apps Script web app before anyone's even
-      // looked at either tab, for no benefit.
+      // switchTab()) — not eagerly here. Dashboard (the boss log) is the
+      // tab shown at load, so firing both requests immediately just means
+      // 2+ simultaneous hits on the Apps Script web app before anyone's
+      // even looked at either tab, for no benefit.
       buildGuideline();
       updateProgress();
       initAuth();
+      // Dashboard is the boss log view — kick off its data load now since
+      // it's the tab open at page load.
+      switchTab("bosslog", document.querySelector(".tab-btn-bosslog"));
 
       // Save the roster filter (Boss Log's "which characters do I have")
       // to the sheet right as the member leaves — pagehide covers normal
