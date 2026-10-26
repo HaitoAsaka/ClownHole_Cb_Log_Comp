@@ -335,6 +335,7 @@ xcw = Kyouka
 真穗解除
 机娘解除
 不
+龙姬 = Ameth
 哈哈剑 = Akino
 猫拳 = Hiyori
 圣伊 = Illya (Christmas)
