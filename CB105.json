@@ -3820,7 +3820,7 @@
               "talentId": 4
             }
           ],
-          "remarks": "全8.3+cr12天姐能活",
+          "remarks": "全8.3+cr12/7.5+cr15天姐能活",
           "exRemarks": "xoooo",
           "links": [
             {
@@ -3848,9 +3848,9 @@
               "type": 20
             },
             {
-              "name": "53378/61800\nb站 Nagisano\n三押 CR全15",
+              "name": "62300\nb站 Nagisano\n双押 CR全15",
               "link": "https://www.bilibili.com/video/av117501983787583/",
-              "remarks": "全CR15 MS163\n职业均全8.3，无TP要求\n\n\n开局XOOOX,自动ON\n118 UE→XOOOO,自动OFF\n107 姐法→UE ON&OFF\n103 BUB→UE ON&OFF\n059 姐法→XOOXO\n052~051 UE（压tp减少后开）\n050~048 姐法（压tp减少后开）→XOOOO\n047 咲恋→XOXOO,自动ON\n040 UE→OOOOO\n037 妹法→OOOOX\n033~031 妹法（压tp减少后开）→OOOOO\n026 UE→XOOOO\n016 UE→OOOOO\n009 UE→XOOOO",
+              "remarks": "全CR15   MS163\n职业均全8.3，无TP要求\n\n开局XOOOX,自动ON\n118 UE→XOOOO,自动OFF\n107 姐法→UE ON&OFF\n103 BUB→UE ON&OFF\n059 姐法→XOOXO\n052~051 UE（压tp减少后开）\n050~048 姐法（压tp减少后开）→XOOOO\n047 咲恋→XOXOO,自动ON\n040 UE→OOOOX,自动OFF\n034 阿格莱亚→妹法 ON&OFF\n026 UE→OOOOO→XOOOX\n019 阿格莱亚→妹法 ON&OFF,自动ON \n016 UE→OOOOX,自动OFF \n011 阿格莱亚→妹法 ON&OFF\n009 UE→XOOOX\n004 BUB→自动ON\n003 阿格莱亚→OOOOO",
               "index": 3,
               "damage": 0,
               "type": 50
@@ -3875,7 +3875,7 @@
           "type": 2,
           "autoDamage": 52500,
           "halfAutoDamage": 58000,
-          "easyManualDamage": 61600,
+          "easyManualDamage": 62300,
           "images": []
         },
         {
