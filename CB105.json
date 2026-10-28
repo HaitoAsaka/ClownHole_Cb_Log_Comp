@@ -407,6 +407,22 @@
               "index": 8,
               "damage": 0,
               "type": 40
+            },
+            {
+              "name": "40s28735\n油管 ネブソク",
+              "link": "https://www.youtube.com/watch?v=QEQBaytoBFk",
+              "remarks": "※CR和骑士强化要高\n⇩自环境⇩\nMS163 属性等级&技能MAX\n\n◆編成\n圣锤 ★3 R42 全部 专用SP 专用2★5 CR15\n圣克  ★5  R42 全部 专用2★5 CR15\n白菲 ★5 R42 全部 CR15\n水千 ★5 R42 全部 专用MAX 专用2★5 CR3\n圣千 ★5 R42 全部 专用SP 专用2★5 CR15\n\n◆职阶强化\n攻击者  左上左下9★0  他8★3\n增益者  右下9★0  右上8★4  他8★3\n增幅者  初动TPLv9★0\n\n⚠熊锤★注意⚠\n◆TL\n1:30 开始(〇〇ー〇ー)\n1:22 圣千\n    →水千 (〇ーー〇ー)\n\n1:18 克 (〇ーー〇〇)\n    →熊锤\n1:17 熊锤\n1:16 圣千 (〇〇ー〇〇) 自动ON\n    →水千\n1:15 雪菲\n    →熊锤 (〇〇〇〇ー) 自动OFF\n\n1:13 水千 (〇〇〇〇〇)\n    →熊锤\n1:09 熊锤\n1:08 熊锤\n    →熊锤\n1:07 熊锤\n    →克\n    →雪菲\n    →熊锤 (ー〇ーーー)  ※根据骑士强化，可能没有\n1:06 水千\n\n1:06 敌UB (〇〇ーー〇)\n\n1:06 熊锤\n    →圣千\n1:04 水千\n1:03 熊锤\n    →熊锤 (〇〇〇ー〇)\n    →雪菲\n    →熊锤\n    →熊锤\n1:02 熊锤\n1:01 熊锤\n    →熊锤\n\n1:00 熊锤 (ー〇〇ーー)\n0:58 雪菲 (ー〇〇〇〇)\n    →熊锤\n    →克\n0:57 水千\n    →熊锤 (ー〇〇〇ー)\n0:55 水千\n0:53 雪菲 (ー〇〇〇〇)\n    →熊锤 (ー〇〇〇ー)\n\n0:52 熊锤ぷうきちラッシュ开始后自动ON\n\n0:51 圣千 (ー〇〇〇〇)\n    →熊锤\n    →熊锤",
+              "index": 9,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "40s28449\n油管 ネブソク",
+              "link": "https://www.youtube.com/watch?v=nI7Z4Q5jLzE",
+              "remarks": "※CR和骑士强化要高\n⇩自环境⇩\nMS163 属性等级&技能MAX\n\n◆編成\n圣锤 ★3 R42 全部 专用SP 专用2★5 CR15\n圣克  ★5  R42 全部 专用2★5 CR15\n白菲 ★5 R42 全部 CR15\n水千 ★5 R42 全部 专用MAX 专用2★5 CR3\n圣千 ★5 R42 全部 专用SP 专用2★5 CR15\n\n◆职阶强化\n攻击者  左上左下9★0  他8★3\n增益者  右下9★0  右上8★4  他8★3\n增幅者  初动TPLv9★0\n\n⚠熊锤★注意⚠\n◆TL\n1:30 开始(〇〇ー〇ー)\n1:22 圣千\n    →水千 (〇ーー〇ー)\n\n1:18 克 (〇ーー〇〇)\n    →熊锤\n1:17 熊锤\n1:16 圣千 (〇〇ー〇〇) 自动ON\n    →水千\n1:15 雪菲\n    →熊锤 (〇〇〇〇ー) 自动OFF\n\n1:13 水千 (〇〇〇〇〇)\n    →熊锤\n1:09 熊锤\n1:08 熊锤\n    →熊锤\n1:07 熊锤\n    →克\n    →雪菲\n    →熊锤 (ー〇ーーー)  ※根据骑士强化，可能没有\n1:06 水千\n\n1:06 敌UB (〇〇ーー〇)\n\n1:06 熊锤\n    →圣千\n1:04 水千\n1:03 熊锤\n    →熊锤 (〇〇〇ー〇)\n    →雪菲\n    →熊锤\n    →熊锤\n1:02 熊锤\n1:01 熊锤\n    →熊锤\n\n1:00 熊锤 (ー〇〇ーー)\n0:58 雪菲 (ー〇〇〇〇)\n    →熊锤\n    →克\n0:57 水千\n    →熊锤 (ー〇〇〇ー)\n0:55 水千\n0:53 雪菲 (ー〇〇〇〇)\n    →熊锤\n    →熊锤\n0:51 熊锤",
+              "index": 10,
+              "damage": 0,
+              "type": 40
             }
           ],
           "type": 1,
@@ -2028,10 +2044,18 @@
               "index": 6,
               "damage": 0,
               "type": 20
+            },
+            {
+              "name": "49000\n油管 アレクサンデル\nTP10.2\nCR全15",
+              "link": "https://www.youtube.com/watch?v=bqKLtfV0uaY",
+              "remarks": "1:30 战斗开始 [ー〇〇〇ー] 自动ON\n1:20 似似花   [ーー〇〇ー] 自动ON\n1:09 紫罗兰   [〇ー〇〇ー] 自动ON\n1:08 似似花   [〇〇〇〇ー] 自动ON\n1:00 似似花 [〇ー〇〇ー] 自动ON\n0:48 似似花 [〇〇〇〇ー] 自动ON\n0:38 似似花 [〇ー〇〇ー] 自动ON\n0:27 斑比    [〇〇〇〇〇] 自动ON\n0:16 似似花 [〇ー〇〇ー] 自动ON\n\n0:02 xcw  止 +2000",
+              "index": 7,
+              "damage": 0,
+              "type": 40
             }
           ],
           "type": 2,
-          "autoDamage": 12800,
+          "autoDamage": 42800,
           "halfAutoDamage": 49500,
           "easyManualDamage": 47900,
           "images": []
@@ -3918,6 +3942,160 @@
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
+        },
+        {
+          "id": 17973,
+          "canAuto": [
+            50
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93040,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133801,
+              "unitName": "Neneka (Alpha)",
+              "rarity": 5,
+              "searchAreaWidth": 759,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93041,
+              "talentId": 5
+            },
+            {
+              "prefabId": 180601,
+              "unitName": "Kyaru (Princess)",
+              "rarity": 5,
+              "searchAreaWidth": 747,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93042,
+              "talentId": 5
+            },
+            {
+              "prefabId": 122301,
+              "unitName": "Vampy",
+              "rarity": 6,
+              "searchAreaWidth": 564,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 93043,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93044,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "TP10.2",
+          "links": [
+            {
+              "type": 50,
+              "name": "47000\n油管 アレクサンデル\n三押 TP10.2\nCR全15",
+              "link": "https://www.youtube.com/watch?v=DQefH-lqwRg",
+              "remarks": "1:30 战斗开始 [〇〇〇〇ー] 自动OFF\n1:18 黑猫   [〇ーー〇ー] 自动OFF\n1:10 xcw   [〇ー〇〇ー] 自动ON\n1:04 黑猫 [〇〇ー〇ー] 自动OFF\n0:58 斑比 [〇〇〇〇ー] 自动ON\n0:55 紫罗兰 [〇ーー〇ー] 自动OFF\n★0:49 黑猫(エイド取消) [〇ーー〇ー] 自动ON\n0:49 似似花 [〇〇ー〇ー] 自动OFF\n0:42 斑比 [〇〇〇〇ー] 自动ON\n0:38 黑猫 [〇ーー〇ー] 自动OFF\n★0:29 黑猫(エイド取消) [〇ーー〇ー] 自动ON\n0:26 紫罗兰 [〇〇ー〇ー] 自动OFF\n★0:20 黑猫(エイド取消) [〇〇〇〇ー] 自动ON\n\n0:02 黑猫  止 +1689",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": 47000,
+          "images": []
+        },
+        {
+          "id": 17974,
+          "canAuto": [
+            40
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 106901,
+              "unitName": "Kaiser Insight",
+              "rarity": 5,
+              "searchAreaWidth": 660,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93045,
+              "talentId": 5
+            },
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93046,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140701,
+              "unitName": "Saren (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 431,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93047,
+              "talentId": 5
+            },
+            {
+              "prefabId": 129901,
+              "unitName": "Eriko (Commander)",
+              "rarity": 5,
+              "searchAreaWidth": 294,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93048,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93049,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "51s28900 TP9.5+",
+          "links": [
+            {
+              "type": 40,
+              "name": "51s28900\nWorryChefs D2T01\nTP9.5+",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml/sheet?headers=false&gid=835537673",
+              "remarks": "1:30 XXOXO 自动 OFF\n1:16 枪电 -> XXOOX 自动 ON\n1:12 水若菜 -> XOOOO\n0:41 军病, 最后UB",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": 28900,
+          "easyManualDamage": null,
+          "images": []
         }
       ]
     },
@@ -4821,7 +4999,7 @@
             10
           ],
           "stage": 6,
-          "damage": 22000,
+          "damage": 23000,
           "charas": [
             {
               "prefabId": 140901,
@@ -4875,7 +5053,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "43s22834-50s24540 TP9.0",
+          "exRemarks": "43s23065-50s24540 TP9.0",
           "links": [
             {
               "type": 10,
@@ -4906,6 +5084,14 @@
               "link": "https://www.youtube.com/watch?v=W4b4RTPn3d4",
               "remarks": "武璃亚   ★5 R42 全部 CR15\n天妹  ★5  R42 全部 专用MAX 专用2★5 CR15\n水莲  ★5 R42 全部 专用MAX CR15\n春电 ★5 R42 全部 专用MAX CR15\n光精灵  ★5 R42 全部 CR15\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(ーーーーー)\n1:20 可璃亚  枪向上\n1:19 银莲  コーリングフェザーHIT后 (〇ーーーー)\n    →光精灵 (〇〇〇〇ー)\n    →姐法\n    →充电宝 (ーー〇ーー)\n\n1:13 妹法  シュートHIT后\n\n1:11 银莲 (〇ー〇ーー)\n    →光精灵 (〇〇〇〇ー)\n    →充电宝\n\n1:08 妹法\n\n1:06 敌UB (〇〇〇〇〇)\n\n1:06 可璃亚\n1:04 充电宝\n1:00 妹法\n0:56 充电宝\n0:53 光精灵\n    →银莲\n0:52 妹法\n0:48 充电宝",
               "index": 3,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "43s23065\n油管 芽須夏希\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=0HYyVsFe1nY",
+              "remarks": "1:30 战斗开始 [✕✕✕✕✕]OFF\n\n1:20 武璃亚 ピアース取消\n1:19 水莲 フェザー3Hit最速打击 [〇✕〇✕✕]OFF\n  ⇒光精灵 [〇〇〇〇✕]OFF\n  ⇒天妹\n  ⇒春电 [〇✕〇✕✕]OFF\n1:14 天妹 シュート3Hit最速打击\n1:11 水莲\n  ⇒光精灵 [✕〇〇〇✕]OFF\n  ⇒春电\n1:09 天妹\n\n===【1:06 敌UB】===\n\n1:06 武璃亚 普攻稍快\n1:04 春电\n1:01 天妹\n0:56 春电\n0:53 水莲\n0:52 天妹 [〇〇〇〇✕]OFF\n  ⇒光精灵\n0:48 春电\n\n\n武璃亚  R42最强 CR15\n天妹 R42最强 CR15\n水莲   R42最强 CR15\n春电  R42最强 CR15\n光精灵    R42最强 CR15\n\n属性Lv1250\n属性技能8/8MAX\n大师163\n\n■掩护者\n不死随意\n\n■攻击者\n全:9-0\n\n■增幅者\n初动TP:9-0\n他:8-3\n\n■增益者\nbuff强化:9-2\n他:8-3",
+              "index": 4,
               "damage": 0,
               "type": 10
             }
@@ -6610,14 +6796,6 @@
               "damage": 0
             },
             {
-              "name": "38000/45100\nWorryChefs D402",
-              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml/sheet?headers=false&gid=1391911131",
-              "remarks": "爱梅斯魔攻高\n1:30 XXXXO 自动 ON\n1:12 龙姬 -> OXOOO\n1:05 枪梅斯 -> OXOXO\n0:49 鹿妹 -> OOXOO\n0:42 美穗 -> OOOOX\n0:27 龙姬 -> OXXOX\n0:13 龙姬 -> OOOOO\n0:01 枪梅斯 #2, 最后 UB, 后无伤害",
-              "index": 1,
-              "damage": 0,
-              "type": 40
-            },
-            {
               "name": "38100/45100\nWorryChefs D404",
               "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml/sheet?headers=false&gid=1391911131",
               "remarks": "1:30 XXXXO 自动 ON\n1:12 龙姬 -> OXOOO\n1:05 枪梅斯 -> OXOXO\n0:49 鹿妹 -> OOXOO\n0:41 鹿妹 -> OXOOX\n0:23 鹿妹 -> OOXOO\n0:13 龙姬 -> OOOOX\n0:01 龙姬, 最后 UB, 后无伤害",
@@ -7246,6 +7424,83 @@
           "autoDamage": 32400,
           "halfAutoDamage": null,
           "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17972,
+          "canAuto": [
+            50
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 101001,
+              "unitName": "Maho",
+              "rarity": 6,
+              "searchAreaWidth": 795,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 93035,
+              "talentId": 1
+            },
+            {
+              "prefabId": 127801,
+              "unitName": "Wurm",
+              "rarity": 5,
+              "searchAreaWidth": 706,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93036,
+              "talentId": 1
+            },
+            {
+              "prefabId": 127701,
+              "unitName": "Lind",
+              "rarity": 5,
+              "searchAreaWidth": 693,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93037,
+              "talentId": 1
+            },
+            {
+              "prefabId": 109401,
+              "unitName": "Grea",
+              "rarity": 5,
+              "searchAreaWidth": 525,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93038,
+              "talentId": 1
+            },
+            {
+              "prefabId": 140801,
+              "unitName": "Ameth (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 512,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93039,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "TP8.2",
+          "links": [
+            {
+              "type": 50,
+              "name": "34391\nヴァッシュ 野村（AI1）\n不押 TP8.2\nCR 6/6/0/6/15",
+              "link": "",
+              "remarks": "1:30　ー○ー○○　ON\n1:18　狐狸后　○○ー○○　ON\n0:59　龙姬后　○ー○○ー　OFF\n0:56　敌UB中　○○○○○　ON\n0:48　琳德后　○○ー○○　ON\n0:45　龙姬后、○○○ーー　OFF　※后45秒敌UB\n0:39　琳德后　○ー○○ー　ON\n0:38　美穗后、○ー○○○　OFF\n0:28　敌UB中　○○○○○　OFF\n0:16　枪梅斯UB后　○○ーー○　OFF\n0:09　琳德UB后　○○○○○",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": 34300,
           "images": []
         }
       ]
