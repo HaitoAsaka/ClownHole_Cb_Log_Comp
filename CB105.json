@@ -334,7 +334,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "21s6856-34s24849",
+          "exRemarks": "21s6856-40s28166",
           "links": [
             {
               "name": "33s15000\n油管 sagoosoiya",
@@ -391,6 +391,22 @@
               "index": 6,
               "damage": 0,
               "type": 10
+            },
+            {
+              "name": "40s28166\n油管 ろけ",
+              "link": "https://www.youtube.com/watch?v=FQYzknAtcRM",
+              "remarks": "骑士:最强/最强/163(1欠)/职阶精通TP9.0他8.4\nCR:15-3-15-15-15\n圣锤 ★3\n圣克\n白菲\n水千\n圣千\n \n1:30 (〇〇ー〇ー)、自动OFF\n\n1:22 圣千\n\n1:22 水千  水千解除\n1:18 克  熊锤SET\n1:18 熊锤\n1:17 熊锤\n\n1:16 圣千 水千SET、自动ON\n1:16 水千\n1:15 雪菲\n\n1:15 熊锤  熊锤解除\n1:13 水千  全员SET\n1:13 熊锤\n1:09 熊锤\n1:08 熊锤\n1:08 熊锤\n1:07 熊锤\n1:07 克\n1:07 雪菲\n\n1:07 熊锤  (ー〇〇〇ー)\n1:06 水千\n\n--1:06 敌UB  全员SET\n\n1:06 熊锤\n\n1:06 圣千 (ー〇〇ー〇)、自动OFF\n1:05 雪菲\n1:04 水千\n1:03 熊锤\n1:03 熊锤\n1:03 熊锤\n1:03 熊锤\n1:02 熊锤\n1:01 熊锤\n1:01 熊锤\n\n0:59 熊锤\n0:59 熊锤  熊锤解除  #0:59第2次操作！\n0:59 雪菲\n\n0:57 水千  (ー〇〇〇〇)\n0:57 熊锤\n0:57 克\n0:55 水千\n\n0:53 熊锤  熊锤解除\n0:51 雪菲 自动ON\n0:51 圣千 全员SET\n0:51 熊锤\n0:51 熊锤\n\n--0:50 敌UB ",
+              "index": 7,
+              "damage": 0,
+              "type": 40
+            },
+            {
+              "name": "40s28153\n油管 ネブソク",
+              "link": "https://www.youtube.com/watch?v=iz3IYfG_aEU",
+              "remarks": "※CR和骑士强化要高\n⇩自环境⇩\nMS163 属性等级&技能MAX\n\n\n◆編成\n圣锤 ★3 R42 全部 专用SP 专用2★5 CR15\n圣克  ★5  R42 全部 专用2★5 CR15\n白菲 ★5 R42 全部 CR15\n水千 ★5 R42 全部 专用MAX 专用2★5 CR3\n圣千 ★5 R42 全部 专用SP 专用2★5 CR15\n\n◆职阶强化\n攻击者  左上左下9★0  他8★3\n增益者  右下9★0  右上8★4  他8★3\n增幅者  初动TPLv9★0\n\n⚠熊锤★注意⚠\n◆TL\n1:30 开始(〇〇ー〇〇)\n1:22 圣千\n    →水千 (〇ーー〇〇)\n1:19 熊锤\n1:18 熊锤\n    →克\n1:17 熊锤\n1:16 圣千 (〇〇ー〇〇) 自动ON\n    →水千\n1:15 雪菲\n    →熊锤 (〇〇〇〇ー)\n\n1:13 水千 (〇〇〇〇〇)\n    →熊锤\n\n1:09 熊锤\n1:08 熊锤\n    →熊锤\n1:07 熊锤\n    →克\n    →雪菲\n    →熊锤 (ー〇ーーー)  ※根据骑士强化，可能没有\n1:06 水千\n\n1:06 敌UB (〇〇ーー〇)\n\n1:06 熊锤\n    →圣千\n1:04 雪菲\n    →水千\n1:03 熊锤\n    →熊锤\n    →熊锤\n    →熊锤\n1:02 熊锤\n1:01 熊锤\n    →熊锤\n\n0:59 熊锤 (ー〇〇ーー) 自动OFF\n\n0:58 雪菲 (ー〇〇〇〇)\n    →熊锤 (ー〇〇〇ー) 自动ON\n    →克\n0:57 水千\n0:55 水千\n0:53 熊锤\n0:51 圣千 (ー〇〇〇〇)\n    →熊锤\n    →雪菲\n    →熊锤",
+              "index": 8,
+              "damage": 0,
+              "type": 40
             }
           ],
           "type": 1,
@@ -563,10 +579,18 @@
               "index": 2,
               "damage": 0,
               "type": 40
+            },
+            {
+              "name": "oooxx 37970\nWorryChefs D1003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 3,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 37600,
+          "autoDamage": 37900,
           "halfAutoDamage": 40000,
           "easyManualDamage": 51500,
           "images": []
@@ -574,7 +598,8 @@
         {
           "id": 17857,
           "canAuto": [
-            20
+            20,
+            40
           ],
           "stage": 6,
           "damage": null,
@@ -648,11 +673,19 @@
               "index": 1,
               "damage": 0,
               "type": 20
+            },
+            {
+              "name": "42758\n情報会 ニクニク（本社）\nCR 15/6/3/15/15",
+              "link": "",
+              "remarks": "自动ON\n菲欧以外SET\n59秒　菲欧SET",
+              "index": 2,
+              "damage": 0,
+              "type": 40
             }
           ],
           "type": 2,
           "autoDamage": 37600,
-          "halfAutoDamage": null,
+          "halfAutoDamage": 42700,
           "easyManualDamage": null,
           "images": []
         },
@@ -1292,7 +1325,8 @@
         {
           "id": 17903,
           "canAuto": [
-            40
+            40,
+            50
           ],
           "stage": 6,
           "damage": null,
@@ -1358,12 +1392,20 @@
               "remarks": "1:30 　　　－〇〇〇－ 自动ON\n1:08 静流　－－〇〇〇\n0:58 静流　－〇〇〇－\n0:50 千歌　自动 OFF\n0:49 诗夏　－〇〇〇〇 自动 ON\n0:31 猪妹　－－〇〇－\n0:12 妈　－－－〇〇\n0:04 猪妹　－－〇〇〇",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "58800\n油管 aki\n双押\nCR全15",
+              "link": "https://www.youtube.com/watch?v=TktrHy2s1IU",
+              "remarks": "01:30 战斗开始\n【ー○○○ー】 自动ON\n01:21 千歌\n01:12 诗夏\n01:12 妈\n01:12 猪妹\n【ーー○○ー】\n01:09 千歌\n01:08 静流\n01:07 诗夏\n\n01:06 BOSSUB\n\n01:03 妈\n01:02 猪妹\n【ー○○○○】\n01:01 千歌\n01:01 诗夏\n00:58 静流\n00:56 妈\n00:56 猪妹\n00:54 诗夏\n【ーー○ー○】\n00:50 千歌\n【ーー○ー○】 自动OFF\n00:49 静流\n00:49 妈\n【ーー○○○】\n00:49 诗夏\n☆00:48 猪妹 普攻取消最速\n【○ー○○ー】\n\n00:47 BOSSUB\n\n00:43 诗夏\n00:39 千歌\n00:39 妈\n00:37 诗夏\n【ー○○ーー】 自动ON\n00:37 猪妹//ひんやりTP回复后\n00:36 静流\n【ー○○ーー】 自动OFF\n00:32 妈\n☆00:31 诗夏 秒数最速目押、十迅风拾//ソングTP回复前\n【ー○○○○】 自动ON\n00:31 千歌\n00:30 猪妹//普攻取消\n\n00:28 BOSSUB\n\n00:26 静流\n00:24 诗夏\n00:23 妈\n00:22 猪妹//普攻取消\n【ーー○○○】\n00:22 千歌\n00:20 诗夏\n00:19 静流\n00:17 妈\n00:13 诗夏\n00:10 猪妹\n00:10 千歌\n【○○○○○】\n\n00:08 BOSSUB\n\n00:08 静流\n00:08 诗夏\n00:08 妈\n00:04 猪妹//普攻取消\n00:03 诗夏\n00:01 千歌\n00:00 战斗结束\n\n\nEL,ES最大\nMS…164\nRM…BRE(8-5,8-3,8-4,8-3)\n         BUF(8-3,8-3,8-3,9-1)\n         HEA(8-3,8-3,8-4,8-3)\n         TAN(8-3,8-3,8-3,8-3)\nRM左上,右上,左下,右下\n\n----\n◆队伍編成(全CR15)\n春姐 ★5 Lv409 RANK42\n诗夏 ★5 Lv409 RANK42\n妈 ★6 Lv409 RANK42\n水猪妹 ★5 Lv409 RANK42\n千歌 ★6 Lv409 RANK42",
+              "index": 1,
+              "damage": 0,
+              "type": 50
             }
           ],
           "type": 2,
           "autoDamage": null,
           "halfAutoDamage": 57200,
-          "easyManualDamage": null,
+          "easyManualDamage": 58800,
           "images": []
         },
         {
@@ -1427,7 +1469,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "xooxx",
           "links": [
             {
               "type": 50,
@@ -1444,10 +1486,18 @@
               "index": 1,
               "damage": 0,
               "type": 20
+            },
+            {
+              "name": "xooxx 41100\nWorryChefs D1001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 34600,
+          "autoDamage": 41100,
           "halfAutoDamage": null,
           "easyManualDamage": 54700,
           "images": []
@@ -1611,6 +1661,83 @@
           ],
           "type": 2,
           "autoDamage": 33900,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17964,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 134001,
+              "unitName": "Fio",
+              "rarity": 5,
+              "searchAreaWidth": 746,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92995,
+              "talentId": 3
+            },
+            {
+              "prefabId": 106301,
+              "unitName": "Arisa",
+              "rarity": 6,
+              "searchAreaWidth": 625,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92996,
+              "talentId": 3
+            },
+            {
+              "prefabId": 130701,
+              "unitName": "Kyouka (Spring)",
+              "rarity": 5,
+              "searchAreaWidth": 563,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92997,
+              "talentId": 3
+            },
+            {
+              "prefabId": 105901,
+              "unitName": "Kokkoro",
+              "rarity": 6,
+              "searchAreaWidth": 500,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 92998,
+              "talentId": 3
+            },
+            {
+              "prefabId": 136501,
+              "unitName": "Shizuru (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 151,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 92999,
+              "talentId": 3
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooox",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooox 39150\nWorryChefs D1003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39100,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -1893,10 +2020,18 @@
               "index": 5,
               "damage": 0,
               "type": 40
+            },
+            {
+              "name": "oxoox 42880\nWorryChefs D2001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 6,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 46400,
+          "autoDamage": 12800,
           "halfAutoDamage": 49500,
           "easyManualDamage": 47900,
           "images": []
@@ -3134,7 +3269,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "xooxo",
           "links": [
             {
               "type": 20,
@@ -3143,10 +3278,18 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "xooxo 40800\nWorryChefs D2003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 32500,
+          "autoDamage": 40000,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -3621,6 +3764,160 @@
           "halfAutoDamage": 40400,
           "easyManualDamage": null,
           "images": []
+        },
+        {
+          "id": 17965,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 133601,
+              "unitName": "Medusa",
+              "rarity": 5,
+              "searchAreaWidth": 445,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93000,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140701,
+              "unitName": "Saren (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 431,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93001,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140101,
+              "unitName": "Fubuki (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 376,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93002,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93003,
+              "talentId": 5
+            },
+            {
+              "prefabId": 100701,
+              "unitName": "Miyako",
+              "rarity": 6,
+              "searchAreaWidth": 125,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 93004,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooxx",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooxx 41350\nWorryChefs D2002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 41300,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17966,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139001,
+              "unitName": "Kyouka (Gothic)",
+              "rarity": 5,
+              "searchAreaWidth": 816,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93005,
+              "talentId": 5
+            },
+            {
+              "prefabId": 180601,
+              "unitName": "Kyaru (Princess)",
+              "rarity": 5,
+              "searchAreaWidth": 747,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93006,
+              "talentId": 5
+            },
+            {
+              "prefabId": 106701,
+              "unitName": "Homare",
+              "rarity": 5,
+              "searchAreaWidth": 727,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93007,
+              "talentId": 5
+            },
+            {
+              "prefabId": 122301,
+              "unitName": "Vampy",
+              "rarity": 6,
+              "searchAreaWidth": 564,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 93008,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133101,
+              "unitName": "Violet",
+              "rarity": 5,
+              "searchAreaWidth": 154,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93009,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 39610\nWorryChefs D2004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 41300,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
         }
       ]
     },
@@ -3693,7 +3990,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "xoooo TP8.0+",
+          "exRemarks": "oxoox TP8.0+",
           "links": [
             {
               "type": 50,
@@ -3750,10 +4047,18 @@
               "index": 6,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "oxoox 39630\nWorryChefs D3004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 7,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 43500,
+          "autoDamage": 39600,
           "images": [],
           "halfAutoDamage": 58800,
           "easyManualDamage": 60100
@@ -3870,10 +4175,18 @@
               "index": 5,
               "damage": 0,
               "type": 40
+            },
+            {
+              "name": "xoooo 48200\nWorryChefs D3001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 6,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 52500,
+          "autoDamage": 48200,
           "halfAutoDamage": 58000,
           "easyManualDamage": 62300,
           "images": []
@@ -4486,6 +4799,14 @@
               "remarks": "黄骑  ★6 R42 全部 专用SP CR6\n光裁 ★5 R42 全部 专用MAX CR3\n水莲  ★5 R42 全部 专用MAX CR15\n暴击弓  ★6  R42 全部 专用SP 专用2★5 CR15\n露娜 ★5  R42 全部 专用MAX CR0\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(ーー〇〇ー)\n\n1:23 暴击弓  カリスマオーラbuff后\n1:21 银莲\n1:20 暴击弓  ダーツHIT后 (ー〇〇〇ー)\n1:18 暴击弓\n    →暴击弓 (ーー〇〇ー)\n1:17 裁缝\n1:16 暴击弓  普攻HIT后 (ー〇〇〇ー)\n1:13 暴击弓\n    →暴击弓\n\n1:11 露娜  怨恨取消 ※1\n1:09 暴击弓\n    →暴击弓",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "24s9460\nWorryChefs D3T02",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml/sheet?headers=false&gid=835537673",
+              "remarks": "1:30 XXXOX 自动 ON\n1:23 暴击弓 -> XOXOX S2 后\n1:21 暴击弓 -> XOOOX\n1:18 暴击弓 #2 -> OOOOX\n露娜 -> XOOOX\n1:07 暴击弓 #2 -> OOOOX\n露娜, +4.5m",
+              "index": 1,
+              "damage": 0,
+              "type": 10
             }
           ],
           "type": 1,
@@ -4560,7 +4881,7 @@
               "type": 10,
               "name": "47s22012\n油管 芽須夏希\nTP9.0",
               "link": "https://www.youtube.com/watch?v=M69WE2dTX7U",
-              "remarks": "1:30　战斗开始　[✕〇〇✕✕]OFF\n\n1:21　水莲　[✕〇〇〇✕]OFF\n　　⇒天妹\n　　⇒春电\n1:18　武璃亚　[〇〇〇〇〇]OFF\n　　⇒光精灵\n1:15　天妹\n1:14　春电\n1:09　水莲\n　　⇒天妹\n1:08　光精灵\n\n===【1:06 敌UB】===\n\n1:06　武璃亚\n　　⇒春电\n1:01　天妹\n0:56　春电\n0:53　天妹\n0:52　水莲\n0:48　光精灵　[〇✕〇〇〇]OFF\n0:45　春电　普攻Hit后\n\n===【0:45 敌UB】===\n0:44　天妹\n\n武璃亚　　R42最强　CR15\n天妹　R42最强　CR15\n水莲　　　R42最强　CR15\n春电　　R42最强　CR15\n光精灵　　　　R42最强　CR15\n\n属性Lv1250\n属性技能8/8MAX\n大师163\n\n■掩护者\n不死随意\n\n■攻击者\n全:9-0\n\n■增幅者\n初动TP:9-0\n他:8-3\n\n■增益者\nbuff强化:9-2\n他:8-3",
+              "remarks": "1:30　战斗开始　[✕〇〇✕✕]OFF\n\n1:21　水莲　[✕〇〇〇✕]OFF\n　　⇒天妹\n　　⇒春电\n1:18　武璃亚 ピアースHit稍快　[〇〇〇〇〇]OFF\n　　⇒光精灵\n1:15　天妹\n1:14　春电\n1:09　水莲\n　　⇒天妹\n1:08　光精灵\n\n===【1:06 敌UB】===\n\n1:06　武璃亚\n　　⇒春电\n1:01　天妹\n0:56　春电\n0:53　天妹\n0:52　水莲\n0:48　光精灵　[〇✕〇〇〇]OFF\n0:45　春电　普攻Hit后\n\n===【0:45 敌UB】===\n0:44　天妹\n\n武璃亚　　R42最强　CR15\n天妹　R42最强　CR15\n水莲　　　R42最强　CR15\n春电　　R42最强　CR15\n光精灵　　　　R42最强　CR15\n\n属性Lv1250\n属性技能8/8MAX\n大师163\n\n■掩护者\n不死随意\n\n■攻击者\n全:9-0\n\n■增幅者\n初动TP:9-0\n他:8-3\n\n■增益者\nbuff强化:9-2\n他:8-3",
               "index": 0,
               "damage": 0
             },
@@ -5135,7 +5456,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set TP8.4+",
+          "exRemarks": "xxooo TP8.4+",
           "links": [
             {
               "type": 20,
@@ -5152,10 +5473,18 @@
               "index": 1,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "xxooo 35670\nWorryChefs D3005",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 32200,
+          "autoDamage": 35600,
           "halfAutoDamage": null,
           "easyManualDamage": 46000,
           "images": []
@@ -5245,6 +5574,160 @@
           "halfAutoDamage": 40900,
           "easyManualDamage": null,
           "images": []
+        },
+        {
+          "id": 17967,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93010,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93011,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93012,
+              "talentId": 4
+            },
+            {
+              "prefabId": 109201,
+              "unitName": "Anne",
+              "rarity": 5,
+              "searchAreaWidth": 630,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93013,
+              "talentId": 4
+            },
+            {
+              "prefabId": 138201,
+              "unitName": "Nephi Nela (Buddha)",
+              "rarity": 5,
+              "searchAreaWidth": 502,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93014,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooox",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooox 44220\nWorryChefs D3002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 44200,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17968,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 140901,
+              "unitName": "Aglaia",
+              "rarity": 5,
+              "searchAreaWidth": 780,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93015,
+              "talentId": 4
+            },
+            {
+              "prefabId": 133501,
+              "unitName": "Saren (New Year)",
+              "rarity": 5,
+              "searchAreaWidth": 718,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93016,
+              "talentId": 4
+            },
+            {
+              "prefabId": 137401,
+              "unitName": "Kasumi (Sister)",
+              "rarity": 5,
+              "searchAreaWidth": 688,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93017,
+              "talentId": 4
+            },
+            {
+              "prefabId": 134601,
+              "unitName": "Aoi (Pilot)",
+              "rarity": 5,
+              "searchAreaWidth": 526,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93018,
+              "talentId": 4
+            },
+            {
+              "prefabId": 138201,
+              "unitName": "Nephi Nela (Buddha)",
+              "rarity": 5,
+              "searchAreaWidth": 502,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93019,
+              "talentId": 4
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oooox",
+          "links": [
+            {
+              "type": 20,
+              "name": "oooox 39660\nWorryChefs D3002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 39600,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
         }
       ]
     },
@@ -5264,7 +5747,7 @@
             10
           ],
           "stage": 6,
-          "damage": 56100,
+          "damage": 56300,
           "charas": [
             {
               "prefabId": 101001,
@@ -5318,7 +5801,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set TP8.3+ 爱梅斯攻击最高",
+          "exRemarks": "xoxoo TP8.3+ 爱梅斯攻击最高",
           "links": [
             {
               "type": 40,
@@ -5379,7 +5862,7 @@
             {
               "name": "55200\n油管 Bluvel\nTP9.0+\nCR全15",
               "link": "https://www.youtube.com/watch?v=qUiVFTkqhX8",
-              "remarks": "美穗 ★5 Lv406 RANK42 CR15\n枪梅斯 ★5 Lv406 RANK42 CR15\n龙姬 ★5 Lv406 RANK42 CR15\n水富婆 ★5 Lv406 RANK42 CR15\n狐狸 ★6 Lv406 RANK42 CR15\n\n属性技能: 8页目第8合流\n大师技能: 160\n职阶强化: 初动TPLV9星0、他LV8星3\n\n要求初动TP: LV9星0以上\n\nTL\n1:20 狐狸 回复后稍快\n(1:18 安)\n1:14 爱梅斯 普攻后 //早過ぎると1:05回复TP前アサルト开始\n1:14 龙姬 アグニ后\n1:12 富婆 #ドレッサーTP\n   → 美穗\n1:11 狐狸 #普攻取消\n(1:08 安)\n\n1:07 BOSS\n\n1:06 爱梅斯 #バッテリーアTP\n1:05 爱梅斯 #回复TP //待机\n1:03 美穗\n   → 富婆 #ドレッサー后\n   → 龙姬 #アグニ后\n1:02 狐狸 #普攻取消\n(1:00 安)\n0:55 爱梅斯 普攻取消\n0:55 龙姬 #普攻取消\n(0:52 安)\n   → 富婆 #ドレッサー后\n0:51 狐狸 ダークネス取消稍快\n\n0:50 BOSS\n\n0:48 爱梅斯 #普攻取消\n0:47 龙姬\n0:46 美穗 がんばれ取消 //召唤物是否生存影响BOSS UB时间，不过不影响伤害？\n(0:44 安)\n0:44 爱梅斯 #回复TP //普攻后\n0:43 富婆 #ドレッサーTP\n0:41 龙姬\n\n0:40 狐狸 普攻取消稍快\n   → 爱梅斯 #待机\n(0:40 安)\n0:39 美穗 #応援取消\n\n0:39 BOSS\n\n0:32 富婆 ドレッサー后 //延迟一些持续到0:23アサルト、但是也要和0:30狐狸契合\n   → 龙姬 #アグニ后\n(0:31 安)\n0:30 爱梅斯 #バッテリーア取消\n0:30 狐狸 OK提示 //ドレッサーTP后 回复生效调整\n0:28 美穗 #普攻取消\n0:25 龙姬\n(0:25 安)\n\n0:23 BOSS\n\n0:23 爱梅斯 #ドレッサーTP\n   → 富婆\n0:22 爱梅斯 #回复TP //待机\n   → 狐狸 #回复后\n0:17 龙姬 インフェルノ后\n(0:15 安)\n0:15 爱梅斯 アサルト后\n   → 美穗 応援取消 //爱梅斯UB时唱名则SET\n0:13 富婆 #ドレッサーTP\n0:12 狐狸 普攻取消稍快\n0:09 爱梅斯 #普攻取消\n0:09 龙姬 インフェルノ后\n(0:09 安)\n0:08 美穗 #がんばれ取消\n\n0:06 BOSS\n\n0:03 狐狸 普攻取消\n0:03 爱梅斯#普攻取消\n(0:01 安)\n0:01 爱梅斯 #回复TP \n   → 龙姬\n0:00 战斗结束",
+              "remarks": "美穗 ★5 Lv406 RANK42 CR15\n枪梅斯 ★5 Lv406 RANK42 CR15\n龙姬 ★5 Lv406 RANK42 CR15\n水富婆 ★5 Lv406 RANK42 CR15\n狐狸 ★6 Lv406 RANK42 CR15\n\n属性技能: 8页目第8合流\n大师技能: 160\n职阶强化: 初动TPLV9星0、他LV8星3\n\n要求初动TP: LV9星0以上\n\nTL\n1:20 狐狸 回复后稍快\n(1:18 安)\n1:14 爱梅斯 普攻后 //早過ぎると1:05回复TP前アサルト开始\n1:14 龙姬 アグニ后\n1:12 富婆 #ドレッサーTP\n   → 美穗\n1:11 狐狸 #普攻取消\n(1:08 安)\n\n1:07 BOSS\n\n1:06 爱梅斯 #バッテリーアTP\n1:05 爱梅斯 #回复TP //待机\n1:03 美穗\n   → 富婆 #ドレッサー后\n   → 龙姬 #アグニ后\n1:02 狐狸 #普攻取消\n(1:00 安)\n0:55 爱梅斯 普攻取消\n0:55 龙姬 #普攻取消\n(0:52 安)\n   → 富婆 #ドレッサー后\n0:51 狐狸 ダークネス取消稍快\n\n0:50 BOSS\n\n0:48 爱梅斯 #普攻取消\n0:47 龙姬\n0:46 美穗 がんばれ取消 //押的准可能召唤物生存会影响BOSS UB时间，不过不影响伤害？\n(0:44 安)\n0:44 爱梅斯 #回复TP //普攻后\n0:43 富婆 #ドレッサーTP\n0:41 龙姬\n\n0:40 狐狸 普攻取消稍快\n   → 爱梅斯 #待机\n(0:40 安)\n0:39 美穗 #応援取消\n\n0:39 BOSS\n\n0:32 富婆 ドレッサー后 //延迟一些持续到0:23アサルト、但是也要和0:30狐狸契合\n   → 龙姬 #アグニ后\n(0:31 安)\n0:30 爱梅斯 #バッテリーア取消\n0:30 狐狸 OK提示 //ドレッサーTP后 回复生效调整\n0:28 美穗 #普攻取消\n0:25 龙姬\n(0:25 安)\n\n0:23 BOSS\n\n0:23 爱梅斯 #ドレッサーTP\n   → 富婆\n0:22 爱梅斯 #回复TP //待机\n   → 狐狸 #回复后\n0:17 龙姬 インフェルノ后\n(0:15 安)\n0:15 爱梅斯 アサルト后\n   → 美穗 応援取消 //爱梅斯UB时唱名则SET\n0:13 富婆 #ドレッサーTP\n0:12 狐狸 普攻取消稍快\n0:09 爱梅斯 #普攻取消\n0:09 龙姬 インフェルノ后\n(0:09 安)\n0:08 美穗 #がんばれ取消\n\n0:06 BOSS\n\n0:03 狐狸 普攻取消\n0:03 爱梅斯#普攻取消\n(0:01 安)\n0:01 爱梅斯 #回复TP \n   → 龙姬\n0:00 战斗结束",
               "index": 7,
               "damage": 0,
               "type": 10
@@ -5397,6 +5880,22 @@
               "link": "https://www.youtube.com/watch?v=mDMlIMykd68",
               "remarks": "杖5 鎧5 饰品4\n\nALL CR15 \n龙姬　本4　鎧5　饰品3(97750)\n\n　1:30 战斗开始　－〇〇－－　“自动ON”\n\n　1:18 狐狸　　－〇－－－　自动OFF\n☆1:15 爱梅斯　秒数目押最速　－〇〇〇－　自动ON\n　1:12 富婆　　－〇〇〇〇\n　0:52 龙姬　　－〇－〇〇\n　0:44 富婆　　－－〇－〇\n☆0:39 爱梅斯　アッサルト后最速　－－〇〇〇(※1)\n☆0:34 富婆　　ドレッサー后　－〇〇〇〇\n　0:29 龙姬　　－〇－－〇\n☆0:23 爱梅斯　アッサルト后瞬间　－〇－〇〇(※2)\n　0:23 龙姬　　〇〇〇〇〇\n　0:16 爱梅斯　〇〇〇－〇　“自动OFF”\n　0:15 富婆　　〇〇〇〇〇\n　0:15 龙姬　　〇〇－－〇\n　0:09富婆 　　〇〇〇〇〇\n\n※1 0:38 爱梅斯UB、普攻取消\n※2 慢了16s的アッサルト命中数减少(-170万左右～)",
               "index": 9,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "xoxoo 36740\nWorryChefs D4002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 10,
+              "damage": 0,
+              "type": 20
+            },
+            {
+              "name": "56300\n油管 Bluvel\nTP9.0+\nCR全15",
+              "link": "https://www.youtube.com/watch?v=thJTTuY1sa0",
+              "remarks": "美穗 ★5 Lv406 RANK42 CR15\n枪梅斯 ★5 Lv406 RANK42 CR15\n龙姬 ★5 Lv406 RANK42 CR15\n水富婆 ★5 Lv406 RANK42 CR15\n狐狸 ★6 Lv406 RANK42 CR15\n\n属性技能: 8页目第8合流\n大师技能: 160\n职阶强化: 初动TPLV9星0、他LV8星3\n\n要求初动TP: LV9星0以上\n\nTL\n1:20 狐狸 回复后稍快\n(1:18 安)\n1:14 爱梅斯 普攻后 //太快1:05回复TP前アサルト开始\n   → 龙姬\n1:12 富婆\n   → 美穗\n1:11 狐狸 #普攻取消\n(1:08 安)\n\n1:07 BOSS\n\n1:06 爱梅斯 #バッテリーアTP\n1:05 爱梅斯 #回复TP //待机\n   → 龙姬\n1:03 美穗\n   → 富婆\n1:02 狐狸 #普攻取消\n(1:00 安)\n0:57 龙姬\n0:55 爱梅斯 普攻后\n(0:52 安)\n   → 富婆 #ドレッサー后\n   → 龙姬\n0:51 狐狸 ダークネス取消稍快\n\n0:50 BOSS\n\n0:48 爱梅斯 #普攻取消\n0:46 美穗 がんばれ取消 //押的准可能召唤物生存会影响BOSS UB时间，不过不影响伤害？\n(0:44 安)\n0:44 爱梅斯 #回复TP //普攻取消\n0:43 富婆 #ドレッサーTP\n   → 龙姬\n\n0:40 狐狸 普攻取消稍快 //慢了爱梅斯会取消アサルト\n   → 爱梅斯 #待机\n(0:40 安)\n0:39 美穗 #がんばれ取消\n\n0:39 BOSS\n\n0:36 龙姬\n0:32 富婆 ドレッサー后 //慢一点可能更好\n(0:31 安)\n0:30 爱梅斯 #バッテリーア取消\n0:30 狐狸 アグニ启动后 //狐狸→龙姬，如果慢0:22龙姬就不会普攻取消\n   → 龙姬 #アグニ后\n0:28 美穗 #普攻取消\n(0:25 安)\n\n0:23 BOSS\n\n0:23 爱梅斯 #ドレッサーTP \n   → 富婆\n0:22 爱梅斯 #回复TP\n   → 龙姬 #普攻取消\n   → 狐狸\n(0:15 安)\n0:15 爱梅斯 アサルト后\n   → 美穗 #がんばれ取消\n0:13 龙姬\n0:13 富婆 #ドレッサーTP\n0:12 狐狸 普攻取消稍快\n0:09 爱梅斯 #普攻取消\n   → 龙姬 #アグニ后\n(0:09 安)\n0:08 美穗 #がんばれ取消\n\n0:06 BOSS\n\n0:03 富婆 #パンツァーTP\n0:02 狐狸 普攻取消 //SET可能提前放导致爱梅斯命中段数减少\n   → 爱梅斯 #普攻取消\n(0:01 安)\n0:01 爱梅斯 #回复TP //アサルト中\n   → 龙姬",
+              "index": 11,
               "damage": 0,
               "type": 10
             }
@@ -5775,7 +6274,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "ooxox",
           "links": [
             {
               "type": 20,
@@ -5784,10 +6283,18 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "ooxox 37000\nWorryChefs D4001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 40100,
+          "autoDamage": 37000,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -6015,6 +6522,14 @@
               "remarks": "宝石兔  ★5 R42 全部 专用MAX CR3\n卯月  ★5  R42 全部 专用MAX 专用2★5 CR15\n水莲  ★5 R42 全部 专用MAX CR15\n春弓  ★5  R42 全部 CR15     会死则下EX\n梦狐 ★5 R42 全部 专用MAX CR6\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n◆TL\n1:30 开始(〇ー〇〇ー)\n1:23 卯月 (〇ー〇ーー)\n1:21 银莲\n    →狐狸 (〇〇〇〇〇)\n    →宝石兔\n    →卯月\n    →妹弓 (〇ー〇ー〇)\n1:13 银莲\n1:11 狐狸 (〇ー〇〇〇)\n    →卯月\n    →宝石兔\n\n1:10 妹弓  スピニングトップシュートHIT后 (〇ー〇ーー)\n\n1:07 敌UB  ※1\n\n1:00 狐狸 (〇〇ー〇ー)\n    →卯月\n0:59 妹弓 (〇〇ー〇〇)\n    →宝石兔",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "33s11260\nWorryChefs D4T01",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml/sheet?headers=false&gid=835537673",
+              "remarks": "1:30\tOXXOX 自动 OFF\n1:23\t卯月 -> OXXXX\n1:21\t梦狐 -> OXOXX\n1:21\t卯月 -> 春弓 -> 宝石兔\n\t参考: 慢押OK OXOXX\n1:11\t水莲 -> 卯月 -> 宝石兔\n1:10/09\t春弓, 最速跳秒1:09\n1:07\tBOSS UB, 水莲死 -> OO–OX\n0:59\t梦狐 -> OO–OX\n\t春弓 -> OO–OO",
+              "index": 1,
+              "damage": 0,
+              "type": 10
             }
           ],
           "type": 1,
@@ -6575,6 +7090,160 @@
           ],
           "type": 2,
           "autoDamage": 27400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17969,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139301,
+              "unitName": "Maho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 700,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93020,
+              "talentId": 1
+            },
+            {
+              "prefabId": 129701,
+              "unitName": "Nephi Nela",
+              "rarity": 5,
+              "searchAreaWidth": 540,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93021,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93022,
+              "talentId": 1
+            },
+            {
+              "prefabId": 108101,
+              "unitName": "Shinobu (Halloween)",
+              "rarity": 5,
+              "searchAreaWidth": 440,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93023,
+              "talentId": 1
+            },
+            {
+              "prefabId": 130201,
+              "unitName": "Fubuki",
+              "rarity": 5,
+              "searchAreaWidth": 371,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93024,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 35410\nWorryChefs D4003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 35400,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17970,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 139301,
+              "unitName": "Maho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 700,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93025,
+              "talentId": 1
+            },
+            {
+              "prefabId": 129701,
+              "unitName": "Nephi Nela",
+              "rarity": 5,
+              "searchAreaWidth": 540,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93026,
+              "talentId": 1
+            },
+            {
+              "prefabId": 139201,
+              "unitName": "Miho (Garupan)",
+              "rarity": 5,
+              "searchAreaWidth": 486,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93027,
+              "talentId": 1
+            },
+            {
+              "prefabId": 130201,
+              "unitName": "Fubuki",
+              "rarity": 5,
+              "searchAreaWidth": 371,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93028,
+              "talentId": 1
+            },
+            {
+              "prefabId": 135501,
+              "unitName": "Aira",
+              "rarity": 5,
+              "searchAreaWidth": 213,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93029,
+              "talentId": 1
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxxoo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oxxoo 32440\nWorryChefs D4004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 32400,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -7143,7 +7812,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "全set",
+          "exRemarks": "xxxoo",
           "links": [
             {
               "type": 20,
@@ -7152,10 +7821,18 @@
               "remarks": "",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "xxxoo 36780\nWorryChefs D5004",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 1,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 45500,
+          "autoDamage": 36700,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
@@ -7574,7 +8251,8 @@
           "id": 17868,
           "canAuto": [
             40,
-            50
+            50,
+            20
           ],
           "stage": 6,
           "damage": null,
@@ -7631,7 +8309,7 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "",
+          "exRemarks": "xxoxo",
           "links": [
             {
               "type": 40,
@@ -7672,12 +8350,28 @@
               "index": 4,
               "damage": 0,
               "type": 40
+            },
+            {
+              "name": "xxoxo 37360\nWorryChefs D5003",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 5,
+              "damage": 0,
+              "type": 20
+            },
+            {
+              "name": "58000\n油管 エレガントスマイル\n单押",
+              "link": "https://www.youtube.com/watch?v=j8-mjZhBFdc",
+              "remarks": "XXOOO 自动ON\n\n1:11 猪妹 OXOOO\n→ 丽莎 XXOOO\n\n1:00 诗夏 OXOOO\n0:51 丽莎 XOOOO\n0:41 若菜 OOOOO\n0:34 丽莎 XOOXX 自动OFF\n0:29 若菜 XOOOX\n→ 妈 XOOOO\n→ 诗夏 XOOOX\n\n☆0:21〜18 丽莎 TP減少后SET\n\n0:18 妈 OXOOO\n0:07 敌UB OOOOO\n0:02 诗夏UB后 +800万左右",
+              "index": 6,
+              "damage": 0,
+              "type": 50
             }
           ],
           "type": 2,
-          "autoDamage": null,
+          "autoDamage": 37300,
           "halfAutoDamage": 56100,
-          "easyManualDamage": 57000,
+          "easyManualDamage": 58000,
           "images": []
         },
         {
@@ -7912,10 +8606,18 @@
               "index": 1,
               "damage": 0,
               "type": 20
+            },
+            {
+              "name": "xxooo 39820\nWorryChefs D5002",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 2,
+              "damage": 0,
+              "type": 20
             }
           ],
           "type": 2,
-          "autoDamage": 39500,
+          "autoDamage": 39800,
           "halfAutoDamage": 43400,
           "easyManualDamage": null,
           "images": []
@@ -7980,15 +8682,23 @@
             }
           ],
           "remarks": "",
-          "exRemarks": "22s13450",
+          "exRemarks": "30s13450",
           "links": [
             {
               "type": 40,
-              "name": "22s13450\n油管 ネブソク",
+              "name": "30s13450\n油管 ネブソク",
               "link": "https://www.youtube.com/watch?v=KUGfyrXSBZM",
               "remarks": "凛  ★5  R42 全部 专用MAX 专用2★5 CR3\n圣锤 ★3 R42 全部 专用SP 专用2★5 CR15\n水病  ★5  R42 全部 专用MAX 专用2★5 CR6\n水千 ★5 R42 全部 专用MAX 专用2★5 CR3\n圣千 ★5 R42 全部 专用SP 专用2★5 CR15\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n⚠️熊锤★注意⚠️\n◆TL\n1:30 开始(〇〇〇ー〇)\n1:23 圣千\n1:22 水千 (〇ー〇ー〇)\n1:19 病娇\n1:16 圣千 (〇〇〇〇〇)\n    →熊锤\n    →水千\n1:16 熊锤\n1:14 水千\n1:13 熊锤\n1:11 凛\n1:10 熊锤\n1:08 熊锤\n1:07 熊锤\n    →病娇\n    →熊锤\n1:06 圣千\n    →熊锤\n1:05 熊锤\n    →水千\n1:04 熊锤\n1:03 熊锤\n    →水千\n1:01 熊锤",
               "index": 0,
               "damage": 0
+            },
+            {
+              "name": "45s14700\nWorryChefs D5T01",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml/sheet?headers=false&gid=835537673",
+              "remarks": "1:30 XOOOO 自动 ON\n1:21 圣千 -> OXOOO\n1:15 圣千 -> XOOOO\n1:11 凛 -> XXOOX\n1:03 水千 -> XOOOX 自动 OFF\n0:50 圣锤 -> XOOOO\n34s 111m\n37s 125m\n38s 132m\n41s 137m",
+              "index": 1,
+              "damage": 0,
+              "type": 40
             }
           ],
           "type": 1,
@@ -8098,6 +8808,83 @@
           "links": [],
           "type": 2,
           "autoDamage": null,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17971,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 107601,
+              "unitName": "Kokkoro (Summer)",
+              "rarity": 6,
+              "searchAreaWidth": 535,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 93030,
+              "talentId": 2
+            },
+            {
+              "prefabId": 117201,
+              "unitName": "Nozomi (Summer)",
+              "rarity": 5,
+              "searchAreaWidth": 417,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93031,
+              "talentId": 2
+            },
+            {
+              "prefabId": 123301,
+              "unitName": "Nea",
+              "rarity": 6,
+              "searchAreaWidth": 350,
+              "rank": 42,
+              "currentRarity": 6,
+              "id": 93032,
+              "talentId": 2
+            },
+            {
+              "prefabId": 111501,
+              "unitName": "Christina (Christmas)",
+              "rarity": 5,
+              "searchAreaWidth": 265,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93033,
+              "talentId": 2
+            },
+            {
+              "prefabId": 129501,
+              "unitName": "Chieru (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 247,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93034,
+              "talentId": 2
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "oxoxo",
+          "links": [
+            {
+              "type": 20,
+              "name": "oxoxo 40750\nWorryChefs D5001",
+              "link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmnYo-X-8cOzroW1DltKunu-2eWGKJE8j4Iy11E2eLlGW7zPKpi3qA9YRyi7Wi8Bz6kWjdh6gFdA0L/pubhtml",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 2,
+          "autoDamage": 40700,
           "halfAutoDamage": null,
           "easyManualDamage": null,
           "images": []
