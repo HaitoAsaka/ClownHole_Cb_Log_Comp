@@ -1917,13 +1917,29 @@
               "index": 10,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "54459\n情報会 うじや\n不押 TP10\nCR 15/9/9/15/15",
+              "link": "",
+              "remarks": "1:30 自动ON\nーーーー〇　ON\n1:11刹鬼→刹鬼解除、猫拳SET\nーー〇ーー\n1:05 充电宝→格蕾斯、充电宝SET 自动OFF\nー〇〇〇ー　OFF\n0:59 格蕾斯→刹鬼SET 自动ON\nー〇〇〇〇　ON\n0:39 刹鬼→刹鬼解除\nー〇〇〇ー\n0:26 猫拳→覇瞳皇帝SET、UB后解除\n〇〇〇〇ー\nー〇〇〇ー\n0:23 格蕾斯→充电宝解除、自动OFF\nーー〇〇ー　OFF\n0:19 格蕾斯→充电宝SET、UB中刹鬼SET、UB后充电宝解除 自动ON\nー〇〇〇ー\nーー〇〇〇　ON\n0:11 刹鬼→充电宝SET、刹鬼、格蕾斯解除\nー〇〇ーー\n0:06 格蕾斯→格蕾斯SET 自动OFF\nー〇〇〇ー　OFF\n0:03 充电宝→全SET\n〇〇〇〇〇",
+              "index": 11,
+              "damage": 0,
+              "type": 50
+            },
+            {
+              "name": "56462\n油管 クローン\n不押 TP9.3",
+              "link": "https://www.youtube.com/watch?v=kp3hvpG3uqE",
+              "remarks": "1:30 ✕✕✕〇〇 OFF\n1:18 格蕾斯 ✕✕〇〇〇 ON\n1:00 刹鬼  ✕〇〇〇✕\n0:49 格蕾斯 ✕〇〇〇〇\n0:49 刹鬼  ✕〇〇✕✕\n0:34 格蕾斯 ✕✕〇✕✕ OFF\n0:29 猫拳  ✕〇〇✕✕\n0:29 充电宝  ✕〇〇✕✕ ON\n0:21 格蕾斯 ✕〇〇〇✕\n0:19 充电宝  ✕〇✕✕〇 OFF\n0:12 充电宝  ✕〇〇✕〇 ON\n0:06 格蕾斯 ✕〇✕〇✕\n0:03 充电宝  〇〇〇〇〇\n\n属性1250 节点 8页目 第8合流 大师163\n职阶(左上,右上,左下,右下)\n攻击者/8-4,8-3,8-4,8-3\n破防者/9-0,8-4,8-4,8-4\n减益者/8-3,8-3,8-3,9-2\n增幅者 /8-3,8-3,8-3,9-3",
+              "index": 12,
+              "damage": 0,
+              "type": 50
             }
           ],
           "type": 2,
           "autoDamage": null,
           "images": [],
           "halfAutoDamage": null,
-          "easyManualDamage": 55500
+          "easyManualDamage": 56400
         },
         {
           "id": 17781,
@@ -4096,6 +4112,169 @@
           "halfAutoDamage": 28900,
           "easyManualDamage": null,
           "images": []
+        },
+        {
+          "id": 17975,
+          "canAuto": [
+            20
+          ],
+          "stage": 6,
+          "damage": null,
+          "charas": [
+            {
+              "prefabId": 106901,
+              "unitName": "Kaiser Insight",
+              "rarity": 5,
+              "searchAreaWidth": 660,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93050,
+              "talentId": 5
+            },
+            {
+              "prefabId": 140701,
+              "unitName": "Saren (Gunner)",
+              "rarity": 5,
+              "searchAreaWidth": 431,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93051,
+              "talentId": 5
+            },
+            {
+              "prefabId": 125601,
+              "unitName": "Vikala",
+              "rarity": 5,
+              "searchAreaWidth": 267,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93052,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93053,
+              "talentId": 5
+            },
+            {
+              "prefabId": 135901,
+              "unitName": "Satsuki",
+              "rarity": 5,
+              "searchAreaWidth": 219,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93054,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "全set 21s2800 TP9.3",
+          "links": [
+            {
+              "type": 20,
+              "name": "全set 21s2800\n情報会 miz\nTP9.3",
+              "link": "",
+              "remarks": "",
+              "index": 0,
+              "damage": 0
+            }
+          ],
+          "type": 1,
+          "autoDamage": 5800,
+          "halfAutoDamage": null,
+          "easyManualDamage": null,
+          "images": []
+        },
+        {
+          "id": 17976,
+          "canAuto": [
+            40,
+            10
+          ],
+          "stage": 6,
+          "damage": 11100,
+          "charas": [
+            {
+              "prefabId": 111401,
+              "unitName": "Luna",
+              "rarity": 5,
+              "searchAreaWidth": 765,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93055,
+              "talentId": 5
+            },
+            {
+              "prefabId": 138701,
+              "unitName": "Wakana (Winter)",
+              "rarity": 5,
+              "searchAreaWidth": 539,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93056,
+              "talentId": 5
+            },
+            {
+              "prefabId": 139801,
+              "unitName": "Sheffy (Wahrer Drache)",
+              "rarity": 5,
+              "searchAreaWidth": 386,
+              "rank": 42,
+              "currentRarity": 4,
+              "id": 93057,
+              "talentId": 5
+            },
+            {
+              "prefabId": 133001,
+              "unitName": "Grace",
+              "rarity": 5,
+              "searchAreaWidth": 234,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93058,
+              "talentId": 5
+            },
+            {
+              "prefabId": 113901,
+              "unitName": "Tsumugi (Halloween)",
+              "rarity": 5,
+              "searchAreaWidth": 152,
+              "rank": 42,
+              "currentRarity": 5,
+              "id": 93059,
+              "talentId": 5
+            }
+          ],
+          "remarks": "",
+          "exRemarks": "21s6311/28s11131 TP9.0",
+          "links": [
+            {
+              "type": 40,
+              "name": "21s6311\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=jQuTRSqvraI",
+              "remarks": "鬼裁 ★5 R42 全部 专用MAX 专用2★5 CR3\n格蕾斯   ★5 R42 全部 CR15\n龙菲 ★4 R42 全部 CR15\n水若菜  ★5 R42 全部 CR15\n露娜 ★5  R42 全部 专用MAX CR0\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n⚠雪菲★注意⚠\n◆TL\n1:30 开始(ー〇ー〇〇)\n1:19 若菜 (ーーー〇〇)\n1:18 格蕾斯 (〇ーー〇〇)\n    →露娜\n1:16 格蕾斯 (〇〇ー〇〇)\n    →若菜 (〇〇〇〇〇)\n    →雪菲\n1:12 雪菲\n    →雪菲\n1:10 露娜",
+              "index": 0,
+              "damage": 0
+            },
+            {
+              "name": "28s11131\n油管 ネブソク\nTP9.0",
+              "link": "https://www.youtube.com/watch?v=qV1pThSXeNI",
+              "remarks": "鬼裁 ★5 R42 全部 专用MAX 专用2★5 CR3\n格蕾斯   ★5 R42 全部 CR15\n龙菲 ★3 R42 全部 CR15\n水若菜  ★5 R42 全部 CR15\n露娜 ★5  R42 全部 专用MAX CR0\n\n◆职阶强化\n增幅者  初动TPLv9★0\n\n⚠雪菲★注意⚠\n◆TL\n1:30 开始(〇〇ー〇ー)\n1:19 若菜 (〇ーー〇〇)\n1:18 露娜\n    →格蕾斯\n\n1:16 若菜  普攻取消 ※1:16最速×\n    →格蕾斯 (ー〇〇〇ー) 自动ON\n    →雪菲\n1:12 雪菲\n    →雪菲\n1:08 露娜 (〇〇〇〇ー)\n1:07 雪菲\n1:06 露娜\n1:04 裁缝\n1:03 雪菲",
+              "index": 1,
+              "damage": 0,
+              "type": 10
+            }
+          ],
+          "type": 1,
+          "autoDamage": null,
+          "halfAutoDamage": 6300,
+          "easyManualDamage": null,
+          "images": []
         }
       ]
     },
@@ -5933,7 +6112,7 @@
             10
           ],
           "stage": 6,
-          "damage": 56300,
+          "damage": 56800,
           "charas": [
             {
               "prefabId": 101001,
@@ -6082,6 +6261,14 @@
               "link": "https://www.youtube.com/watch?v=thJTTuY1sa0",
               "remarks": "美穗 ★5 Lv406 RANK42 CR15\n枪梅斯 ★5 Lv406 RANK42 CR15\n龙姬 ★5 Lv406 RANK42 CR15\n水富婆 ★5 Lv406 RANK42 CR15\n狐狸 ★6 Lv406 RANK42 CR15\n\n属性技能: 8页目第8合流\n大师技能: 160\n职阶强化: 初动TPLV9星0、他LV8星3\n\n要求初动TP: LV9星0以上\n\nTL\n1:20 狐狸 回复后稍快\n(1:18 安)\n1:14 爱梅斯 普攻后 //太快1:05回复TP前アサルト开始\n   → 龙姬\n1:12 富婆\n   → 美穗\n1:11 狐狸 #普攻取消\n(1:08 安)\n\n1:07 BOSS\n\n1:06 爱梅斯 #バッテリーアTP\n1:05 爱梅斯 #回复TP //待机\n   → 龙姬\n1:03 美穗\n   → 富婆\n1:02 狐狸 #普攻取消\n(1:00 安)\n0:57 龙姬\n0:55 爱梅斯 普攻后\n(0:52 安)\n   → 富婆 #ドレッサー后\n   → 龙姬\n0:51 狐狸 ダークネス取消稍快\n\n0:50 BOSS\n\n0:48 爱梅斯 #普攻取消\n0:46 美穗 がんばれ取消 //押的准可能召唤物生存会影响BOSS UB时间，不过不影响伤害？\n(0:44 安)\n0:44 爱梅斯 #回复TP //普攻取消\n0:43 富婆 #ドレッサーTP\n   → 龙姬\n\n0:40 狐狸 普攻取消稍快 //慢了爱梅斯会取消アサルト\n   → 爱梅斯 #待机\n(0:40 安)\n0:39 美穗 #がんばれ取消\n\n0:39 BOSS\n\n0:36 龙姬\n0:32 富婆 ドレッサー后 //慢一点可能更好\n(0:31 安)\n0:30 爱梅斯 #バッテリーア取消\n0:30 狐狸 アグニ启动后 //狐狸→龙姬，如果慢0:22龙姬就不会普攻取消\n   → 龙姬 #アグニ后\n0:28 美穗 #普攻取消\n(0:25 安)\n\n0:23 BOSS\n\n0:23 爱梅斯 #ドレッサーTP \n   → 富婆\n0:22 爱梅斯 #回复TP\n   → 龙姬 #普攻取消\n   → 狐狸\n(0:15 安)\n0:15 爱梅斯 アサルト后\n   → 美穗 #がんばれ取消\n0:13 龙姬\n0:13 富婆 #ドレッサーTP\n0:12 狐狸 普攻取消稍快\n0:09 爱梅斯 #普攻取消\n   → 龙姬 #アグニ后\n(0:09 安)\n0:08 美穗 #がんばれ取消\n\n0:06 BOSS\n\n0:03 富婆 #パンツァーTP\n0:02 狐狸 普攻取消 //SET可能提前放导致爱梅斯命中段数减少\n   → 爱梅斯 #普攻取消\n(0:01 安)\n0:01 爱梅斯 #回复TP //アサルト中\n   → 龙姬",
               "index": 11,
+              "damage": 0,
+              "type": 10
+            },
+            {
+              "name": "56800\n油管 Bluvel\nTP9.0+\nCR全15",
+              "link": "https://www.youtube.com/watch?v=_gBA5JDE97Y",
+              "remarks": "美穗 ★5 Lv406 RANK42 CR15\n枪梅斯 ★5 Lv406 RANK42 CR15\n龙姬 ★5 Lv406 RANK42 CR15\n水富婆 ★5 Lv406 RANK42 CR15\n狐狸 ★6 Lv406 RANK42 CR15\n\n属性技能: 8页目第8合流\n大师技能: 160\n职阶强化: 初动TPLV9星0、他LV8星3\n\n要求初动TP: LV9星0以上\n\nTL\n1:20 狐狸 回复后稍快\n(1:18 安)\n1:14 爱梅斯 普攻后 //太快1:05回复TP前アサルト开始\n   → 龙姬\n1:12 富婆\n   → 美穗\n1:11 狐狸 #普攻取消\n(1:08 安)\n\n1:07 BOSS\n\n1:06 爱梅斯 #バッテリーアTP\n1:05 爱梅斯 #回复TP //待机\n   → 龙姬\n1:03 富婆 #接续TP(ドレッサー后)\n1:02 狐狸 #普攻取消\n(1:00 安)\n0:57 龙姬\n0:56 爱梅斯 普攻取消\n   → 美穗 #待机\n(0:52 安)\n   → 富婆 #ドレッサー后 //0:52无安则目押\n   → 龙姬\n0:51 狐狸 ダークネス取消稍快\n\n0:50 BOSS\n\n0:49 爱梅斯 #普攻取消\n0:46 美穗 #がんばれ取消 //召唤物不活\n(0:44 安)\n0:44 爱梅斯 #回复TP //普攻取消\n0:43 富婆 #ドレッサーTP\n   → 龙姬\n\n0:40 狐狸 普攻取消稍快 //慢了爱梅斯会取消アサルト\n   → 爱梅斯 #待机\n(0:40 安)\n0:39 美穗 #がんばれ取消\n\n0:39 BOSS\n\n0:36 龙姬\n0:32 富婆 ドレッサー后 //慢一点可能更好\n(0:31 安)\n0:30 爱梅斯 #バッテリーア取消\n0:30 狐狸 アグニ启动后\n   → 龙姬 #アグニ后\n0:28 美穗 #普攻取消\n(0:25 安)\n\n0:23 BOSS\n\n0:22 爱梅斯 #ドレッサーTP\n   → 富婆\n0:22 爱梅斯 #回复TP\n   → 龙姬 #普攻取消\n   → 狐狸\n(0:15 安)\n0:15 爱梅斯 アサルト后\n   → 美穗 #がんばれ取消\n0:13 龙姬\n0:13 富婆 #ドレッサーTP\n0:12 狐狸 普攻取消稍快\n0:09 爱梅斯 #普攻取消\n   → 龙姬 #アグニ后\n(0:09 安)\n0:08 美穗 #がんばれ取消\n\n0:06 BOSS\n\n0:03 富婆 #パンツァーTP\n0:03 狐狸 普攻取消 //SET可能提前放导致爱梅斯命中段数减少\n   → 爱梅斯 #普攻取消\n(0:01 安)\n0:01 爱梅斯 #回复TP //アサルト中\n   → 龙姬",
+              "index": 12,
               "damage": 0,
               "type": 10
             }
@@ -7664,13 +7851,21 @@
               "index": 10,
               "damage": 0,
               "type": 50
+            },
+            {
+              "name": "55716\n情報会 鞘戸詩音\n不押 TP8.3\nCR全15",
+              "link": "",
+              "remarks": "1:30 战斗开始　〇〇－－〇　“自动OFF”\n\n1:12 偶像　　〇〇－〇〇　“自动ON”\n0:31 克　　　〇－－〇〇　“自动OFF”\n0:22 偶像　　〇〇〇〇〇　“自动ON”\n     小黄　　　〇－〇〇〇\n0:18 克　　　〇〇－－〇　“自动OFF”\n0:14 小黄　　〇〇〇〇〇\n     克　　　　〇－－－〇\n0:11 偶像　　〇〇〇〇〇\n0:07 克　　　－〇－〇〇\n0:02 紫罗兰　〇〇－〇〇\n     偶像　　　〇〇〇〇〇\n     克　　　　〇－－－〇\n0:01 偶像　　〇〇〇〇〇",
+              "index": 11,
+              "damage": 0,
+              "type": 50
             }
           ],
           "type": 2,
           "autoDamage": 40800,
           "images": [],
           "halfAutoDamage": 54100,
-          "easyManualDamage": 54300
+          "easyManualDamage": 55700
         },
         {
           "id": 17807,
