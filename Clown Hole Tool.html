@@ -2443,16 +2443,45 @@
         gap: 4px;
         min-width: 0;
       }
+      /* Text centred both ways; the inner .t4-roster-note-text does the
+         2-line clamp, since a -webkit-box can't also be a centring flexbox. */
       .t4-roster-note {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         height: 38px;
         padding: 3px 5px;
         font-size: 10px;
         line-height: 1.3;
-        font-family: inherit;
+        /* Same face as the tab buttons (browser button default, e.g. the
+           "Contributor" tab), not the body's Segoe UI. */
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        text-align: center;
         color: var(--black);
         background: var(--white);
         border: 1px solid var(--grayM);
         border-radius: 6px;
+        overflow: hidden;
+      }
+      .t4-roster-note.is-empty {
+        background: transparent;
+        border-style: dashed;
+        color: var(--gray);
+        font-weight: 400;
+      }
+      .t4-roster-note.is-editable {
+        cursor: pointer;
+      }
+      .t4-roster-note.is-editable:hover,
+      .t4-roster-note.is-editable:focus-visible,
+      .t4-roster-note.is-editable.is-open {
+        outline: none;
+        border-color: var(--orange);
+      }
+      .t4-roster-note-text {
+        min-width: 0;
         overflow: hidden;
         word-break: break-word;
         white-space: pre-wrap;
@@ -2461,19 +2490,65 @@
         line-clamp: 2;
         -webkit-box-orient: vertical;
       }
-      .t4-roster-note:empty {
-        background: transparent;
-        border-style: dashed;
+      /* Editor-only popover: tick which owners of a char make up its note. */
+      .t4-note-picker {
+        position: fixed;
+        z-index: 300;
+        width: 200px;
+        padding: 8px;
+        border-radius: var(--radius);
+        background: var(--white);
+        border: 1px solid var(--grayM);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+        font-size: 12px;
+        display: none;
       }
-      textarea.t4-roster-note {
+      .t4-note-picker.visible {
         display: block;
-        width: 100%;
-        resize: none;
+      }
+      .t4-note-picker-title {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .t4-note-picker-list {
+        max-height: 220px;
         overflow-y: auto;
       }
-      textarea.t4-roster-note:focus {
-        outline: none;
+      .t4-note-picker-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 2px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .t4-note-picker-item:hover {
+        background: var(--grayL);
+      }
+      .t4-note-picker-empty {
+        color: var(--gray);
+        padding: 4px 2px;
+      }
+      .t4-note-picker-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 6px;
+        margin-top: 8px;
+      }
+      .t4-note-picker-btn {
+        padding: 4px 10px;
+        font-family: inherit;
+        font-size: 12px;
+        border: 1px solid var(--grayM);
+        border-radius: 6px;
+        background: var(--white);
+        color: var(--black);
+        cursor: pointer;
+      }
+      .t4-note-picker-btn.is-primary {
+        background: var(--orange);
         border-color: var(--orange);
+        color: var(--white);
       }
       .t4-roster-chara {
         display: flex;
@@ -4818,6 +4893,8 @@
         rosters: [], // [{ name, missing: [prefabId] }]
         notes: {}, // { [prefabId]: text }
       };
+      let t4NotePickerId = null; // prefabId whose note picker is open
+      let t4NotePickerNames = []; // names listed in it, by checkbox data-idx
 
       async function fetchT4Roster(user) {
         if (!user) return;
@@ -4847,6 +4924,7 @@
       }
 
       function resetT4Roster() {
+        closeT4NotePicker();
         t4RosterState = { loading: false, error: "", canEdit: false, rosters: [], notes: {} };
         renderT4Roster();
       }
@@ -4897,9 +4975,6 @@
       function renderT4Roster() {
         const grid = document.getElementById("t4-roster-grid");
         if (!grid) return;
-        // Don't wipe a note mid-edit — the re-render picks it up next time.
-        if (grid.contains(document.activeElement) && document.activeElement.tagName === "TEXTAREA")
-          return;
 
         const charas = t4RosterAllCharas();
         const label = document.getElementById("t4-roster-label");
@@ -4926,10 +5001,15 @@
               const displayName = translateToEnglish(c.unitName);
               const note = t4RosterState.notes[c.prefabId] || "";
               const count = t4RosterOwners(c.prefabId, entries).length;
+              const noteClass = `t4-roster-note${note ? "" : " is-empty"}`;
+              const noteText = `<span class="t4-roster-note-text">${escapeHtml(note)}</span>`;
               const noteHTML = t4RosterState.canEdit
-                ? `<textarea class="t4-roster-note" maxlength="300" placeholder="Note..."
-              onchange="saveT4Note(${c.prefabId}, this)">${escapeHtml(note)}</textarea>`
-                : `<div class="t4-roster-note">${escapeHtml(note)}</div>`;
+                ? `<button type="button" class="${noteClass} is-editable${
+                    t4NotePickerId === c.prefabId ? " is-open" : ""
+                  }" data-prefab-id="${c.prefabId}" onclick="toggleT4NotePicker(${c.prefabId}, this)">${
+                    note ? noteText : `<span class="t4-roster-note-text">Chọn acc...</span>`
+                  }</button>`
+                : `<div class="${noteClass}">${noteText}</div>`;
               return `
         <div class="t4-roster-tile">
           ${noteHTML}
@@ -4947,7 +5027,111 @@
             .join("");
       }
 
-      async function saveT4Note(prefabId, textarea) {
+      // ── T4 note picker (editor only) ──
+      // A char's note is the owners the editor ticks, joined with ", ".
+      // Names already in the note but no longer owners stay listed (ticked)
+      // so saving doesn't silently drop them. State lives up by t4RosterState.
+
+      function t4NoteNames(note) {
+        return String(note || "")
+          .split(/[,\n]/)
+          .map((s) => s.trim())
+          .filter(Boolean);
+      }
+
+      function t4NotePickerEl() {
+        let picker = document.getElementById("t4-note-picker");
+        if (!picker) {
+          picker = document.createElement("div");
+          picker.id = "t4-note-picker";
+          picker.className = "t4-note-picker";
+          picker.setAttribute("role", "dialog");
+          document.body.appendChild(picker);
+        }
+        return picker;
+      }
+
+      function toggleT4NotePicker(prefabId, anchor) {
+        if (t4NotePickerId === prefabId) {
+          closeT4NotePicker();
+          return;
+        }
+        const c = t4RosterAllCharas().find((x) => x.prefabId === prefabId);
+        if (!c) return;
+        closeT4NotePicker();
+        hideT4RosterTip();
+
+        const current = t4NoteNames(t4RosterState.notes[prefabId]);
+        const owners = t4RosterOwners(prefabId, t4RosterEntries());
+        const ownerKeys = new Set(owners.map((n) => n.toLowerCase()));
+        t4NotePickerNames = [...owners, ...current.filter((n) => !ownerKeys.has(n.toLowerCase()))];
+        const checked = new Set(current.map((n) => n.toLowerCase()));
+
+        const picker = t4NotePickerEl();
+        picker.innerHTML = `
+          <div class="t4-note-picker-title">${escapeHtml(translateToEnglish(c.unitName))}</div>
+          <div class="t4-note-picker-list">${
+            t4NotePickerNames.length
+              ? t4NotePickerNames
+                  .map(
+                    (n, i) => `<label class="t4-note-picker-item">
+              <input type="checkbox" data-idx="${i}"${checked.has(n.toLowerCase()) ? " checked" : ""}>
+              ${escapeHtml(n)}</label>`,
+                  )
+                  .join("")
+              : `<div class="t4-note-picker-empty">Chưa acc nào có char này</div>`
+          }</div>
+          <div class="t4-note-picker-actions">
+            <button type="button" class="t4-note-picker-btn" onclick="closeT4NotePicker()">Hủy</button>
+            <button type="button" class="t4-note-picker-btn is-primary" onclick="saveT4NotePicker()">Lưu</button>
+          </div>`;
+        picker.classList.add("visible");
+        t4NotePickerId = prefabId;
+        anchor.classList.add("is-open");
+
+        const r = anchor.getBoundingClientRect();
+        const p = picker.getBoundingClientRect();
+        const left = Math.min(
+          Math.max(8, r.left + r.width / 2 - p.width / 2),
+          window.innerWidth - p.width - 8,
+        );
+        const above = r.bottom + p.height + 8 > window.innerHeight - 8;
+        picker.style.left = `${left}px`;
+        picker.style.top = `${above ? Math.max(8, r.top - p.height - 6) : r.bottom + 6}px`;
+      }
+
+      function closeT4NotePicker() {
+        document.getElementById("t4-note-picker")?.classList.remove("visible");
+        document
+          .querySelectorAll(".t4-roster-note.is-open")
+          .forEach((el) => el.classList.remove("is-open"));
+        t4NotePickerId = null;
+        t4NotePickerNames = [];
+      }
+
+      function saveT4NotePicker() {
+        const prefabId = t4NotePickerId;
+        if (prefabId === null) return;
+        const names = [...document.querySelectorAll("#t4-note-picker input:checked")].map(
+          (input) => t4NotePickerNames[Number(input.dataset.idx)],
+        );
+        closeT4NotePicker();
+        saveT4Note(prefabId, names.join(", "));
+      }
+
+      (function bindT4NotePicker() {
+        document.addEventListener("mousedown", (e) => {
+          if (t4NotePickerId === null) return;
+          if (e.target.closest?.("#t4-note-picker, .t4-roster-note.is-editable")) return;
+          closeT4NotePicker();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && t4NotePickerId !== null) closeT4NotePicker();
+        });
+        window.addEventListener("scroll", closeT4NotePicker, { passive: true });
+      })();
+
+      async function saveT4Note(prefabId, note) {
         let pin = "";
         try {
           pin = localStorage.getItem(T4_NOTE_PIN_KEY) || "";
@@ -4960,8 +5144,7 @@
           }
         }
 
-        const note = textarea.value.trim();
-        textarea.disabled = true;
+        note = note.trim();
         try {
           const params = new URLSearchParams();
           params.set("action", "saveT4Note");
@@ -4986,11 +5169,10 @@
           } catch {}
           if (note) t4RosterState.notes[prefabId] = note;
           else delete t4RosterState.notes[prefabId];
+          renderT4Roster();
           showToast("Đã lưu note");
         } catch (err) {
           showToast(err?.message || "Không kết nối được server.", true);
-        } finally {
-          textarea.disabled = false;
         }
       }
 
