@@ -2388,6 +2388,141 @@
         padding: 2px;
         flex-shrink: 0;
       }
+      /* Every character in the current CB, shown in the Comp - Tier 4
+         card — a note box above each portrait, owners on hover (see
+         renderT4Roster / the fixed-position .t4-roster-tip). */
+      .t4-roster-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+        gap: 8px;
+        padding: 10px;
+        background: var(--grayL);
+        border: 1px solid var(--grayM);
+        border-radius: 0 0 var(--radius) var(--radius);
+      }
+      .t4-roster-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+        font-family: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+      .t4-roster-toggle-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--gray);
+        text-transform: none;
+        letter-spacing: 0;
+      }
+      .t4-roster-toggle-hint .ti {
+        font-size: 14px;
+        transition: transform 0.15s;
+      }
+      .t4-roster-section.is-collapsed .t4-roster-toggle {
+        border-radius: var(--radius);
+      }
+      .t4-roster-section.is-collapsed .t4-roster-toggle-hint .ti {
+        transform: rotate(180deg);
+      }
+      .t4-roster-section.is-collapsed .t4-roster-grid {
+        display: none;
+      }
+      .t4-roster-empty {
+        grid-column: 1 / -1;
+        font-size: 12px;
+        color: var(--gray);
+        padding: 4px 0;
+      }
+      .t4-roster-tile {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+      }
+      .t4-roster-note {
+        height: 38px;
+        padding: 3px 5px;
+        font-size: 10px;
+        line-height: 1.3;
+        font-family: inherit;
+        color: var(--black);
+        background: var(--white);
+        border: 1px solid var(--grayM);
+        border-radius: 6px;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .t4-roster-note:empty {
+        background: transparent;
+        border-style: dashed;
+      }
+      textarea.t4-roster-note {
+        display: block;
+        width: 100%;
+        resize: none;
+        overflow-y: auto;
+      }
+      textarea.t4-roster-note:focus {
+        outline: none;
+        border-color: var(--orange);
+      }
+      .t4-roster-chara {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        cursor: default;
+        border-radius: 8px;
+        padding: 2px;
+      }
+      .t4-roster-chara:focus-visible {
+        outline: 2px solid var(--orange);
+      }
+      .t4-roster-chara.is-unowned .bosslog-chara-filter-portrait {
+        opacity: 0.4;
+      }
+      .t4-roster-count {
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--teal);
+      }
+      .t4-roster-chara.is-unowned .t4-roster-count {
+        color: var(--red);
+      }
+      .t4-roster-tip {
+        position: fixed;
+        z-index: 300;
+        max-width: 240px;
+        padding: 8px 10px;
+        border-radius: var(--radius);
+        background: var(--black);
+        color: var(--white);
+        font-size: 12px;
+        line-height: 1.4;
+        pointer-events: none;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        display: none;
+      }
+      .t4-roster-tip.visible {
+        display: block;
+      }
+      .t4-roster-tip-title {
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .t4-roster-tip-sub {
+        color: var(--grayM);
+        font-size: 11px;
+      }
       .bosslog-action-line {
         white-space: pre-wrap;
       }
@@ -2967,7 +3102,7 @@
       const LOG_KEY = "clownhole_upload_log";
       const TIER4_SELECTED_KEY = "clownhole_tier4_selected";
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
-      const AUTH_URL ="https://script.google.com/macros/s/AKfycbxM4UiDFUNr7DKMMeq_LOe6TAWn1bFFBbQWh-8NkwCFCd1xcQ0Q1YL9Azu2eiD7OXxJ6w/exec";
+      const AUTH_URL ="https://script.google.com/macros/s/AKfycbwqYRSY000kxsV4_W-i8Ehm9uXlxpQQlADOdOriTELN02T6b9e1IwAzhD-BcsZPvJSMGg/exec";
       function showLoginScreen() {
         document.getElementById("login-overlay").classList.remove("hidden");
         document.getElementById("app-shell").classList.remove("visible");
@@ -2993,6 +3128,7 @@
         // filter from the Members sheet instead of trusting only this
         // browser's localStorage.
         fetchCharaHave(displayName);
+        fetchT4Roster(displayName);
       }
 
       function getCurrentUser() {
@@ -3178,6 +3314,7 @@
         // `currentUser`), undoing everything above.
         currentUser = null;
         localStorage.removeItem(SESSION_KEY);
+        resetT4Roster();
         showLoginScreen();
       }
 
@@ -3734,6 +3871,7 @@
         bossLogMissingCharasDirty = true;
         persistBossLogMissingCharas();
         buildBossLogView();
+        renderT4Roster();
       }
 
       function clearBossLogMissingCharas() {
@@ -3741,6 +3879,7 @@
         bossLogMissingCharasDirty = true;
         persistBossLogMissingCharas();
         buildBossLogView();
+        renderT4Roster();
       }
 
       // prefabId -> raw unitName, scanned from whatever boss data is
@@ -3815,6 +3954,7 @@
           if (bossLogMissingCharas.size !== before) {
             persistBossLogMissingCharas();
             buildBossLogView(); // no-op if the Boss Log tab hasn't been built yet
+            renderT4Roster();
           }
         } catch {
           // best-effort — keep whatever's already in localStorage on failure
@@ -3844,6 +3984,7 @@
         } finally {
           bossLogState.loading = false;
           buildBossLogView();
+          renderT4Roster();
         }
       }
 
@@ -4622,9 +4763,298 @@
           <div class="card-chk-label">Comp đã chọn (${tier4SelectedComps.length})</div>
           <div class="tier4-selected-list">${tier4SelectedListHTML()}</div>
         </div>
+        <div class="card-chk-section t4-roster-section${t4RosterCollapsed ? " is-collapsed" : ""}" id="t4-roster-section">
+          <button type="button" class="card-chk-label t4-roster-toggle" onclick="toggleT4RosterCollapsed()"
+            aria-expanded="${!t4RosterCollapsed}" aria-controls="t4-roster-grid">
+            <span id="t4-roster-label">Char trong CB hiện tại</span>
+            <span class="t4-roster-toggle-hint">${t4RosterCollapsed ? "Hiện" : "Ẩn"}<i class="ti ti-chevron-up" aria-hidden="true"></i></span>
+          </button>
+          <div class="t4-roster-grid" id="t4-roster-grid"></div>
+        </div>
       </div>
     </div>`;
+        renderT4Roster();
       }
+
+      // ── T4 CHAR ROSTER ────────────────────────────────────────────────
+      // Every character across all of CB105.json's comps, each with a
+      // note box above and its owners on hover. "Owner" = an account that
+      // has a saved roster ("Char have" note) and hasn't marked that
+      // character missing — accounts that never saved one aren't counted.
+      // Notes are keyed by prefabId and shared across every CB. Who may
+      // edit them is decided server-side only (`canEdit` from the
+      // t4Roster action) and every save re-checks the account + PIN, so
+      // nothing in this file says which account that is.
+      const T4_NOTE_PIN_KEY = "clownhole_t4_note_pin";
+      const T4_ROSTER_COLLAPSED_KEY = "clownhole_t4_roster_collapsed";
+
+      let t4RosterCollapsed = (() => {
+        try {
+          return localStorage.getItem(T4_ROSTER_COLLAPSED_KEY) === "1";
+        } catch {
+          return false;
+        }
+      })();
+
+      function toggleT4RosterCollapsed() {
+        t4RosterCollapsed = !t4RosterCollapsed;
+        try {
+          localStorage.setItem(T4_ROSTER_COLLAPSED_KEY, t4RosterCollapsed ? "1" : "0");
+        } catch {}
+        const section = document.getElementById("t4-roster-section");
+        if (!section) return;
+        section.classList.toggle("is-collapsed", t4RosterCollapsed);
+        const btn = section.querySelector(".t4-roster-toggle");
+        btn.setAttribute("aria-expanded", String(!t4RosterCollapsed));
+        btn.querySelector(".t4-roster-toggle-hint").firstChild.textContent =
+          t4RosterCollapsed ? "Hiện" : "Ẩn";
+        hideT4RosterTip();
+      }
+
+      let t4RosterState = {
+        loading: false,
+        error: "",
+        canEdit: false,
+        rosters: [], // [{ name, missing: [prefabId] }]
+        notes: {}, // { [prefabId]: text }
+      };
+
+      async function fetchT4Roster(user) {
+        if (!user) return;
+        t4RosterState.loading = true;
+        t4RosterState.error = "";
+        renderT4Roster();
+        try {
+          const params = new URLSearchParams();
+          params.set("action", "t4Roster");
+          params.set("user", user);
+          const res = await fetch(`${AUTH_URL}?${params.toString()}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || "Không lấy được dữ liệu char.");
+          // Ignore a stale response if the account changed meanwhile.
+          if (getCurrentUser() !== user) return;
+          t4RosterState.canEdit = !!data.canEdit;
+          t4RosterState.rosters = Array.isArray(data.rosters) ? data.rosters : [];
+          t4RosterState.notes =
+            data.notes && typeof data.notes === "object" ? data.notes : {};
+        } catch (err) {
+          t4RosterState.error = err?.message || "Không kết nối được server.";
+        } finally {
+          t4RosterState.loading = false;
+          renderT4Roster();
+        }
+      }
+
+      function resetT4Roster() {
+        t4RosterState = { loading: false, error: "", canEdit: false, rosters: [], notes: {} };
+        renderT4Roster();
+      }
+
+      // Server rosters, with the logged-in account's own entry swapped for
+      // this browser's live filter — its edits only reach the sheet when
+      // the tab closes (saveCharaHaveBeacon), but should show here now.
+      function t4RosterEntries() {
+        const user = getCurrentUser();
+        const key = user.trim().toLowerCase();
+        const entries = t4RosterState.rosters
+          .filter((r) => r && r.name && String(r.name).trim().toLowerCase() !== key)
+          .map((r) => ({
+            name: String(r.name),
+            missing: new Set((r.missing || []).map(Number)),
+          }));
+        const own = t4RosterState.rosters.find(
+          (r) => r && String(r.name).trim().toLowerCase() === key,
+        );
+        if (user && (own || bossLogMissingCharas.size)) {
+          entries.push({
+            name: own ? String(own.name) : user,
+            missing: new Set([...bossLogMissingCharas].map(Number)),
+          });
+        }
+        return entries;
+      }
+
+      function t4RosterAllCharas() {
+        const seen = new Map();
+        bossLogState.bosses.forEach((boss) => {
+          bossLogUniqueCharasForBoss(boss).forEach((c) => {
+            if (!seen.has(c.prefabId)) seen.set(c.prefabId, c);
+          });
+        });
+        return [...seen.values()].sort((a, b) =>
+          translateToEnglish(a.unitName).localeCompare(translateToEnglish(b.unitName)),
+        );
+      }
+
+      function t4RosterOwners(prefabId, entries) {
+        return entries
+          .filter((e) => !e.missing.has(Number(prefabId)))
+          .map((e) => e.name)
+          .sort((a, b) => a.localeCompare(b));
+      }
+
+      function renderT4Roster() {
+        const grid = document.getElementById("t4-roster-grid");
+        if (!grid) return;
+        // Don't wipe a note mid-edit — the re-render picks it up next time.
+        if (grid.contains(document.activeElement) && document.activeElement.tagName === "TEXTAREA")
+          return;
+
+        const charas = t4RosterAllCharas();
+        const label = document.getElementById("t4-roster-label");
+        if (label) label.textContent = `Char trong CB hiện tại (${charas.length})`;
+
+        if (!charas.length) {
+          grid.innerHTML = `<div class="t4-roster-empty">${
+            bossLogState.loading ? "Đang tải dữ liệu CB..." : "Chưa có dữ liệu char."
+          }</div>`;
+          return;
+        }
+
+        const entries = t4RosterEntries();
+        const statusHTML = t4RosterState.error
+          ? `<div class="t4-roster-empty">${escapeHtml(t4RosterState.error)}</div>`
+          : t4RosterState.loading
+            ? `<div class="t4-roster-empty">Đang tải người sở hữu...</div>`
+            : "";
+
+        grid.innerHTML =
+          statusHTML +
+          charas
+            .map((c) => {
+              const displayName = translateToEnglish(c.unitName);
+              const note = t4RosterState.notes[c.prefabId] || "";
+              const count = t4RosterOwners(c.prefabId, entries).length;
+              const noteHTML = t4RosterState.canEdit
+                ? `<textarea class="t4-roster-note" maxlength="300" placeholder="Note..."
+              onchange="saveT4Note(${c.prefabId}, this)">${escapeHtml(note)}</textarea>`
+                : `<div class="t4-roster-note">${escapeHtml(note)}</div>`;
+              return `
+        <div class="t4-roster-tile">
+          ${noteHTML}
+          <div class="t4-roster-chara${count ? "" : " is-unowned"}" tabindex="0" data-prefab-id="${c.prefabId}">
+            <div class="bosslog-chara-filter-portrait">
+              <img src="${escapeHtml(bossLogCharaIconUrl(c))}" alt="" loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="bosslog-chara-filter-fallback">${escapeHtml(bossLogCharaInitial(displayName))}</div>
+            </div>
+            <div class="bosslog-chara-filter-name">${escapeHtml(displayName)}</div>
+            <div class="t4-roster-count">${count} acc</div>
+          </div>
+        </div>`;
+            })
+            .join("");
+      }
+
+      async function saveT4Note(prefabId, textarea) {
+        let pin = "";
+        try {
+          pin = localStorage.getItem(T4_NOTE_PIN_KEY) || "";
+        } catch {}
+        if (!pin) {
+          pin = (window.prompt("Nhập mã PIN để lưu note:") || "").trim();
+          if (!pin) {
+            showToast("Chưa nhập PIN — note chưa được lưu.", true);
+            return;
+          }
+        }
+
+        const note = textarea.value.trim();
+        textarea.disabled = true;
+        try {
+          const params = new URLSearchParams();
+          params.set("action", "saveT4Note");
+          params.set("user", getCurrentUser());
+          params.set("pin", pin);
+          params.set("prefabId", String(prefabId));
+          params.set("note", note);
+          const res = await fetch(`${AUTH_URL}?${params.toString()}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (!data.ok) {
+            if (data.error === "pin") {
+              try {
+                localStorage.removeItem(T4_NOTE_PIN_KEY);
+              } catch {}
+              throw new Error("Sai mã PIN — note chưa được lưu.");
+            }
+            throw new Error(data.error || "Không lưu được note.");
+          }
+          try {
+            localStorage.setItem(T4_NOTE_PIN_KEY, pin);
+          } catch {}
+          if (note) t4RosterState.notes[prefabId] = note;
+          else delete t4RosterState.notes[prefabId];
+          showToast("Đã lưu note");
+        } catch (err) {
+          showToast(err?.message || "Không kết nối được server.", true);
+        } finally {
+          textarea.disabled = false;
+        }
+      }
+
+      // One body-level tooltip, positioned on hover/focus — the card has
+      // overflow: hidden, so a tooltip nested inside it would get clipped.
+      function t4RosterTipEl() {
+        let tip = document.getElementById("t4-roster-tip");
+        if (!tip) {
+          tip = document.createElement("div");
+          tip.id = "t4-roster-tip";
+          tip.className = "t4-roster-tip";
+          tip.setAttribute("role", "tooltip");
+          document.body.appendChild(tip);
+        }
+        return tip;
+      }
+
+      function showT4RosterTip(chara) {
+        const prefabId = Number(chara.dataset.prefabId);
+        const c = t4RosterAllCharas().find((x) => x.prefabId === prefabId);
+        if (!c) return;
+        const owners = t4RosterOwners(prefabId, t4RosterEntries());
+        const tip = t4RosterTipEl();
+        tip.innerHTML = `
+          <div class="t4-roster-tip-title">${escapeHtml(translateToEnglish(c.unitName))} · ${owners.length} acc</div>
+          <div>${
+            owners.length
+              ? owners.map(escapeHtml).join(", ")
+              : `<span class="t4-roster-tip-sub">Chưa acc nào có</span>`
+          }</div>`;
+        tip.classList.add("visible");
+
+        const r = chara.getBoundingClientRect();
+        const t = tip.getBoundingClientRect();
+        const left = Math.min(
+          Math.max(8, r.left + r.width / 2 - t.width / 2),
+          window.innerWidth - t.width - 8,
+        );
+        const below = r.top - t.height - 8 < 8;
+        tip.style.left = `${left}px`;
+        tip.style.top = `${below ? r.bottom + 8 : r.top - t.height - 8}px`;
+      }
+
+      function hideT4RosterTip() {
+        document.getElementById("t4-roster-tip")?.classList.remove("visible");
+      }
+
+      (function bindT4RosterTip() {
+        const container = document.getElementById("bosslog-tier4-container");
+        if (!container) return;
+        const onEnter = (e) => {
+          const chara = e.target.closest?.(".t4-roster-chara");
+          if (chara) showT4RosterTip(chara);
+        };
+        const onLeave = (e) => {
+          const chara = e.target.closest?.(".t4-roster-chara");
+          if (chara && !chara.contains(e.relatedTarget)) hideT4RosterTip();
+        };
+        container.addEventListener("mouseover", onEnter);
+        container.addEventListener("mouseout", onLeave);
+        container.addEventListener("focusin", onEnter);
+        container.addEventListener("focusout", onLeave);
+        window.addEventListener("scroll", hideT4RosterTip, { passive: true });
+      })();
 
       // buildLogView() rebuilds the whole panel's innerHTML — including the
       // filter <input>s — on every keystroke now that filtering is live.
