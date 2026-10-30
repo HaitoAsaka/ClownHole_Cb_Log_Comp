@@ -711,6 +711,82 @@
         background: #e0b84a;
         color: var(--white);
       }
+      .tab-btn-bot {
+        background: var(--blueL);
+        color: var(--blue);
+        border-radius: var(--radius) var(--radius) 0 0;
+        font-weight: 600;
+      }
+      .tab-btn-bot.active {
+        background: var(--blue);
+        color: var(--white);
+      }
+      .tab-btn-bot:hover:not(.active) {
+        background: #4a7aa8;
+        color: var(--white);
+      }
+      /* BOT — OVK time calculator (port of bot.py's !calc) */
+      .ovk-card {
+        max-width: 520px;
+        margin: 0 auto;
+        background: var(--white);
+        border: 0.5px solid var(--grayM);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+      }
+      .ovk-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--blue);
+        margin-bottom: 4px;
+      }
+      .ovk-hint {
+        font-size: 12px;
+        color: #888;
+        margin-bottom: 16px;
+      }
+      .ovk-field {
+        margin-bottom: 12px;
+      }
+      .ovk-field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--gray);
+        margin-bottom: 4px;
+      }
+      .ovk-result {
+        margin-top: 16px;
+        display: grid;
+        gap: 10px;
+      }
+      .ovk-row {
+        background: var(--blueL);
+        border-radius: var(--radius);
+        padding: 10px 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+      .ovk-row-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--blue);
+      }
+      .ovk-row-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--black);
+        font-variant-numeric: tabular-nums;
+      }
+      .ovk-msg {
+        background: var(--amberL);
+        color: var(--amber);
+        border-radius: var(--radius);
+        padding: 10px 14px;
+        font-size: 13px;
+      }
       /* CONTRIBUTOR / HALL OF FAME */
       .hof-header {
         text-align: center;
@@ -2760,6 +2836,33 @@
           >
             <i class="ti ti-trophy" aria-hidden="true"></i> Contributor
           </button>
+          <button
+            class="tab-btn tab-btn-bot"
+            onclick="switchTab('bot', this)"
+          >
+            <i class="ti ti-robot" aria-hidden="true"></i> Bot
+          </button>
+        </div>
+        <div id="tab-bot" class="tab-panel">
+          <div class="ovk-card">
+            <div class="ovk-title">
+              <i class="ti ti-clock-bolt" aria-hidden="true"></i> Tính time Ovk
+            </div>
+            <div class="ovk-hint">Ví dụ: Máu boss 300, Player 1 251, Player 2 173</div>
+            <div class="ovk-field">
+              <label for="ovk-b1">Máu boss hiện tại</label>
+              <input id="ovk-b1" class="boss-input" type="number" min="0" step="any" oninput="calcOvk()" />
+            </div>
+            <div class="ovk-field">
+              <label for="ovk-b2">Dame player 1</label>
+              <input id="ovk-b2" class="boss-input" type="number" min="0" step="any" oninput="calcOvk()" />
+            </div>
+            <div class="ovk-field">
+              <label for="ovk-b3">Dame player 2</label>
+              <input id="ovk-b3" class="boss-input" type="number" min="0" step="any" oninput="calcOvk()" />
+            </div>
+            <div class="ovk-result" id="ovk-result"></div>
+          </div>
         </div>
         <div id="tab-cards" class="tab-panel">
           <div class="cards-grid" id="cards-container"></div>
@@ -5751,6 +5854,47 @@
             buildBossLogView();
           }
         }
+      }
+
+      // OVK carry-over time for the player who hits second: `first` lands
+      // first and leaves `hp - first`, then `second` overkills that.
+      // Port of calc_result1/calc_result2 from bot.py.
+      function ovkTime(hp, first, second) {
+        if (first + second <= hp) return 0;
+        const remain = hp - first;
+        if (remain === 0 || second / remain >= 4.5) return 90;
+        return 110 - (remain * 90) / second;
+      }
+
+      function calcOvk() {
+        const out = document.getElementById("ovk-result");
+        const vals = ["ovk-b1", "ovk-b2", "ovk-b3"].map((id) =>
+          document.getElementById(id).value.trim(),
+        );
+        if (vals.some((v) => v === "")) {
+          out.innerHTML = "";
+          return;
+        }
+        const [b1, b2, b3] = vals.map(Number);
+        if ([b1, b2, b3].some((n) => !Number.isFinite(n))) {
+          out.innerHTML = `<div class="ovk-msg">Bạn phải nhập số cho cả 3 ô.</div>`;
+          return;
+        }
+        if (b2 >= b1 || b3 >= b1) {
+          out.innerHTML = `<div class="ovk-msg">Dame to hơn máu boss rồi tự ăn đê ovk làm gì</div>`;
+          return;
+        }
+        const p1First = Math.round(ovkTime(b1, b2, b3));
+        const p2First = Math.round(ovkTime(b1, b3, b2));
+        out.innerHTML = `
+          <div class="ovk-row">
+            <span class="ovk-row-label">Nếu Player 1 thả trước</span>
+            <span class="ovk-row-value">${p1First} s</span>
+          </div>
+          <div class="ovk-row">
+            <span class="ovk-row-label">Nếu Player 2 thả trước</span>
+            <span class="ovk-row-value">${p2First} s</span>
+          </div>`;
       }
 
       function openGuideline() {
