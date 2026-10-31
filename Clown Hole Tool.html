@@ -827,6 +827,9 @@
         border: 2px solid #e6c766;
         box-shadow: 0 10px 30px rgba(154, 107, 0, 0.15);
       }
+      .hof-card + .hof-card {
+        margin-top: 24px;
+      }
       .hof-art {
         position: relative;
         min-height: 320px;
@@ -2896,6 +2899,55 @@
 
           <article class="hof-card">
             <div class="hof-art">
+              <img src="Img/IMG_2358.jpg" loading="lazy" alt="Artwork của Neobo" />
+              <div class="hof-ribbon">
+                <i class="ti ti-star-filled" aria-hidden="true"></i> CB105
+              </div>
+            </div>
+            <div class="hof-body">
+              <div class="hof-award">
+                <i class="ti ti-trophy" aria-hidden="true"></i>
+                Player of the CB105
+              </div>
+              <h3 class="hof-name">Neobo</h3>
+              <p class="hof-citation">
+                clan nhu cut
+              </p>
+              <div class="hof-stats">
+                <div class="hof-stat">
+                  <span class="hof-stat-label">Điểm mùa trước (CB104)</span>
+                  <span class="hof-stat-value">27,069,795,626</span>
+                </div>
+                <div class="hof-stat">
+                  <span class="hof-stat-label">Rank cao nhất (08/2026)</span>
+                  <span class="hof-stat-value">#2</span>
+                </div>
+                <div class="hof-stat">
+                  <span class="hof-stat-label">Điểm mùa này (CB105)</span>
+                  <span class="hof-stat-value">29,378,087,345</span>
+                </div>
+                <div class="hof-stat">
+                  <span class="hof-stat-label">Rank mùa này</span>
+                  <span class="hof-stat-value">#9</span>
+                </div>
+              </div>
+              <a
+                class="hof-proof"
+                href="Img/IMG_2354.png"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="Img/IMG_2354.png" loading="lazy" alt="Profile card của Neobo" />
+                <span
+                  ><i class="ti ti-zoom-in" aria-hidden="true"></i> Xem profile
+                  card</span
+                >
+              </a>
+            </div>
+          </article>
+
+          <article class="hof-card">
+            <div class="hof-art">
               <img src="Img/sherry.jpg" loading="lazy" alt="Artwork của Mjhieu" />
               <div class="hof-ribbon">
                 <i class="ti ti-star-filled" aria-hidden="true"></i> CB104
@@ -3376,6 +3428,7 @@
       // greet an actual login, not replay on every page reload.
       const HONOREES = {
         mjhieu: { name: "Mjhieu", award: "Player of the CB104" },
+        neobo: { name: "Neobo", award: "Player of the CB105" },
       };
 
       function celebrateHonoree(displayName) {
