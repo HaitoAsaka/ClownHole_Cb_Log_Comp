@@ -3333,6 +3333,14 @@
       const TIER4_SELECTED_KEY = "clownhole_tier4_selected";
       // Dán URL Web App sau khi deploy (kết thúc bằng /exec)
       const AUTH_URL ="https://script.google.com/macros/s/AKfycbwqYRSY000kxsV4_W-i8Ehm9uXlxpQQlADOdOriTELN02T6b9e1IwAzhD-BcsZPvJSMGg/exec";
+
+      // Per-account localStorage key — the roster filter and Tier 4 picks
+      // belong to an account, not a browser, so members sharing a device
+      // (or one member with alts) never see each other's.
+      function userStorageKey(base, user) {
+        return `${base}:${String(user || "").trim().toLowerCase()}`;
+      }
+
       function showLoginScreen() {
         document.getElementById("login-overlay").classList.remove("hidden");
         document.getElementById("app-shell").classList.remove("visible");
@@ -3353,6 +3361,16 @@
         document.getElementById("player-name").textContent = displayName;
         document.getElementById("login-overlay").classList.add("hidden");
         document.getElementById("app-shell").classList.add("visible");
+        // Swap in this account's own local state before anything renders
+        // or fetches — the previous account's must never show under this
+        // name.
+        tier4SelectedComps = loadTier4Selection();
+        bossLogMissingCharas = loadBossLogMissingCharas();
+        bossLogMissingCharasDirty = false;
+        buildTier4Card();
+        buildBossLogView();
+        renderT4Roster();
+        updateProgress();
         // Covers both a fresh login and a restored session (initAuth()
         // calls this too) — either way, pull this account's saved roster
         // filter from the Members sheet instead of trusting only this
@@ -3530,13 +3548,12 @@
         // below and before the session's username is gone.
         saveCharaHaveBeacon(getCurrentUser());
 
-        // Then wipe it locally — the roster filter is per-account, not
-        // per-browser, so the next login on this device (possibly a
-        // different member) must start from nothing, not inherit whoever
-        // was just logged in.
-        bossLogMissingCharas.clear();
+        // Then drop it from memory — the next login on this device
+        // (possibly a different member) loads its own per-account copy in
+        // enterApp(). This account's stored copy is left alone so a pending
+        // save survives a quick re-login (see fetchCharaHave).
+        bossLogMissingCharas = new Set();
         bossLogMissingCharasDirty = false;
-        persistBossLogMissingCharas();
         buildBossLogView();
 
         // Actually end the session — without this, SESSION_KEY stays set
@@ -3545,12 +3562,32 @@
         // `currentUser`), undoing everything above.
         currentUser = null;
         localStorage.removeItem(SESSION_KEY);
+        // getCurrentUser() falls back to this label — leaving the old name
+        // here would keep answering for the logged-out account.
+        document.getElementById("player-name").textContent = "Tên nhân vật";
         resetT4Roster();
         showLoginScreen();
       }
 
+      // One-time cleanup of the old browser-wide keys. The shared roster is
+      // dropped: it may hold another member's picks, and the sheet copy is
+      // the truth anyway. The shared Tier 4 picks go to the restored
+      // session's account so an in-progress pick list isn't lost.
+      function migrateLegacyAccountStorage(sessionUser) {
+        const legacyTier4 = localStorage.getItem(TIER4_SELECTED_KEY);
+        if (legacyTier4 !== null) {
+          const key = userStorageKey(TIER4_SELECTED_KEY, sessionUser);
+          if (sessionUser && localStorage.getItem(key) === null) {
+            localStorage.setItem(key, legacyTier4);
+          }
+          localStorage.removeItem(TIER4_SELECTED_KEY);
+        }
+        localStorage.removeItem(BOSSLOG_MISSING_CHARAS_KEY);
+      }
+
       function initAuth() {
         const saved = localStorage.getItem(SESSION_KEY);
+        migrateLegacyAccountStorage(saved);
         if (saved) enterApp(saved);
         else showLoginScreen();
       }
@@ -3566,19 +3603,24 @@
       // (see uploadToSheet()) — { subId, compId, bossId, bossIndex,
       // bossName, taskId, linkIndex, link }, `link` being that comp's raw
       // CB105.json link object.
-      let tier4SelectedComps = loadTier4Selection();
+      // Loaded per account in enterApp().
+      let tier4SelectedComps = [];
 
       function loadTier4Selection() {
+        if (!currentUser) return [];
         try {
-          return JSON.parse(localStorage.getItem(TIER4_SELECTED_KEY) || "[]");
+          return JSON.parse(
+            localStorage.getItem(userStorageKey(TIER4_SELECTED_KEY, currentUser)) || "[]",
+          );
         } catch {
           return [];
         }
       }
 
       function persistTier4Selection() {
+        if (!currentUser) return;
         localStorage.setItem(
-          TIER4_SELECTED_KEY,
+          userStorageKey(TIER4_SELECTED_KEY, currentUser),
           JSON.stringify(tier4SelectedComps),
         );
       }
@@ -4073,16 +4115,26 @@
       const BOSSLOG_MISSING_CHARAS_KEY = "clownhole_bosslog_missing_charas";
       const BOSSLOG_MIN_CHARA_MATCH = 4;
 
+      // Per-account timestamp of this device's last roster change or save
+      // attempt not yet known to have reached the sheet — see
+      // fetchCharaHave for why it matters.
+      const BOSSLOG_ROSTER_PENDING_KEY = "clownhole_bosslog_roster_pending";
+      const BOSSLOG_ROSTER_PENDING_GRACE_MS = 5 * 60 * 1000;
+
       function loadBossLogMissingCharas() {
+        if (!currentUser) return new Set();
         try {
-          const raw = JSON.parse(localStorage.getItem(BOSSLOG_MISSING_CHARAS_KEY) || "[]");
+          const raw = JSON.parse(
+            localStorage.getItem(userStorageKey(BOSSLOG_MISSING_CHARAS_KEY, currentUser)) || "[]",
+          );
           return new Set(Array.isArray(raw) ? raw : []);
         } catch {
           return new Set();
         }
       }
 
-      let bossLogMissingCharas = loadBossLogMissingCharas();
+      // Loaded per account in enterApp().
+      let bossLogMissingCharas = new Set();
 
       // Set whenever the selection changes; cleared once saveCharaHaveBeacon()
       // successfully hands it to sendBeacon (see there) — lets the
@@ -4090,9 +4142,18 @@
       let bossLogMissingCharasDirty = false;
 
       function persistBossLogMissingCharas() {
+        if (!currentUser) return;
         localStorage.setItem(
-          BOSSLOG_MISSING_CHARAS_KEY,
+          userStorageKey(BOSSLOG_MISSING_CHARAS_KEY, currentUser),
           JSON.stringify([...bossLogMissingCharas]),
+        );
+      }
+
+      function markBossLogRosterPending(user) {
+        if (!user) return;
+        localStorage.setItem(
+          userStorageKey(BOSSLOG_ROSTER_PENDING_KEY, user),
+          String(Date.now()),
         );
       }
 
@@ -4100,6 +4161,7 @@
         if (bossLogMissingCharas.has(prefabId)) bossLogMissingCharas.delete(prefabId);
         else bossLogMissingCharas.add(prefabId);
         bossLogMissingCharasDirty = true;
+        markBossLogRosterPending(currentUser);
         persistBossLogMissingCharas();
         buildBossLogView();
         renderT4Roster();
@@ -4108,6 +4170,7 @@
       function clearBossLogMissingCharas() {
         bossLogMissingCharas.clear();
         bossLogMissingCharasDirty = true;
+        markBossLogRosterPending(currentUser);
         persistBossLogMissingCharas();
         buildBossLogView();
         renderT4Roster();
@@ -4140,10 +4203,7 @@
       // tearing down — it's the one API browsers guarantee to still
       // attempt sending; reused as-is for logout() since it's simplest to
       // have one save path rather than two.
-      function saveCharaHaveBeacon(user) {
-        if (!user || !bossLogMissingCharasDirty) return;
-        if (typeof navigator.sendBeacon !== "function") return;
-
+      function saveCharaHaveUrl(user) {
         const nameMap = bossLogCharaNameMap();
         const charas = [...bossLogMissingCharas].map((prefabId) => ({
           prefabId,
@@ -4154,17 +4214,44 @@
         params.set("action", "saveCharaHave");
         params.set("user", user);
         params.set("charas", JSON.stringify(charas));
+        return `${AUTH_URL}?${params.toString()}`;
+      }
 
-        const sent = navigator.sendBeacon(`${AUTH_URL}?${params.toString()}`, "");
-        if (sent) bossLogMissingCharasDirty = false;
+      function saveCharaHaveBeacon(user) {
+        if (!user || !bossLogMissingCharasDirty) return;
+        if (typeof navigator.sendBeacon !== "function") return;
+
+        const sent = navigator.sendBeacon(saveCharaHaveUrl(user), "");
+        if (sent) {
+          bossLogMissingCharasDirty = false;
+          // Queued, not confirmed — keep it pending (see fetchCharaHave).
+          markBossLogRosterPending(user);
+        }
       }
 
       // Pulled on every login (fresh or restored session — see enterApp())
-      // so the roster filter follows the account across devices/browsers
-      // instead of staying stuck to whichever one last saved it.
+      // so the roster filter follows the account across devices/browsers.
+      // The sheet note is the source of truth and replaces this browser's
+      // copy — except right after this device changed it: the beacon is
+      // fire-and-forget, so a quick reload can read the sheet before that
+      // save lands. Within the grace window the local copy wins and is
+      // re-sent with a regular fetch instead.
       async function fetchCharaHave(user) {
         if (!user) return;
+        const pendingKey = userStorageKey(BOSSLOG_ROSTER_PENDING_KEY, user);
+        const pendingAt = localStorage.getItem(pendingKey);
         try {
+          if (pendingAt && Date.now() - Number(pendingAt) < BOSSLOG_ROSTER_PENDING_GRACE_MS) {
+            const res = await fetch(saveCharaHaveUrl(user));
+            if (!res.ok) return;
+            const data = await res.json();
+            // Only clear it if nothing changed while the save was in flight.
+            if (data.ok && localStorage.getItem(pendingKey) === pendingAt) {
+              localStorage.removeItem(pendingKey);
+            }
+            return;
+          }
+
           const params = new URLSearchParams();
           params.set("action", "charaHave");
           params.set("user", user);
@@ -4172,21 +4259,18 @@
           if (!res.ok) return;
           const data = await res.json();
           if (!data.ok || !Array.isArray(data.charaHave)) return;
+          // Logged out / switched account while this was in flight.
+          if (user !== currentUser) return;
 
-          // Union with whatever's already local, never replace — an empty
-          // or smaller note (e.g. this account's very first sync, or one
-          // saved from a device with less picked) must not erase a
-          // selection already sitting in this browser's localStorage.
           const serverIds = data.charaHave
             .map((c) => (c && typeof c === "object" ? c.prefabId : c))
             .filter((id) => id != null);
-          const before = bossLogMissingCharas.size;
-          serverIds.forEach((id) => bossLogMissingCharas.add(id));
-          if (bossLogMissingCharas.size !== before) {
-            persistBossLogMissingCharas();
-            buildBossLogView(); // no-op if the Boss Log tab hasn't been built yet
-            renderT4Roster();
-          }
+          bossLogMissingCharas = new Set(serverIds);
+          bossLogMissingCharasDirty = false;
+          localStorage.removeItem(pendingKey);
+          persistBossLogMissingCharas();
+          buildBossLogView(); // no-op if the Boss Log tab hasn't been built yet
+          renderT4Roster();
         } catch {
           // best-effort — keep whatever's already in localStorage on failure
         }
